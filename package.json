@@ -1,5 +1,5 @@
 {
-  "name": "Filmvisarna",
+  "name": "filmvisarna-repo",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
