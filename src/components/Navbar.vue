@@ -47,10 +47,13 @@ a {
   font-weight: bold;
   float: left;
   cursor: pointer;
+
 }
 
 a:hover {
-  color: rgb(128, 195, 226);
+ 
+  color: burlywood;
+
 }
 
 .tickets {
