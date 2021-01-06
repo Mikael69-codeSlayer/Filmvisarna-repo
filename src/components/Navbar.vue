@@ -1,7 +1,9 @@
 
   <!-- Title -->
   
-<template></template>
+<template>
+<h1>{{ filmvisarna }}</h1>
+</template>
 
 <script>
 export default {
