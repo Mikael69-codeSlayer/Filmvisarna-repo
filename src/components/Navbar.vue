@@ -40,7 +40,7 @@ router-link {
   color: rgb(241, 241, 241);
   font-weight: bold;
   float: left;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 a {
   text-decoration: none;
