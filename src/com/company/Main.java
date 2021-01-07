@@ -5,7 +5,9 @@ import express.database.CollectionOptions;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("Detta är ett test");
+
+        Express app = new Express();
+        app.listen(4000);
+
     }
 }
