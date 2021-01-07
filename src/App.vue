@@ -10,6 +10,7 @@
 import Filmvisarna from "./components/Filmvisarna.vue";
 import Navbar from "./components/Navbar.vue";
 
+
 // This syntax is declaring a component
 // which can be registered and reused later
 export default {
