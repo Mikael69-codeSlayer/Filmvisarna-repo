@@ -17,9 +17,20 @@ public class Main {
         // res - answer to the question, for instance number, String or object information
         app.get("/", (req, res) -> { // Lambda (arrow-function)
             res.send("Hello World");
-
-            // timeline: 24:32
         });
+
+        app.get("/biljetter", (req, res) -> {
+            res.send("Biljetter");
+        });
+
+        app.get("/filmer&trailer", (req, res) -> {
+            res.send("Filmer & Trailer");
+        });
+
+        app.get("/login", (req, res) -> {
+            res.send("Logga in");
+        });
+
 
         // listen starts the server
         // and should be done after endpoint-listeners
