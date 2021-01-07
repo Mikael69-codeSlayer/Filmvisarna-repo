@@ -8,10 +8,10 @@
     <a class="tickets" @click="goToTickets">Biljetter</a>
 
     <a class="filmsAndTrailers" @click="goToFilmsAndTrailer"
-      >Filmer & Trailer</a>
+      >Filmer & Trailer</a
+    >
 
-       <a class="login" @click="login">Logga in</a>
-
+    <a class="login" @click="login">Logga in</a>
   </nav>
 </template>
 
@@ -27,6 +27,7 @@ export default {
 
 <style scoped>
 nav {
+  margin: -15px;
   user-select: none;
   padding: 25px 0 45px 0;
   text-align: center;
@@ -47,13 +48,10 @@ a {
   font-weight: bold;
   float: left;
   cursor: pointer;
-
 }
 
 a:hover {
- 
   color: burlywood;
-
 }
 
 .tickets {
@@ -71,7 +69,5 @@ a:hover {
 
 .login:hover {
   color: rgb(128, 195, 226);
-
 }
-
 </style>
