@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 
 // We need the components we use as distinct page views:
 import Filmvisarna from '@/views/Filmvisarna.vue'
