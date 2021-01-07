@@ -2,27 +2,27 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // We need the components we use as distinct page views:
-import Home from '@/views/Home.vue'
-import Products from '@/views/Products.vue'
-import Contact from '@/views/Contact.vue'
+import Filmvisarna from '@/views/Filmvisarna.vue'
+import Movies from '@/views/Movies.vue'
+import Login from '@/views/Login.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'filmvisarna',
+    component: Filmvisarna
   },
   {
-    path: '/products/:id', // dynamic $route.params.id
-    name: 'products',
-    component: Products
+    path: '/movies/:id', // dynamic $route.params.id
+    name: 'movies',
+    component: Movies
   },
   {
-    path: '/contact',
-    name: 'contact',
-    component: Contact
+    path: '/login',
+    name: 'login',
+    component: Login
   }
 ]
 
