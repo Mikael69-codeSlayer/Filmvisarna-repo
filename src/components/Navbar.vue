@@ -28,7 +28,6 @@ export default {
 <style scoped>
 nav {
   margin: -15px;
-  margin-top: -15px;
   user-select: none;
   padding: 25px 0 45px 0;
   text-align: center;
