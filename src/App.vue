@@ -6,7 +6,7 @@
       <router-link :to="{ name: 'Filmvisarna' }">Filmvisarna</router-link>
     </div>
     <div class="filmer">
-      <router-link :to="{ name: 'Filmer' }">Filmer</router-link>
+      <router-link :to="{ name: 'Filmer' }">Filmer & Trailer</router-link>
     </div>
     <div class="bil">
       <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
@@ -42,51 +42,86 @@ export default {
 
 <style>
 /******************** google fonts **************/ 
+/*Cookie*/ 
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Lora&display=swap');
+/*Roboto Slab*/ 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 /***********************************************/ 
 
+/*Navigationbar*/ 
 #nav {
   background: rgb(209, 6, 46);
-  padding: 25px;
+  padding: 5px;
   margin: -20px;
 }
 body {
   background-color: black;
 }
 
+/*a -> filmer, biljetter, filmvisarna, login*/ 
 a {
    color: white;
-}
-a:link {
-  text-decoration: none;
+   text-decoration: none;
+   position: relative;
 }
 
+a:hover {
+  color:rgba(240, 248, 255, 0.842);
+}
+
+a:after {    
+  
+  bottom: -12px;
+  content: "";
+  display: block;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.548);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after { 
+  width: 90%; 
+  left: 6%; 
+   
+}
+
+
+/*Filmvisarna*/ 
 div.filmV {
   font-family: 'Cookie', cursive;
   float: center;  
   font-size: 50px;
-  margin-top: -5px;
+  margin-top: 5px;
 }
+
+div.filmV::first-letter {
+   font-size: 70px;
+   color:aliceblue;
+}
+/*Filmer*/ 
 div.filmer {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Slab', serif;
+  float: left;
+  padding-left: 300px;
+  margin-top: -45px;
+  font-size: 20px;
+}
+/*Biljetter*/ 
+div.bil {
+  font-family: 'Roboto Slab', serif;
   float: left;
   padding-left: 90px;
-  margin-top: -20px;
+  margin-top: -45px;
   font-size: 20px;
 }
-div.bil {
-  font-family: 'Lora', serif;
-  float: left;
-  padding-left: 120px;
-  margin-top: -20px;
-  font-size: 20px;
-}
+/*Login*/ 
 div.log {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Slab', serif;
   float: right;
-  margin-top: -20px;
+  margin-top: -45px;
   font-size: 20px;
   padding-right: 70px;
 }
