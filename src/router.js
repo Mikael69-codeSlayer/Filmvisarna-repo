@@ -7,23 +7,23 @@ import Biljetter from './views/Biljetter.vue'
 
 const routes = [
   {
-    path: '/',
     name: 'Filmvisarna',
+    path: '/',
     component: Filmvisarna
   },
   {
-    path: '/filmer', // dynamic $route.params.id
     name: 'Filmer',
+    path: '/filmer', // dynamic $route.params.id
     component: Filmer
   },
   {
-    path: '/login',
     name: 'Login',
+    path: '/login',
     component: Login
   },
   {
-    path: '/biljetter',
     name: 'Biljetter',
+    path: '/biljetter',
     component: Biljetter
   }
 ]

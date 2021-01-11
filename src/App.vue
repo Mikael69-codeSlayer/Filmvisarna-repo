@@ -10,13 +10,15 @@
     |
     <router-link :to ="{ name: 'Login'}">Login</router-link>
   </div>
+  <!--We added router-view to App.vue template, it must be included to render components.-->
+  <router-view />
 </template>
 
 <!-- JavaScript (Vue) -->
 <script>
 // Imported 3  Vue.js files
 import Filmvisarna from './views/Filmvisarna.vue'
-import Filmer from './views/Movies.vue'
+import Filmer from './views/Filmer.vue'
 import Login from './views/Login.vue'
 import Biljetter from './views/Biljetter.vue'
 
