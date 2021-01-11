@@ -18,12 +18,12 @@ public class Main {
         app.get("/", (req, res) -> { // Lambda (arrow-function)
             res.send("Hello World");
         });
-
+/*
         app.get("/biljetter", (req, res) -> {
             res.send("Biljetter");
         });
-
-        app.get("/filmer&trailer", (req, res) -> {
+*/
+        app.get("/movies", (req, res) -> {
             res.send("Filmer & Trailer");
         });
 

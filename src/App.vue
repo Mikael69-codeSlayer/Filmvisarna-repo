@@ -12,9 +12,10 @@
 
 <!-- JavaScript (Vue) -->
 <script>
-// Imported 2  Vue.js files
-import Filmvisarna from "./views/Filmvisarna.vue";
-import Navbar from "./views/Navbar.vue";
+// Imported 3  Vue.js files
+import Filmvisarna from './views/Filmvisarna.vue'
+import Movies from './views/Movies.vue'
+import Login from './views/Login.vue'
 
 
 // This syntax is declaring a component
@@ -23,7 +24,8 @@ export default {
   name: "App",
   components: {
     Filmvisarna,
-    Navbar,
+    Movies,
+    Login
   },
 };
 </script>
