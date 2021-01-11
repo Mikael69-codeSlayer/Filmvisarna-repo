@@ -7,8 +7,8 @@
 <!-- JavaScript (Vue) -->
 <script>
 // Imported 2  Vue.js files
-import Filmvisarna from "./components/Filmvisarna.vue";
-import Navbar from "./components/Navbar.vue";
+import Filmvisarna from "./views/Filmvisarna.vue";
+import Navbar from "./views/Navbar.vue";
 
 
 // This syntax is declaring a component
