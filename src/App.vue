@@ -41,26 +41,57 @@ export default {
 </script>
 
 <style>
+/******************** google fonts **************/ 
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Lora&display=swap');
+/***********************************************/ 
+
 #nav {
-  background: rgb(238, 5, 52);
-  padding: 30px;
+  background: rgb(209, 6, 46);
+  padding: 25px;
   margin: -20px;
 }
 body {
   background-color: black;
 }
-.filmV {
-  float: left;
-  padding-right: 130px;
+
+a {
+   color: white;
+  
+
+
 }
-.filmer {
-  float: left;
-  padding-right: 130px;
+a:link {
+  text-decoration: none;
 }
-.bil {
-  float: left;
+
+
+div.filmV {
+  font-family: 'Cookie', cursive;
+  float: center;  
+  font-size: 50px;
+  margin-top: -5px;
 }
-.log {
+div.filmer {
+  font-family: 'Lora', serif;
+  float: left;
+  padding-left: 90px;
+  margin-top: -20px;
+  font-size: 20px;
+}
+div.bil {
+  font-family: 'Lora', serif;
+  float: left;
+  padding-left: 120px;
+  margin-top: -20px;
+  font-size: 20px;
+}
+div.log {
+  font-family: 'Lora', serif;
   float: right;
+  margin-top: -20px;
+  font-size: 20px;
+  padding-right: 70px;
 }
 </style>
