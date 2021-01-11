@@ -11,7 +11,7 @@ const routes = [
     component: Filmvisarna
   },
   {
-    path: '/movies/:id', // dynamic $route.params.id
+    path: '/movies', // dynamic $route.params.id
     name: 'Movies',
     component: Movies
   },
