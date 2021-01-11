@@ -1,7 +1,13 @@
 <!-- HTML -->
 <template>
-  <!-- Title -->
-  <Navbar filmvisarna="Filmvisarna" />
+  <!-- Navigationbar with router-link and data-bind-->
+  <div id = "nav">
+    <router-link :to ="{ name: 'Filmvisarna'}">Filmvisarna</router-link>
+    |
+    <router-link :to ="{ name: 'Movies'}">Movies</router-link>
+    |
+    <router-link :to ="{ name: 'Login'}">Login</router-link>
+  </div>
 </template>
 
 <!-- JavaScript (Vue) -->
