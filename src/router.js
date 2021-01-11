@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Filmvisarna from './views/Filmvisarna.vue'
-import Movies from './views/Movies.vue'
+import Filmer from './views/Filmer.vue'
 import Login from './views/Login.vue'
+import Biljetter from './views/Biljetter.vue'
 
 const routes = [
   {
@@ -11,14 +12,19 @@ const routes = [
     component: Filmvisarna
   },
   {
-    path: '/movies', // dynamic $route.params.id
-    name: 'Movies',
-    component: Movies
+    path: '/filmer', // dynamic $route.params.id
+    name: 'Filmer',
+    component: Filmer
   },
   {
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/biljetter',
+    name: 'Biljetter',
+    component: Biljetter
   }
 ]
 
