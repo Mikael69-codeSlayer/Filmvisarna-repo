@@ -34,4 +34,8 @@ export default {
 body {
   background-color: black;
 }
+
+#nav {
+  background: crimson;
+}
 </style>
