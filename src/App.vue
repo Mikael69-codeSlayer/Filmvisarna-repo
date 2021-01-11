@@ -58,14 +58,10 @@ body {
 
 a {
    color: white;
-  
-
-
 }
 a:link {
   text-decoration: none;
 }
-
 
 div.filmV {
   font-family: 'Cookie', cursive;
