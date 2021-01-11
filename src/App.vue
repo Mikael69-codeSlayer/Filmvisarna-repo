@@ -1,14 +1,19 @@
 <!-- HTML -->
 <template>
   <!-- Navigationbar with router-link and data-bind-->
-  <div id = "nav">
-    <router-link :to ="{ name: 'Filmvisarna'}">Filmvisarna</router-link>
-    |
-    <router-link :to ="{ name: 'Filmer'}">Filmer</router-link>
-    |
-    <router-link :to ="{ name: 'Biljetter'}">Biljetter</router-link>
-    |
-    <router-link :to ="{ name: 'Login'}">Login</router-link>
+  <div id="nav">
+    <div class="filmV">
+      <router-link :to="{ name: 'Filmvisarna' }">Filmvisarna</router-link>
+    </div>
+    <div class="filmer">
+      <router-link :to="{ name: 'Filmer' }">Filmer</router-link>
+    </div>
+    <div class="bil">
+      <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
+    </div>
+    <div class="log">
+      <router-link :to="{ name: 'Login' }">Login</router-link>
+    </div>
   </div>
   <!--We added router-view to App.vue template, it must be included to render components.-->
   <router-view />
@@ -17,10 +22,10 @@
 <!-- JavaScript (Vue) -->
 <script>
 // Imported 3  Vue.js files
-import Filmvisarna from './views/Filmvisarna.vue'
-import Filmer from './views/Filmer.vue'
-import Login from './views/Login.vue'
-import Biljetter from './views/Biljetter.vue'
+import Filmvisarna from "./views/Filmvisarna.vue";
+import Filmer from "./views/Filmer.vue";
+import Login from "./views/Login.vue";
+import Biljetter from "./views/Biljetter.vue";
 
 // This syntax is declaring a component
 // which can be registered and reused later
@@ -30,7 +35,7 @@ export default {
     Filmvisarna,
     Filmer,
     Login,
-    Biljetter
+    Biljetter,
   },
 };
 </script>
@@ -38,14 +43,24 @@ export default {
 <style>
 #nav {
   background: rgb(238, 5, 52);
-  padding: 25px;
-  margin: -15px;
+  padding: 30px;
+  margin: -20px;
 }
 body {
   background-color: black;
 }
-
-#nav {
-  background: crimson;
+.filmV {
+  float: left;
+  padding-right: 130px;
+}
+.filmer {
+  float: left;
+  padding-right: 130px;
+}
+.bil {
+  float: left;
+}
+.log {
+  float: right;
 }
 </style>
