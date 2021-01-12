@@ -18,8 +18,6 @@ public class Filmer {
     private String description;
     private String[] images;
     private String[] youtubeTrailers;
-
-    // Posters
     private String posterUrl;
 
     public String getTitle() {
