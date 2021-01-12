@@ -25,7 +25,12 @@ export default {
             msg: 'På bio nu',
             posterUrl:""
         }
-    },
+    }, 
+    computed: {
+      filmer() {
+        return this.$store.state.filmer
+      }
+    }
     
 };
 </script>
