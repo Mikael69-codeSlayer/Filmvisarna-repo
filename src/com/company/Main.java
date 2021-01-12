@@ -2,13 +2,16 @@ package com.company;
 //import com.company.models.Todo;
 import express.Express;
 import express.database.CollectionOptions;
+
+import static express.database.Database.collection;
+
 public class Main {
 
     public static void main(String[] args) {
 
         // instantiate the app
         Express app = new Express();
-
+        app.enableCollections();
         // "/" defaults to homepage
         // req = Request;  res = Response
         // req - server gets a question
@@ -18,19 +21,22 @@ public class Main {
         app.get("/", (req, res) -> { // Lambda (arrow-function)
             res.send("Hello World");
         });
-/*
+
         app.get("/biljetter", (req, res) -> {
             res.send("Biljetter");
         });
-*/
-        app.get("/movies", (req, res) -> {
+
+        app.get("/filmer", (req, res) -> {
             res.send("Filmer & Trailer");
+            var filmer = collection("Filmer").find();
+            res.json(filmer);
+
+
         });
 
         app.get("/login", (req, res) -> {
             res.send("Logga in");
         });
-
 
         // listen starts the server
         // and should be done after endpoint-listeners

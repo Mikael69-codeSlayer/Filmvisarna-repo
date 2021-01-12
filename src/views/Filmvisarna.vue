@@ -1,19 +1,33 @@
 <!--   HTML  -->
 <template>
+<div class="home">
     <h1>Homepage</h1>
+    <h1>{{ msg }}</h1>
+
+    <!--If you want to add some pictures-->
+    <!--<img :src="posterUrl">-->
+</div>
 </template>
 
 <!--  JavaScript (Vue.js)   -->
 <script>
 export default {
- 
+    name: 'home',
+    data(){
+        return {
+            msg: 'Detta är ett test',
+            posterUrl:""
+        }
+    },
+    
 };
 </script>
 
 <!--- CSS  --->
-<style>
+<style scoped>
 /*
-IMPORTANT! Don't forget to use 'scope'
+IMPORTANT! Don't forget to use 'scoped'
 otherwise all changes will effect other files
 */
+
 </style>
