@@ -41,6 +41,11 @@ export default {
 </script>
 
 <style>
+/*
+IMPORTANT! Don't forget to use 'scope'
+otherwise all changes will effect other files
+*/
+
 /******************** google fonts **************/ 
 /*Cookie*/ 
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
@@ -65,13 +70,12 @@ a {
    text-decoration: none;
    position: relative;
 }
-
+/*the :hover selector is used to select elements when you mouse over them*/ 
 a:hover {
   color:rgba(240, 248, 255, 0.842);
 }
-
+/*the ::after selector inserts something after the content of each selected element(s)*/
 a:after {    
-  
   bottom: -12px;
   content: "";
   display: block;
@@ -85,9 +89,7 @@ a:after {
 a:hover:after { 
   width: 90%; 
   left: 6%; 
-   
 }
-
 
 /*Filmvisarna*/ 
 div.filmV {
@@ -96,7 +98,7 @@ div.filmV {
   font-size: 50px;
   margin-top: 5px;
 }
-
+/*First letter*/ 
 div.filmV::first-letter {
    font-size: 70px;
    color:aliceblue;

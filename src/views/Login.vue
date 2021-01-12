@@ -9,8 +9,8 @@ export default {
 </script>
 
 <style>
-h1 {
-  color: blue;
-}
-
+/*
+IMPORTANT! Don't forget to use 'scope'
+otherwise all changes will effect other files
+*/
 </style>
