@@ -1,23 +1,45 @@
 <!-- HTML -->
 <template>
-<!-- Title -->
-  <Navbar filmvisarna="Filmvisarna" />
+  <!-- Navigationbar with router-link and data-bind-->
+  <div id = "nav">
+    <router-link :to ="{ name: 'Filmvisarna'}">Filmvisarna</router-link>
+    |
+    <router-link :to ="{ name: 'Filmer'}">Filmer</router-link>
+    |
+    <router-link :to ="{ name: 'Biljetter'}">Biljetter</router-link>
+    |
+    <router-link :to ="{ name: 'Login'}">Login</router-link>
+  </div>
 </template>
 
 <!-- JavaScript (Vue) -->
 <script>
-// Imported 2  Vue.js files
-import Filmvisarna from "./components/Filmvisarna.vue";
-import Navbar from "./components/Navbar.vue";
+// Imported 3  Vue.js files
+import Filmvisarna from './views/Filmvisarna.vue'
+import Filmer from './views/Movies.vue'
+import Login from './views/Login.vue'
+import Biljetter from './views/Biljetter.vue'
 
-// This syntax is declaring a component 
+// This syntax is declaring a component
 // which can be registered and reused later
 export default {
-  name: "App", 
+  name: "App",
   components: {
     Filmvisarna,
-    Navbar,
+    Filmer,
+    Login,
+    Biljetter
   },
 };
 </script>
 
+<style>
+#nav {
+  background: rgb(238, 5, 52);
+  padding: 25px;
+  margin: -15px;
+}
+body {
+  background-color: black;
+}
+</style>
