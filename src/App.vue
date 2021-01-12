@@ -1,6 +1,7 @@
 <!-- HTML -->
 <template>
   <!-- Navigationbar with router-link and data-bind-->
+  <div class="main-container">
   <div id="nav">
     <div class="filmV">
       <router-link :to="{ name: 'Filmvisarna' }">Filmvisarna</router-link>
@@ -16,6 +17,7 @@
     </div>
   </div>
   <!--We added router-view to App.vue template, it must be included to render components.-->
+  </div>
   <router-view />
 </template>
 
@@ -55,10 +57,15 @@ otherwise all changes will effect other files
 /***********************************************/ 
 
 /*Navigationbar*/ 
+div.main-container {
+  width: 100%;
+}
 #nav {
-  background: rgb(209, 6, 46);
+  background-color: rgb(209, 6, 46);
   padding: 5px;
-  margin: -20px;
+  
+  
+ /*fix margin*/ 
 }
 body {
   background-color: black;

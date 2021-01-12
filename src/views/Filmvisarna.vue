@@ -18,7 +18,12 @@ export default {
             msg: 'Detta är ett test',
             posterUrl:""
         }
-    },
+    }, 
+    computed: {
+      filmer() {
+        return this.$store.state.filmer
+      }
+    }
     
 };
 </script>
