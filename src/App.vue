@@ -76,7 +76,7 @@ a:hover {
 }
 /*the ::after selector inserts something after the content of each selected element(s)*/
 a:after {    
-  bottom: -12px;
+  bottom: -11px;
   content: "";
   display: block;
   height: 4px;
