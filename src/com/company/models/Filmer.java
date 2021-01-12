@@ -12,6 +12,7 @@ public class Filmer {
     private String genre;
     private String distributor;
     private String language;
+    private String subtitles;
     private String director;
     private String[] actors;
     private String description;
@@ -67,6 +68,14 @@ public class Filmer {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public String getSubtitles() {
+        return subtitles;
+    }
+
+    public void setSubtitles(String subtitles) {
+        this.subtitles = subtitles;
     }
 
     public String getDirector() {
