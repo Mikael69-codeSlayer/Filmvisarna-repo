@@ -3,7 +3,11 @@
 <div class="home">
     <h1>Homepage</h1>
     <h1>{{ msg }}</h1>
-
+    <div
+    v-for ="film of filmer"
+    :key ="film.id">
+        <img :src="posterUrl">
+    </div>
     <!--If you want to add some pictures-->
     <!--<img :src="posterUrl">-->
 </div>
