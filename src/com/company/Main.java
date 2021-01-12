@@ -8,7 +8,7 @@ public class Main {
 
         // instantiate the app
         Express app = new Express();
-
+        app.enableCollections();
         // "/" defaults to homepage
         // req = Request;  res = Response
         // req - server gets a question

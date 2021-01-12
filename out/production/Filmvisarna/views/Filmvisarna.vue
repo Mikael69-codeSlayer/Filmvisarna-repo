@@ -1,8 +1,6 @@
 <!--   HTML  -->
 <template>
-  <div class ="home">
     <h1>Homepage</h1>
-  </div>
 </template>
 
 <!--  JavaScript (Vue.js)   -->
@@ -14,5 +12,8 @@ export default {
 
 <!--- CSS  --->
 <style>
-
+/*
+IMPORTANT! Don't forget to use 'scope'
+otherwise all changes will effect other files
+*/
 </style>

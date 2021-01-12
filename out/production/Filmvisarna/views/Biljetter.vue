@@ -10,7 +10,13 @@ export default {
 </script>
 
 <style>
+/*Test
+IMPORTANT! Don't forget to use 'scope'
+otherwise all changes will effect other files
+*/ 
 h1{
-  color: aqua;
+  text-align: center;
+  color: whitesmoke;
+  padding-top: 30vh;
 }
 </style>
