@@ -2,6 +2,9 @@ package com.company;
 //import com.company.models.Todo;
 import express.Express;
 import express.database.CollectionOptions;
+
+import static express.database.Database.collection;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -25,12 +28,15 @@ public class Main {
 
         app.get("/filmer", (req, res) -> {
             res.send("Filmer & Trailer");
+            var filmer = collection("Filmer").find();
+            res.json(filmer);
+
+
         });
 
         app.get("/login", (req, res) -> {
             res.send("Logga in");
         });
-
 
         // listen starts the server
         // and should be done after endpoint-listeners
