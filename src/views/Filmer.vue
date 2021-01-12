@@ -7,7 +7,9 @@
 
         </div>
             <div class="movie-list">
-              
+              <li class="movie-item">
+                  
+              </li>
         </div>
     </div>
     
