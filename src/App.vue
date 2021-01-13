@@ -22,7 +22,7 @@
 </template>
 
 <!-- JavaScript (Vue) -->
-<script>
+<script scoped>
 // Imported 3  Vue.js files
 import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";

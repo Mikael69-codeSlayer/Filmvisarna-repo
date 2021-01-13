@@ -7,19 +7,20 @@
 
         </div>
             <div class="movie-list">
-                <div 
+    <div 
     v-for="film of filmer" 
-   :key="film.id"
-   >
+    :key="film.id"
+    >
 
-   <router-link :to="'rest/filmer/' + film.id">
-        <img :src="film.posterUrl">
-    </router-link>
-   <p>#{{ film.title }} {{ film.length }}</p>
+        <router-link :to="'/filmerDetails/' + film.id">
+                <img :src="film.posterUrl">
+                
+        </router-link>
+        <p>#{{ film.title }} {{ film.id }}</p>
     </div>
-              <li class="movie-item">
+             <!-- <li class="movie-item">
                   
-              </li>
+              </li> -->
         </div>
     </div>
     
@@ -29,9 +30,9 @@
 export default {
     data() {
         return{
-            /*
-            posterUrl: "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg"
-            */
+            
+            /*posterUrl: "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg"*/
+            
         }
     },
     computed:{

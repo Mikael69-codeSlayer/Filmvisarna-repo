@@ -9,7 +9,7 @@ import FilmerDetails from './views/FilmerDetails.vue'
 const routes = [
   {
     name: 'FilmerDetails',
-    path: '/filmerDetails',
+    path: '/filmerDetails/:id',
     component: FilmerDetails
   },
   {
