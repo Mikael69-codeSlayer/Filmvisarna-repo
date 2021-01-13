@@ -6,6 +6,7 @@ import org.dizitart.no2.objects.Id;
 @Model
 public class Filmer {
     @Id
+    private String id;
     private String title;
     private int productionYear;
     private int length;
@@ -19,6 +20,15 @@ public class Filmer {
     private String[] images;
     private String[] youtubeTrailers;
     private String posterUrl;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

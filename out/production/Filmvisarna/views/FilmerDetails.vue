@@ -10,7 +10,10 @@ export default {
       // get id from url parameter
       return this.$route.params.id
     }
+    
   }
+
+ 
 }
 </script>
 
