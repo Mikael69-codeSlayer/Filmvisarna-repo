@@ -4,8 +4,19 @@
     <div class=aktuellt-container>
 
         <p class="aktuellt-title">Aktuellt på bio</p>
-             <div class="aktuellt-poster">
-        </div>
+
+             <div class="aktuellt-poster" 
+             v-for="film of filmer" 
+             :key="film.id">
+
+             <div v-if="film.id == 4">
+         <router-link :to="'/filmerDetails/' + film.id">
+                   <img :src="film.images[1]">
+         </router-link>
+                     
+
+             </div>
+            </div>
 
     </div>
      <div class="paBio">
@@ -70,6 +81,10 @@ div.aktuellt-container {
 p.aktuellt-title {
     color: white;
     padding-right: 780px;
+}
+
+.aktuellt-poster img {
+   width: 400px;
 }
 
 </style>

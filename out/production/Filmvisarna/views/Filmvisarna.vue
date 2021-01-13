@@ -3,13 +3,12 @@
 <div class="home">
     <div class=aktuellt-container>
 
-<p class="aktuellt-title">Aktuellt på bio</p>
-<div class="aktuellt-poster">
-    
-</div>
+        <p class="aktuellt-title">Aktuellt på bio</p>
+             <div class="aktuellt-poster">
+        </div>
 
     </div>
-    <div class="paBio">
+     <div class="paBio">
         <h1>{{ msg }}</h1>
         <div class="filmDiv"
         v-for="film of filmer" 
