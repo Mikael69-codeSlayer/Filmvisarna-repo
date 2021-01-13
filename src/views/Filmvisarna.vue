@@ -1,8 +1,14 @@
 <!--   HTML  -->
 <template>
 <div class="home">
-    <h1>Homepage</h1>
-    <div class="paBio">
+    <div class=aktuellt-container>
+
+        <p class="aktuellt-title">Aktuellt på bio</p>
+             <div class="aktuellt-poster">
+        </div>
+
+    </div>
+     <div class="paBio">
         <h1>{{ msg }}</h1>
         <div class="filmDiv"
         v-for="film of filmer" 
@@ -56,6 +62,14 @@ otherwise all changes will effect other files
 }
 img{
     width: 200px;
+}
+div.aktuellt-container {
+    background-color: rgb(105, 84, 105);
+    padding: 120px;
+}
+p.aktuellt-title {
+    color: white;
+    padding-right: 780px;
 }
 
 </style>
