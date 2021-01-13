@@ -1,21 +1,23 @@
 <!-- HTML -->
 <template>
   <!-- Navigationbar with router-link and data-bind-->
-  <div id="nav">
-    <div class="filmV">
-      <router-link :to="{ name: 'Filmvisarna' }">Filmvisarna</router-link>
+  <div class="main-container">
+    <div id="nav">
+      <div class="filmV">
+        <router-link :to="{ name: 'Filmvisarna' }">Filmvisarna</router-link>
+      </div>
+      <div class="filmer">
+        <router-link :to="{ name: 'Filmer' }">Filmer & Trailer</router-link>
+      </div>
+      <div class="bil">
+        <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
+      </div>
+      <div class="log">
+        <router-link :to="{ name: 'Login' }">Login</router-link>
+      </div>
     </div>
-    <div class="filmer">
-      <router-link :to="{ name: 'Filmer' }">Filmer & Trailer</router-link>
-    </div>
-    <div class="bil">
-      <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
-    </div>
-    <div class="log">
-      <router-link :to="{ name: 'Login' }">Login</router-link>
-    </div>
+    <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
-  <!--We added router-view to App.vue template, it must be included to render components.-->
   <router-view />
 </template>
 
@@ -46,36 +48,42 @@ IMPORTANT! Don't forget to use 'scope'
 otherwise all changes will effect other files
 */
 
-/******************** google fonts **************/ 
-/*Cookie*/ 
-@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+/******************** google fonts **************/
+/*Cookie*/
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
 
-/*Roboto Slab*/ 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-/***********************************************/ 
+/*Roboto Slab*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+/***********************************************/
 
-/*Navigationbar*/ 
+/*Navigationbar*/
+div.main-container {
+  width: 100%;
+}
 #nav {
-  background: rgb(209, 6, 46);
+  background-color: rgb(209, 6, 46);
   padding: 5px;
-  margin: -20px;
+
+  /*fix margin*/
 }
 body {
   background-color: black;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/*a -> filmer, biljetter, filmvisarna, login*/ 
+/*a -> filmer, biljetter, filmvisarna, login*/
 a {
-   color: white;
-   text-decoration: none;
-   position: relative;
+  color: white;
+  text-decoration: none;
+  position: relative;
 }
-/*the :hover selector is used to select elements when you mouse over them*/ 
+/*the :hover selector is used to select elements when you mouse over them*/
 a:hover {
-  color:rgba(240, 248, 255, 0.842);
+  color: rgba(240, 248, 255, 0.842);
 }
 /*the ::after selector inserts something after the content of each selected element(s)*/
-a:after {    
+a:after {
   bottom: -11px;
   content: "";
   display: block;
@@ -86,42 +94,42 @@ a:after {
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-a:hover:after { 
-  width: 90%; 
-  left: 6%; 
+a:hover:after {
+  width: 90%;
+  left: 6%;
 }
 
-/*Filmvisarna*/ 
+/*Filmvisarna*/
 div.filmV {
-  font-family: 'Cookie', cursive;
-  float: center;  
+  font-family: "Cookie", cursive;
+  float: center;
   font-size: 50px;
   margin-top: 5px;
 }
-/*First letter*/ 
+/*First letter*/
 div.filmV::first-letter {
-   font-size: 70px;
-   color:aliceblue;
+  font-size: 70px;
+  color: aliceblue;
 }
-/*Filmer*/ 
+/*Filmer*/
 div.filmer {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   float: left;
   padding-left: 300px;
   margin-top: -45px;
   font-size: 20px;
 }
-/*Biljetter*/ 
+/*Biljetter*/
 div.bil {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   float: left;
   padding-left: 90px;
   margin-top: -45px;
   font-size: 20px;
 }
-/*Login*/ 
+/*Login*/
 div.log {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   float: right;
   margin-top: -45px;
   font-size: 20px;

@@ -9,7 +9,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /*Test
 IMPORTANT! Don't forget to use 'scope'
 otherwise all changes will effect other files
