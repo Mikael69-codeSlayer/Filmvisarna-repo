@@ -18,23 +18,18 @@ public class Main {
 
         // path is the endpoint url the method listens to
         // res - answer to the question, for instance number, String or object information
-        app.get("/", (req, res) -> { // Lambda (arrow-function)
-            res.send("Hello World");
-        });
 
-        app.get("/biljetter", (req, res) -> {
+        app.get("/rest/biljetter", (req, res) -> {
             res.send("Biljetter");
         });
 
-        app.get("/filmer", (req, res) -> {
+        app.get("/rest/filmer", (req, res) -> {
             res.send("Filmer & Trailer");
             var filmer = collection("Filmer").find();
             res.json(filmer);
-
-
         });
 
-        app.get("/login", (req, res) -> {
+        app.get("/rest/login", (req, res) -> {
             res.send("Logga in");
         });
 
