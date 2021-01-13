@@ -42,7 +42,7 @@ export default {
   created(){
     this.$store.dispatch('fetchFilmer')
   }
-};
+}
 </script>
 
 <style>

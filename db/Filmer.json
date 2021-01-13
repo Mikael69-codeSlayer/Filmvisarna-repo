@@ -1,4 +1,5 @@
 [ {
+  "id": "0",
   "title" : "Borat 2",
   "productionYear" : 2020,
   "length" : 96,
@@ -14,6 +15,7 @@
   "posterUrl" : "https://resizing.flixster.com/ifh8bBMQbKXt4kKD6v9ugJqoKWE=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzI0YzkyYWVjLWZhNWMtNDNkYy04Y2JkLWY5ZWU3ZDQ0OWNkYS5qcGc="
 },
 [ {
+  "id": "1",
   "title" : "Bladerunner",
   "productionYear" : 1982,
   "length" : 117,
@@ -29,6 +31,7 @@
   "posterUrl" : "https://images-na.ssl-images-amazon.com/images/I/51abpgBmt6L._AC_.jpg"
 },
 {
+  "id": "2",
   "title": "Star Wars: Episod III – revenge of the sith",
   "productionYear": 2005,
   "length": 140,
