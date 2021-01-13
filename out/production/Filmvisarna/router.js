@@ -9,7 +9,7 @@ import FilmerDetails from './views/FilmerDetails.vue'
 const routes = [
   {
     name: 'FilmerDetails',
-    path: '/filmerDetails',
+    path: '/filmerDetails/:id',
     component: FilmerDetails
   },
   {
@@ -19,7 +19,7 @@ const routes = [
   },
   {
     name: 'Filmer',
-    path: '/filmer/:id', // dynamic $route.params.id
+    path: '/filmer', // dynamic $route.params.id
     component: Filmer
   },
   {
