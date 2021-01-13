@@ -4,13 +4,13 @@
     <div class="inputboxes"><input
       type="text"
       name="användarnamn"
-      v-model="input.användarnamn"
+      v-model="input.anvandarnamn"
       placeholder="Användarnamn"
     />
     <input
       type="lösenord"
       name="lösenord"
-      v-model="input.lösenord"
+      v-model="input.losenord"
       placeholder="Lösenord"
     /></div>
     <div class="buttonsbody"><button type="button" @click="login()">Login</button>
@@ -24,8 +24,8 @@ export default {
   data() {
     return {
       input: {
-        användarnamn: "",
-        lösenord: "",
+        anvandarnamn: "",
+        losenord: "",
       },
     };
   },
