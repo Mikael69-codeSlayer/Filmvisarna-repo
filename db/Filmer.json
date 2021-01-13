@@ -12,4 +12,44 @@
   "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg" ],
   "youtubeTrailers" : [ "https://www.youtube.com/watch?v=JvPTCvUnNQA&ab_channel=ONEMedia" ],
   "posterUrl" : "https://resizing.flixster.com/ifh8bBMQbKXt4kKD6v9ugJqoKWE=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzI0YzkyYWVjLWZhNWMtNDNkYy04Y2JkLWY5ZWU3ZDQ0OWNkYS5qcGc="
-} ]
+},
+[ {
+  "title" : "Bladerunner",
+  "productionYear" : 1982,
+  "length" : 117,
+  "genre" : "Action, Sci-Fi, Thriller",
+  "distributor" : "Amazon Studios",
+  "language" : "Engelska",
+  "subtitles" : "svenska",
+  "director" : "Ridley Scott",
+  "actors" : [ "Harrison Ford", "Rutger Hauer", "Sean Young", "Edward James Olmos" ],
+  "description" : "<p>In the early twenty-first century, the Tyrell Corporation, during what was called the Nexus phase, developed robots, called replicants, that were supposed to aid society, the replicants which looked and acted like humans. When the superhuman generation Nexus 6 replicants, used for dangerous off-Earth endeavors, began a mutiny on an off-Earth colony, replicants became illegal on Earth. Police units, called blade runners, have the job of destroying - or in their parlance retiring - any replicant that makes its way back to or created on Earth, with anyone convicted of aiding or assisting a replicant being sentenced to death.</p>",
+  "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/watch?v=eogpIG53Cis" ],
+  "posterUrl" : "https://images-na.ssl-images-amazon.com/images/I/51abpgBmt6L._AC_.jpg"
+},
+{
+  "title": "Star Wars: Episod III – revenge of the sith",
+  "productionYear": 2005,
+  "length": 140,
+  "genre": "Action",
+  "distributor": "20th Century Fox",
+  "language": "engelska",
+  "subtitles": "svenska",
+  "director": "George Lucas",
+  "actors": [
+    "Ewan McGregor",
+    "Natalie Portman",
+    "Hayden Christensen"
+  ],
+  "description": "<p>Lorem ipsum</p>",
+  "images": [
+    "https://images.justwatch.com/backdrop/152871672/s1440/star-wars-episode-iii-revenge-of-the-sith"
+  ],
+  "youtubeTrailers": [
+    "https://www.youtube.com/watch?v=5UnjrG_N8hU"
+  ],
+  "posterUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/220px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg"
+} 
+]
+]

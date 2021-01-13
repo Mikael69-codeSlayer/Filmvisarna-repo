@@ -4,26 +4,32 @@ import Filmvisarna from './views/Filmvisarna.vue'
 import Filmer from './views/Filmer.vue'
 import Login from './views/Login.vue'
 import Biljetter from './views/Biljetter.vue'
+import FilmerDetails from './views/FilmerDetails.vue'
 
 const routes = [
   {
-    path: '/',
+    name: 'FilmerDetails',
+    path: '/filmerDetails',
+    component: FilmerDetails
+  },
+  {
     name: 'Filmvisarna',
+    path: '/',
     component: Filmvisarna
   },
   {
-    path: '/filmer', // dynamic $route.params.id
     name: 'Filmer',
+    path: '/filmer', // dynamic $route.params.id
     component: Filmer
   },
   {
-    path: '/login',
     name: 'Login',
+    path: '/login',
     component: Login
   },
   {
-    path: '/biljetter',
     name: 'Biljetter',
+    path: '/biljetter',
     component: Biljetter
   }
 ]
