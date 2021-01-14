@@ -1,24 +1,19 @@
 <template>
+
   <div id="login">
-    <h1 class="loginbody">Login</h1>
-    <div class="inputboxes"><input
-      type="text"
-      name="användarnamn"
-      v-model="input.anvandarnamn"
-      placeholder="Användarnamn"
+    <h1 class="loginbody">Logga in</h1>
+    <div class="inputboxes">
+      <input type="text" name="username" v-model="input.username" placeholder="E-postadress"
     />
-    <input
-      type="lösenord"
-      name="lösenord"
-      v-model="input.losenord"
-      placeholder="Lösenord"
-    /></div>
+    <input type="password" name="password" v-model="input.password" placeholder="Lösenord"/>
+    </div>
     <div class="buttonsbody">
-    <button type="button" @click="login()">Login</button>
+    <button type="login" @click="login()">Logga in</button>
     <p>---eller---</p>
-    <button type="bliMedlem" @click="bliMedlem()">Skapa konto</button>
+    <button type="register" @click="register()">Skapa konto</button>
     </div>
   </div>
+ 
 </template>
 
 <script>
@@ -27,14 +22,15 @@ export default {
   data() {
     return {
       input: {
-        anvandarnamn: "",
-        losenord: "",
+        username: "",
+        password: "",
       },
     };
   },
   methods: {
-    login() {},
-    bliMedlem() {},
+    handlelogin(){
+     
+    }
   },
 };
 </script>
@@ -59,18 +55,25 @@ otherwise all changes will effect other files
   
 }
 
-.inputboxes{
+.inputboxes input{
+  margin: 10px 0 5px;
  text-align: center; 
- border-radius:20px;
- box-sizing: border-box;
+ border-radius:2px;
  border:none;
- font-weight: bold;
- 
+ font-family: "Roboto Slab", serif;
+  font-size: 15px;
 }
 
-.buttonsbody{
+button {
 text-align: center;
 margin-top: 10px;
+border-radius: 2px;
+font-family: "Roboto Slab", serif;
+font-size: 15px;
+color: red;
+border: 0;
+padding:5px 10px;
+
 }
 
 </style>
