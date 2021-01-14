@@ -8,7 +8,7 @@
   <div class="detail-posters" v-for="film of filmer" :key="film.id">
     <div v-if="film.id == 1">
       <img :src="film.posterUrl" />
-      <p>{{ film.title }}</p>
+      <p>{{ film.title }} | {{ film.length }}</p>
     </div>
   </div>
 </template>
