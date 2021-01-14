@@ -20,7 +20,7 @@ const routes = [
   },
   {
     name: 'Filmer',
-    path: '/filmer', // dynamic $route.params.id
+    path: '/filmer', 
     component: Filmer
   },
   {
@@ -34,8 +34,8 @@ const routes = [
     component: Biljetter
   },
   {
-    name: 'Salong',
-    path: '/salong',
+    name: 'Salon',
+    path: '/salon',
     component: Salon
   }
 ]

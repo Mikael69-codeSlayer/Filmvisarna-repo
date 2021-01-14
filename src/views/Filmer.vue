@@ -28,12 +28,14 @@
 
 <script>
 export default {
-    data() {
-        return{
-            
-            /*posterUrl: "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg"*/
-            
-        }
+  data() {
+    return {
+      
+    };
+  },
+  computed: {
+    filmer() {
+      return this.$store.state.filmer;
     },
     computed:{
         filmer() {

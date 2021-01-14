@@ -34,7 +34,7 @@ public class Main {
         });
 
         app.get("/rest/salon", (req, res) -> {
-            res.send("Salong");
+            res.send("Salon");
         });
 
         // listen starts the server
