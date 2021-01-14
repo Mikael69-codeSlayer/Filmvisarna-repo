@@ -3,15 +3,14 @@
   <div id="login">
     <h1 class="loginbody">Logga in</h1>
     <div class="inputboxes">
-      <input type="text" name="username" v-model="input.username" placeholder="E-postadress"
-    />
-    <input type="password" name="password" v-model="input.password" placeholder="Lösenord"/>
+    <input type="email" required v-model="input.email" placeholder="E-postadress"/>
+    <input type="password" required v-model="input.password" placeholder="Lösenord"/>
     </div>
+
     <div class="buttonsbody">
     <button type="login" @click="login()">Logga in</button>
 
     <p>---eller---</p>
-
     <router-link :to="'/skapaKonto/'" >  
     <button type="register">Skapa konto</button>
     </router-link>
@@ -29,13 +28,13 @@ export default {
   data() {
     return {
       input: {
-        username: "",
+        email: "",
         password: "",
       },
-    };
+    }
   },
   methods: {
-    handlelogin(){
+    login(){
      
     }
   },
@@ -58,26 +57,31 @@ otherwise all changes will effect other files
   font-family: "Roboto Slab", serif;
   text-align: center;
   letter-spacing: 1px;
+  
 }
-
-.inputboxes input{
-  margin: 10px 0 5px;
+ input{
+  margin-top: 7px;
  text-align: center; 
  border-radius:2px;
  border:none;
  font-family: "Roboto Slab", serif;
   font-size: 15px;
+  width:250px;
+  height: 30px;
 }
 
 button {
 text-align: center;
-margin-top: 10px;
+margin-top: 25px;
 border-radius: 2px;
 font-family: "Roboto Slab", serif;
 font-size: 15px;
-color: red;
+color: white;
+background-color:  rgb(209, 6, 46);
 border: 0;
-padding:5px 10px;
+width:200px;
+height:30px;
 
 }
+
 </style>
