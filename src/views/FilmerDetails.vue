@@ -1,7 +1,7 @@
 <template>
   <h1>Filmer</h1>
 
-  <!-- It works, but it breaks when page is reloaded. 
+  <!-- It works. 
   We added v-for to loop through films like we did in 'Filmvisarna.vue'
   and v-if to choose which poster should be displayed. -->
 
