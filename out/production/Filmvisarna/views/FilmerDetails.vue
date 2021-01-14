@@ -8,13 +8,10 @@ export default {
   computed: {
     id() {
       // get id from url parameter
-      return this.$route.params.id
-    }
-    
-  }
-
- 
-}
+      return this.$route.params.id;
+    },
+  },
+};
 </script>
 
 <style scope>

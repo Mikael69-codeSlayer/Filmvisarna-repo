@@ -52,7 +52,6 @@ otherwise all changes will effect other files
   font-family: "Roboto Slab", serif;
   text-align: center;
   letter-spacing: 1px;
-  
 }
 
 .inputboxes input{
@@ -75,5 +74,4 @@ border: 0;
 padding:5px 10px;
 
 }
-
 </style>

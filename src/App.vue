@@ -39,10 +39,10 @@ export default {
     Login,
     Biljetter,
   },
-  created(){
-    this.$store.dispatch('fetchFilmer')
-  }
-}
+  created() {
+    this.$store.dispatch("fetchFilmer");
+  },
+};
 </script>
 
 <style>

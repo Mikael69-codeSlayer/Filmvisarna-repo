@@ -93,7 +93,7 @@ h1.news-headline {
 }
 .news-container-inside{
     text-align: left;
-    padding-left: 20vw;
+    padding-left: 26.6vw;
 }
 .showing-now-headline{
     color: white;
@@ -103,7 +103,7 @@ h1.news-headline {
 }
 .showing-now > h1{
     text-align: center;
-    padding-right: 46vw;
+    padding-right: 37vw;
 
 }
 
