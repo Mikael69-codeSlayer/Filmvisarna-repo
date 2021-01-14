@@ -1,22 +1,24 @@
 <template>
   <div id="login">
     <h1 class="loginbody">Login</h1>
-    <div class="inputboxes"><input
-      type="text"
-      name="användarnamn"
-      v-model="input.anvandarnamn"
-      placeholder="Användarnamn"
-    />
-    <input
-      type="lösenord"
-      name="lösenord"
-      v-model="input.losenord"
-      placeholder="Lösenord"
-    /></div>
+    <div class="inputboxes">
+      <input
+        type="text"
+        name="användarnamn"
+        v-model="input.anvandarnamn"
+        placeholder="Användarnamn"
+      />
+      <input
+        type="lösenord"
+        name="lösenord"
+        v-model="input.losenord"
+        placeholder="Lösenord"
+      />
+    </div>
     <div class="buttonsbody">
-    <button type="button" @click="login()">Login</button>
-    <p>---eller---</p>
-    <button type="bliMedlem" @click="bliMedlem()">Skapa konto</button>
+      <button type="button" @click="login()">Login</button>
+      <p>---eller---</p>
+      <button type="bliMedlem" @click="bliMedlem()">Skapa konto</button>
     </div>
   </div>
 </template>
@@ -56,21 +58,18 @@ otherwise all changes will effect other files
   font-family: "Roboto Slab", serif;
   text-align: center;
   letter-spacing: 1px;
-  
 }
 
-.inputboxes{
- text-align: center; 
- border-radius:20px;
- box-sizing: border-box;
- border:none;
- font-weight: bold;
- 
+.inputboxes {
+  text-align: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: none;
+  font-weight: bold;
 }
 
-.buttonsbody{
-text-align: center;
-margin-top: 10px;
+.buttonsbody {
+  text-align: center;
+  margin-top: 10px;
 }
-
 </style>
