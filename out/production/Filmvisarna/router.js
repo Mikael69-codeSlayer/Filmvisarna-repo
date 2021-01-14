@@ -34,8 +34,8 @@ const routes = [
     component: Biljetter
   },
   {
-    name: 'Salong',
-    path: '/salong',
+    name: 'Salon',
+    path: '/salon',
     component: Salon
   }
 ]

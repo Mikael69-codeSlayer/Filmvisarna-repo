@@ -15,11 +15,9 @@
       <div class="log">
         <router-link :to="{ name: 'Login' }">Login</router-link>
       </div>
-    <!--
-      <div class="salon">
+            <div class="salon">
         <router-link :to="{ name: 'Salon' }">Salong</router-link>
       </div>
-      -->
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
@@ -44,7 +42,6 @@ export default {
     Filmer,
     Login,
     Biljetter,
-    Salon,
   },
   created() {
     this.$store.dispatch("fetchFilmer");
@@ -144,12 +141,5 @@ div.log {
   margin-top: -45px;
   font-size: 20px;
   padding-right: 70px;
-}
-/*Salon -TEMP*/
-div.salon {
-  font-family: "Roboto Slab", serif;
-  float: left;
-  margin-top: -45px;
-  font-size: 20px;
 }
 </style>
