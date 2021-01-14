@@ -9,11 +9,18 @@
     </div>
     <div class="buttonsbody">
     <button type="login" @click="login()">Logga in</button>
+
     <p>---eller---</p>
-    <button type="register" @click="register()">Skapa konto</button>
+
+    <router-link :to="'/skapaKonto/'" >  
+    <button type="register">Skapa konto</button>
+    </router-link>
+  
+
     </div>
-  </div>
  
+  </div>
+  
 </template>
 
 <script>
@@ -43,7 +50,6 @@ otherwise all changes will effect other files
 
 #login {
   width: 300px;
-  background-color: rgba(209, 6, 47, 0.973);
   margin: auto;
   margin-top: 100px;
   padding: 20px;
