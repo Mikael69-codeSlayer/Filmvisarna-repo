@@ -1,6 +1,7 @@
 <!--This is for movies and trailers-->
 <template>
   <div class="movies-container">
+    
     <div class="movies-header">
       <h1 class="filmer-header">Filmer</h1>
     </div>
@@ -15,10 +16,19 @@
 
         </div>
               <div class="movie-item-text">
-                  {{ film.title }} | {{ film.genre }}
+                  {{ film.title }} <br> {{ film.genre }}
+                  
                 </div>
-                <div class="movie-item-space"></div>
+                
             </router-link>
+            
+                <div class="movie-item-space">
+                   
+                   <div class="line">
+                      
+                   </div>
+                    
+                </div>
           </div>
         </div>
 
@@ -77,7 +87,7 @@ h1.filmer-header {
 }
 
 div.movie-list {
-  background-color: palegoldenrod;
+  background-color: rgb(0, 0, 0);
   height: 1100px;
   width: 55%;
   margin: 0 auto;
@@ -89,7 +99,7 @@ div.movie-item {
   background-color: coral;
   width: 100%;
   overflow: hidden;
-  height: 180px;
+  height: 140px;
 }
 
 div.movie-item-poster {
@@ -112,9 +122,16 @@ div.movie-item-text {
 }
 
 div.movie-item-space {
-   background-color: chartreuse;
+   background-color: rgb(0, 0, 0);
    width: 100%;
-   height: 100px;
+   height: 10px;
+}
+
+div.line {
+    background-color: white;
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
 }
 
 img {
