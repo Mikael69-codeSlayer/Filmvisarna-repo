@@ -1,5 +1,6 @@
 <!-- HTML -->
 <template>
+
   <!-- Navigationbar with router-link and data-bind-->
   <div class="main-container">
     <div id="nav">
