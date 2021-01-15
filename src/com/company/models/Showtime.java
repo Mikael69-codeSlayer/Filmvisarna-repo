@@ -10,7 +10,7 @@ public class Showtime {
     private String film;
     private String date;
     private String time;
-    
+
     public String getAuditorium() {
         return auditorium;
     }
