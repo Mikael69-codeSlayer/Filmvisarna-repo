@@ -5,6 +5,7 @@ import Filmer from './views/Filmer.vue'
 import Login from './views/Login.vue'
 import Biljetter from './views/Biljetter.vue'
 import FilmerDetails from './views/FilmerDetails.vue'
+import Salon from "./views/Salon.vue";
 
 const routes = [
   {
@@ -19,7 +20,7 @@ const routes = [
   },
   {
     name: 'Filmer',
-    path: '/filmer', // dynamic $route.params.id
+    path: '/filmer', 
     component: Filmer
   },
   {
@@ -31,6 +32,11 @@ const routes = [
     name: 'Biljetter',
     path: '/biljetter',
     component: Biljetter
+  },
+  {
+    name: 'Salon',
+    path: '/salon',
+    component: Salon
   }
 ]
 

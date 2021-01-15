@@ -33,6 +33,10 @@ public class Main {
             res.send("Logga in");
         });
 
+        app.get("/rest/salon", (req, res) -> {
+            res.send("Salon");
+        });
+
         // listen starts the server
         // and should be done after endpoint-listeners
         app.listen(4000); // note that we can't use the same port as Vue does (3000)

@@ -1,5 +1,6 @@
 <!-- HTML -->
 <template>
+
   <!-- Navigationbar with router-link and data-bind-->
   <div class="main-container">
     <div id="nav">
@@ -15,6 +16,9 @@
       <div class="log">
         <router-link :to="{ name: 'Login' }">Login</router-link>
       </div>
+            <div class="salon">
+        <router-link :to="{ name: 'Salon' }">Salong</router-link>
+      </div>
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
@@ -28,6 +32,7 @@ import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
 import Biljetter from "./views/Biljetter.vue";
+import Salon from "./views/Salon.vue";
 
 // This syntax is declaring a component
 // which can be registered and reused later

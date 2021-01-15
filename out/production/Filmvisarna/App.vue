@@ -15,6 +15,9 @@
       <div class="log">
         <router-link :to="{ name: 'Login' }">Login</router-link>
       </div>
+            <div class="salon">
+        <router-link :to="{ name: 'Salon' }">Salong</router-link>
+      </div>
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
@@ -26,8 +29,10 @@
 // Imported 3  Vue.js files
 import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
+import FilmerDetails from "./views/FilmerDetails.vue";
 import Login from "./views/Login.vue";
 import Biljetter from "./views/Biljetter.vue";
+import Salon from "./views/Salon.vue";
 
 // This syntax is declaring a component
 // which can be registered and reused later
@@ -36,6 +41,7 @@ export default {
   components: {
     Filmvisarna,
     Filmer,
+    FilmerDetails,
     Login,
     Biljetter,
   },
