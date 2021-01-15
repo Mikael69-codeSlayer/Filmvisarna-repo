@@ -7,14 +7,15 @@
   
   <div class="detail-posters" v-for="film of filmer" :key="film.id">
     <div v-if="film.id == 1">
+       </div>
       <img :src="film.posterUrl" />
-    </div>
-    <div class="detail-text">
+      <div class="detail-text">
       <p>{{ film.title }}</p> <br />
               {{ film.genre }} 
               | {{ film.length }} min
               | {{ film.language }}
     </div>
+   
   </div>
 </div>
 </template>
@@ -48,8 +49,10 @@ div.detail-container {
 
 div.detail-text {
   background-color: bisque;
-  float: left;
   width: 300px;
+  float: right;
+  margin-right: 185px;
+  margin-top: 205px;
 }
 
 .detail-posters {
@@ -57,7 +60,6 @@ div.detail-text {
   width: 700px;
   margin: 0 auto;
   text-align: left;
-  
 }
 
 
