@@ -113,6 +113,10 @@ div.detail-text p {
    cursor: pointer;
 }
 
+.trailer-button:hover {
+  background-color: rgba(250, 82, 82, 0.787);
+}
+
 div.detail-container {
   height: 600px;
   width: 100%;
