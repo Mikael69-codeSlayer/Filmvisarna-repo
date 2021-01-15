@@ -28,6 +28,7 @@ public class Main {
             var filmer = collection("Filmer").find();
             res.json(filmer);
         });
+        /*
         app.get("/rest/salon", (req, res) -> {
             var salon = collection("Salon").find();
             res.json(salon);
@@ -35,7 +36,7 @@ public class Main {
         app.get("/rest/showtime", (req, res) -> {
             var showtime = collection("Showtime").find();
             res.json(showtime);
-        });
+        });*/
 
         app.get("/rest/login", (req, res) -> {
             res.send("Logga in");
