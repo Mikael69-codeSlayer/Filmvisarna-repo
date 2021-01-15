@@ -1,5 +1,6 @@
 <!-- HTML -->
 <template>
+
   <!-- Navigationbar with router-link and data-bind-->
   <div class="main-container">
     <div id="nav">
@@ -29,7 +30,6 @@
 // Imported 3  Vue.js files
 import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
-import FilmerDetails from "./views/FilmerDetails.vue";
 import Login from "./views/Login.vue";
 import Biljetter from "./views/Biljetter.vue";
 import Salon from "./views/Salon.vue";
@@ -41,7 +41,6 @@ export default {
   components: {
     Filmvisarna,
     Filmer,
-    FilmerDetails,
     Login,
     Biljetter,
   },
