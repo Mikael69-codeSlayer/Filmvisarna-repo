@@ -1,24 +1,58 @@
 <template>
-  
   <!-- It works. 
   We added v-for to loop through films like we did in 'Filmvisarna.vue'
   and v-if to choose which poster should be displayed. -->
-<div class="detail-container">
-  
-  <div class="detail-posters" v-for="film of filmer" :key="film.id">
+  <div class="detail-container" v-for="film of filmer" :key="film.id">
     <div v-if="film.id == 1">
-      <img :src="film.posterUrl" />
+      <!-- <img :src="film.images[1]"> -->
     </div>
-    <div class="detail-text">
-      <p>{{ film.title }} | {{ film.length }}</p>
+    <div class="movie-container">
+      <div class="trailer-button-container">
+       <!-- <button class="trailer-button" @click="">Play</button> -->
+
+      <section>
+        <iframe width="560" height="315" :src="film.youtubeTrailers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+
+      </div>
+      <div class="detail-posters">
+        <img :src="film.posterUrl" />
+        <div class="detail-text">
+          <h1>{{ film.title }}</h1>
+          <br />
+          <p>{{ film.genre }} | {{ film.length }} min</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="movie-info-container">
+      <div class="movie-description">
+        <p>{{ film.description }}</p>
+      </div>
+      
+      <div class="movie-director">
+        <p>Regi:<br />{{ film.director }}</p>
+      </div>
+
+      <div class="movie-actors">
+        <p>Skådespelare:<br />{{ film.actors }}</p>
+      </div>
+
+      <div class="movie-language">
+        <p>Originalspråk:<br />{{ film.language }}</p>
+      </div>
+    
+     <div class="movie-year">
+        <p>Utgivningsår:<br />{{ film.productionYear}}</p>
+      </div>
+
     </div>
   </div>
-</div>
 </template>
 
 <script>
 export default {
-  computed: {
+  computed: { 
     filmer() {
       // Also added this, to get filmes and id
       return this.$store.state.filmer.filter((filmer) => filmer.id == this.id);
@@ -28,34 +62,102 @@ export default {
       return this.$route.params.id;
     },
   },
+  methods: {
+    
+  }
 };
 </script>
 
 <style scoped>
+div.detail-text {
+  background-color: rgba(93, 218, 93, 0);
+  width: 400px;
+  float: right;
+  margin-right: 80px;
+  margin-top: 190px;
+}
+
+div.detail-text h1 {
+  font-weight: bold;
+  font-size: 1.6em;
+  line-height: 2px;
+  color: white;
+}
+
+div.detail-text p {
+  line-height: 2px;
+  color: white;
+  font-size: 1em;
+}
 
 div.detail-container {
+  height: 600px;
+  width: 100%;
+}
+
+/*div.inner-background img{
+  background-color: orange;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}*/
+
+div.movie-container {
   background-color: blueviolet;
-  margin: 0 auto;
+  padding-top: 400px;
+  background-image: url("https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .detail-posters img {
   width: 200px;
-
-}
-
-div.detail-text {
-  background-color: bisque;
-  float: left;
-  width: 300px;
 }
 
 .detail-posters {
-  background-color: cadetblue;
+  background-color: rgba(139, 225, 230, 0);
   width: 700px;
   margin: 0 auto;
   text-align: left;
-  
 }
 
+div.movie-info-container {
+  height: 500px;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  color: white;
+  padding-top: 30px;
+}
+
+div.movie-description {
+  width: 37%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+div.movie-director {
+  width: 37%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+div.movie-actors {
+  width: 37%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+div.movie-language {
+  width: 37%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+div.movie-year {
+  width: 37%;
+  margin: 0 auto;
+  text-align: left;
+}
 
 </style> 
