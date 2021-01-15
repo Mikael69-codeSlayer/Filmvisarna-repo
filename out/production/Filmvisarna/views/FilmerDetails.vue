@@ -7,12 +7,14 @@
       <!-- <img :src="film.images[1]"> -->
     </div>
     <div class="movie-container">
-      <div class="gradient-background"></div>
 
-      <!-- <div class="trailer-button-container">
+     <div class="gradient-background">
+      </div>
+     
+     <!-- <div class="trailer-button-container">
        <button class="trailer-button" @click="">Play</button> 
       </div> -->
-
+      
       <div class="detail-posters">
         <img :src="film.posterUrl" />
         <div class="detail-text">
@@ -22,12 +24,15 @@
         </div>
       </div>
     </div>
-
+     
     <div class="movie-info-container">
+
+      
+
       <div class="movie-description">
         <p>{{ film.description }}</p>
       </div>
-
+      
       <div class="movie-director">
         <p>Regi:<br />{{ film.director }}</p>
       </div>
@@ -39,30 +44,24 @@
       <div class="movie-language">
         <p>Originalspråk:<br />{{ film.language }}</p>
       </div>
-
-      <div class="movie-year">
-        <p>Utgivningsår:<br />{{ film.productionYear }}</p>
+    
+     <div class="movie-year">
+        <p>Utgivningsår:<br />{{ film.productionYear}}</p>
       </div>
 
       <div class="trailer-video">
         <section>
-          <iframe
-            width="560"
-            height="315"
-            :src="film.youtubeTrailers"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </section>
+        <iframe width="560" height="315" :src="film.youtubeTrailers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
       </div>
+
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  computed: {
+  computed: { 
     filmer() {
       // Also added this, to get filmes and id
       return this.$store.state.filmer.filter((filmer) => filmer.id == this.id);
@@ -72,7 +71,9 @@ export default {
       return this.$route.params.id;
     },
   },
-  methods: {},
+  methods: {
+    
+  }
 };
 </script>
 
@@ -124,10 +125,11 @@ div.gradient-background {
   height: 200px;
   position: absolute;
   top: 500px;
-  left: 0;
+  left: 0;   
   z-index: 10;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
 }
+
 
 .detail-posters img {
   width: 200px;
@@ -140,7 +142,7 @@ div.gradient-background {
   width: 700px;
   margin: 0 auto;
   text-align: left;
-  z-index: 10;
+ z-index: 10;
   position: relative;
 }
 
@@ -151,10 +153,10 @@ div.movie-info-container {
   color: white;
   padding-top: 30px;
   position: absolute;
-
+ 
   /*background-image: linear-gradient(rgb(0, 0, 0), rgba(24, 156, 179, 0.192));*/
 }
-
+ 
 div.movie-description {
   width: 37%;
   margin: 0 auto;
@@ -188,4 +190,5 @@ div.movie-year {
 div.trailer-video {
   margin-top: 150px;
 }
+
 </style> 
