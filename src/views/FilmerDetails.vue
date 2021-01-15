@@ -7,6 +7,14 @@
       <!-- <img :src="film.images[1]"> -->
     </div>
     <div class="movie-container">
+      <div class="trailer-button-container">
+       <!-- <button class="trailer-button" @click="">Play</button> -->
+
+      <section>
+        <iframe width="560" height="315" :src="film.youtubeTrailers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+
+      </div>
       <div class="detail-posters">
         <img :src="film.posterUrl" />
         <div class="detail-text">
@@ -44,7 +52,7 @@
 
 <script>
 export default {
-  computed: {
+  computed: { 
     filmer() {
       // Also added this, to get filmes and id
       return this.$store.state.filmer.filter((filmer) => filmer.id == this.id);
@@ -54,6 +62,9 @@ export default {
       return this.$route.params.id;
     },
   },
+  methods: {
+    
+  }
 };
 </script>
 
