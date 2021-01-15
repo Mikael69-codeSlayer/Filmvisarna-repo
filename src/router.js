@@ -5,6 +5,7 @@ import Filmer from './views/Filmer.vue'
 import Login from './views/Login.vue'
 import Biljetter from './views/Biljetter.vue'
 import FilmerDetails from './views/FilmerDetails.vue'
+import SkapaKonto from './views/SkapaKonto.vue'
 import Salon from "./views/Salon.vue";
 
 const routes = [
@@ -32,6 +33,11 @@ const routes = [
     name: 'Biljetter',
     path: '/biljetter',
     component: Biljetter
+  },
+  {
+    name: 'SkapaKonto',
+    path: '/skapaKonto',
+    component: SkapaKonto
   },
   {
     name: 'Salon',
