@@ -10,7 +10,10 @@
       <img :src="film.posterUrl" />
     </div>
     <div class="detail-text">
-      <p>{{ film.title }} | {{ film.length }}</p>
+      <p>{{ film.title }}</p> <br />
+              {{ film.genre }} 
+              | {{ film.length }} min
+              | {{ film.language }}
     </div>
   </div>
 </div>
