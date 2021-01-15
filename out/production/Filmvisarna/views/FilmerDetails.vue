@@ -11,9 +11,9 @@
      <div class="gradient-background">
       </div>
      
-      <div class="trailer-button-container">
-       <button class="trailer-button" @click="B">Play</button> 
-      </div> 
+     <!-- <div class="trailer-button-container">
+       <button class="trailer-button" @click="">Play</button> 
+      </div> -->
       
       <div class="detail-posters">
         <img :src="film.posterUrl" />

@@ -16,7 +16,12 @@
      
 </select>
 </div>
-
+ <div class="movie-item-text">
+              <p>{{ film.title }}</p> <br />
+              {{ film.genre }} 
+              | {{ film.length }} min
+              | {{ film.language }}
+            </div>
 
 </template>
 
@@ -64,6 +69,7 @@ margin-top: 5px;
   font-size: 16px;
 height: 30px;
 width:250px;
+
 }
 div.filmdropdown{
   float: left;
