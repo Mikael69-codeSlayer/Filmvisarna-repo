@@ -22,7 +22,7 @@
           <p>{{ film.genre }} | {{ film.length }} min</p>
 
           <div class="trailer-button-container">
-            <button class="trailer-button" @click="BOB">Biljetter</button>
+            <button class="trailer-button" @click="ticketButton()">Biljetter</button>
           </div>
         </div>
       </div>
@@ -66,6 +66,7 @@
 </template>
 
 <script>
+import BiljetterVue from '../../out/production/Filmvisarna/views/Biljetter.vue';
 export default {
   computed: {
     filmer() {
@@ -77,7 +78,11 @@ export default {
       return this.$route.params.id;
     },
   },
-  methods: {},
+  methods: {
+    ticketButton: function() {
+      window.open("/biljetter", "_self")
+    }
+  },
 };
 </script>
 
