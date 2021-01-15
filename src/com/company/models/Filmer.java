@@ -15,7 +15,7 @@ public class Filmer {
     private String language;
     private String subtitles;
     private String director;
-    private String[] actors;
+    private String actors;
     private String description;
     private String[] images;
     private String[] youtubeTrailers;
@@ -94,11 +94,11 @@ public class Filmer {
         this.director = director;
     }
 
-    public String[] getActors() {
+    public String getActors() {
         return actors;
     }
 
-    public void setActors(String[] actors) {
+    public void setActors(String actors) {
         this.actors = actors;
     }
 
