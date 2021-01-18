@@ -22,7 +22,10 @@
           <p>{{ film.genre }} | {{ film.length }} min</p>
 
           <div class="trailer-button-container">
-            <button class="trailer-button" @click="ticketButton()">Biljetter</button>
+            <router-link :to="'/biljetter/'" >  
+            <button class="trailer-button">Biljetter</button>
+           </router-link>
+           <!-- <button class="trailer-button" @click="ticketButton()">Biljetter</button>-->
           </div>
         </div>
       </div>
@@ -78,11 +81,12 @@ export default {
       return this.$route.params.id;
     },
   },
+  /*
   methods: {
     ticketButton: function() {
       window.open("/biljetter", "_self")
     }
-  },
+  },*/
 };
 </script>
 
