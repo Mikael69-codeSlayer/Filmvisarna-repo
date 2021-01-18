@@ -3,25 +3,24 @@
 <div>Boka dina biljetter idag</div>
 
 <div class="filmdropdown">
+
 <select v-model="films">
-   <option value="film" v-for="film of filmer" :key="film.title"> {{film.title}}</option>
+  <option disabled value="">Alla filmer</option>
+   <option value="film" v-for="film of filmer" :key="film.title" > {{film.title}}</option>
+
 </select>
+
 </div>
 
 <div class="datedropdown">
 <select v-model="date">
-
+<option disabled value="">Datum</option>
    <option value="date">15/1</option>
     <option value="date">16/1</option>
      
 </select>
 </div>
- <div class="movie-item-text">
-              <p>{{ film.title }}</p> <br />
-              {{ film.genre }} 
-              | {{ film.length }} min
-              | {{ film.language }}
-            </div>
+
 
 </template>
 
@@ -64,18 +63,24 @@ select{
 margin-top: 5px;
  text-align: center; 
  border-radius:2px;
- border:none;
  font-family: "Roboto Slab", serif;
-  font-size: 16px;
+font-size: 16px;
 height: 30px;
 width:250px;
+border-color:white;
+background-color: black;
+color:white;
 
 }
+
 div.filmdropdown{
   float: left;
   margin-left:200px;
   margin-top:50px;
+  color: white;
+
 }
+
 div.datedropdown{
   float: left;
   margin-top:50px;
