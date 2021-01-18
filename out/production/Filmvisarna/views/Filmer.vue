@@ -54,7 +54,7 @@ otherwise all changes will effect other files
 
 .space {
   width: 100%;
-  height: 200px;
+  height: 100px;
 }
 
 a {
@@ -75,7 +75,7 @@ div.movies-container {
   color: white;
   width: 100%;
   position: relative;
-  height: 5000px;
+  height: 500px;
   background: rgb(0, 0, 0);
   padding: 40px 0;
 }
