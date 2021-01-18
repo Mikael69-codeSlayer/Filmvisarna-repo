@@ -72,14 +72,28 @@ otherwise all changes will effect other files
 a {
   font-family: "Roboto Slab", serif;
   color: white;
-  text-decoration: none!important;
+  text-decoration: none;
 }
 
+p {
+  font-family: "Roboto Slab", serif;
+  color: white;
+}
 
 .news-spotlight{
-    color: white;
-    text-decoration: none;
+  font-family: "Roboto Slab", serif;
+  color: white;
+  text-decoration: none;
 }
+
+h1.news-headline {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  padding-right: 70px;
+  text-align: left;
+  font-size: 20px;
+}
+
 .showing-films {
   display: inline-block;
 }
@@ -94,12 +108,7 @@ img {
 div.news-container {
   padding: 50px;
 }
-h1.news-headline {
-  color: white;
-  padding-right: 70px;
-  text-align: left;
-  font-size: 20px;
-}
+
 
 .news-poster img {
   width: 400px;
@@ -109,6 +118,7 @@ h1.news-headline {
   padding-left: 26.6vw;
 }
 .showing-now-headline {
+  font-family: "Roboto Slab", serif;
   color: white;
   padding-right: 70px;
   text-align: left;
