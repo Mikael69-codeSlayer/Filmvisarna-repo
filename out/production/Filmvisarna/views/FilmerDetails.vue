@@ -3,10 +3,17 @@
   We added v-for to loop through films like we did in 'Filmvisarna.vue'
   and v-if to choose which poster should be displayed. -->
   <div class="detail-container" v-for="film of filmer" :key="film.id">
-    <div v-if="film.id == 1">
-      <!-- <img :src="film.images[1]"> -->
-    </div>
+     
+     <!-- <div v-if="film.id == 1">-->
+      <!-- <img :src="film.images[1]"> 
+    </div>-->
+    
+    
     <div class="movie-container">
+
+<!-- add background to JSON-file -->
+         <img :src="film.images[0]" />
+
       <div class="gradient-background"></div>
 
       <!-- <div class="trailer-button-container">
@@ -141,7 +148,7 @@ div.detail-container {
 div.movie-container {
   background-color: blueviolet;
   padding-top: 400px;
-  background-image: url("https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg");
+  /*background-image: url("https://images-ext-1.discordapp.net/external/AcVMep7nNKn5Ow9k52mTpBcZO33J9tI8SamJ0qz8IcQ/https/pics.filmaffinity.com/Blade_Runner-237438038-large.jpg?width=954&height=477");*/
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;

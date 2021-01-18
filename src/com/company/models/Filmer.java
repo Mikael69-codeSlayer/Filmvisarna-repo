@@ -20,7 +20,7 @@ public class Filmer {
     private String[] images;
     private String[] youtubeTrailers;
     private String posterUrl;
-
+    private String backgroundImage;
 
     public String getId() {
         return id;
@@ -132,5 +132,13 @@ public class Filmer {
 
     public void setPosterUrl(String posterUrl) {
         this.posterUrl = posterUrl;
+    }
+
+    public String getBackgroundImage() {
+        return backgroundImage;
+    }
+
+    public void setBackgroundImage(String backgroundImage) {
+        this.backgroundImage = backgroundImage;
     }
 }

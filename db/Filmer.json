@@ -12,7 +12,8 @@
   "description" : "Sacha Baron Cohen är tillbaka. Borat har varit Gulag-fånge i 14 år, efter att ha skämt ut sitt hemland. Men nu behöver premiärministern hans hjälp med att få Donald Trumps respekt, och därför får Borat en chans till botgöring; han ska åka till USA och överlämna apan Johnny – Kazakstans kulturminister och främsta porrstjärna – till vicepresidenten Mike Pence. Saker går dock inte riktigt som planerat, och det blir i stället Borats dotter Tutar (Maria Bakalova) – som med sina 14 år är den äldsta ogifta kvinnan i hela Kazakstan – som följer med, för att överlämnas till USA:s ”vice fitt-tagare”.",
   "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg" ],
   "youtubeTrailers" : [ "https://www.youtube.com/embed/JvPTCvUnNQA" ],
-  "posterUrl" : "https://resizing.flixster.com/ifh8bBMQbKXt4kKD6v9ugJqoKWE=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzI0YzkyYWVjLWZhNWMtNDNkYy04Y2JkLWY5ZWU3ZDQ0OWNkYS5qcGc="
+  "posterUrl" : "https://resizing.flixster.com/ifh8bBMQbKXt4kKD6v9ugJqoKWE=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzI0YzkyYWVjLWZhNWMtNDNkYy04Y2JkLWY5ZWU3ZDQ0OWNkYS5qcGc=",
+  "backgroundImage" : ""
 }, {
   "id" : "2",
   "title" : "Bladerunner",
@@ -27,7 +28,8 @@
   "description" : "In the early twenty-first century, the Tyrell Corporation, during what was called the Nexus phase, developed robots, called replicants, that were supposed to aid society, the replicants which looked and acted like humans. When the superhuman generation Nexus 6 replicants, used for dangerous off-Earth endeavors, began a mutiny on an off-Earth colony, replicants became illegal on Earth. Police units, called blade runners, have the job of destroying - or in their parlance retiring - any replicant that makes its way back to or created on Earth, with anyone convicted of aiding or assisting a replicant being sentenced to death.",
   "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg" ],
   "youtubeTrailers" : [ "https://www.youtube.com/embed/eogpIG53Cis" ],
-  "posterUrl" : "https://images-na.ssl-images-amazon.com/images/I/51abpgBmt6L._AC_.jpg"
+  "posterUrl" : "https://images-na.ssl-images-amazon.com/images/I/51abpgBmt6L._AC_.jpg",
+  "backgroundImage" : ""
 }, {
   "id" : "3",
   "title" : "Star Wars: Episod III",
@@ -42,7 +44,8 @@
   "description" : "In the early twenty-first century, the Tyrell Corporation, during what was called the Nexus phase, developed robots, called replicants, that were supposed to aid society, the replicants which looked and acted like humans. When the superhuman generation Nexus 6 replicants, used for dangerous off-Earth endeavors, began a mutiny on an off-Earth colony, replicants became illegal on Earth. Police units, called blade runners, have the job of destroying - or in their parlance retiring - any replicant that makes its way back to or created on Earth, with anyone convicted of aiding or assisting a replicant being sentenced to death.",
   "images" : [ "https://images.justwatch.com/backdrop/152871672/s1440/star-wars-episode-iii-revenge-of-the-sith" ],
   "youtubeTrailers" : [ "https://www.youtube.com/embed/5UnjrG_N8hU" ],
-  "posterUrl" : "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/220px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg"
+  "posterUrl" : "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/220px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg",
+  "backgroundImage" : ""
 }, {
   "id" : "4",
   "title" : "Dances with Wolves",
@@ -57,5 +60,6 @@
   "description" : "Efter ett stort fältslag under det amerikanska inbördeskriget 1863 förflyttas den hjältemodiga löjtnanten John Dunbar på egen begäran till en avlägsen utpost i Dakota som gränsar till indianernas land. Fortet visar sig vara övergivet, så han beslutar sig för att stanna och invänta sina trupper. Men han upptäcker snart att han inte är ensam. Efter ett första våldsamt möte med den lokala siouxstammen börjar han allt mer accepteras av indianerna, som ger honom namnet 'Dansar med vargar'. Men den växande vänskapen innebär samtidigt att Dunbar inom en snar framtid kommer att tvingas välja sida.",
   "images" : [ "https: //www.discshop.se/img/front_large/146341/dances_with_wolves_blu_ray_import_sv_text.jpg", "https://imageproxy.themaven.net//https%3A%2F%2Fwww.biography.com%2F.image%2FMTczMTI4NTA2ODYxOTU0Mjg0%2Fdances-with-wolves-gettyimages-159824459.jpg" ],
   "youtubeTrailers" : [ "https://www.youtube.com/embed/uc8NMbrW7mI" ],
-  "posterUrl" : "https://www.discshop.se/img/front_large/28813/dances_with_wolves_import_sv_text.jpg"
+  "posterUrl" : "https://www.discshop.se/img/front_large/28813/dances_with_wolves_import_sv_text.jpg",
+  "backgroundImage" : ""
 } ]
