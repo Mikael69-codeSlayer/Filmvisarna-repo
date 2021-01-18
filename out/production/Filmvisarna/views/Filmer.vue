@@ -1,5 +1,6 @@
 <!--This is for movies and trailers-->
 <template>
+<div class="space"></div>
   <div class="movies-container">
     <div class="movies-header">
       <h1 class="filmer-header">Filmer</h1>
@@ -14,7 +15,7 @@
             </div>
 
             <div class="movie-item-text">
-              <p>{{ film.title }}</p> <br />
+              <a class="movie-title">{{ film.title }}</a> <br />
               {{ film.genre }} 
               | {{ film.length }} min
               | {{ film.language }}
@@ -50,6 +51,25 @@ export default {
 IMPORTANT! Don't forget to use 'scope'
 otherwise all changes will effect other files
 */
+
+.space {
+  width: 100%;
+  height: 200px;
+}
+
+a {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  text-decoration: none!important;
+}
+
+.movie-title {
+   font-size: 25px;
+   font-weight: bold;
+   line-height: 70px;
+}
+
+
 
 div.movies-container {
   color: white;
