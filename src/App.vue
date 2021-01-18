@@ -1,22 +1,21 @@
 <!-- HTML -->
 <template>
-
   <!-- Navigationbar with router-link and data-bind-->
   <div class="main-container">
-    <div id="nav">
-      <div class="filmV">
+    <div class="nav">
+      <div class="nav filmV">
         <router-link :to="{ name: 'Filmvisarna' }">Filmvisarna</router-link>
       </div>
-      <div class="filmer">
+      <div class="nav filmer">
         <router-link :to="{ name: 'Filmer' }">Filmer & Trailer</router-link>
       </div>
-      <div class="bil">
+      <div class="nav bil">
         <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
       </div>
-      <div class="log">
+      <div class="nav log">
         <router-link :to="{ name: 'Login' }">Login</router-link>
       </div>
-            <div class="salon">
+      <div class="nav salon">
         <router-link :to="{ name: 'Salon' }">Salong</router-link>
       </div>
     </div>
@@ -68,7 +67,7 @@ otherwise all changes will effect other files
 div.main-container {
   width: 100%;
 }
-#nav {
+.nav {
   background-color: rgb(209, 6, 46);
   padding: 5px;
 
@@ -81,17 +80,17 @@ body {
 }
 
 /*a -> filmer, biljetter, filmvisarna, login*/
-a {
+.nav a {
   color: white;
   text-decoration: none;
   position: relative;
 }
 /*the :hover selector is used to select elements when you mouse over them*/
-a:hover {
+.nav a:hover {
   color: rgba(240, 248, 255, 0.842);
 }
 /*the ::after selector inserts something after the content of each selected element(s)*/
-a:after {
+.nav a:after {
   bottom: -11px;
   content: "";
   display: block;
@@ -102,7 +101,7 @@ a:after {
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-a:hover:after {
+.nav a:hover:after {
   width: 90%;
   left: 6%;
 }
