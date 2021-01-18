@@ -62,4 +62,25 @@
   "youtubeTrailers" : [ "https://www.youtube.com/embed/uc8NMbrW7mI" ],
   "posterUrl" : "https://www.discshop.se/img/front_large/28813/dances_with_wolves_import_sv_text.jpg",
   "backgroundImage" : "https://i.imgur.com/hoZWBgz.png"
+},
+{
+  "id": "5",
+  "title": "Pulp Fiction",
+  "productionYear": 1994,
+  "length": 178,
+  "genre": "Drama",
+  "distributor": "Miramax Films",
+  "language": "Engelska",
+  "subtitles": "Svenska",
+  "director": "Quentin Tarantino",
+  "actors": "John Travolta, Samuel L. Jackson, Uma Thurman",
+  "description": "I undervärlden leder flera incidenter att två torpeder, en boxare, en gangster med sin fru, och ett par banditer får sina öden sammanflätade i en historia om upprättelse och våld",
+  "images": [
+    "https://www.indiewire.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-22-at-5.09.08-PM.png","https://www.praqma.com/images/stories/bonnie/vincent-oops.png"
+  ],
+  "youtubeTrailers": [
+    "https: //www.youtube.com/embed/tGpTpVyI_OQ"
+  ],
+  "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTciQFy8sCo8hOdnzlhUh_cqlYNLIFA4nlQwg&usqp=CAU",
+  "backgroundImage": "https://i.imgur.com/oFoiHDS.png"
 } ]
