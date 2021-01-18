@@ -9,14 +9,13 @@
     </div>-->
    
     
-    <div class="movie-container">
+    <!--<div class="movie-container">-->
+      <div class="movie-container" v-bind:style="{ 'background-image': 'url(' + film.backgroundImage + ')' }">
 
 <!--<img :src="film.backgroundImage" />-->
 <!-- add background to JSON-file -->
       <!--  <span style="background-image: url({{film.backgroundImage}})"></span> -->
-    
- <img :src="film.backgroundImage" />
-     
+         
 
       <div class="gradient-background"></div>
        
@@ -167,7 +166,7 @@ div.gradient-background {
   width: 100%;
   height: 200px;
   position: absolute;
-  top: 500px;
+  top: 506px;
   left: 0;
   z-index: 10;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
