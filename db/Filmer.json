@@ -24,9 +24,9 @@
   "subtitles" : "svenska",
   "director" : "Ridley Scott",
   "actors" : "Harrison Ford, Rutger Hauer, Sean Young, Edward James Olmos",
-  "description" : "<p>In the early twenty-first century, the Tyrell Corporation, during what was called the Nexus phase, developed robots, called replicants, that were supposed to aid society, the replicants which looked and acted like humans. When the superhuman generation Nexus 6 replicants, used for dangerous off-Earth endeavors, began a mutiny on an off-Earth colony, replicants became illegal on Earth. Police units, called blade runners, have the job of destroying - or in their parlance retiring - any replicant that makes its way back to or created on Earth, with anyone convicted of aiding or assisting a replicant being sentenced to death.</p>",
+  "description" : "In the early twenty-first century, the Tyrell Corporation, during what was called the Nexus phase, developed robots, called replicants, that were supposed to aid society, the replicants which looked and acted like humans. When the superhuman generation Nexus 6 replicants, used for dangerous off-Earth endeavors, began a mutiny on an off-Earth colony, replicants became illegal on Earth. Police units, called blade runners, have the job of destroying - or in their parlance retiring - any replicant that makes its way back to or created on Earth, with anyone convicted of aiding or assisting a replicant being sentenced to death.",
   "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg" ],
-  "youtubeTrailers" : [ "https://www.youtube.com/watch?v=eogpIG53Cis" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/embed/eogpIG53Cis" ],
   "posterUrl" : "https://images-na.ssl-images-amazon.com/images/I/51abpgBmt6L._AC_.jpg"
 }, {
   "id" : "3",
@@ -39,9 +39,9 @@
   "subtitles" : "Svenska",
   "director" : "George Lucas",
   "actors" : "Ewan McGregor, Natalie Portman, Hayden Christensen",
-  "description" : "<p>Lorem ipsum</p>",
+  "description" : "In the early twenty-first century, the Tyrell Corporation, during what was called the Nexus phase, developed robots, called replicants, that were supposed to aid society, the replicants which looked and acted like humans. When the superhuman generation Nexus 6 replicants, used for dangerous off-Earth endeavors, began a mutiny on an off-Earth colony, replicants became illegal on Earth. Police units, called blade runners, have the job of destroying - or in their parlance retiring - any replicant that makes its way back to or created on Earth, with anyone convicted of aiding or assisting a replicant being sentenced to death.",
   "images" : [ "https://images.justwatch.com/backdrop/152871672/s1440/star-wars-episode-iii-revenge-of-the-sith" ],
-  "youtubeTrailers" : [ "https://www.youtube.com/watch?v=5UnjrG_N8hU" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/embed/5UnjrG_N8hU" ],
   "posterUrl" : "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/220px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg"
 }, {
   "id" : "4",
@@ -54,8 +54,8 @@
   "subtitles" : "Svenska",
   "director" : "Kevin Costner",
   "actors" : "Kevin Costner, Mary McDonnell, Graham Greene, Rodney Grant",
-  "description" : "<p> Efter ett stort fältslag under det amerikanska inbördeskriget 1863 förflyttas den hjältemodiga löjtnanten John Dunbar på egen begäran till en avlägsen utpost i Dakota som gränsar till indianernas land. Fortet visar sig vara övergivet, så han beslutar sig för att stanna och invänta sina trupper. Men han upptäcker snart att han inte är ensam. Efter ett första våldsamt möte med den lokala siouxstammen börjar han allt mer accepteras av indianerna, som ger honom namnet 'Dansar med vargar'. Men den växande vänskapen innebär samtidigt att Dunbar inom en snar framtid kommer att tvingas välja sida.</p>",
+  "description" : "Efter ett stort fältslag under det amerikanska inbördeskriget 1863 förflyttas den hjältemodiga löjtnanten John Dunbar på egen begäran till en avlägsen utpost i Dakota som gränsar till indianernas land. Fortet visar sig vara övergivet, så han beslutar sig för att stanna och invänta sina trupper. Men han upptäcker snart att han inte är ensam. Efter ett första våldsamt möte med den lokala siouxstammen börjar han allt mer accepteras av indianerna, som ger honom namnet 'Dansar med vargar'. Men den växande vänskapen innebär samtidigt att Dunbar inom en snar framtid kommer att tvingas välja sida.",
   "images" : [ "https: //www.discshop.se/img/front_large/146341/dances_with_wolves_blu_ray_import_sv_text.jpg", "https://imageproxy.themaven.net//https%3A%2F%2Fwww.biography.com%2F.image%2FMTczMTI4NTA2ODYxOTU0Mjg0%2Fdances-with-wolves-gettyimages-159824459.jpg" ],
-  "youtubeTrailers" : [ "https://www.youtube.com/watch?v=5nU148c3TCg" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/embed/uc8NMbrW7mI" ],
   "posterUrl" : "https://www.discshop.se/img/front_large/28813/dances_with_wolves_import_sv_text.jpg"
 } ]
