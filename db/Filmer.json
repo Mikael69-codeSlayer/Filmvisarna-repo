@@ -13,7 +13,7 @@
   "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg" ],
   "youtubeTrailers" : [ "https://www.youtube.com/embed/JvPTCvUnNQA" ],
   "posterUrl" : "https://resizing.flixster.com/ifh8bBMQbKXt4kKD6v9ugJqoKWE=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzI0YzkyYWVjLWZhNWMtNDNkYy04Y2JkLWY5ZWU3ZDQ0OWNkYS5qcGc=",
-  "backgroundImage" : ""
+  "backgroundImage" : "https://i.imgur.com/DTA6i1j.png"
 }, {
   "id" : "2",
   "title" : "Bladerunner",
@@ -25,11 +25,11 @@
   "subtitles" : "svenska",
   "director" : "Ridley Scott",
   "actors" : "Harrison Ford, Rutger Hauer, Sean Young, Edward James Olmos",
-  "description" : "In the early twenty-first century, the Tyrell Corporation, during what was called the Nexus phase, developed robots, called replicants, that were supposed to aid society, the replicants which looked and acted like humans. When the superhuman generation Nexus 6 replicants, used for dangerous off-Earth endeavors, began a mutiny on an off-Earth colony, replicants became illegal on Earth. Police units, called blade runners, have the job of destroying - or in their parlance retiring - any replicant that makes its way back to or created on Earth, with anyone convicted of aiding or assisting a replicant being sentenced to death.",
+  "description" : "Los Angeles år 2019. Människan har lyckats framställa androider, organiska robotar som är nästan omöjliga att skilja från vanliga människor. Dessa kallas replikanter och de brukas som slavar av människorna. Efter en serie blodiga uppror bannlyses replikanterna från jorden och deras liv begränsas till fyra år. En speciell sorts poliser, så kallade blade runners, får i uppgift att identifiera och döda alla replikanter som mot lagen befinner sig på jorden. För att motivera det moraliska i handlingen 'dödas' inte en replikant utan den 'pensioneras'. Rick Deckard (Harrison Ford) är en före detta blade runner som blir återkallad till tjänst för att pensionera en grupp våldsamma replikanter som lyckats ta sig till jorden. I jakten på dessa replikanter, som gör allt för att få fortsätta leva, möter Deckard inte bara livsfara utan även svåra frågor om både sina motståndares och sin egen natur.",
   "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg" ],
   "youtubeTrailers" : [ "https://www.youtube.com/embed/eogpIG53Cis" ],
   "posterUrl" : "https://images-na.ssl-images-amazon.com/images/I/51abpgBmt6L._AC_.jpg",
-  "backgroundImage" : ""
+  "backgroundImage" : "https://i.imgur.com/ZqBkMVu.png"
 }, {
   "id" : "3",
   "title" : "Star Wars: Episod III",
@@ -41,11 +41,11 @@
   "subtitles" : "Svenska",
   "director" : "George Lucas",
   "actors" : "Ewan McGregor, Natalie Portman, Hayden Christensen",
-  "description" : "In the early twenty-first century, the Tyrell Corporation, during what was called the Nexus phase, developed robots, called replicants, that were supposed to aid society, the replicants which looked and acted like humans. When the superhuman generation Nexus 6 replicants, used for dangerous off-Earth endeavors, began a mutiny on an off-Earth colony, replicants became illegal on Earth. Police units, called blade runners, have the job of destroying - or in their parlance retiring - any replicant that makes its way back to or created on Earth, with anyone convicted of aiding or assisting a replicant being sentenced to death.",
+  "description" : "Klonkrigen rasar i galaxen. Republiken har kämpat hårt och tappert mot Greve Dooku och hans arméer av stridsdroider. Dock så drabbas man nu av en katastrof, då en flotta under ledning av General Grievous stormar republikens huvudplanet,Coruscant, och kidnappar överkansler Palpatine. Samtidigt sänds jediriddarna Anakin Skywalker och Obi-Wan Kenobi till striden för att undsätta den kidnappade kanslern. Anakin Skywalker slits mellan de stridande parterna, mellan den mörka och den ljusa sidan. Lockad av löften om makt och kunskap svär Anakin den mörka sidan trohet och blir Sith Darth Vader.",
   "images" : [ "https://images.justwatch.com/backdrop/152871672/s1440/star-wars-episode-iii-revenge-of-the-sith" ],
   "youtubeTrailers" : [ "https://www.youtube.com/embed/5UnjrG_N8hU" ],
   "posterUrl" : "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/220px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg",
-  "backgroundImage" : ""
+  "backgroundImage" : "https://i.imgur.com/OZfdQGd.png"
 }, {
   "id" : "4",
   "title" : "Dances with Wolves",
@@ -61,5 +61,5 @@
   "images" : [ "https: //www.discshop.se/img/front_large/146341/dances_with_wolves_blu_ray_import_sv_text.jpg", "https://imageproxy.themaven.net//https%3A%2F%2Fwww.biography.com%2F.image%2FMTczMTI4NTA2ODYxOTU0Mjg0%2Fdances-with-wolves-gettyimages-159824459.jpg" ],
   "youtubeTrailers" : [ "https://www.youtube.com/embed/uc8NMbrW7mI" ],
   "posterUrl" : "https://www.discshop.se/img/front_large/28813/dances_with_wolves_import_sv_text.jpg",
-  "backgroundImage" : ""
+  "backgroundImage" : "https://i.imgur.com/f6nkFej.png"
 } ]

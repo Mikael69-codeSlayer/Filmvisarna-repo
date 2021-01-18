@@ -7,14 +7,19 @@
      <!-- <div v-if="film.id == 1">-->
       <!-- <img :src="film.images[1]"> 
     </div>-->
-    
+   
     
     <div class="movie-container">
 
+<!--<img :src="film.backgroundImage" />-->
 <!-- add background to JSON-file -->
-         <img :src="film.images[0]" />
+      <!--  <span style="background-image: url({{film.backgroundImage}})"></span> -->
+    
+ <img :src="film.backgroundImage" />
+     
 
       <div class="gradient-background"></div>
+       
 
       <!-- <div class="trailer-button-container">
        <button class="trailer-button" @click="">Play</button> 
@@ -153,6 +158,10 @@ div.movie-container {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/*.movie-container img {
+  width: 100%;
+}*/
 
 div.gradient-background {
   width: 100%;
