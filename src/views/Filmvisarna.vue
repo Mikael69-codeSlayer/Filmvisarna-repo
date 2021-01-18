@@ -1,7 +1,6 @@
 <!--   HTML  -->
 <template>
   <div class="home">
-    
     <div class="news-container">
       <div class="news-container-inside">
         <h1 class="news-headline">Aktuellt på bio</h1>
@@ -10,24 +9,26 @@
           <div v-if="film.id == 4">
             <router-link :to="'/filmerDetails/' + film.id">
               <img :src="film.images[1]" />
-             <p class="news-spotlight">{{ film.title }}</p>
+              <p class="news-spotlight">{{ film.title }}</p>
             </router-link>
-<div class="space"></div>
+            <div class="space"></div>
           </div>
         </div>
       </div>
     </div>
     <div class="showing-now">
       <h1 class="showing-now-headline">{{ msg }}</h1>
+      <br>
       <div class="showing-films" v-for="film of filmer" :key="film.id">
         <div class="movie-item">
-        <router-link :to="'/filmerDetails/' + film.id">
-        
-          <img :src="film.posterUrl" />
-        </router-link>
-        <br><a>{{ film.title }}</a>
+          <router-link :to="'/filmerDetails/' + film.id">
+            <img :src="film.posterUrl" />
+          </router-link>
+          <br /><a>{{ film.title }}</a>
         </div>
       </div>
+     <div class="space"></div>
+
     </div>
     <!--
     <div
@@ -66,7 +67,7 @@ otherwise all changes will effect other files
 */
 .space {
   width: 100%;
-  height: 100px;
+  height: 50px;
 }
 
 a {
@@ -80,7 +81,7 @@ p {
   color: white;
 }
 
-.news-spotlight{
+.news-spotlight {
   font-family: "Roboto Slab", serif;
   color: white;
   text-decoration: none;
@@ -109,7 +110,6 @@ div.news-container {
   padding: 50px;
 }
 
-
 .news-poster img {
   width: 400px;
 }
@@ -120,12 +120,10 @@ div.news-container {
 .showing-now-headline {
   font-family: "Roboto Slab", serif;
   color: white;
-  padding-right: 70px;
-  text-align: left;
+  text-align: center;
   font-size: 20px;
 }
 .showing-now > h1 {
   text-align: center;
-  padding-right: 37vw;
 }
 </style>
