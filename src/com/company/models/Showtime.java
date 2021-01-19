@@ -6,22 +6,20 @@ import org.dizitart.no2.objects.Id;
 
 @Model
 public class Showtime {
-    @Id
-    private String id;
-    private String salon;
-    private String film;
-    private String date;
-    private String time;
-    private String showId;
-
-    public Showtime(){}
-
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getSalon() {
+        return salon;
+    }
+
+    public void setSalon(String salon) {
+        this.salon = salon;
     }
 
     public String getSalon() {
@@ -56,11 +54,11 @@ public class Showtime {
         this.showId = showId;
     }
 
-    public String getFilm() {
-        return film;
-    }
-
-    public void setFilm(String film) {
-        this.film = film;
-    }
+    @Id
+    private String id;
+    private String salon;
+    private String film;
+    private String date;
+    private String time;
+    private String showId;
 }

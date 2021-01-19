@@ -19,10 +19,6 @@ public class Main {
         // path is the endpoint url the method listens to
         // res - answer to the question, for instance number, String or object information
 
-        app.get("/rest/biljetter", (req, res) -> {
-            res.send("Biljetter");
-        });
-
         app.get("/rest/filmer", (req, res) -> {
             res.send("Filmer & Trailer");
             var filmer = collection("Filmer").find();
@@ -33,10 +29,10 @@ public class Main {
             var salon = collection("Salon").find();
             res.json(salon);
         });
-        app.get("/rest/showtime", (req, res) -> {
-            var showtime = collection("Showtime").find();
-            res.json(showtime);
-        });
+        app.get("/rest/ticket", (req, res) -> {
+            var ticket = collection("Ticket").find();
+            res.json(ticket);
+        });*/
 
         app.get("/rest/login", (req, res) -> {
             res.send("Logga in");
