@@ -6,10 +6,22 @@ import org.dizitart.no2.objects.Id;
 @Model
 public class Salon {
     @Id
-
+    private String id;
     private String name;
     private int seats;
     private int[] seatsPerRow;
+
+    public Salon() {
+
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

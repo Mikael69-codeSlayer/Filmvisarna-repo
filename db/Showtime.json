@@ -1,0 +1,13 @@
+[ {
+  "salon" : "Lilla Salongen",
+  "film" : "Pulp Fiction",
+  "date" : "2021-02-05",
+  "time" : "21:05",
+  "showId" : "85"
+}, {
+  "salon" : "Stora Salongen",
+  "film" : "Star Wars: Episod III",
+  "date" : "2021-02-21",
+  "time" : "19:20",
+  "showId" : "84"
+} ]
