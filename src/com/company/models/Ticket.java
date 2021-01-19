@@ -4,7 +4,7 @@ import express.database.Model;
 import org.dizitart.no2.objects.Id;
 
 @Model
-public class Showtime {
+public class Ticket {
     @Id
     private String auditorium;
     private String film;
