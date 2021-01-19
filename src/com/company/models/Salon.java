@@ -6,16 +6,17 @@ import org.dizitart.no2.objects.Id;
 @Model
 public class Salon {
     @Id
-    private String salonName;
+
+    private String name;
     private int seats;
     private int[] seatsPerRow;
 
-    public String getSalonName() {
-        return salonName;
+    public String getName() {
+        return name;
     }
 
-    public void setSalonName(String salonName) {
-        this.salonName = salonName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getSeats() {
@@ -33,5 +34,4 @@ public class Salon {
     public void setSeatsPerRow(int[] seatsPerRow) {
         this.seatsPerRow = seatsPerRow;
     }
-
 }

@@ -6,17 +6,18 @@ import org.dizitart.no2.objects.Id;
 @Model
 public class Showtime {
     @Id
-    private String auditorium;
+    private String salon;
     private String film;
     private String date;
     private String time;
+    private String showId;
 
-    public String getAuditorium() {
-        return auditorium;
+    public String getSalon() {
+        return salon;
     }
 
-    public void setAuditorium(String auditorium) {
-        this.auditorium = auditorium;
+    public void setSalon(String salon) {
+        this.salon = salon;
     }
 
     public String getFilm() {
@@ -43,4 +44,11 @@ public class Showtime {
         this.time = time;
     }
 
+    public String getShowId() {
+        return showId;
+    }
+
+    public void setShowId(String showId) {
+        this.showId = showId;
+    }
 }

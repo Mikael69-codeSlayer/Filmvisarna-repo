@@ -17,7 +17,11 @@
       <!--  <span style="background-image: url({{film.backgroundImage}})"></span> -->
          
 
-      <div class="gradient-background"></div>
+      <div class="gradient-background">
+
+        
+      </div>
+    
        
 
       <!-- <div class="trailer-button-container">
@@ -151,7 +155,7 @@ div.detail-container {
 
 div.movie-container {
   background-color: blueviolet;
-  padding-top: 400px;
+  /*padding-top: 400px;*/
   /*background-image: url("https://images-ext-1.discordapp.net/external/AcVMep7nNKn5Ow9k52mTpBcZO33J9tI8SamJ0qz8IcQ/https/pics.filmaffinity.com/Blade_Runner-237438038-large.jpg?width=954&height=477");*/
   position: relative;
   background-repeat: no-repeat;
