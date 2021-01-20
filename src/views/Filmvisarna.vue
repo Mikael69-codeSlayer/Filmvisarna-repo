@@ -18,7 +18,7 @@
     </div>
     <div class="showing-now">
       <h1 class="showing-now-headline">{{ msg }}</h1>
-      <br>
+      <br />
       <div class="showing-films" v-for="film of filmer" :key="film.id">
         <div class="movie-item">
           <router-link :to="'/filmerDetails/' + film.id">
@@ -27,8 +27,7 @@
           <br /><a>{{ film.title }}</a>
         </div>
       </div>
-     <div class="space"></div>
-
+      <div class="space"></div>
     </div>
     <!--
     <div
