@@ -2,8 +2,8 @@
 <h1>Biljetter</h1>
 <div>Boka dina biljetter idag</div>
 
-<div class="filmdropdown">
 
+<div class="filmdropdown">
 <select v-model="films">
   <option disabled value="">Alla filmer</option>
    <option value="film" v-for="film of filmer" :key="film.title" > {{film.title}}</option>
@@ -15,15 +15,13 @@
 <div class="datedropdown">
 <select v-model="date">
 <option disabled value="">Datum</option>
-   <option value="date">15/1</option>
-    <option value="date">16/1</option>
+   <option value="time" v-for="time of showtime" :key="time.date" > {{time.date}}</option>
      
 </select>
 </div>
 
 
 </template>
-
 
 
 <script>
@@ -33,11 +31,27 @@ export default {
       films:'',
       date:''
 
-    };
+    }
   },
+
   computed: {
     filmer() {
       return this.$store.state.filmer;
+    },
+   showtime() {
+      return this.$store.state.showtime;
+  
+    },
+  /*  id() {
+      // get id from url parameter
+      return this.$route.params.id;
+    },*/
+  },
+
+  methods:{
+    selectFilm(){
+      console.log(this.showtime)
+
     },
   },
 
