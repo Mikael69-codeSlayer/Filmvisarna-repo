@@ -24,7 +24,7 @@ public class Main {
             var filmer = collection("Filmer").find();
             res.json(filmer);
         });
-        /*
+
         app.get("/rest/salon", (req, res) -> {
             var salon = collection("Salon").find();
             res.json(salon);
@@ -32,12 +32,11 @@ public class Main {
         app.get("/rest/ticket", (req, res) -> {
             var ticket = collection("Ticket").find();
             res.json(ticket);
-        });*/
+        });
 
         app.get("/rest/login", (req, res) -> {
             res.send("Logga in");
         });
-
 
         // listen starts the server
         // and should be done after endpoint-listeners

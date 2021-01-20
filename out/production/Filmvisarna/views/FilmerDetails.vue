@@ -17,7 +17,11 @@
       <!--  <span style="background-image: url({{film.backgroundImage}})"></span> -->
          
 
-      <div class="gradient-background"></div>
+      <div class="gradient-background">
+
+        
+      </div>
+    
        
 
       <!-- <div class="trailer-button-container">

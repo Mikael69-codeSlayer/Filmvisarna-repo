@@ -6,32 +6,44 @@ import org.dizitart.no2.objects.Id;
 @Model
 public class Salon {
     @Id
-    private String salonName;
-    private int seats;
-    private int[] seatsPerRow;
+    private String id;
 
-    public String getSalonName() {
-        return salonName;
+    private String name;
+    private String seats;
+    private String[] seatsPerRow;
+
+    public String getId() {
+        return id;
     }
 
-    public void setSalonName(String salonName) {
-        this.salonName = salonName;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public int getSeats() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSeats() {
         return seats;
     }
 
-    public void setSeats(int seats) {
+    public void setSeats(String seats) {
         this.seats = seats;
     }
 
-    public int[] getSeatsPerRow() {
+    public String[] getSeatsPerRow() {
         return seatsPerRow;
     }
 
-    public void setSeatsPerRow(int[] seatsPerRow) {
+    public void setSeatsPerRow(String[] seatsPerRow) {
         this.seatsPerRow = seatsPerRow;
     }
+
+
 
 }

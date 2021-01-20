@@ -7,6 +7,8 @@ import org.dizitart.no2.objects.Id;
 public class Filmer {
     @Id
     private String id;
+
+    private int movieId;
     private String title;
     private int productionYear;
     private int length;
@@ -22,6 +24,7 @@ public class Filmer {
     private String posterUrl;
     private String backgroundImage;
 
+
     public String getId() {
         return id;
     }
@@ -29,6 +32,15 @@ public class Filmer {
     public void setId(String id) {
         this.id = id;
     }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
+
 
     public String getTitle() {
         return title;
