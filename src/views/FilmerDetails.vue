@@ -61,6 +61,17 @@
         <p>Utgivningsår:<br />{{ film.productionYear }}</p>
       </div>
 
+      <div class="screen-container">
+        <vueper-slides
+          class="no-shadow"
+          :visible-slides="3"
+          :slide-ratio="1 / 4"
+          :dragging-distance="70"
+        >
+          <vueper-slide v-for="i in 9" :key="i" :title="i.toString()" />
+        </vueper-slides>
+      </div>
+
       <div class="trailer-video">
         <section>
           <iframe
@@ -79,7 +90,25 @@
 
 <script>
 import BiljetterVue from "../../out/production/Filmvisarna/views/Biljetter.vue";
+
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
+
 export default {
+  data: () => ({
+  slides: [
+    {
+      title: 'Slide #1',
+      content: 'Slide content.'
+    }
+  ]
+}),
+
+  components: {
+    VueperSlides,
+    VueperSlide,
+  },
+
   computed: {
     filmer() {
       // Also added this, to get filmes and id
@@ -224,6 +253,11 @@ div.movie-year {
   width: 37%;
   margin: 0 auto;
   text-align: left;
+}
+
+div.screen-container {
+  padding: 160px;
+  background-color: rgba(255, 192, 203, 0.418);
 }
 
 div.trailer-video {
