@@ -32,7 +32,7 @@ public class Main {
         app.get("/rest/ticket", (req, res) -> {
             var ticket = collection("Ticket").find();
             res.json(ticket);
-        });*/
+        });
 
         app.get("/rest/login", (req, res) -> {
             res.send("Logga in");

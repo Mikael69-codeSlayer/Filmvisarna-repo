@@ -1,5 +1,6 @@
 [ {
   "id" : "ms7sOWb6yOxll5a95C4SL",
+  "movieId" : 1,
   "title" : "Borat 2",
   "productionYear" : 2020,
   "length" : 96,
@@ -16,6 +17,7 @@
   "backgroundImage" : "https://i.imgur.com/DTA6i1j.png"
 }, {
   "id" : "fkK7mE-K4alh5RJ4y1xWV",
+  "movieId" : 2,
   "title" : "Bladerunner",
   "productionYear" : 1982,
   "length" : 117,
@@ -32,6 +34,7 @@
   "backgroundImage" : "https://i.imgur.com/ZqBkMVu.png"
 }, {
   "id" : "CIuOrJtdWsN-LiplEkfyT",
+  "movieId" : 3,
   "title" : "Star Wars: Episode III",
   "productionYear" : 2005,
   "length" : 140,
@@ -48,6 +51,7 @@
   "backgroundImage" : "https://i.imgur.com/OZfdQGd.png"
 }, {
   "id" : "LeEbfpxcBDUPRmc3BdNTa",
+  "movieId" : 4,
   "title" : "Dansar med vargar",
   "productionYear" : 1990,
   "length" : 181,
@@ -64,6 +68,7 @@
   "backgroundImage" : "https://i.imgur.com/hoZWBgz.png"
 }, {
   "id" : "WZJn6gJ6vjK6WbA3q9iku",
+  "movieId" : 5,
   "title" : "Pulp Fiction",
   "productionYear" : 1994,
   "length" : 178,

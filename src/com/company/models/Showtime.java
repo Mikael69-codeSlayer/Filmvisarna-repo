@@ -3,9 +3,19 @@ package com.company.models;
 import express.database.Model;
 import org.dizitart.no2.objects.Id;
 
-
 @Model
 public class Showtime {
+
+    @Id
+    private String id;
+
+    private String salon;
+    private String film;
+    private String date;
+    private String time;
+    private String showId;
+
+
     public String getId() {
         return id;
     }
@@ -22,12 +32,12 @@ public class Showtime {
         this.salon = salon;
     }
 
-    public String getSalon() {
-        return salon;
+    public String getFilm() {
+        return film;
     }
 
-    public void setSalon(String salon) {
-        this.salon = salon;
+    public void setFilm(String film) {
+        this.film = film;
     }
 
     public String getDate() {
@@ -54,11 +64,5 @@ public class Showtime {
         this.showId = showId;
     }
 
-    @Id
-    private String id;
-    private String salon;
-    private String film;
-    private String date;
-    private String time;
-    private String showId;
+
 }
