@@ -6,7 +6,7 @@
         <h1 class="news-headline">Aktuellt på bio</h1>
 
         <div class="news-poster" v-for="film of filmer" :key="film.id">
-          <div v-if="film.productionYear == 1990">
+          <div v-if="film.movieId == 4">
             <router-link :to="'/filmerDetails/' + film.id">
               <img :src="film.images[1]" />
               <p class="news-spotlight">{{ film.title }}</p>
@@ -18,7 +18,7 @@
     </div>
     <div class="showing-now">
       <h1 class="showing-now-headline">{{ msg }}</h1>
-      <br>
+      <br />
       <div class="showing-films" v-for="film of filmer" :key="film.id">
         <div class="movie-item">
           <router-link :to="'/filmerDetails/' + film.id">
@@ -27,8 +27,7 @@
           <br /><a>{{ film.title }}</a>
         </div>
       </div>
-     <div class="space"></div>
-
+      <div class="space"></div>
     </div>
     <!--
     <div
