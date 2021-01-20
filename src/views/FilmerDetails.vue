@@ -3,26 +3,20 @@
   We added v-for to loop through films like we did in 'Filmvisarna.vue'
   and v-if to choose which poster should be displayed. -->
   <div class="detail-container" v-for="film of filmer" :key="film.id">
-     
-     <!-- <div v-if="film.id == 1">-->
-      <!-- <img :src="film.images[1]"> 
+    <!-- <div v-if="film.id == 1">-->
+    <!-- <img :src="film.images[1]"> 
     </div>-->
-   
-    
+
     <!--<div class="movie-container">-->
-      <div class="movie-container" v-bind:style="{ 'background-image': 'url(' + film.backgroundImage + ')' }">
-
-<!--<img :src="film.backgroundImage" />-->
-<!-- add background to JSON-file -->
+    <div
+      class="movie-container"
+      v-bind:style="{ 'background-image': 'url(' + film.backgroundImage + ')' }"
+    >
+      <!--<img :src="film.backgroundImage" />-->
+      <!-- add background to JSON-file -->
       <!--  <span style="background-image: url({{film.backgroundImage}})"></span> -->
-         
 
-      <div class="gradient-background">
-
-        
-      </div>
-    
-       
+      <div class="gradient-background"></div>
 
       <!-- <div class="trailer-button-container">
        <button class="trailer-button" @click="">Play</button> 
@@ -37,10 +31,10 @@
           <p>{{ film.genre }} | {{ film.length }} min</p>
 
           <div class="trailer-button-container">
-            <router-link :to="'/biljetter/'" >  
-            <button class="trailer-button">Biljetter</button>
-           </router-link>
-           <!-- <button class="trailer-button" @click="ticketButton()">Biljetter</button>-->
+            <router-link :to="'/biljetter/'">
+              <button class="trailer-button">Biljetter</button>
+            </router-link>
+            <!-- <button class="trailer-button" @click="ticketButton()">Biljetter</button>-->
           </div>
         </div>
       </div>
@@ -67,6 +61,17 @@
         <p>Utgivningsår:<br />{{ film.productionYear }}</p>
       </div>
 
+      <div class="screen-container">
+        <vueper-slides
+          class="no-shadow"
+          :visible-slides="3"
+          :slide-ratio="1 / 4"
+          :dragging-distance="70"
+        >
+          <vueper-slide v-for="i in 9" :key="i" :title="i.toString()" />
+        </vueper-slides>
+      </div>
+
       <div class="trailer-video">
         <section>
           <iframe
@@ -84,8 +89,26 @@
 </template>
 
 <script>
-import BiljetterVue from '../../out/production/Filmvisarna/views/Biljetter.vue';
+import BiljetterVue from "../../out/production/Filmvisarna/views/Biljetter.vue";
+
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
+
 export default {
+  data: () => ({
+  slides: [
+    {
+      title: 'Slide #1',
+      content: 'Slide content.'
+    }
+  ]
+}),
+
+  components: {
+    VueperSlides,
+    VueperSlide,
+  },
+
   computed: {
     filmer() {
       // Also added this, to get filmes and id
@@ -128,13 +151,13 @@ div.detail-text p {
 }
 
 .trailer-button {
-   background-color: rgba(220, 20, 60, 0.877);  
-   font-size: 1.2em;
-   color: white;
-   padding: 5px 15px 5px;
-  
-   border: 1px solid red;
-   cursor: pointer;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px 15px 5px;
+
+  border: 1px solid red;
+  cursor: pointer;
 }
 
 .trailer-button:hover {
@@ -230,6 +253,11 @@ div.movie-year {
   width: 37%;
   margin: 0 auto;
   text-align: left;
+}
+
+div.screen-container {
+  padding: 160px;
+  background-color: rgba(255, 192, 203, 0.418);
 }
 
 div.trailer-video {
