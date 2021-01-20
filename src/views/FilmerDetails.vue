@@ -90,7 +90,7 @@
 
 <script>
 import BiljetterVue from "../../out/production/Filmvisarna/views/Biljetter.vue";
-
+// Vueper Slides
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 
@@ -103,7 +103,6 @@ export default {
     }
   ]
 }),
-
   components: {
     VueperSlides,
     VueperSlide,
@@ -257,7 +256,7 @@ div.movie-year {
 
 div.screen-container {
   padding: 160px;
-  background-color: rgba(255, 192, 203, 0.418);
+  background-color: rgba(255, 192, 203, 0.459);
 }
 
 div.trailer-video {
