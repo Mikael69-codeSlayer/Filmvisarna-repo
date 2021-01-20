@@ -54,14 +54,8 @@
           :visible-slides="3"
           :slide-ratio="1 / 4"
           :dragging-distance="70"
-          :gap="3"
         >
-          <!------- Number of slides ------>
-          <vueper-slide
-            v-for="(slide, i) in slides"
-            :key="i"
-            :image="slide.image"
-          />
+          <vueper-slide v-for="i in 9" :key="i" :title="i.toString()" />
         </vueper-slides>
       </div>
 
@@ -92,19 +86,22 @@ export default {
       {
         title: "Slide #1",
         content: "Slide content.",
-        image: "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg"
-      }
+        image: "",
+      },
     ],
   }),
   components: {
     VueperSlides,
-    VueperSlide
+    VueperSlide,
   },
 
   computed: {
     filmer() {
       // Also added this, to get filmes and id
       return this.$store.state.filmer.filter((filmer) => filmer.id == this.id);
+    },
+    images() {
+      return this.$store.state.images.filter((images) => images.id == this.id);
     },
     showtime() {
       return this$store.state.showtime.filter(
@@ -253,6 +250,7 @@ div.movie-year {
 }
 
 div.screen-container {
+  background-color: rgba(119, 114, 114, 0.171);
   padding: 160px;
 }
 
