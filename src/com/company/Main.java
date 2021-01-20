@@ -34,6 +34,15 @@ public class Main {
             res.json(ticket);
         });
 
+
+        app.get("/rest/showtime", (req, res) -> {
+            res.send("Showtime");
+            var showtime = collection("Showtime").find();
+            res.json(showtime);
+
+        });
+
+
         app.get("/rest/login", (req, res) -> {
             res.send("Logga in");
         });

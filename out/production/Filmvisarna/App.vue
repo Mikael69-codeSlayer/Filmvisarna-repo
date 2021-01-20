@@ -43,9 +43,11 @@ export default {
     Filmer,
     Login,
     Biljetter,
+    Salon
   },
   created() {
     this.$store.dispatch("fetchFilmer");
+    this.$store.dispatch("fetchShowtime");
   },
 };
 </script>

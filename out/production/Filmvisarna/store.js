@@ -1,13 +1,17 @@
 import { createStore } from 'vuex'
 
 const state = {
-  filmer: []
+  filmer: [],
+  showtime: []
 }
 
 // mutates state 
 const mutations = {
   setFilmer(state, list) {
     state.filmer = list
+  },
+  setShowtime(state, list) {
+    state.showtime = list
   }
 }
 
@@ -21,6 +25,11 @@ const actions = {
     console.log(list)
     
     store.commit('setFilmer', list)
+  },
+
+  async fetchShowtime(store) {
+    let list = await fetch('/rest/showtime')
+    list = await list.json()
   }
 }
 
