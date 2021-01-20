@@ -46,10 +46,11 @@ export default {
     Salon
   },
   created() {
-    this.$store.dispatch("fetchFilmer");
-    this.$store.dispatch("fetchShowtime");
+    this.$store.dispatch("fetchFilmer"),
+    this.$store.dispatch("fetchShowtime")
   },
 };
+
 </script>
 
 <style>
