@@ -10,7 +10,7 @@ public class Salons {
     private int salonId;
 
     private String name;
-    private String seats;
+    private int seats;
     private String[] seatsPerRow;
 
     public String getId() {
@@ -29,11 +29,11 @@ public class Salons {
         this.name = name;
     }
 
-    public String getSeats() {
+    public int getSeats() {
         return seats;
     }
 
-    public void setSeats(String seats) {
+    public void setSeats(int seats) {
         this.seats = seats;
     }
 

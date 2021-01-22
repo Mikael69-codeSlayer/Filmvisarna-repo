@@ -41,7 +41,7 @@ const routes = [
   },
   {
     name: 'Salons',
-    path: '/salon',
+    path: '/salons',
     component: Salons
   }
 ]

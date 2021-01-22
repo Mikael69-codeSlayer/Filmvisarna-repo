@@ -18,43 +18,56 @@
     <div class="salon-space"></div>
     <!--
     <div class="grid-container" v-for="salon of salons" :key="salon.id">
-       <div v-if="salon.id == '_-U0T3P70ChcqZLL6i3nb'"> </div> -->
-    <div class="hej_temp" v-for="salon of salons" :key="salon.id">
-      <h1>{{ salon.name }}</h1>
-      {{ salon.salonId }} 
-      {{ salon.name }}
-      
-    </div>
-    <p>HEJ</p>
-      <div class="salon-space"></div>
+        -->
+    <div class="salon" v-for="salon of salons" :key="salon.id">
+      <div v-if="salon.salonId == 1">
+        <h1>{{ salon.name }}</h1>
+        <h1>{{ salon.seats }}</h1>
+        
+                
+        <div class="seat" v-for="seat in salon.seats" :key="seat">
+          <div class="grid-item"> </div>
+        
+        </div>
+        
+      </div>
     </div>
 
+    <div class="salon-space"></div>
+  </div>
 </template>
 
 
 
 <script>
 export default {
-  name: "temp",
-  data() {
-    return {
-      name: "",
-    };
-  },
+
   computed: {
     salons() {
       //to get Salon and
       return this.$store.state.salons;
     },
+    
+    numberOfSeats: function() {
+      return this$store.state.salons.filter(function(item) {
+        return salons.seats;
+      } );
+      
+    },
+    
   },
 };
 </script>
 
 
 
-
 <style scoped>
-.hej_temp {
+
+
+.seats {
+  width: 500px;
+}
+.salon {
   width: 500px;
   height: 300px;
   background: pink;
@@ -153,6 +166,7 @@ export default {
 }
 
 .grid-item {
+  float: left;
   background-color: rgb(204, 204, 204);
   border: 1px solid rgba(0, 0, 0, 0.8);
   font-size: 15px;

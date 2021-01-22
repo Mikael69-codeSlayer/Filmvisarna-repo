@@ -16,8 +16,8 @@
         <router-link :to="{ name: 'Login' }">Login</router-link>
       </div>
       
-      <div class="nav salon">
-        <router-link :to="{ name: 'Salon' }">Salong</router-link>
+      <div class="nav salons">
+        <router-link :to="{ name: 'Salons' }">Salong</router-link>
       </div> 
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
