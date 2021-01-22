@@ -25,9 +25,9 @@ public class Main {
             res.json(filmer);
         });
 
-        app.get("/rest/salon", (req, res) -> {
-            var salon = collection("Salon").find();
-            res.json(salon);
+        app.get("/rest/salons", (req, res) -> {
+            var salons = collection("Salons").find();
+            res.json(salons);
         });
         app.get("/rest/ticket", (req, res) -> {
             var ticket = collection("Ticket").find();

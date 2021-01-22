@@ -34,6 +34,14 @@ const actions = {
     console.log(list)
 
     store.commit('setShowtime', list)
+  },
+  async fetchSalons(store) {
+    let list = await fetch('/rest/salons')
+    list = await list.json()
+
+    console.log(list)
+
+    store.commit('setShowtime', list)
   }
 }
 

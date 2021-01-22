@@ -6,7 +6,7 @@ import Login from './views/Login.vue'
 import Biljetter from './views/Biljetter.vue'
 import FilmerDetails from './views/FilmerDetails.vue'
 import SkapaKonto from './views/SkapaKonto.vue'
-import Salon from "./views/Salon.vue";
+import Salons from "./views/Salons.vue";
 
 const routes = [
   {
@@ -40,9 +40,9 @@ const routes = [
     component: SkapaKonto
   },
   {
-    name: 'Salon',
-    path: '/salon',
-    component: Salon
+    name: 'Salons',
+    path: '/salons',
+    component: Salons
   }
 ]
 

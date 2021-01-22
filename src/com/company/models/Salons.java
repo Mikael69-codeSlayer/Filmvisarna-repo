@@ -4,9 +4,10 @@ import express.database.Model;
 import org.dizitart.no2.objects.Id;
 
 @Model
-public class Salon {
+public class Salons {
     @Id
     private String id;
+    private int salonId;
 
     private String name;
     private String seats;
@@ -43,6 +44,10 @@ public class Salon {
     public void setSeatsPerRow(String[] seatsPerRow) {
         this.seatsPerRow = seatsPerRow;
     }
+
+    public int getSalonId() { return salonId;  }
+
+    public void setSalonId(int salonId) { this.salonId = salonId; }
 
 
 

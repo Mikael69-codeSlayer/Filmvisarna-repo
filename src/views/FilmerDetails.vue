@@ -86,13 +86,15 @@
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 
+
+
 export default {
   data: () => ({
     slides: [
       {
         title: "Slide #1",
         content: "Slide content.",
-        image: "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg"
+        image: ""
       }
     ],
   }),

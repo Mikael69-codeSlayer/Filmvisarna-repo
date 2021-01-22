@@ -15,10 +15,10 @@
       <div class="nav log">
         <router-link :to="{ name: 'Login' }">Login</router-link>
       </div>
-      <!--
+      
       <div class="nav salon">
         <router-link :to="{ name: 'Salon' }">Salong</router-link>
-      </div> -->
+      </div> 
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
@@ -32,7 +32,7 @@ import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
 import Biljetter from "./views/Biljetter.vue";
-import Salon from "./views/Salon.vue";
+import Salons from "./views/Salons.vue";
 
 // This syntax is declaring a component
 // which can be registered and reused later
@@ -43,11 +43,12 @@ export default {
     Filmer,
     Login,
     Biljetter,
-    Salon
+    Salons
   },
   created() {
     this.$store.dispatch("fetchFilmer"),
-    this.$store.dispatch("fetchShowtime")
+    this.$store.dispatch("fetchShowtime"),
+    this.$store.dispatch("fetchSalons")
   },
 };
 
