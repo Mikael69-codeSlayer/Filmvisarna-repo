@@ -25,7 +25,7 @@ const actions = {
     list = await list.json()
 
     // debug list
-    console.log(list)
+    //console.log(list)
     
     store.commit('setFilmer', list)
   },
@@ -34,7 +34,7 @@ const actions = {
     let list = await fetch('/rest/showtime')
     list = await list.json()
 
-    console.log(list)
+    //console.log(list)
 
     store.commit('setShowtime', list)
   },

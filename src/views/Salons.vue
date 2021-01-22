@@ -24,11 +24,14 @@
         <h1>{{ salon.name }}</h1>
         <h1>{{ salon.seats }}</h1>
         
-                
-        <div class="seat" v-for="seat in salon.seats" :key="seat">
-          <div class="grid-item"> </div>
+        <!--<div class="seats_per_row" v-for="row in salon.seatsPerRow" :key="row"><br>    -->
+           
+          <div class="seat" v-for="seat in salon.seats" :key="seat">
+            <div class="grid-item"> </div>
+          </div>
+          
+        </div> 
         
-        </div>
         
       </div>
     </div>
@@ -48,12 +51,13 @@ export default {
       return this.$store.state.salons;
     },
     
+    /*
     numberOfSeats: function() {
       return this$store.state.salons.filter(function(item) {
         return salons.seats;
       } );
       
-    },
+    }, */
     
   },
 };
@@ -70,7 +74,8 @@ export default {
 .salon {
   width: 500px;
   height: 300px;
-  background: pink;
+  margin: 0 auto;
+  
 }
 
 .salon-name {
