@@ -49,18 +49,13 @@
 
       <div class="screen-container">
         <!------- Vueper Slides (Carousel) ------>
-        <vueper-slides
-          class="no-shadow"
-          :visible-slides="3"
-          :slide-ratio="1 / 4"
-          :dragging-distance="70"
-          :gap="3"
-        >
-          <!------- Number of slides ------>
+        <vueper-slides fade :touchable="false">
           <vueper-slide
             v-for="(slide, i) in slides"
             :key="i"
             :image="slide.image"
+            :title="slide.title"
+            :content="slide.content"
           />
         </vueper-slides>
       </div>
@@ -90,21 +85,33 @@ export default {
   data: () => ({
     slides: [
       {
-        title: "Slide #1",
-        content: "Slide content.",
-        image: ""
-      }
+         title: 'El Teide Volcano, Spain',
+    content: 'Photo by Max Rive',
+    // You can also provide a URL for the image.
+      image: 'https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg'
+      },
+       
+       {
+
+         image: 'https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg'
+       }
+       
+
     ],
+    
   }),
   components: {
     VueperSlides,
-    VueperSlide
+    VueperSlide,
   },
 
   computed: {
     filmer() {
       // Also added this, to get filmes and id
       return this.$store.state.filmer.filter((filmer) => filmer.id == this.id);
+    },
+    images() {
+      return this.$store.state.images.filter((images) => images.id == this.id);
     },
     showtime() {
       return this$store.state.showtime.filter(
@@ -253,6 +260,7 @@ div.movie-year {
 }
 
 div.screen-container {
+  background-color: rgba(119, 114, 114, 0.171);
   padding: 160px;
 }
 
