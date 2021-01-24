@@ -8,11 +8,11 @@
     </div>
 
     <div class="buttonsbody">
-    <button type="login" @click="login()">Logga in</button>
+    <button type="login" @click.prevent="login">Logga in</button>
 
     <p>---eller---</p>
     <router-link :to="'/skapaKonto/'" >  
-    <button type="register">Skapa konto</button>
+    <button type="register" >Skapa konto</button>
     </router-link>
   
 
@@ -35,9 +35,14 @@ export default {
   },
   methods: {
     login(){
-     
+      const credentials={
+      email: this.email,
+      password: this.password
+      }
+     this.$store.dispatch('login', credentials)
     }
-  },
+  }
+  
 };
 </script>
 

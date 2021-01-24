@@ -7,7 +7,7 @@
     <input type="password" rquired v-model="password" placeholder="Lösenord"/><br>
     <input type="confirmpassword" rquired v-model="confirmPassword" placeholder="Bekräfta lösenord"/>
     </div>
-<button type="submit" @click="submit()">Skapa</button>
+<button type="submit" @click.prevent="register"> Skapa</button>
 </template>
 
 <script>
@@ -21,8 +21,18 @@ export default {
         password: "",
         confirmPassword: ""
       }
-    }
+    },
 
+    methods:{
+    register(){
+      const credentials={
+      email: this.email,
+      password: this.password,
+      
+      }
+     this.$store.dispatch('register', credentials)
+    }
+    }
 };
 
 </script>

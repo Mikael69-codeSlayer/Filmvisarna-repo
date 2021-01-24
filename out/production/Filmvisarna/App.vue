@@ -22,6 +22,7 @@
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
+  
   <router-view />
 </template>
 
@@ -33,6 +34,7 @@ import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
 import Biljetter from "./views/Biljetter.vue";
 import Salon from "./views/Salon.vue";
+import SkapaKonto from "./views/SkapaKonto.vue";
 
 // This syntax is declaring a component
 // which can be registered and reused later
@@ -43,11 +45,13 @@ export default {
     Filmer,
     Login,
     Biljetter,
-    Salon
+    Salon,
+    SkapaKonto
   },
   created() {
     this.$store.dispatch("fetchFilmer"),
-    this.$store.dispatch("fetchShowtime")
+    this.$store.dispatch("fetchShowtime"),
+    this.$store.dispatch("whoAmI")
   },
 };
 
