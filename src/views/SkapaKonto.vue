@@ -4,8 +4,8 @@
 
 <div class="inputboxes">
       <input type="email" required v-model="email" placeholder="E-postadress"/><br>
-    <input type="password" rquired v-model="password" placeholder="Lösenord"/><br>
-    <input type="confirmpassword" rquired v-model="confirmPassword" placeholder="Bekräfta lösenord"/>
+    <input type="password" required v-model="password" placeholder="Lösenord"/><br>
+    <input type="confirmpassword" required v-model="confirmPassword" placeholder="Bekräfta lösenord"/>
     </div>
 <button type="submit" @click.prevent="register"> Skapa</button>
 </template>

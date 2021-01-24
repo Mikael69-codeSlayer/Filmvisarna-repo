@@ -67,7 +67,7 @@ const actions = {
     }
   },
   async whoAmI(store) {
-    let user = await fetch ('/api/whoami/')
+    let user = await fetch ('/api/whoami')
     try {
       user = await user.json()
       console.log(user);
