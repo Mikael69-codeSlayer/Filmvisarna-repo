@@ -1,8 +1,9 @@
 <template>
 <h1>Biljetter</h1>
 <div>Boka dina biljetter idag</div>
-<div v-bind="sortJASON" v-for="show of showtime" :key="show.showId">
-  <h1>{{show.showId}}</h1>
+<div v-for="show of tempSort" :key="show.id">
+  <h1>TEST</h1>
+  <h1>{{show.id}}</h1>
 </div>
 <!--
 <div class="filmdropdown">
@@ -50,11 +51,24 @@
 
 <script>
 export default {
+  created() {
+    this.tempSort = this.showtime.sort((a, b) => a.showId - b.showId );
+    /*
+    this.$store.dispatch("fetchShowtime");
+    let temp = this.$store.dispatch("fetchShowtime");
+    console.log("Detta är temp" + temp)
+    console.log("Är i created")
+    console.log("Det här är temp" + this.tempSort)
+    let sorted =this.showtime.sort((a, b) => a.showId - b.showId );
+    this.tempSort=sorted;
+    console.log("Det här är temp" + this.tempSort)
+*/
+  },
   data() {
     return {
       films:'',
-      date:''
-
+      date:'',
+      tempSort:'',
     }
   },
 
@@ -65,6 +79,11 @@ export default {
    showtime() {
       return this.$store.state.showtime;
     },
+    sortJSON: function (params) {
+              return this.showtime.sort((a, b) => a.showId - b.showId );
+
+    }
+    
     
   /*  id() {
       // get id from url parameter
@@ -82,8 +101,11 @@ export default {
 
     },
     sortJASON(){
+
+      console.log("JASON")
         return this.showtime.sort((a, b) => a.showId - b.showId );
   }
+    
   },
 
 }

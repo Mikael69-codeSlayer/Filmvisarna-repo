@@ -1,10 +1,11 @@
 <template>
 <h1>Biljetter</h1>
 <div>Boka dina biljetter idag</div>
-<div v-bind="sortJSON()" v-for="show of showtime" :key="show.showId">
-  <h1>{{show.showId}}</h1>
+<div v-for="show of sortedShows" :key="show.id">
+  <h1>TEST</h1>
+  <h1>{{show.id}}</h1>
 </div>
-<!--
+
 <div class="filmdropdown">
 <select v-model="films">
   <option disabled value="">Alla filmer</option>
@@ -13,7 +14,7 @@
 </select>
 
 </div>
--->
+
 <div class="datedropdown">
 <select v-model="date">
 <option disabled value="">Datum</option>
@@ -44,17 +45,16 @@
       </div>
     </div>
 
-
 </template>
 
 
 <script>
 export default {
+  
   data() {
     return {
       films:'',
-      date:''
-
+      date:'',
     }
   },
 
@@ -65,19 +65,11 @@ export default {
    showtime() {
       return this.$store.state.showtime;
     },
-    sortJSON: function (params) {
-              return this.showtime.sort((a, b) => a.showId - b.showId );
-
+    sortedShows(){
+      let shows = this.$store.state.showtime.sort((a, b) => a.showId - b.showId );
+      console.log("Detta är shows" + shows)
+      return shows;
     }
-    
-    
-  /*  id() {
-      // get id from url parameter
-      return this.$route.params.id;
-    },*/
-    /*sortByShowtime(){
-     return this.$store.state.showtime.filter((showtime) => showtime.date == this.date)
-    }*/
   },
   
 
