@@ -1,17 +1,17 @@
 [ {
-  "id" : "2_q7K1ioojiOV-iL1ayEQ",
-  "salon" : "Lilla Salongen",
-  "film" : "Pulp Fiction",
-  "date" : "2021-02-19",
-  "time" : "20:02",
-  "showId" : "1"
-}, {
   "id" : "chyuAFdSgXF0Eaima97Oz",
   "salon" : "Lilla Salongen",
   "film" : "Dansa Med Vargar",
   "date" : "2021-02-22",
   "time" : "18:59",
   "showId" : "2"
+}, {
+  "id" : "2_q7K1ioojiOV-iL1ayEQ",
+  "salon" : "Lilla Salongen",
+  "film" : "Pulp Fiction",
+  "date" : "2021-02-19",
+  "time" : "20:02",
+  "showId" : "1"
 }, {
   "id" : "mj5CRTaL9PA2eKgp6MDwl",
   "salon" : "Lilla Salongen",

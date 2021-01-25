@@ -1,7 +1,9 @@
 <template>
 <h1>Biljetter</h1>
 <div>Boka dina biljetter idag</div>
-
+<div v-bind="sortJSON()" v-for="show of showtime" :key="show.showId">
+  <h1>{{show.showId}}</h1>
+</div>
 <!--
 <div class="filmdropdown">
 <select v-model="films">
@@ -63,20 +65,33 @@ export default {
    showtime() {
       return this.$store.state.showtime;
     },
-    sortByShowtime(){
-     return this.$store.state.showtime.filter((showtime) => showtime.date == this.date)
+    sortJSON: function (params) {
+              return this.showtime.sort((a, b) => a.showId - b.showId );
+
     }
+    
+    
   /*  id() {
       // get id from url parameter
       return this.$route.params.id;
     },*/
+    /*sortByShowtime(){
+     return this.$store.state.showtime.filter((showtime) => showtime.date == this.date)
+    }*/
   },
+  
 
   methods:{
     selectFilm(){
       console.log(this.showtime)
 
     },
+    sortJASON(){
+
+      console.log("JASON")
+        return this.showtime.sort((a, b) => a.showId - b.showId );
+  }
+    
   },
 
 }
