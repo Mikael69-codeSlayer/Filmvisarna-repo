@@ -114,7 +114,7 @@ export default {
       return this.$store.state.filmer.filter((filmer) => filmer.id == this.id);
     },
     showtime(){
-    return this$store.state.showtime.filter((showtime) => showtime.id == this.id)
+    return this.$store.state.showtime.filter((showtime) => showtime.id == this.id)
     },
     id() {
       // get id from url parameter
