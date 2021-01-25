@@ -64,7 +64,7 @@ export default {
       return this.$store.state.showtime;
     },
     sortByShowtime(){
-     return this.$store.state.showtime.filter((showtime) => showtime.id == this.id)
+     return this.$store.state.showtime.filter((showtime) => showtime.date == this.date)
     }
   /*  id() {
       // get id from url parameter
