@@ -2,7 +2,8 @@ import { createStore } from 'vuex'
 
 const state = {
   filmer: [],
-  showtime: []
+  showtime: [],
+  salons: []
 }
 
 // mutates state 
@@ -42,7 +43,7 @@ const actions = {
     let list = await fetch('/rest/salons')
     list = await list.json()
 
-    console.log(list)
+    //console.log(list)
 
     store.commit('setSalons', list)
   }

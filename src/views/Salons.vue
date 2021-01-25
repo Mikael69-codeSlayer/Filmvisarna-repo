@@ -3,6 +3,7 @@
     <div class="salon-space"></div>
     <div class="salon-header">
       <h1>VÄLJ DINA PLATSER</h1>
+      <!-- seat icons -->
       <div class="seats-icons">
         <div class="seat-available-icon"></div>
         <div class="seat-available">Ledig</div>
@@ -14,22 +15,26 @@
     </div>
 
     <div class="salon-space"></div>
-    <div class="salon-screen">BIODUK</div>
-    <div class="salon-space"></div>
-    <!--
-    <div class="grid-container" v-for="salon of salons" :key="salon.id">
-        -->
-    <div class="salon" v-for="salon of salons" :key="salon.id">
+    
+    <!-- loop salons -->
+  
+    
+    <div class="salon" v-for="salon of salons" :key="salon">
+      <!-- <div v-bind:class="selectedSalon">  -->
       <div v-if="salon.salonId == 1">
-        <h1>{{ salon.name }}</h1>
-        <h1>{{ salon.seats }}</h1>
         
-        <!--<div class="seats_per_row" v-for="row in salon.seatsPerRow" :key="row"><br>    -->
-           
-          <div class="seat" v-for="seat in salon.seats" :key="seat">
-            <div class="grid-item"> </div>
-          </div>
-          
+        <h1>{{ salon.name }}</h1>
+        <p>{{ salon.seats }} Platser</p>
+        <div class="salon-space"></div>
+        <div class="salon-screen">BIODUK</div>
+        <div class="salon-space"></div>
+        
+        <!-- loop rows -->
+        <div class="row" v-for="(row,n) in salon.seatsPerRow" :key="row">
+          {{ row }}  
+             <!-- loop seats 
+             <!--<div class="seat" v-for="seat in row" :key="seat"> {{ (seatNumber++)-8100 }}</div>  -->
+             <div class="seat" v-for="seat in row" :key="seat"> {{letters[n]}}{{ (seat-1)+1 }}</div>  
         </div> 
         
         
@@ -37,20 +42,45 @@
     </div>
 
     <div class="salon-space"></div>
+    <div class="salon-space"></div>
   </div>
 </template>
 
 
 
 <script>
+import { computed } from 'vue';
 export default {
 
+  data() {
+    const letters = ["A","B","C","D","E","F","G","H","I","J","K","L"]
+    return {letters }
+    //return {
+      //seatNumber: 1,
+    //  return letters,
+  },
+
   computed: {
-    salons() {
-      //to get Salon and
-      return this.$store.state.salons;
+    sNumber() {
+    const seatNumber = computed(() => seatNumber + 1);
     },
+    //selectedSalon() {
+      //return this.$store.state.salons.filter(s => s.salonId == this.salonId)[1];
+     // return this.$store.state.salons.filter((salons) => salons.salonId == this.salonId);
+     // }
+    //},
+
+    salons() {
+      //to get Salon
+      return this.$store.state.salons;
+    }
+
+    //seatNumber: function () {
+    //  return this.$store.state.salons.salonId[1].seats++;
+    //}
     
+
+
     /*
     numberOfSeats: function() {
       return this$store.state.salons.filter(function(item) {
@@ -59,7 +89,7 @@ export default {
       
     }, */
     
-  },
+  }
 };
 </script>
 
@@ -68,11 +98,56 @@ export default {
 <style scoped>
 
 
-.seats {
-  width: 500px;
+.row {
+  height: 50px;
+  text-align: center;
+  color: black;
+  display: inline-block;
+  margin-left:auto;
+  margin-right:auto;
+  
 }
+
+._row {
+  
+  margin: 0 auto;
+  background: green;
+  text-align: center;
+  
+}
+
+
+._seats {
+  width: 600px;
+  text-align: center;
+  
+  
+}
+
+.seat {
+  float: left;
+  background-color: rgb(204, 204, 204);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 15px;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  margin-left: 5px;
+  
+  
+}
+
+.seat:hover {
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
 .salon {
-  width: 500px;
+  text-align: center;
+  width: 800px;
   height: 300px;
   margin: 0 auto;
   
@@ -95,7 +170,7 @@ export default {
 }
 
 .salon-screen {
-  width: 830px;
+  width: 730px;
   background: gray;
   color: rgb(255, 255, 255);
   font-family: "Roboto Slab", serif;
@@ -170,21 +245,5 @@ export default {
   grid-gap: 10px;
 }
 
-.grid-item {
-  float: left;
-  background-color: rgb(204, 204, 204);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  font-size: 15px;
-  font-weight: bold;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 40px;
-}
 
-.grid-item:hover {
-  background-color: rgb(255, 255, 255);
-  cursor: pointer;
-}
 </style>

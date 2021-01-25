@@ -17,7 +17,7 @@
       </div>
       
       <div class="nav salons">
-        <router-link :to="{ name: 'Salons' }">Salong</router-link>
+        <router-link :to="{ name: 'Salons' }">Salonger</router-link>
       </div> 
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
@@ -139,6 +139,17 @@ div.bil {
   margin-top: -45px;
   font-size: 20px;
 }
+/*Login*/
+div.salons {
+  font-family: "Roboto Slab", serif;
+  float: left;
+  margin-top: -45px;
+  font-size: 20px;
+  padding-left: 550px;
+
+}
+
+
 /*Login*/
 div.log {
   font-family: "Roboto Slab", serif;

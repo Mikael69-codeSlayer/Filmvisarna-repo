@@ -2,7 +2,8 @@ import { createStore } from 'vuex'
 
 const state = {
   filmer: [],
-  showtime: []
+  showtime: [],
+  salons: []
 }
 
 // mutates state 
