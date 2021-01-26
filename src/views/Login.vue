@@ -8,7 +8,9 @@
     </div>
 
     <div class="buttonsbody">
-    <button type="login" @click.prevent="login">Logga in</button>
+    <button type="login" @click.prevent="login" v-if="!isLoggedIn">Logga in</button>
+
+   <button v-else @click="logout">Logout</button>
 
     <p>---eller---</p>
     <router-link :to="'/skapaKonto/'" >  
@@ -33,6 +35,12 @@ export default {
       },
     }
   },
+   computed:{
+    isLoggedIn(){
+      return this.$store.state.user != null
+    }
+
+  },
   methods: {
     login(){
       const credentials={
@@ -40,9 +48,13 @@ export default {
       password: this.password
       }
      this.$store.dispatch('login', credentials)
+    },
+    logout(){
+      fetch('/api/logout')
+      this.$store.commit('setUser', null)
     }
   }
-  
+
 };
 </script>
 

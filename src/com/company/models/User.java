@@ -1,7 +1,5 @@
 package com.company.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import express.database.Model;
 import org.dizitart.no2.objects.Id;
 
@@ -36,17 +34,17 @@ public class User {
         this.email = email;
     }
 
-    @JsonIgnore
+   // @JsonIgnore -- tar bort password när man hämtar en user
     public String getPassword() {
         return password;
     }
 
-    @JsonProperty
+    //@JsonProperty  -- tillåter password att tas emot av express
     public void setPassword(String password) {
         this.password = password;
     }
 
-    @Override
+   // @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +

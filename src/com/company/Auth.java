@@ -15,7 +15,7 @@ public class Auth {
         initAuth();
     }
     private void initAuth(){
-        String secretSalt = "hnjfew45%!dhDsdqw-_!dwOL";  //googla på load from environment
+        String secretSalt = "hnjfew45%!dhDsdqw-_!dwOL";  //googla på load from environment??
 
         app.post("/api/register", (req, res) -> {
             if(req.session("current-user") != null) {
@@ -63,7 +63,9 @@ public class Auth {
             }
 
             if (HashPassword.match(user.getPassword() + secretSalt, existingUser.getPassword())) {
-                existingUser.setPassword(null);
+
+               existingUser.setPassword(null);
+
                 req.session("current-user", existingUser);
 
                 res.json(existingUser); //rätt email + lösenord
