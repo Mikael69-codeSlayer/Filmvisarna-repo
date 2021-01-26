@@ -1,13 +1,16 @@
 <template>
 <h1>Skapa konto</h1>
+
 <div>Skapa konto för att kunna boka biljetter, se bokningsnummer och avboka/omboka biljetter.</div>
 
 <div class="inputboxes">
       <input type="email" required v-model="email" placeholder="E-postadress"/><br>
-    <input type="password" rquired v-model="password" placeholder="Lösenord"/><br>
-    <input type="confirmpassword" rquired v-model="confirmPassword" placeholder="Bekräfta lösenord"/>
+    <input type="password" required v-model="password" placeholder="Lösenord"/><br>
+   <!-- <input type="confirmpassword" required v-model="password" placeholder="Bekräfta lösenord"/>-->
     </div>
-<button type="submit" @click="submit()">Skapa</button>
+  <router-link :to="'/'" > 
+<button type="submit" @click.prevent="register"> Skapa</button>
+</router-link>
 </template>
 
 <script>
@@ -19,10 +22,21 @@ export default {
   return{
         email: "",
         password: "",
-        confirmPassword: ""
+       /* confirmPassword: ""*/
       }
-    }
+    },
 
+    methods:{
+    register(){
+      const credentials={
+      email: this.email,
+      password: this.password,
+      
+      }
+     this.$store.dispatch('register', credentials)
+      this.$router.replace('/');
+    }
+    }
 };
 
 </script>

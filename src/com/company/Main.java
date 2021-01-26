@@ -1,7 +1,12 @@
 package com.company;
-//import com.company.models.Todo;
+
+import com.company.models.User;
+import com.company.utilities.HashPassword;
 import express.Express;
 import express.database.CollectionOptions;
+import org.dizitart.no2.objects.filters.ObjectFilters;
+
+import java.util.HashMap;
 
 import static express.database.Database.collection;
 
@@ -9,12 +14,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         // instantiate the app
         Express app = new Express();
         app.enableCollections();
         // "/" defaults to homepage
         // req = Request;  res = Response
         // req - server gets a question
+        new Auth(app);
 
         // path is the endpoint url the method listens to
         // res - answer to the question, for instance number, String or object information
@@ -46,6 +53,7 @@ public class Main {
         app.get("/rest/login", (req, res) -> {
             res.send("Logga in");
         });
+
 
         // listen starts the server
         // and should be done after endpoint-listeners

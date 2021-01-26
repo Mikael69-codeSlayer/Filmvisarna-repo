@@ -8,7 +8,7 @@
         <div class="news-poster" v-for="film of filmer" :key="film.id">
           <div v-if="film.movieId == 4">
             <router-link :to="'/filmerDetails/' + film.id">
-              <img :src="film.images[1]" />
+              <img :src="film.images[0]" />
               <p class="news-spotlight">{{ film.title }}</p>
             </router-link>
             <div class="space"></div>

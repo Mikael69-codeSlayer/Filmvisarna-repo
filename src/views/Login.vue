@@ -2,23 +2,24 @@
 
   <div id="login">
     <h1 class="loginbody">Logga in</h1>
-    <div class="inputboxes">
-    <input type="email" required v-model="input.email" placeholder="E-postadress"/>
-    <input type="password" required v-model="input.password" placeholder="Lösenord"/>
-    </div>
+    <input type="email" required v-model="email" placeholder="E-postadress"/>
+    <input type="password" required v-model="password" placeholder="Lösenord"/>
+    
+    <router-link :to="'/'" > 
+    <button type="login" @click.prevent="login">Logga in</button>
+    </router-link>
 
-    <div class="buttonsbody">
-    <button type="login" @click="login()">Logga in</button>
 
     <p>---eller---</p>
+
     <router-link :to="'/skapaKonto/'" >  
-    <button type="register">Skapa konto</button>
+    <button type="register" >Skapa konto</button>
     </router-link>
   
 
     </div>
  
-  </div>
+
   
 </template>
 
@@ -27,17 +28,32 @@ export default {
   name: "Login",
   data() {
     return {
-      input: {
         email: "",
         password: "",
-      },
+  
     }
+  },
+   computed:{
+    isLoggedIn(){
+      return this.$store.state.user != null
+    }
+
   },
   methods: {
     login(){
-     
-    }
-  },
+      const credentials={
+      email: this.email,
+      password: this.password
+      }
+     this.$store.dispatch('login', credentials)
+     this.$router.replace('/');
+    },
+    /*logout(){
+      fetch('/api/logout')
+      this.$store.commit('setUser', null)
+    }*/
+  }
+
 };
 </script>
 
