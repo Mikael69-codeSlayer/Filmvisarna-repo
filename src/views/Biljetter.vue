@@ -56,6 +56,7 @@ export default {
     return {
       films:'',
       date:'',
+      noDuplicates:'',
     }
   },
 
@@ -128,14 +129,14 @@ export default {
       //       let numberToRemove = this.showtime.indexOf(i)
       //       console.log("numberToRemove " + numberToRemove)
       //       this.showtime.splice(numberToRemove,1)
-      // let noDuplicates = []
+      let noDuplicates = []
 
-      //     this.showtime.forEach(date => {
-      //         if(!noDuplicates.includes(date)){
-      //             noDuplicates.push(date)
-      //         }
-      //     })       
-      //     console.log(noDuplicates)    
+          this.showtime.forEach(date => {
+              if(!noDuplicates.includes(date)){
+                  noDuplicates.push(date)
+              }
+          })       
+          console.log(noDuplicates)    
           // this.showtime = this.noDuplicates;               
       //     }
       //   }

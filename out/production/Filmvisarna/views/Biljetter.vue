@@ -89,16 +89,58 @@ export default {
         }
         //console.log(show.date)
       }
-      //console.log(this.showtime)
-      
-      for(let show of this.showtime){
-        let ett = två;
-        let två = this.showtime.date;
-        console.log(ett)
-        console.log(två)
-      }
+      console.log(this.showtime)
 
-      return this.showtime;
+      // for(let remove of this.showtime){
+      //   console.log(remove.date)
+      // }
+
+      // for (let i = 0; i < this.showtime.length - 1; i++) {
+      //   console.log("for works")
+      //   if (i.date[i + 1] == i.date[i]) {
+      //             console.log("if works")
+      //     results.push(this.showtime[i]);
+      //   }
+      // }
+      //this.showtime.filter((value, index) => this.showtime.indexOf(value)===index);
+      // for(let outer of this.showtime){
+
+      //   let temp = outer.date;
+      //   console.log("temp " + temp)
+        
+      //   for(let inner of this.showtime){
+      //     let temp2=inner.date;
+      //     console.log("temp2 " + temp2)
+  
+      //     let numberToRemove = this.showtime.indexOf(outer)
+      //     console.log("numberToRemove " + numberToRemove)
+
+      //     if(temp2=temp){
+      //       this.showtime.splice(numberToRemove,1)
+      //       temp2="test"
+      //     }
+        
+      //   }
+      // }
+      // for (let i =0; i< this.showtime.length; i++){
+      //   for(let j =1; i<this.showtime.length; i++){
+      //     if(i.date===j.date){
+      //       let numberToRemove = this.showtime.indexOf(i)
+      //       console.log("numberToRemove " + numberToRemove)
+      //       this.showtime.splice(numberToRemove,1)
+      let noDuplicates = []
+
+          this.showtime.forEach(date => {
+              if(!noDuplicates.includes(date)){
+                  noDuplicates.push(date)
+              }
+          })       
+          console.log(noDuplicates)    
+          // this.showtime = this.noDuplicates;               
+      //     }
+      //   }
+      // }
+      return this.noDuplicates;
       /*
       let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
       console.log("Detta är shows" + shows)
