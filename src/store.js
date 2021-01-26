@@ -59,10 +59,10 @@ const actions = {
       body: JSON.stringify(credentials)
     })
     try {
-      user = await user.json()
-      console.log(user);
-      store.commit('setUser', user)
-    } catch {
+    user = await user.json()
+    console.log(user);
+    store.commit('setUser', user)
+  } catch {
       console.warn('Fel uppgifter')
     }
   },

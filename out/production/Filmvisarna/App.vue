@@ -1,5 +1,6 @@
 <!-- HTML -->
 <template>
+
   <!-- Navigationbar with router-link and data-bind-->
   <div class="main-container">
     <div class="nav">
@@ -24,6 +25,7 @@
   </div>
   
   <router-view />
+  
 </template>
 
 <!-- JavaScript (Vue) -->
@@ -47,6 +49,12 @@ export default {
     Biljetter,
     Salon,
     SkapaKonto
+  },
+  computed:{
+    isLoggedIn(){
+      return this.$store.state.user != null
+    }
+
   },
   created() {
     this.$store.dispatch("fetchFilmer"),
