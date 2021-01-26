@@ -1,11 +1,12 @@
 <template>
 <h1>Biljetter</h1>
 <div>Boka dina biljetter idag</div>
+<!--
 <div v-for="show of sortedShows" :key="show.id">
   <h1>TEST</h1>
   <h1>{{show.id}}</h1>
 </div>
-
+-->
 <div class="filmdropdown">
 <select v-model="films">
   <option disabled value="">Alla filmer</option>
@@ -18,7 +19,7 @@
 <div class="datedropdown">
 <select v-model="date">
 <option disabled value="">Datum</option>
-   <option value="time" v-for="time of showtime" :key="time.date" > {{time.date}}</option>
+   <option value="time" v-for="show of sortedShows" :key="show.date" > {{show.date}}</option>
      
 </select>
 </div>
@@ -66,7 +67,7 @@ export default {
       return this.$store.state.showtime;
     },
     sortedShows(){
-      let shows = this.$store.state.showtime.sort((a, b) => a.showId - b.showId );
+      let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
       console.log("Detta är shows" + shows)
       return shows;
     }
