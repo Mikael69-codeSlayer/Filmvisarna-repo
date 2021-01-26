@@ -1,118 +1,86 @@
-[
-  {
-    "id": "ms7sOWb6yOxll5a95C4SL",
-    "movieId": 1,
-    "title": "Borat 2",
-    "productionYear": 2020,
-    "length": 96,
-    "genre": "Komedi/Fiktiv dokumentärfilm",
-    "distributor": "Amazon Studios",
-    "language": "Engelska",
-    "subtitles": "Svenska",
-    "director": "Jason Woliner",
-    "actors": "Sacha Baron Cohen, Maria Bakalova, Tom Hanks, Jason Woliner",
-    "description": "Sacha Baron Cohen är tillbaka. Borat har varit Gulag-fånge i 14 år, efter att ha skämt ut sitt hemland. Men nu behöver premiärministern hans hjälp med att få Donald Trumps respekt, och därför får Borat en chans till botgöring; han ska åka till USA och överlämna apan Johnny – Kazakstans kulturminister och främsta porrstjärna – till vicepresidenten Mike Pence. Saker går dock inte riktigt som planerat, och det blir i stället Borats dotter Tutar (Maria Bakalova) – som med sina 14 år är den äldsta ogifta kvinnan i hela Kazakstan – som följer med, för att överlämnas till USA:s ”vice fitt-tagare”.",
-    "images": [
-      "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg",
-      "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg",
-      "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg"
-    ],
-    "youtubeTrailers": [
-      "https://www.youtube.com/embed/JvPTCvUnNQA"
-    ],
-    "posterUrl": "https://resizing.flixster.com/ifh8bBMQbKXt4kKD6v9ugJqoKWE=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzI0YzkyYWVjLWZhNWMtNDNkYy04Y2JkLWY5ZWU3ZDQ0OWNkYS5qcGc=",
-    "backgroundImage": "https://i.imgur.com/DTA6i1j.png"
-  },
-  {
-    "id": "fkK7mE-K4alh5RJ4y1xWV",
-    "movieId": 2,
-    "title": "Bladerunner",
-    "productionYear": 1982,
-    "length": 117,
-    "genre": "Action, Sci-Fi, Thriller",
-    "distributor": "Amazon Studios",
-    "language": "Engelska",
-    "subtitles": "svenska",
-    "director": "Ridley Scott",
-    "actors": "Harrison Ford, Rutger Hauer, Sean Young, Edward James Olmos",
-    "description": "Los Angeles år 2019. Människan har lyckats framställa androider, organiska robotar som är nästan omöjliga att skilja från vanliga människor. Dessa kallas replikanter och de brukas som slavar av människorna. Efter en serie blodiga uppror bannlyses replikanterna från jorden och deras liv begränsas till fyra år. En speciell sorts poliser, så kallade blade runners, får i uppgift att identifiera och döda alla replikanter som mot lagen befinner sig på jorden. För att motivera det moraliska i handlingen 'dödas' inte en replikant utan den 'pensioneras'. Rick Deckard (Harrison Ford) är en före detta blade runner som blir återkallad till tjänst för att pensionera en grupp våldsamma replikanter som lyckats ta sig till jorden. I jakten på dessa replikanter, som gör allt för att få fortsätta leva, möter Deckard inte bara livsfara utan även svåra frågor om både sina motståndares och sin egen natur.",
-    "images": [
-      "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg",
-      "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg",
-      "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg"
-    ],
-    "youtubeTrailers": [
-      "https://www.youtube.com/embed/eogpIG53Cis"
-    ],
-    "posterUrl": "https://images-na.ssl-images-amazon.com/images/I/51abpgBmt6L._AC_.jpg",
-    "backgroundImage": "https://i.imgur.com/ZqBkMVu.png"
-  },
-  {
-    "id": "CIuOrJtdWsN-LiplEkfyT",
-    "movieId": 3,
-    "title": "Star Wars: Episode III",
-    "productionYear": 2005,
-    "length": 140,
-    "genre": "Action",
-    "distributor": "20th Century Fox",
-    "language": "Engelska",
-    "subtitles": "Svenska",
-    "director": "George Lucas",
-    "actors": "Ewan McGregor, Natalie Portman, Hayden Christensen",
-    "description": "Klonkrigen rasar i galaxen. Republiken har kämpat hårt och tappert mot Greve Dooku och hans arméer av stridsdroider. Dock så drabbas man nu av en katastrof, då en flotta under ledning av General Grievous stormar republikens huvudplanet,Coruscant, och kidnappar överkansler Palpatine. Samtidigt sänds jediriddarna Anakin Skywalker och Obi-Wan Kenobi till striden för att undsätta den kidnappade kanslern. Anakin Skywalker slits mellan de stridande parterna, mellan den mörka och den ljusa sidan. Lockad av löften om makt och kunskap svär Anakin den mörka sidan trohet och blir Sith Darth Vader.",
-    "images": [
-      "https://images.justwatch.com/backdrop/152871672/s1440/star-wars-episode-iii-revenge-of-the-sith"
-    ],
-    "youtubeTrailers": [
-      "https://www.youtube.com/embed/5UnjrG_N8hU"
-    ],
-    "posterUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/220px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg",
-    "backgroundImage": "https://i.imgur.com/OZfdQGd.png"
-  },
-  {
-    "id": "LeEbfpxcBDUPRmc3BdNTa",
-    "movieId": 4,
-    "title": "Dansar med vargar",
-    "productionYear": 1990,
-    "length": 181,
-    "genre": "Adventure, Western, Drama",
-    "distributor": "Orion Pictures",
-    "language": "Engelska, Lakota, Pawnee",
-    "subtitles": "Svenska",
-    "director": "Kevin Costner",
-    "actors": "Kevin Costner, Mary McDonnell, Graham Greene, Rodney Grant",
-    "description": "Efter ett stort fältslag under det amerikanska inbördeskriget 1863 förflyttas den hjältemodiga löjtnanten John Dunbar på egen begäran till en avlägsen utpost i Dakota som gränsar till indianernas land. Fortet visar sig vara övergivet, så han beslutar sig för att stanna och invänta sina trupper. Men han upptäcker snart att han inte är ensam. Efter ett första våldsamt möte med den lokala siouxstammen börjar han allt mer accepteras av indianerna, som ger honom namnet 'Dansar med vargar'. Men den växande vänskapen innebär samtidigt att Dunbar inom en snar framtid kommer att tvingas välja sida.",
-    "images": [
-      "https://www.discshop.se/img/front_large/146341/dances_with_wolves_blu_ray_import_sv_text.jpg",
-      "https://imageproxy.themaven.net//https%3A%2F%2Fwww.biography.com%2F.image%2FMTczMTI4NTA2ODYxOTU0Mjg0%2Fdances-with-wolves-gettyimages-159824459.jpg"
-    ],
-    "youtubeTrailers": [
-      "https://www.youtube.com/embed/uc8NMbrW7mI"
-    ],
-    "posterUrl": "https://www.discshop.se/img/front_large/28813/dances_with_wolves_import_sv_text.jpg",
-    "backgroundImage": "https://i.imgur.com/hoZWBgz.png"
-  },
-  {
-    "id": "WZJn6gJ6vjK6WbA3q9iku",
-    "movieId": 5,
-    "title": "Pulp Fiction",
-    "productionYear": 1994,
-    "length": 178,
-    "genre": "Drama",
-    "distributor": "Miramax Films",
-    "language": "Engelska",
-    "subtitles": "Svenska",
-    "director": "Quentin Tarantino",
-    "actors": "John Travolta, Samuel L. Jackson, Uma Thurman",
-    "description": "I undervärlden leder flera incidenter att två torpeder, en boxare, en gangster med sin fru, och ett par banditer får sina öden sammanflätade i en historia om upprättelse och våld",
-    "images": [
-      "https://www.indiewire.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-22-at-5.09.08-PM.png",
-      "https://www.praqma.com/images/stories/bonnie/vincent-oops.png"
-    ],
-    "youtubeTrailers": [
-      "https://www.youtube.com/embed/tGpTpVyI_OQ"
-    ],
-    "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTciQFy8sCo8hOdnzlhUh_cqlYNLIFA4nlQwg&usqp=CAU",
-    "backgroundImage": "https://i.imgur.com/oFoiHDS.png"
-  }
-]
+[ {
+  "id" : "ms7sOWb6yOxll5a95C4SL",
+  "movieId" : 1,
+  "title" : "Borat 2",
+  "productionYear" : 2020,
+  "length" : 96,
+  "genre" : "Komedi/Fiktiv dokumentärfilm",
+  "distributor" : "Amazon Studios",
+  "language" : "Engelska",
+  "subtitles" : "Svenska",
+  "director" : "Jason Woliner",
+  "actors" : "Sacha Baron Cohen, Maria Bakalova, Tom Hanks, Jason Woliner",
+  "description" : "Sacha Baron Cohen är tillbaka. Borat har varit Gulag-fånge i 14 år, efter att ha skämt ut sitt hemland. Men nu behöver premiärministern hans hjälp med att få Donald Trumps respekt, och därför får Borat en chans till botgöring; han ska åka till USA och överlämna apan Johnny – Kazakstans kulturminister och främsta porrstjärna – till vicepresidenten Mike Pence. Saker går dock inte riktigt som planerat, och det blir i stället Borats dotter Tutar (Maria Bakalova) – som med sina 14 år är den äldsta ogifta kvinnan i hela Kazakstan – som följer med, för att överlämnas till USA:s ”vice fitt-tagare”.",
+  "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg", "https://imgs.aftonbladet-cdn.se/v2/images/41e88750-8eb9-4fba-8efe-6f292a531c5b?fit=crop&h=726&q=50&w=982&s=514c7b1c276af88b886c7c5643a81509e902cf25" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/embed/JvPTCvUnNQA" ],
+  "posterUrl" : "https://resizing.flixster.com/ifh8bBMQbKXt4kKD6v9ugJqoKWE=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzI0YzkyYWVjLWZhNWMtNDNkYy04Y2JkLWY5ZWU3ZDQ0OWNkYS5qcGc=",
+  "backgroundImage" : "https://i.imgur.com/DTA6i1j.png"
+}, {
+  "id" : "fkK7mE-K4alh5RJ4y1xWV",
+  "movieId" : 2,
+  "title" : "Bladerunner",
+  "productionYear" : 1982,
+  "length" : 117,
+  "genre" : "Action, Sci-Fi, Thriller",
+  "distributor" : "Amazon Studios",
+  "language" : "Engelska",
+  "subtitles" : "svenska",
+  "director" : "Ridley Scott",
+  "actors" : "Harrison Ford, Rutger Hauer, Sean Young, Edward James Olmos",
+  "description" : "Los Angeles år 2019. Människan har lyckats framställa androider, organiska robotar som är nästan omöjliga att skilja från vanliga människor. Dessa kallas replikanter och de brukas som slavar av människorna. Efter en serie blodiga uppror bannlyses replikanterna från jorden och deras liv begränsas till fyra år. En speciell sorts poliser, så kallade blade runners, får i uppgift att identifiera och döda alla replikanter som mot lagen befinner sig på jorden. För att motivera det moraliska i handlingen 'dödas' inte en replikant utan den 'pensioneras'. Rick Deckard (Harrison Ford) är en före detta blade runner som blir återkallad till tjänst för att pensionera en grupp våldsamma replikanter som lyckats ta sig till jorden. I jakten på dessa replikanter, som gör allt för att få fortsätta leva, möter Deckard inte bara livsfara utan även svåra frågor om både sina motståndares och sin egen natur.",
+  "images" : [ "https://pyxis.nymag.com/v1/imgs/d62/390/4cb823b5e271d6b32c50e5ec875f863eed-borat-2.rsquare.w1200.jpg", "https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg", "https://media.vanityfair.com/photos/5f8f7fdbfaf1b82d3425a7cb/master/w_2560%2Cc_limit/borat-subsequent-moviefilm-BLOODMOON_SG_00261_V2_rgb.jpg" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/embed/eogpIG53Cis" ],
+  "posterUrl" : "https://images-na.ssl-images-amazon.com/images/I/51abpgBmt6L._AC_.jpg",
+  "backgroundImage" : "https://i.imgur.com/ZqBkMVu.png"
+}, {
+  "id" : "CIuOrJtdWsN-LiplEkfyT",
+  "movieId" : 3,
+  "title" : "Star Wars: Episode III",
+  "productionYear" : 2005,
+  "length" : 140,
+  "genre" : "Action",
+  "distributor" : "20th Century Fox",
+  "language" : "Engelska",
+  "subtitles" : "Svenska",
+  "director" : "George Lucas",
+  "actors" : "Ewan McGregor, Natalie Portman, Hayden Christensen",
+  "description" : "Klonkrigen rasar i galaxen. Republiken har kämpat hårt och tappert mot Greve Dooku och hans arméer av stridsdroider. Dock så drabbas man nu av en katastrof, då en flotta under ledning av General Grievous stormar republikens huvudplanet,Coruscant, och kidnappar överkansler Palpatine. Samtidigt sänds jediriddarna Anakin Skywalker och Obi-Wan Kenobi till striden för att undsätta den kidnappade kanslern. Anakin Skywalker slits mellan de stridande parterna, mellan den mörka och den ljusa sidan. Lockad av löften om makt och kunskap svär Anakin den mörka sidan trohet och blir Sith Darth Vader.",
+  "images" : [ "https://images.justwatch.com/backdrop/152871672/s1440/star-wars-episode-iii-revenge-of-the-sith" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/embed/5UnjrG_N8hU" ],
+  "posterUrl" : "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/220px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg",
+  "backgroundImage" : "https://i.imgur.com/OZfdQGd.png"
+}, {
+  "id" : "LeEbfpxcBDUPRmc3BdNTa",
+  "movieId" : 4,
+  "title" : "Dansar med vargar",
+  "productionYear" : 1990,
+  "length" : 181,
+  "genre" : "Adventure, Western, Drama",
+  "distributor" : "Orion Pictures",
+  "language" : "Engelska, Lakota, Pawnee",
+  "subtitles" : "Svenska",
+  "director" : "Kevin Costner",
+  "actors" : "Kevin Costner, Mary McDonnell, Graham Greene, Rodney Grant",
+  "description" : "Efter ett stort fältslag under det amerikanska inbördeskriget 1863 förflyttas den hjältemodiga löjtnanten John Dunbar på egen begäran till en avlägsen utpost i Dakota som gränsar till indianernas land. Fortet visar sig vara övergivet, så han beslutar sig för att stanna och invänta sina trupper. Men han upptäcker snart att han inte är ensam. Efter ett första våldsamt möte med den lokala siouxstammen börjar han allt mer accepteras av indianerna, som ger honom namnet 'Dansar med vargar'. Men den växande vänskapen innebär samtidigt att Dunbar inom en snar framtid kommer att tvingas välja sida.",
+  "images" : [ "https://www.discshop.se/img/front_large/146341/dances_with_wolves_blu_ray_import_sv_text.jpg", "https://imageproxy.themaven.net//https%3A%2F%2Fwww.biography.com%2F.image%2FMTczMTI4NTA2ODYxOTU0Mjg0%2Fdances-with-wolves-gettyimages-159824459.jpg" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/embed/uc8NMbrW7mI" ],
+  "posterUrl" : "https://www.discshop.se/img/front_large/28813/dances_with_wolves_import_sv_text.jpg",
+  "backgroundImage" : "https://i.imgur.com/hoZWBgz.png"
+}, {
+  "id" : "WZJn6gJ6vjK6WbA3q9iku",
+  "movieId" : 5,
+  "title" : "Pulp Fiction",
+  "productionYear" : 1994,
+  "length" : 178,
+  "genre" : "Drama",
+  "distributor" : "Miramax Films",
+  "language" : "Engelska",
+  "subtitles" : "Svenska",
+  "director" : "Quentin Tarantino",
+  "actors" : "John Travolta, Samuel L. Jackson, Uma Thurman",
+  "description" : "I undervärlden leder flera incidenter att två torpeder, en boxare, en gangster med sin fru, och ett par banditer får sina öden sammanflätade i en historia om upprättelse och våld",
+  "images" : [ "https://www.indiewire.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-22-at-5.09.08-PM.png", "https://www.praqma.com/images/stories/bonnie/vincent-oops.png" ],
+  "youtubeTrailers" : [ "https://www.youtube.com/embed/tGpTpVyI_OQ" ],
+  "posterUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTciQFy8sCo8hOdnzlhUh_cqlYNLIFA4nlQwg&usqp=CAU",
+  "backgroundImage" : "https://i.imgur.com/oFoiHDS.png"
+} ]
