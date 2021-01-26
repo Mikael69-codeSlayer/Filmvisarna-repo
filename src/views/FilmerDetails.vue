@@ -48,84 +48,85 @@
       </div>
 
       <div class="screen-container">
-        
-        <!------- Vueper Slides (Carousel) ------>
-     <!-------  // ! Commented out Vueper Slides
-     <vueper-slides fade :touchable="false">
-          <vueper-slide
-            v-for="(slide, i) in slides"
-            :key="i"
-            :image="slide.image"
-            :title="slide.title"
-            :content="slide.content"
-          />
-        </vueper-slides> ------>
-     
-       <section class="carousel" aria-label="Gallery">
-  <ol class="carousel__viewport">
-    <li id="carousel__slide1"
-        tabindex="0"
-        class="carousel__slide">
-        <img :src="film.images[0]" />
-      <div class="carousel__snapper">
-        <a href="#carousel__slide4"
-           class="carousel__prev">Go to last slide</a>
-        <a href="#carousel__slide2"
-           class="carousel__next">Go to next slide</a>
-      </div>
-    </li>
-    <li id="carousel__slide2"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide1"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide3"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide3"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide2"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide4"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide4"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide3"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide1"
-         class="carousel__next">Go to first slide</a>
-    </li>
-  </ol>
-  <aside class="carousel__navigation">
-    <ol class="carousel__navigation-list">
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide1"
-           class="carousel__navigation-button">Go to slide 1</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide2"
-           class="carousel__navigation-button">Go to slide 2</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide3"
-           class="carousel__navigation-button">Go to slide 3</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide4"
-           class="carousel__navigation-button">Go to slide 4</a>
-      </li>
-    </ol>
-  </aside>
-</section>
-     
-     
-     
+        <section id="screen">
+          <div class="container">
+            <div class="carousel">
+              <input
+                type="radio"
+                name="slides"
+                checked="checked"
+                id="slide-1"
+              />
+              <input type="radio" name="slides" id="slide-2" />
+              <input type="radio" name="slides" id="slide-3" />
+              <input type="radio" name="slides" id="slide-4" />
+              <input type="radio" name="slides" id="slide-5" />
+              <input type="radio" name="slides" id="slide-6" />
+              <ul class="carousel__slides">
+                <li class="carousel__slide">
+                  <figure>
+                    <div>
+                      <img :src="film.images[0]" alt="" />
+                    </div>
+                  </figure>
+                </li>
+              
+                <li class="carousel__slide">
+                  <figure>
+                    <div>
+                       <img :src="film.images[1]" alt="" />
+                    </div>
+                   
+                  </figure>
+                </li>
+                <li class="carousel__slide">
+                  <figure>
+                    <div>
+                        <img :src="film.images[2]" alt="" />
+                    </div>
+                    
+                  </figure>
+                </li>
+                <li class="carousel__slide">
+                  <figure>
+                    <div>
+                      <img src="https://picsum.photos/id/1049/800/450" alt="" />
+                    </div>
+                  
+                  </figure>
+                </li>
+                <li class="carousel__slide">
+                  <figure>
+                    <div>
+                      <img src="https://picsum.photos/id/1052/800/450" alt="" />
+                    </div>
+                   
+                  </figure>
+                </li>
+              </ul>
+              <ul class="carousel__thumbnails">
+                <li>
+                  <label for="slide-1"
+                    ><img :src="film.images[0]" alt="" /></label>
+                </li>
+                <li>
+                  <label for="slide-2"
+                    ><img :src="film.images[1]" alt="" /></label>
+                </li>
+                <li>
+                  <label for="slide-3"
+                    >  <img :src="film.images[2]" alt="" /></label>
+                </li>
+                <li>
+                  <label for="slide-4"
+                    ><img src="https://picsum.photos/id/1045/150/150" alt=""
+                  /></label>
+                </li>
+    
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
 
       <div class="trailer-video">
@@ -151,7 +152,7 @@
 //import "vueperslides/dist/vueperslides.css";
 
 export default {
-// ! Commented out data and Vueper Slides
+  // ! Commented out data and Vueper Slides
 
   /*data: () => ({
     slides: [
@@ -176,7 +177,6 @@ export default {
     // ! Commented out Vueper Slides
     //VueperSlides,
     //VueperSlide,
-  
   },
 
   computed: {
@@ -334,245 +334,190 @@ div.movie-year {
 }
 
 div.screen-container {
-  background-color: rgba(119, 114, 114, 0.171);
-  padding: 160px;
+  background-color: black;
+  
+  width: 1000px;
+  margin: 0 auto;
 }
 
 div.trailer-video {
   margin-top: 150px;
 }
 
+/** ----------------------- Carousel ------------------------**/
 
-
-
-
-
-@keyframes tonext {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: 100%;
-  }
-  98% {
-    left: 100%;
-  }
-  99% {
-    left: 0;
-  }
+#section.screen {
+	 background: #f4f4f4;
+	 padding: 50px 0;
+   width: 850px;
+  
+}
+ .container {
+	 max-width: 1500px;
+   width: 800px;
+	 margin: 0 auto;
+	 padding: 0 20px;
+}
+ .carousel {
+	 display: block;
+	 text-align: left;
+	 position: relative;
+	 margin-bottom: 22px;
+}
+ .carousel > input {
+	 clip: rect(1px, 1px, 1px, 1px);
+	 clip-path: inset(50%);
+	 height: 1px;
+	 width: 1px;
+	 margin: -1px;
+	 overflow: hidden;
+	 padding: 0;
+	 position: absolute;
+}
+.carousel > input:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
+	 margin-left: -500%;
+}
+ .carousel > input:nth-of-type(5):checked ~ .carousel__slides .carousel__slide:first-of-type {
+	 margin-left: -400%;
+}
+ .carousel > input:nth-of-type(4):checked ~ .carousel__slides .carousel__slide:first-of-type {
+	 margin-left: -300%;
+}
+ .carousel > input:nth-of-type(3):checked ~ .carousel__slides .carousel__slide:first-of-type {
+	 margin-left: -200%;
+}
+ .carousel > input:nth-of-type(2):checked ~ .carousel__slides .carousel__slide:first-of-type {
+	 margin-left: -100%;
+}
+ .carousel > input:nth-of-type(1):checked ~ .carousel__slides .carousel__slide:first-of-type {
+	 margin-left: 0%;
+}
+ .carousel > input:nth-of-type(1):checked ~ .carousel__thumbnails li:nth-of-type(1) {
+	 box-shadow: 0px 0px 0px 3px whitesmoke;
+}
+ .carousel > input:nth-of-type(2):checked ~ .carousel__thumbnails li:nth-of-type(2) {
+	 box-shadow: 0px 0px 0px 3px whitesmoke;
+}
+ .carousel > input:nth-of-type(3):checked ~ .carousel__thumbnails li:nth-of-type(3) {
+	 box-shadow: 0px 0px 0px 3px whitesmoke;
+}
+ .carousel > input:nth-of-type(4):checked ~ .carousel__thumbnails li:nth-of-type(4) {
+	 box-shadow: 0px 0px 0px 3px whitesmoke;
+}
+ .carousel > input:nth-of-type(5):checked ~ .carousel__thumbnails li:nth-of-type(5) {
+	 box-shadow: 0px 0px 0px 3px whitesmoke;
+}
+ .carousel > input:nth-of-type(6):checked ~ .carousel__thumbnails li:nth-of-type(6) {
+	 box-shadow: 0px 0px 0px 3px whitesmoke;
+}
+ 
+ .carousel__slides {
+	 position: relative;
+	 z-index: 1;
+	 padding: 0;
+	 margin: 0;
+	 overflow: hidden;
+	 white-space: nowrap;
+	 box-sizing: border-box;
+	 display: flex;
+}
+ .carousel__slide {
+	 position: relative;
+	 display: block;
+	 flex: 1 0 100%;
+	 width: 100%;
+	 height: 100%;
+	 overflow: hidden;
+	 transition: all 300ms ease-out;
+	 vertical-align: top;
+	 box-sizing: border-box;
+	 white-space: normal;
+}
+ .carousel__slide figure {
+	 display: flex;
+	 margin: 0;
+}
+ .carousel__slide div {
+	 position: relative;
+	 width: 100%;
+}
+ .carousel__slide div:before {
+	 display: block;
+	 content: "";
+	 width: 100%;
+	 padding-top: 66.6666666667%;
+}
+ .carousel__slide div > img {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 width: 100%;
+	 height: 100%;
+}
+ .carousel__slide img {
+	 display: block;
+	 flex: 1 1 auto;
+	 object-fit: cover;
 }
 
-@keyframes tostart {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: -300%;
-  }
-  98% {
-    left: -300%;
-  }
-  99% {
-    left: 0;
-  }
+ .carousel__slide .credit {
+	 margin-top: 1rem;
+	 color: rgba(0, 0, 0, 0.5);
+	 display: block;
 }
-
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
-  }
-  97% {
-    scroll-snap-align: none;
-  }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
-  }
+ .carousel__slide.scrollable {
+	 overflow-y: scroll;
 }
-
-body {
-  max-width: 37.5rem;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  font-family: 'Lato', sans-serif;
+ .carousel__thumbnails {
+	 list-style: none;
+	 padding: 0;
+	 margin: 0;
+	 display: flex;
+	 margin: 0 -10px;
 }
-
-* {
-  box-sizing: border-box;
-  scrollbar-color: transparent transparent; /* thumb and track color */
-  scrollbar-width: 0px;
+ .carousel__slides + .carousel__thumbnails {
+	 margin-top: 20px;
 }
-
-*::-webkit-scrollbar {
-  width: 0;
+ .carousel__thumbnails li {
+	 flex: 1 1 auto;
+	 max-width: calc((100% / 6) - 20px);
+	 margin: 0 10px;
+	 transition: all 300ms ease-in-out;
 }
-
-*::-webkit-scrollbar-track {
-  background: transparent;
+ .carousel__thumbnails label {
+	 display: block;
+	 position: relative;
 }
-
-*::-webkit-scrollbar-thumb {
-  background: transparent;
-  border: none;
+ .carousel__thumbnails label:before {
+	 display: block;
+	 content: "";
+	 width: 100%;
+	 padding-top: 100%;
 }
-
-* {
-  -ms-overflow-style: none;
+ .carousel__thumbnails label > img {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 width: 100%;
+	 height: 100%;
 }
-
-ol, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+ .carousel__thumbnails label:hover, .carousel__thumbnails label:focus {
+	 cursor: pointer;
 }
-
-.carousel {
-  position: relative;
-  padding-top: 75%;
-  filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
+ .carousel__thumbnails label:hover img, .carousel__thumbnails label:focus img {
+	 box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+	 transition: all 300ms ease-in-out;
 }
-
-.carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow-x: scroll;
-  counter-reset: item;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+ .carousel__thumbnails img {
+	 display: block;
+	 width: 100%;
+	 height: 100%;
+	 object-fit: cover;
 }
+ 
 
-.carousel__slide {
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  background-color: #f99;
-  counter-increment: item;
-}
-
-.carousel__slide:nth-child(even) {
-  background-color: #99f;
-}
-
-.carousel__slide:before {
-  content: counter(item);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-40%,70px);
-  color: #fff;
-  font-size: 2em;
-}
-
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-}
-
-@media (hover: hover) {
-  .carousel__snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
-
-  .carousel__slide:last-child .carousel__snapper {
-    animation-name: tostart, snap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel__snapper {
-    animation-name: none;
-  }
-}
-
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-  animation-name: none;
-}
-
-.carousel__navigation {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-.carousel__navigation-list,
-.carousel__navigation-item {
-  display: inline-block;
-}
-
-.carousel__navigation-button {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #333;
-  background-clip: content-box;
-  border: 0.25rem solid transparent;
-  border-radius: 50%;
-  font-size: 0;
-  transition: transform 0.1s;
-}
-
-.carousel::before,
-.carousel::after,
-.carousel__prev,
-.carousel__next {
-  position: absolute;
-  top: 0;
-  margin-top: 37.5%;
-  width: 4rem;
-  height: 4rem;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  font-size: 0;
-  outline: 0;
-}
-
-.carousel::before,
-.carousel__prev {
-  left: -1rem;
-}
-
-.carousel::after,
-.carousel__next {
-  right: -1rem;
-}
-
-.carousel::before,
-.carousel::after {
-  content: '';
-  z-index: 1;
-  background-color: #333;
-  background-size: 1.5rem 1.5rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: #fff;
-  font-size: 2.5rem;
-  line-height: 4rem;
-  text-align: center;
-  pointer-events: none;
-}
-
-.carousel::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-.carousel::after {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-}
 </style> 
