@@ -1,11 +1,12 @@
 <template>
 <h1>Biljetter</h1>
 <div>Boka dina biljetter idag</div>
-<div v-for="show of tempSort" :key="show.id">
+<!--
+<div v-for="show of sortedShows" :key="show.id">
   <h1>TEST</h1>
   <h1>{{show.id}}</h1>
 </div>
-<!--
+-->
 <div class="filmdropdown">
 <select v-model="films">
   <option disabled value="">Alla filmer</option>
@@ -14,11 +15,11 @@
 </select>
 
 </div>
--->
+
 <div class="datedropdown">
 <select v-model="date">
 <option disabled value="">Datum</option>
-   <option value="time" v-for="time of showtime" :key="time.date" > {{time.date}}</option>
+   <option value="time" v-for="show of sortedShows" :key="show.date" > {{show.date}}</option>
      
 </select>
 </div>
@@ -45,30 +46,16 @@
       </div>
     </div>
 
-
 </template>
 
 
 <script>
 export default {
-  created() {
-    this.tempSort = this.showtime.sort((a, b) => a.showId - b.showId );
-    /*
-    this.$store.dispatch("fetchShowtime");
-    let temp = this.$store.dispatch("fetchShowtime");
-    console.log("Detta är temp" + temp)
-    console.log("Är i created")
-    console.log("Det här är temp" + this.tempSort)
-    let sorted =this.showtime.sort((a, b) => a.showId - b.showId );
-    this.tempSort=sorted;
-    console.log("Det här är temp" + this.tempSort)
-*/
-  },
+  
   data() {
     return {
       films:'',
       date:'',
-      tempSort:'',
     }
   },
 
@@ -79,19 +66,21 @@ export default {
    showtime() {
       return this.$store.state.showtime;
     },
-    sortJSON: function (params) {
-              return this.showtime.sort((a, b) => a.showId - b.showId );
-
+    sortedShows(){
+      //This removes all "-" in dates
+      for (let show of this.showtime){
+        if(show.date.includes("-")){
+          show.date = show.date.replaceAll("-","")
+          console.log(show.date)
+        }
+        
+      }
+      return this.showtime;
+      /*
+      let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
+      console.log("Detta är shows" + shows)
+      return shows;*/
     }
-    
-    
-  /*  id() {
-      // get id from url parameter
-      return this.$route.params.id;
-    },*/
-    /*sortByShowtime(){
-     return this.$store.state.showtime.filter((showtime) => showtime.date == this.date)
-    }*/
   },
   
 

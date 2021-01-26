@@ -73,8 +73,14 @@ export default {
           show.date = show.date.replaceAll("-","")
           console.log(show.date)
         }
-        
+
       }
+      //This sorts showtimes dates in order
+      this.showtime.sort((a, b) => a.date - b.date );
+      console.log(this.showtime)
+
+
+
       return this.showtime;
       /*
       let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
