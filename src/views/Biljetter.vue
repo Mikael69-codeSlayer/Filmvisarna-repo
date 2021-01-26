@@ -67,9 +67,19 @@ export default {
       return this.$store.state.showtime;
     },
     sortedShows(){
+      //This removes all "-" in dates
+      for (let show of this.showtime){
+        if(show.date.includes("-")){
+          show.date = show.date.replaceAll("-","")
+          console.log(show.date)
+        }
+        
+      }
+      return this.showtime;
+      /*
       let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
       console.log("Detta är shows" + shows)
-      return shows;
+      return shows;*/
     }
   },
   
