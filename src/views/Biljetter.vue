@@ -71,14 +71,15 @@ export default {
       for (let show of this.showtime){
         if(show.date.includes("-")){
           show.date = show.date.replaceAll("-","")
-          console.log(show.date)
+          //console.log(show.date)
         }
 
       }
       //This sorts showtimes dates in order
       this.showtime.sort((a, b) => a.date - b.date );
-      console.log(this.showtime)
+      //console.log(this.showtime)
 
+      //This adds "-" between year-month and month-day 
       for(let show of this.showtime){
         if(show.date.includes(2021)){
           show.date=show.date.replace("2021", "2021-")
@@ -86,37 +87,60 @@ export default {
         if(show.date.includes(2021)){
           show.date=show.date.replace("-02", "-02-")
         }
-        console.log(show.date)
+        //console.log(show.date)
       }
-
-      // for (let addToShow of this.showtime){
-        // if(addToShow.date.includes("2021")){
-        //   console.log("addToShow test")
-        //   //addToShow.date=addToShow.date.add("test")
-        //   //return main_string.slice(0, pos) + ins_string + main_string.slice(pos);
-        //   main_string.slice(0, 3) + "-" + main_string.slice(3);
-        // }
-      // addToShow.date.substr(0,3)+"-"+addToShow.date.substr(3)
-      //  addToShow.date.substr(0,5)+"-"+addToShow.date.substr(5)
-
-        // for(let d in addToShow.date){
-        //   console.log(d)
-        //   if(d==3){
-        //     //str.substr(0,2)+":"+str.substr(2);
-        //     //addToShow.date.substr(0,3)+"-"+addToShow.date.substr(3)
-        //    addToShow.date.slice(0, 3) + "-" + addToShow.date.slice(3);
-
-        //   }if(d==5){
-        //     //addToShow.date.substr(0,5)+"-"+addToShow.date.substr(5)
-
-        //   }
-        // }
-      // }
       console.log(this.showtime)
-// for(let u of this.showtime){
-//   console.log(u.date)
-// }
-      return this.showtime;
+
+      // for(let remove of this.showtime){
+      //   console.log(remove.date)
+      // }
+
+      // for (let i = 0; i < this.showtime.length - 1; i++) {
+      //   console.log("for works")
+      //   if (i.date[i + 1] == i.date[i]) {
+      //             console.log("if works")
+      //     results.push(this.showtime[i]);
+      //   }
+      // }
+      //this.showtime.filter((value, index) => this.showtime.indexOf(value)===index);
+      // for(let outer of this.showtime){
+
+      //   let temp = outer.date;
+      //   console.log("temp " + temp)
+        
+      //   for(let inner of this.showtime){
+      //     let temp2=inner.date;
+      //     console.log("temp2 " + temp2)
+  
+      //     let numberToRemove = this.showtime.indexOf(outer)
+      //     console.log("numberToRemove " + numberToRemove)
+
+      //     if(temp2=temp){
+      //       this.showtime.splice(numberToRemove,1)
+      //       temp2="test"
+      //     }
+        
+      //   }
+      // }
+      // for (let i =0; i< this.showtime.length; i++){
+      //   for(let j =1; i<this.showtime.length; i++){
+      //     if(i.date===j.date){
+      //       let numberToRemove = this.showtime.indexOf(i)
+      //       console.log("numberToRemove " + numberToRemove)
+      //       this.showtime.splice(numberToRemove,1)
+      // let noDuplicates = []
+
+      //     this.showtime.forEach(date => {
+      //         if(!noDuplicates.includes(date)){
+      //             noDuplicates.push(date)
+      //         }
+      //     })       
+      //     console.log(noDuplicates)    
+          // this.showtime = this.noDuplicates;               
+      //     }
+      //   }
+      // }
+      return this.noDuplicates;
       /*
       let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
       console.log("Detta är shows" + shows)

@@ -71,15 +71,32 @@ export default {
       for (let show of this.showtime){
         if(show.date.includes("-")){
           show.date = show.date.replaceAll("-","")
-          console.log(show.date)
+          //console.log(show.date)
         }
 
       }
       //This sorts showtimes dates in order
       this.showtime.sort((a, b) => a.date - b.date );
-      console.log(this.showtime)
+      //console.log(this.showtime)
 
-
+      //This adds "-" between year-month and month-day 
+      for(let show of this.showtime){
+        if(show.date.includes(2021)){
+          show.date=show.date.replace("2021", "2021-")
+        }
+        if(show.date.includes(2021)){
+          show.date=show.date.replace("-02", "-02-")
+        }
+        //console.log(show.date)
+      }
+      //console.log(this.showtime)
+      
+      for(let show of this.showtime){
+        let ett = två;
+        let två = this.showtime.date;
+        console.log(ett)
+        console.log(två)
+      }
 
       return this.showtime;
       /*
