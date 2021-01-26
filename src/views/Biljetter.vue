@@ -79,8 +79,43 @@ export default {
       this.showtime.sort((a, b) => a.date - b.date );
       console.log(this.showtime)
 
+      for(let show of this.showtime){
+        if(show.date.includes(2021)){
+          show.date=show.date.replace("2021", "2021-")
+        }
+        if(show.date.includes(2021)){
+          show.date=show.date.replace("-02", "-02-")
+        }
+        console.log(show.date)
+      }
 
+      // for (let addToShow of this.showtime){
+        // if(addToShow.date.includes("2021")){
+        //   console.log("addToShow test")
+        //   //addToShow.date=addToShow.date.add("test")
+        //   //return main_string.slice(0, pos) + ins_string + main_string.slice(pos);
+        //   main_string.slice(0, 3) + "-" + main_string.slice(3);
+        // }
+      // addToShow.date.substr(0,3)+"-"+addToShow.date.substr(3)
+      //  addToShow.date.substr(0,5)+"-"+addToShow.date.substr(5)
 
+        // for(let d in addToShow.date){
+        //   console.log(d)
+        //   if(d==3){
+        //     //str.substr(0,2)+":"+str.substr(2);
+        //     //addToShow.date.substr(0,3)+"-"+addToShow.date.substr(3)
+        //    addToShow.date.slice(0, 3) + "-" + addToShow.date.slice(3);
+
+        //   }if(d==5){
+        //     //addToShow.date.substr(0,5)+"-"+addToShow.date.substr(5)
+
+        //   }
+        // }
+      // }
+      console.log(this.showtime)
+// for(let u of this.showtime){
+//   console.log(u.date)
+// }
       return this.showtime;
       /*
       let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
