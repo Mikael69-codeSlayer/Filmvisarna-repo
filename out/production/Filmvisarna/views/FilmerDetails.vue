@@ -47,6 +47,7 @@
         <p>Utgivningsår:<br />{{ film.productionYear }}</p>
       </div>
 
+      <!-------------------------------------- Carousel ------------------------------------>
       <div class="screen-container">
         <section id="screen">
           <div class="container">
@@ -60,8 +61,6 @@
               <input type="radio" name="slides" id="slide-2" />
               <input type="radio" name="slides" id="slide-3" />
               <input type="radio" name="slides" id="slide-4" />
-              <input type="radio" name="slides" id="slide-5" />
-              <input type="radio" name="slides" id="slide-6" />
               <ul class="carousel__slides">
                 <li class="carousel__slide">
                   <figure>
@@ -70,59 +69,50 @@
                     </div>
                   </figure>
                 </li>
-              
+
                 <li class="carousel__slide">
                   <figure>
                     <div>
-                       <img :src="film.images[1]" alt="" />
+                      <img :src="film.images[1]" alt="" />
                     </div>
-                   
                   </figure>
                 </li>
                 <li class="carousel__slide">
                   <figure>
                     <div>
-                        <img :src="film.images[2]" alt="" />
+                      <img :src="film.images[2]" alt="" />
                     </div>
-                    
                   </figure>
                 </li>
                 <li class="carousel__slide">
                   <figure>
                     <div>
-                      <img src="https://picsum.photos/id/1049/800/450" alt="" />
+                      <img :src="film.images[3]" alt="" />
                     </div>
-                  
-                  </figure>
-                </li>
-                <li class="carousel__slide">
-                  <figure>
-                    <div>
-                      <img src="https://picsum.photos/id/1052/800/450" alt="" />
-                    </div>
-                   
                   </figure>
                 </li>
               </ul>
               <ul class="carousel__thumbnails">
                 <li>
                   <label for="slide-1"
-                    ><img :src="film.images[0]" alt="" /></label>
+                    ><img :src="film.images[0]" alt=""
+                  /></label>
                 </li>
                 <li>
                   <label for="slide-2"
-                    ><img :src="film.images[1]" alt="" /></label>
-                </li>
-                <li>
-                  <label for="slide-3"
-                    >  <img :src="film.images[2]" alt="" /></label>
-                </li>
-                <li>
-                  <label for="slide-4"
-                    ><img src="https://picsum.photos/id/1045/150/150" alt=""
+                    ><img :src="film.images[1]" alt=""
                   /></label>
                 </li>
-    
+                <li>
+                  <label for="slide-3">
+                    <img :src="film.images[2]" alt=""
+                  /></label>
+                </li>
+                <li>
+                  <label for="slide-4">
+                    <img :src="film.images[3]" alt=""
+                  /></label>
+                </li>
               </ul>
             </div>
           </div>
@@ -146,39 +136,7 @@
 </template>
 
 <script>
-// ! Commented out Vueper Slides
-// Vueper Slides
-//import { VueperSlides, VueperSlide } from "vueperslides";
-//import "vueperslides/dist/vueperslides.css";
-
 export default {
-  // ! Commented out data and Vueper Slides
-
-  /*data: () => ({
-    slides: [
-      {
-         title: 'El Teide Volcano, Spain',
-    content: 'Photo by Max Rive',
-    // You can also provide a URL for the image.
-      image: 'https://variety.com/wp-content/uploads/2020/10/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00038_V2_rgb.jpg'
-      },
-       
-       {
-
-         image: ''
-       }
-       
-
-    ],
-    
-  }), */
-
-  components: {
-    // ! Commented out Vueper Slides
-    //VueperSlides,
-    //VueperSlide,
-  },
-
   computed: {
     filmer() {
       // Also added this, to get filmes and id
@@ -197,12 +155,6 @@ export default {
       return this.$route.params.id;
     },
   },
-  /*
-  methods: {
-    ticketButton: function() {
-      window.open("/biljetter", "_self")
-    }
-  },*/
 };
 </script>
 
@@ -247,25 +199,13 @@ div.detail-container {
   width: 100%;
 }
 
-/*div.inner-background img{
-  background-color: orange;
-  width: 100%;
-  z-index: -1;
-  overflow: hidden;
-}*/
-
 div.movie-container {
   background-color: rgba(137, 43, 226, 0);
   padding-top: 400px;
-  /*background-image: url("https://images-ext-1.discordapp.net/external/AcVMep7nNKn5Ow9k52mTpBcZO33J9tI8SamJ0qz8IcQ/https/pics.filmaffinity.com/Blade_Runner-237438038-large.jpg?width=954&height=477");*/
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-/*.movie-container img {
-  width: 100%;
-}*/
 
 div.gradient-background {
   width: 100%;
@@ -299,8 +239,6 @@ div.movie-info-container {
   color: white;
   padding-top: 30px;
   position: absolute;
-
-  /*background-image: linear-gradient(rgb(0, 0, 0), rgba(24, 156, 179, 0.192));*/
 }
 
 div.movie-description {
@@ -335,7 +273,7 @@ div.movie-year {
 
 div.screen-container {
   background-color: black;
-  
+
   width: 1000px;
   margin: 0 auto;
 }
@@ -347,177 +285,189 @@ div.trailer-video {
 /** ----------------------- Carousel ------------------------**/
 
 #section.screen {
-	 background: #f4f4f4;
-	 padding: 50px 0;
-   width: 850px;
-  
+  background: #f4f4f4;
+  padding: 50px 0;
+  width: 850px;
 }
- .container {
-	 max-width: 1500px;
-   width: 800px;
-	 margin: 0 auto;
-	 padding: 0 20px;
+.container {
+  max-width: 1500px;
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
- .carousel {
-	 display: block;
-	 text-align: left;
-	 position: relative;
-	 margin-bottom: 22px;
+.carousel {
+  display: block;
+  text-align: left;
+  position: relative;
+  margin-bottom: 22px;
 }
- .carousel > input {
-	 clip: rect(1px, 1px, 1px, 1px);
-	 clip-path: inset(50%);
-	 height: 1px;
-	 width: 1px;
-	 margin: -1px;
-	 overflow: hidden;
-	 padding: 0;
-	 position: absolute;
-}
-.carousel > input:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
-	 margin-left: -500%;
-}
- .carousel > input:nth-of-type(5):checked ~ .carousel__slides .carousel__slide:first-of-type {
-	 margin-left: -400%;
-}
- .carousel > input:nth-of-type(4):checked ~ .carousel__slides .carousel__slide:first-of-type {
-	 margin-left: -300%;
-}
- .carousel > input:nth-of-type(3):checked ~ .carousel__slides .carousel__slide:first-of-type {
-	 margin-left: -200%;
-}
- .carousel > input:nth-of-type(2):checked ~ .carousel__slides .carousel__slide:first-of-type {
-	 margin-left: -100%;
-}
- .carousel > input:nth-of-type(1):checked ~ .carousel__slides .carousel__slide:first-of-type {
-	 margin-left: 0%;
-}
- .carousel > input:nth-of-type(1):checked ~ .carousel__thumbnails li:nth-of-type(1) {
-	 box-shadow: 0px 0px 0px 3px whitesmoke;
-}
- .carousel > input:nth-of-type(2):checked ~ .carousel__thumbnails li:nth-of-type(2) {
-	 box-shadow: 0px 0px 0px 3px whitesmoke;
-}
- .carousel > input:nth-of-type(3):checked ~ .carousel__thumbnails li:nth-of-type(3) {
-	 box-shadow: 0px 0px 0px 3px whitesmoke;
-}
- .carousel > input:nth-of-type(4):checked ~ .carousel__thumbnails li:nth-of-type(4) {
-	 box-shadow: 0px 0px 0px 3px whitesmoke;
-}
- .carousel > input:nth-of-type(5):checked ~ .carousel__thumbnails li:nth-of-type(5) {
-	 box-shadow: 0px 0px 0px 3px whitesmoke;
-}
- .carousel > input:nth-of-type(6):checked ~ .carousel__thumbnails li:nth-of-type(6) {
-	 box-shadow: 0px 0px 0px 3px whitesmoke;
-}
- 
- .carousel__slides {
-	 position: relative;
-	 z-index: 1;
-	 padding: 0;
-	 margin: 0;
-	 overflow: hidden;
-	 white-space: nowrap;
-	 box-sizing: border-box;
-	 display: flex;
-}
- .carousel__slide {
-	 position: relative;
-	 display: block;
-	 flex: 1 0 100%;
-	 width: 100%;
-	 height: 100%;
-	 overflow: hidden;
-	 transition: all 300ms ease-out;
-	 vertical-align: top;
-	 box-sizing: border-box;
-	 white-space: normal;
-}
- .carousel__slide figure {
-	 display: flex;
-	 margin: 0;
-}
- .carousel__slide div {
-	 position: relative;
-	 width: 100%;
-}
- .carousel__slide div:before {
-	 display: block;
-	 content: "";
-	 width: 100%;
-	 padding-top: 66.6666666667%;
-}
- .carousel__slide div > img {
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 right: 0;
-	 bottom: 0;
-	 width: 100%;
-	 height: 100%;
-}
- .carousel__slide img {
-	 display: block;
-	 flex: 1 1 auto;
-	 object-fit: cover;
+.carousel > input {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
 }
 
- .carousel__slide .credit {
-	 margin-top: 1rem;
-	 color: rgba(0, 0, 0, 0.5);
-	 display: block;
+.carousel
+  > input:nth-of-type(4):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: -300%;
 }
- .carousel__slide.scrollable {
-	 overflow-y: scroll;
+.carousel
+  > input:nth-of-type(3):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: -200%;
 }
- .carousel__thumbnails {
-	 list-style: none;
-	 padding: 0;
-	 margin: 0;
-	 display: flex;
-	 margin: 0 -10px;
+.carousel
+  > input:nth-of-type(2):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: -100%;
 }
- .carousel__slides + .carousel__thumbnails {
-	 margin-top: 20px;
+.carousel
+  > input:nth-of-type(1):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: 0%;
 }
- .carousel__thumbnails li {
-	 flex: 1 1 auto;
-	 max-width: calc((100% / 6) - 20px);
-	 margin: 0 10px;
-	 transition: all 300ms ease-in-out;
+.carousel
+  > input:nth-of-type(1):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(1) {
+  box-shadow: 0px 0px 0px 3px whitesmoke;
 }
- .carousel__thumbnails label {
-	 display: block;
-	 position: relative;
+.carousel
+  > input:nth-of-type(2):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(2) {
+  box-shadow: 0px 0px 0px 3px whitesmoke;
 }
- .carousel__thumbnails label:before {
-	 display: block;
-	 content: "";
-	 width: 100%;
-	 padding-top: 100%;
+.carousel
+  > input:nth-of-type(3):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(3) {
+  box-shadow: 0px 0px 0px 3px whitesmoke;
 }
- .carousel__thumbnails label > img {
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 right: 0;
-	 bottom: 0;
-	 width: 100%;
-	 height: 100%;
+.carousel
+  > input:nth-of-type(4):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(4) {
+  box-shadow: 0px 0px 0px 3px whitesmoke;
 }
- .carousel__thumbnails label:hover, .carousel__thumbnails label:focus {
-	 cursor: pointer;
-}
- .carousel__thumbnails label:hover img, .carousel__thumbnails label:focus img {
-	 box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
-	 transition: all 300ms ease-in-out;
-}
- .carousel__thumbnails img {
-	 display: block;
-	 width: 100%;
-	 height: 100%;
-	 object-fit: cover;
-}
- 
 
+.carousel__slides {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+}
+.carousel__slide {
+  position: relative;
+  display: block;
+  flex: 1 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 300ms ease-out;
+  vertical-align: top;
+  box-sizing: border-box;
+  white-space: normal;
+}
+.carousel__slide figure {
+  display: flex;
+  margin: 0;
+}
+.carousel__slide div {
+  position: relative;
+  width: 100%;
+}
+.carousel__slide div:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 66.6666666667%;
+}
+.carousel__slide div > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.carousel__slide img {
+  display: block;
+  flex: 1 1 auto;
+  object-fit: cover;
+}
+
+.carousel__slide .credit {
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+.carousel__slide.scrollable {
+  overflow-y: scroll;
+}
+.carousel__thumbnails {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin: 0 -10px;
+}
+.carousel__slides + .carousel__thumbnails {
+  margin-top: 20px;
+}
+.carousel__thumbnails li {
+  flex: 1 1 auto;
+  max-width: calc((100% / 6) - 20px);
+  margin: 0 10px;
+  transition: all 300ms ease-in-out;
+}
+.carousel__thumbnails label {
+  display: block;
+  position: relative;
+}
+.carousel__thumbnails label:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.carousel__thumbnails label > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.carousel__thumbnails label:hover,
+.carousel__thumbnails label:focus {
+  cursor: pointer;
+}
+.carousel__thumbnails label:hover img,
+.carousel__thumbnails label:focus img {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+  transition: all 300ms ease-in-out;
+}
+.carousel__thumbnails img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 </style> 
