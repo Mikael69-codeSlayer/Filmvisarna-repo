@@ -1,6 +1,6 @@
 <template>
   <div class="salon-container">
-    <div class="salon-space"></div>
+    <div class="spacing"></div>
     <div class="salon-header">
       <h1>VÄLJ DINA PLATSER</h1>
       <!-- seat icons -->
@@ -14,36 +14,54 @@
       </div>
     </div>
 
-    <div class="salon-space"></div>
+    <div class="spacing"></div>
     
-    <!-- loop salons -->
-  
-    
+    <!--- Loop salons to get Salon1--->
     <div class="salon" v-for="salon of salons" :key="salon">
-      <!-- <div v-bind:class="selectedSalon">  -->
+      
       <div v-if="salon.salonId == 1">
-        
+        <!-- display salon name, seats and movie screen  -->
         <h1>{{ salon.name }}</h1>
         <p>{{ salon.seats }} Platser</p>
-        <div class="salon-space"></div>
+        <div class="spacing"></div>
         <div class="salon-screen">BIODUK</div>
-        <div class="salon-space"></div>
+        <div class="spacing"></div>
         
-        <!-- loop rows -->
+        <!-- loop through the rows -->
         <div class="row" v-for="(row,n) in salon.seatsPerRow" :key="row">
-          {{ row }}  
-             <!-- loop seats 
-             <!--<div class="seat" v-for="seat in row" :key="seat"> {{ (seatNumber++)-8100 }}</div>  -->
-             <div class="seat" v-for="seat in row" :key="seat"> {{letters[n]}}{{ (seat-1)+1 }}</div>  
-        </div> 
-        
-        
+          
+             <!-- loop seats and set seat/row number-->
+             <button class="seat" @click="$event.target.classList.toggle('selected')" v-for="seat in row" :key="seat"> {{letters[n]}}{{ (seat-1)+1 }}</button>  
+        </div>  
       </div>
     </div>
 
-    <div class="salon-space"></div>
-    <div class="salon-space"></div>
-  </div>
+        
+    <!--<div id="app3">-->
+
+      <!--- Loop salons to get Salon2--->
+    <div class="salon" v-for="salon of salons" :key="salon">
+      <div v-if="salon.salonId == 2">
+        <!-- display salon name, seats and movie screen  -->
+        <h1>{{ salon.name }}</h1>
+        <p>{{ salon.seats }} Platser</p>
+        <div class="spacing"></div>
+        <div class="salon-screen">BIODUK</div>
+        <div class="spacing"></div>
+        
+        <!-- loop through the rows -->
+        <div class="row" v-for="(row,n) in salon.seatsPerRow" :key="row">
+           
+             <!-- loop seats and set seat/row number-->
+             <button class="seat" @click="$event.target.classList.toggle('selected')" v-for="seat in row" :key="seat"> {{letters[n]}}{{ (seat-1)+1 }}</button> 
+        </div>  
+      </div>
+        <div class="spacing"></div>
+        <div class="spacing"></div>
+    </div>
+    </div>
+
+  <!--</div>-->
 </template>
 
 
@@ -51,44 +69,29 @@
 <script>
 import { computed } from 'vue';
 export default {
+  //el: '#app3',
+  data: { selected: false },
 
   data() {
+    //return row letter
     const letters = ["A","B","C","D","E","F","G","H","I","J","K","L"]
-    return {letters }
-    //return {
-      //seatNumber: 1,
-    //  return letters,
+    return { letters }
+    
   },
 
   computed: {
     sNumber() {
     const seatNumber = computed(() => seatNumber + 1);
     },
-    //selectedSalon() {
-      //return this.$store.state.salons.filter(s => s.salonId == this.salonId)[1];
-     // return this.$store.state.salons.filter((salons) => salons.salonId == this.salonId);
-     // }
-    //},
-
     salons() {
       //to get Salon
       return this.$store.state.salons;
+    }, 
+   methods: {
+    toggleClass: function(event){
+       this.isActive = !this.isActive;
     }
-
-    //seatNumber: function () {
-    //  return this.$store.state.salons.salonId[1].seats++;
-    //}
-    
-
-
-    /*
-    numberOfSeats: function() {
-      return this$store.state.salons.filter(function(item) {
-        return salons.seats;
-      } );
-      
-    }, */
-    
+  }
   }
 };
 </script>
@@ -96,6 +99,36 @@ export default {
 
 
 <style scoped>
+
+.seat {
+  text-align: center;
+  padding: 10px 10px;
+  margin: 3px;
+  border: none;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  background-color: rgb(204, 204, 204);
+  font-size: 14px;
+  user-select: none;
+  border-radius: 2px;
+}
+
+.selected {
+  background: red;
+}
+
+
+
+h1 {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-size: 25px;
+}
+
+p {
+  font-family: "Roboto Slab", serif;
+  color: white;
+}
 
 
 .row {
@@ -105,51 +138,36 @@ export default {
   display: inline-block;
   margin-left:auto;
   margin-right:auto;
-  
+  user-select: none;
 }
-
-._row {
-  
-  margin: 0 auto;
-  background: green;
-  text-align: center;
-  
-}
-
-
-._seats {
-  width: 600px;
-  text-align: center;
-  
-  
-}
-
-.seat {
+/*
+.seats {
   float: left;
   background-color: rgb(204, 204, 204);
   border: 1px solid rgba(0, 0, 0, 0.8);
   font-size: 15px;
   font-weight: bold;
   width: 40px;
-  height: 40px;
+  height: 40px; 
   text-align: center;
   vertical-align: middle;
   line-height: 40px;
   margin-left: 5px;
-  
-  
+  user-select: none;
 }
-
-.seat:hover {
+ */
+.seats:hover {
   background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
 .salon {
   text-align: center;
-  width: 800px;
-  height: 300px;
+  width: 600px;
+  height: 250px;
   margin: 0 auto;
+  user-select: none;
+  background-color: rgb(0, 0, 0);
   
 }
 
@@ -170,7 +188,7 @@ export default {
 }
 
 .salon-screen {
-  width: 730px;
+  width: 600px;
   background: gray;
   color: rgb(255, 255, 255);
   font-family: "Roboto Slab", serif;
@@ -180,11 +198,12 @@ export default {
   line-height: 30px;
 }
 
-.salon-space {
+.spacing {
   width: 500px;
-  height: 100px;
+  height: 70px;
   background: rgb(0, 0, 0);
   margin: 0 auto;
+  user-select: none;
 }
 .seats-icons {
   width: 600px;
@@ -195,6 +214,7 @@ export default {
   width: 20px;
   height: 20px;
   background: rgb(204, 204, 204);
+  user-select: none;
 }
 
 .seat-available {
@@ -205,6 +225,7 @@ export default {
   margin-left: 8px;
   width: 70px;
   background: rgb(0, 0, 0);
+  user-select: none;
 }
 
 .seat-taken-icon {
@@ -212,6 +233,7 @@ export default {
   width: 20px;
   height: 20px;
   background: rgb(93, 93, 93);
+  user-select: none;
 }
 
 .seat-taken {
@@ -221,6 +243,7 @@ export default {
   line-height: 20px;
   margin-left: 8px;
   background: rgb(0, 0, 0);
+  user-select: none;
 }
 
 .seat-chosen-icon {
@@ -228,6 +251,7 @@ export default {
   width: 20px;
   height: 20px;
   background: rgb(255, 82, 82);
+  user-select: none;
 }
 
 .seat-chosen {
@@ -237,13 +261,6 @@ export default {
   line-height: 20px;
   margin-left: 8px;
   background: rgb(0, 0, 0);
+  user-select: none;
 }
-
-.grid-container {
-  display: inline-grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-gap: 10px;
-}
-
-
 </style>
