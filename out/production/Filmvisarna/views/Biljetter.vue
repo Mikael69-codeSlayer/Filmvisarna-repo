@@ -1,8 +1,12 @@
 <template>
 <h1>Biljetter</h1>
 <div>Boka dina biljetter idag</div>
-
-
+<!--
+<div v-for="show of sortedShows" :key="show.id">
+  <h1>TEST</h1>
+  <h1>{{show.id}}</h1>
+</div>
+-->
 <div class="filmdropdown">
 <select v-model="films">
   <option disabled value="">Alla filmer</option>
@@ -15,22 +19,44 @@
 <div class="datedropdown">
 <select v-model="date">
 <option disabled value="">Datum</option>
-   <option value="time" v-for="time of showtime" :key="time.date" > {{time.date}}</option>
+   <option value="time" v-for="show of sortedShows" :key="show.date" > {{show.date}}</option>
      
 </select>
 </div>
+<div class="movie-list">
+      <div v-for="film of filmer" :key="film.id">
+        <router-link :to="'/filmerDetails/' + film.id">
+          <div class="movie-item">
+            <div class="movie-item-poster">
+              <img :src="film.posterUrl" />
+            </div>
 
+            <div class="movie-item-text">
+              <a class="movie-title">{{ film.title }}</a> <br />
+              {{ film.genre }} 
+              | {{ film.length }} min
+              | {{ film.language }}
+            </div>
+          </div>
+        </router-link>
+
+        <div class="movie-item-space">
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
 
 </template>
 
 
 <script>
 export default {
+  
   data() {
     return {
       films:'',
-      date:''
-
+      date:'',
+      noDuplicates:'',
     }
   },
 
@@ -40,19 +66,102 @@ export default {
     },
    showtime() {
       return this.$store.state.showtime;
-  
     },
-  /*  id() {
-      // get id from url parameter
-      return this.$route.params.id;
-    },*/
+    sortedShows(){
+      //This removes all "-" in dates
+      for (let show of this.showtime){
+        if(show.date.includes("-")){
+          show.date = show.date.replaceAll("-","")
+          //console.log(show.date)
+        }
+
+      }
+      //This sorts showtimes dates in order
+      this.showtime.sort((a, b) => a.date - b.date );
+      //console.log(this.showtime)
+
+      //This adds "-" between year-month and month-day 
+      for(let show of this.showtime){
+        if(show.date.includes(2021)){
+          show.date=show.date.replace("2021", "2021-")
+        }
+        if(show.date.includes(2021)){
+          show.date=show.date.replace("-02", "-02-")
+        }
+        //console.log(show.date)
+      }
+      console.log(this.showtime)
+
+      // for(let remove of this.showtime){
+      //   console.log(remove.date)
+      // }
+
+      // for (let i = 0; i < this.showtime.length - 1; i++) {
+      //   console.log("for works")
+      //   if (i.date[i + 1] == i.date[i]) {
+      //             console.log("if works")
+      //     results.push(this.showtime[i]);
+      //   }
+      // }
+      //this.showtime.filter((value, index) => this.showtime.indexOf(value)===index);
+      // for(let outer of this.showtime){
+
+      //   let temp = outer.date;
+      //   console.log("temp " + temp)
+        
+      //   for(let inner of this.showtime){
+      //     let temp2=inner.date;
+      //     console.log("temp2 " + temp2)
+  
+      //     let numberToRemove = this.showtime.indexOf(outer)
+      //     console.log("numberToRemove " + numberToRemove)
+
+      //     if(temp2=temp){
+      //       this.showtime.splice(numberToRemove,1)
+      //       temp2="test"
+      //     }
+        
+      //   }
+      // }
+      // for (let i =0; i< this.showtime.length; i++){
+      //   for(let j =1; i<this.showtime.length; i++){
+      //     if(i.date===j.date){
+      //       let numberToRemove = this.showtime.indexOf(i)
+      //       console.log("numberToRemove " + numberToRemove)
+      //       this.showtime.splice(numberToRemove,1)
+      // let noDuplicates = []
+
+      //     this.showtime.forEach(date => {
+      //         if(!noDuplicates.includes(date)){
+      //             noDuplicates.push(date)
+      //         }
+      //     })       
+      //     console.log(noDuplicates)    
+          // this.showtime = this.noDuplicates;               
+      //     }
+      //   }
+      // }
+       
+      return this.noDuplicates;
+      /*
+      let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
+      console.log("Detta är shows" + shows)
+      return shows;*/
+    }
   },
+  
 
   methods:{
     selectFilm(){
       console.log(this.showtime)
 
     },
+    sortJASON(){
+
+      console.log("JASON")
+        return this.showtime.sort((a, b) => a.showId - b.showId );
+  }
+    
   },
 
 }
@@ -101,5 +210,109 @@ div.datedropdown{
   margin-left:2px;
 }
 
+/* */
 
+.space {
+  width: 100%;
+  height: 100px;
+}
+
+a {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  text-decoration: none!important;
+}
+
+.movie-title {
+   font-size: 25px;
+   font-weight: bold;
+   line-height: 70px;
+}
+
+
+
+div.movies-container {
+  color: white;
+  width: 100%;
+  position: relative;
+  height: 500px;
+  background: rgb(0, 0, 0);
+  padding: 40px 0;
+}
+
+div.movies-header {
+  background-color: rgb(0, 0, 0);
+  width: 55%;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+h1.filmer-header {
+  font-size: 25px;
+  width: 980px;
+  height: 42px;
+  color: white;
+  font: 36px;
+  margin: 0 0 8px;
+  padding: 0 84px 0px 0px;
+}
+
+div.movie-list {
+  background-color: rgb(0, 0, 0);
+  height: 1100px;
+  width: 55%;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+div.movie-item {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  overflow: hidden;
+  height: 140px;
+}
+
+div.movie-item-poster {
+  background-color: rgb(0, 0, 0);
+  width: 100px;
+  height: 150px;
+  float: left;
+}
+
+div.movie-item-text {
+  background-color: rgb(0, 0, 0);
+  display: inline-block;
+  width: 40vw;
+  height: 100px;
+  text-align: left;
+  padding-left: 25px;
+  vertical-align: bottom;
+  display: table-cell;
+  line-height: 7px;
+}
+div.movie-item-text p {
+    font-weight: bold;
+    font-size: 25px;
+    
+}
+
+div.movie-item-space {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 10px;
+}
+
+div.line {
+  background-color: white;
+  width: 100%;
+  height: 1px;
+  margin-top: 10px;
+}
+
+img {
+  width: 100px;
+}
 </style>
