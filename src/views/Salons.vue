@@ -68,6 +68,7 @@
 
 <script>
 import { computed } from 'vue';
+
 export default {
   //el: '#app3',
   data: { selected: false },
@@ -86,14 +87,17 @@ export default {
     salons() {
       //to get Salon
       return this.$store.state.salons;
+    }
     }, 
+    
    methods: {
     toggleClass: function(event){
        this.isActive = !this.isActive;
     }
   }
-  }
-};
+  };
+
+
 </script>
 
 
