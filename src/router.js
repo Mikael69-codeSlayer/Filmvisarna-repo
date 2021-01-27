@@ -31,7 +31,7 @@ const routes = [
   },
   {
     name: 'Biljetter',
-    path: '/biljetter/:id',
+    path: '/biljetter',
     component: Biljetter
   },
   {
