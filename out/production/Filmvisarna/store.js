@@ -49,8 +49,8 @@ const actions = {
       user = await user.json()
       console.log(user);
       store.commit('setUser', user)
-    } catch(error) {
-      console.warn(error)
+    } catch {
+      console.warn('Fel uppgifter')
     }
   },
   async register(store, credentials) {

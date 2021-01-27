@@ -13,7 +13,9 @@
         <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
       </div>
       <div class="nav log">
-        <router-link :to="{ name: 'Login' }">Login</router-link>
+        <router-link v-if="showFirst" :to="{ name: 'Login' }" >Login</router-link> 
+        <div v-else> Välkommen!
+        <button @click="logout">Logout</button></div>
       </div>
       <!--
       <div class="nav salon">
@@ -49,12 +51,26 @@ export default {
     Salon,
     SkapaKonto
   },
+   methods: {
+    logout(){
+      fetch('/api/logout')
+      this.$store.commit('setUser', null)
+    }
+  },
 
   created() {
     this.$store.dispatch("fetchFilmer"),
     this.$store.dispatch("fetchShowtime"),
     this.$store.dispatch("whoAmI")
   },
+  computed: {
+    showFirst() {
+      return this.$store.state.user == null
+  },
+   isLoggedIn(){
+      return this.$store.state.user != null
+    }
+    }
 };
 
 </script>
@@ -151,5 +167,16 @@ div.log {
   margin-top: -45px;
   font-size: 20px;
   padding-right: 70px;
+}
+button{
+   color: white;
+  text-decoration: none;
+  position: relative;
+  background:none;
+  font-family: "Roboto Slab", serif;
+  
+  background: rgba(255, 255, 255, 0.548);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+ 
 }
 </style>

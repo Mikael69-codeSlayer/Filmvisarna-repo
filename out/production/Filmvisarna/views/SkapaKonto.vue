@@ -8,7 +8,9 @@
     <input type="password" required v-model="password" placeholder="Lösenord"/><br>
    <!-- <input type="confirmpassword" required v-model="password" placeholder="Bekräfta lösenord"/>-->
     </div>
+  <router-link :to="'/'" > 
 <button type="submit" @click.prevent="register"> Skapa</button>
+</router-link>
 </template>
 
 <script>
@@ -32,6 +34,7 @@ export default {
       
       }
      this.$store.dispatch('register', credentials)
+      this.$router.replace('/');
     }
     }
 };
