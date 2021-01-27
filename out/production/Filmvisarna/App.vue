@@ -18,16 +18,14 @@
         <button @click="mypages">Mina Sidor</button>
         <button @click="logout">Logout</button></div>
       </div>
-      <!--
-      <div class="nav salon">
-        <router-link :to="{ name: 'Salon' }">Salong</router-link>
-      </div> -->
+      
+      <div class="nav salons">
+        <router-link :to="{ name: 'Salons' }">Salonger</router-link>
+      </div> 
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
-  
   <router-view />
-  
 </template>
 
 <!-- JavaScript (Vue) -->
@@ -40,6 +38,7 @@ import Biljetter from "./views/Biljetter.vue";
 import Salon from "./views/Salon.vue";
 import SkapaKonto from "./views/SkapaKonto.vue";
 import MinaSidor from "./views/MinaSidor.vue"
+import Salons from "./views/Salons.vue";
 
 // This syntax is declaring a component
 // which can be registered and reused later
@@ -67,7 +66,7 @@ export default {
   created() {
     this.$store.dispatch("fetchFilmer"),
     this.$store.dispatch("fetchShowtime"),
-    this.$store.dispatch("whoAmI")
+    this.$store.dispatch("fetchSalons")
   },
   computed: {
     userLoggedIn() {
@@ -166,6 +165,17 @@ div.bil {
   margin-top: -45px;
   font-size: 20px;
 }
+/*Login*/
+div.salons {
+  font-family: "Roboto Slab", serif;
+  float: left;
+  margin-top: -45px;
+  font-size: 20px;
+  padding-left: 550px;
+
+}
+
+
 /*Login*/
 div.log {
   font-family: "Roboto Slab", serif;

@@ -12,7 +12,7 @@
     <p>---eller---</p>
 
     <router-link :to="'/skapaKonto/'" >  
-    <button type="register" >Skapa konto</button>
+    <button type="register">Skapa konto</button>
     </router-link>
   
 
@@ -32,12 +32,6 @@ export default {
         password: "",
   
     }
-  },
-   computed:{
-    isLoggedIn(){
-      return this.$store.state.user != null
-    }
-
   },
   methods: {
     login(){

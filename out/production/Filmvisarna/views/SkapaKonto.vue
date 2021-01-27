@@ -1,6 +1,5 @@
 <template>
 <h1>Skapa konto</h1>
-
 <div>Skapa konto för att kunna boka biljetter, se bokningsnummer och avboka/omboka biljetter.</div>
 
 <form @submit.prevent="register"> 
@@ -21,21 +20,13 @@ export default {
   return{
         email: "",
         password: "",
-       /* confirmPassword: ""*/
-      }
-    },
-
-    methods:{
-    register(){
-      const credentials={
-      email: this.email,
-      password: this.password,
-      
+        confirmPassword: ""
       }
      this.$store.dispatch('register', credentials)
       this.$router.replace('/minasidor');
     }
     }
+
 };
 
 </script>

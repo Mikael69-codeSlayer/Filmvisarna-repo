@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 const state = {
   filmer: [],
   showtime: [],
-  user: null
+  salons: []
 }
 
 // mutates state 
@@ -13,9 +13,9 @@ const mutations = {
   },
   setShowtime(state, list) {
     state.showtime = list
-  }, 
-  setUser(state, user) {
-    state.user = user
+  },
+  setSalons(state, list) {
+    state.salons = list
   }
 }
 
@@ -26,7 +26,7 @@ const actions = {
     list = await list.json()
 
     // debug list
-    console.log(list)
+    //console.log(list)
     
     store.commit('setFilmer', list)
   },
@@ -35,9 +35,16 @@ const actions = {
     let list = await fetch('/rest/showtime')
     list = await list.json()
 
-    console.log(list)
+    //console.log(list)
 
     store.commit('setShowtime', list)
+  },
+  async fetchSalons(store) {
+    let list = await fetch('/rest/salons')
+    list = await list.json()
+    //console.log(list)
+
+    store.commit('setSalons', list)
   },
 
   async login(store, credentials) {
@@ -59,15 +66,15 @@ const actions = {
       body: JSON.stringify(credentials)
     })
     try {
-    user = await user.json()
-    console.log(user);
-    store.commit('setUser', user)
-  } catch {
+      user = await user.json()
+      console.log(user);
+      store.commit('setUser', user)
+    } catch {
       console.warn('Fel uppgifter')
     }
   },
   async whoAmI(store) {
-    let user = await fetch ('/api/whoami')
+    let user = await fetch('/api/whoami')
     try {
       user = await user.json()
       console.log(user);
@@ -75,8 +82,8 @@ const actions = {
     } catch {
       console.warn('Ej inloggad')
     }
+ 
   }
 }
-
 
 export default createStore({ state, mutations, actions }) 
