@@ -33,7 +33,7 @@ export default {
       
       }
      this.$store.dispatch('register', credentials)
-      this.$router.replace('/');
+      this.$router.replace('/minasidor');
     }
     }
 };

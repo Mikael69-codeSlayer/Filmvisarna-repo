@@ -47,7 +47,7 @@ export default {
       }
      
      this.$store.dispatch('login', credentials)
-     this.$router.replace('/');
+     this.$router.replace('/minasidor');
     },
   }
 
