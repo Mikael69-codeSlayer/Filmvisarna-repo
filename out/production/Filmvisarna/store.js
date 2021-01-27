@@ -3,7 +3,8 @@ import { createStore } from 'vuex'
 const state = {
   filmer: [],
   showtime: [],
-  salons: []
+  salons: [],
+  user: null
 }
 
 // mutates state 
@@ -16,6 +17,9 @@ const mutations = {
   },
   setSalons(state, list) {
     state.salons = list
+  }, 
+  setUser(state, user) {
+    state.user = user
   }
 }
 
@@ -42,11 +46,11 @@ const actions = {
   async fetchSalons(store) {
     let list = await fetch('/rest/salons')
     list = await list.json()
+
     //console.log(list)
 
     store.commit('setSalons', list)
   },
-
   async login(store, credentials) {
     let user = await fetch('/api/login', {
       method: 'POST',
@@ -59,22 +63,23 @@ const actions = {
     } catch {
       console.warn('Fel uppgifter')
     }
-  },
+    },
+  
   async register(store, credentials) {
     let user = await fetch('/api/register', {
       method: 'POST',
       body: JSON.stringify(credentials)
     })
     try {
-      user = await user.json()
-      console.log(user);
-      store.commit('setUser', user)
-    } catch {
+    user = await user.json()
+    console.log(user);
+    store.commit('setUser', user)
+  } catch {
       console.warn('Fel uppgifter')
     }
   },
   async whoAmI(store) {
-    let user = await fetch('/api/whoami')
+    let user = await fetch ('/api/whoami')
     try {
       user = await user.json()
       console.log(user);
@@ -82,8 +87,8 @@ const actions = {
     } catch {
       console.warn('Ej inloggad')
     }
- 
   }
 }
+
 
 export default createStore({ state, mutations, actions }) 

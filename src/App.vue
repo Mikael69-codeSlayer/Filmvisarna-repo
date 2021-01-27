@@ -50,9 +50,8 @@ export default {
     Filmer,
     Login,
     Biljetter,
-    Salon,
     SkapaKonto,
-    MinaSidor
+    MinaSidor,
     Salons,
     SkapaKonto
   },

@@ -21,6 +21,12 @@ export default {
 h1{
   font-family: "Roboto Slab", serif;
   color: white;
+  text-align: center;
+  margin-top:40px;
+}
+div{
+   font-family: "Roboto Slab", serif;
+  color: white;
   text-align: left;
   margin-left: 60px;
   margin-top:40px;

@@ -50,7 +50,7 @@ const routes = [
     name: 'MinaSidor',
     path: '/minasidor',
     component: MinaSidor
-
+  },{
     name: 'Salons',
     path: '/salons',
     component: Salons

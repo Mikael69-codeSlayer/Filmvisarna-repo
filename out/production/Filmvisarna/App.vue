@@ -25,7 +25,9 @@
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
+  
   <router-view />
+  
 </template>
 
 <!-- JavaScript (Vue) -->
@@ -35,10 +37,9 @@ import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
 import Biljetter from "./views/Biljetter.vue";
-import Salon from "./views/Salon.vue";
+import Salons from "./views/Salons.vue";
 import SkapaKonto from "./views/SkapaKonto.vue";
 import MinaSidor from "./views/MinaSidor.vue"
-import Salons from "./views/Salons.vue";
 
 // This syntax is declaring a component
 // which can be registered and reused later
@@ -49,9 +50,10 @@ export default {
     Filmer,
     Login,
     Biljetter,
-    Salon,
     SkapaKonto,
-    MinaSidor
+    MinaSidor,
+    Salons,
+    SkapaKonto
   },
    methods: {
     logout(){
@@ -67,6 +69,7 @@ export default {
     this.$store.dispatch("fetchFilmer"),
     this.$store.dispatch("fetchShowtime"),
     this.$store.dispatch("fetchSalons")
+    this.$store.dispatch("whoAmI")
   },
   computed: {
     userLoggedIn() {
