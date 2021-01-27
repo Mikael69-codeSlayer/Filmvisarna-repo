@@ -146,7 +146,7 @@ export default {
       return this.$store.state.images.filter((images) => images.id == this.id);
     },
     showtime() {
-      return this$store.state.showtime.filter(
+      return this.$store.state.showtime.filter(
         (showtime) => showtime.id == this.id
       );
     },
