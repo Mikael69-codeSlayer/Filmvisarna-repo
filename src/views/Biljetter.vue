@@ -7,22 +7,6 @@
   <h1>{{show.id}}</h1>
 </div>
 -->
-<div class="filmdropdown">
-<select v-model="films">
-  <option disabled value="">Alla filmer</option>
-   <option value="film" v-for="film of filmer" :key="film.title" > {{film.title}}</option>
-
-</select>
-
-</div>
-
-<div class="datedropdown">
-<select v-model="date">
-<option disabled value="">Datum</option>
-   <option value="time" v-for="show of sortedShows" :key="show.date" > {{show.date}}</option>
-     
-</select>
-</div>
 <div class="movie-list">
       <div v-for="film of filmer" :key="film.id">
         <router-link :to="'/filmerDetails/' + film.id">
