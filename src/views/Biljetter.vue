@@ -19,7 +19,10 @@
     <div v-for="show of showtime" :key="show.id">
       <div>
         <h1>{{ show.date }}</h1>
+        <p>Lediga säten {{ show.availableSeats }}</p>
+       <router-link :to="'/ticket/' + show.id">
          <button class="ticket-button">Biljetter</button>
+        </router-link>
       </div>
     </div>
   </div>
