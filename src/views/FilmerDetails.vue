@@ -18,7 +18,7 @@
           <p>{{ film.genre }} | {{ film.length }} min</p>
 
           <div class="trailer-button-container">
-            <router-link :to="'/biljetter/'">
+            <router-link :to="'/biljetter/' +film.id">
               <button class="trailer-button">Biljetter</button>
             </router-link>
           </div>
@@ -146,7 +146,7 @@ export default {
       return this.$store.state.images.filter((images) => images.id == this.id);
     },
     showtime() {
-      return this$store.state.showtime.filter(
+      return this.$store.state.showtime.filter(
         (showtime) => showtime.id == this.id
       );
     },
