@@ -19,7 +19,9 @@
     <div v-for="show of showtime" :key="show.id">
       <div>
         <h1>{{ show.date }}</h1>
-        <button class="buy-ticket-button">Biljetter</button>
+        <button class="adult-ticket-button">Vuxen Biljetter</button>
+        <button class="child-ticket-button">Barn Biljetter</button>
+        <button class="senior-ticket-button">Senior Biljetter</button>
       </div>
     </div>
   </div>
