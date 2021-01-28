@@ -4,13 +4,14 @@ import express.database.Model;
 import org.dizitart.no2.objects.Id;
 
 @Model
-public class Salon {
+public class Salons {
     @Id
     private String id;
+    private int salonId;
 
     private String name;
-    private String seats;
-    private String[] seatsPerRow;
+    private int seats;
+    private int[] seatsPerRow;
 
     public String getId() {
         return id;
@@ -28,21 +29,25 @@ public class Salon {
         this.name = name;
     }
 
-    public String getSeats() {
+    public int getSeats() {
         return seats;
     }
 
-    public void setSeats(String seats) {
+    public void setSeats(int seats) {
         this.seats = seats;
     }
 
-    public String[] getSeatsPerRow() {
+    public int[] getSeatsPerRow() {
         return seatsPerRow;
     }
 
-    public void setSeatsPerRow(String[] seatsPerRow) {
+    public void setSeatsPerRow(int[] seatsPerRow) {
         this.seatsPerRow = seatsPerRow;
     }
+
+    public int getSalonId() { return salonId;  }
+
+    public void setSalonId(int salonId) { this.salonId = salonId; }
 
 
 

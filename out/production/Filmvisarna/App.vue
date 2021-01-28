@@ -13,12 +13,15 @@
         <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
       </div>
       <div class="nav log">
-        <router-link :to="{ name: 'Login' }">Login</router-link>
+        <router-link v-if="userLoggedIn" :to="{ name: 'Login' }" >Login</router-link> 
+        <div v-else> Välkommen!
+        <button @click="mypages">Mina Sidor</button>
+        <button @click="logout">Logout</button></div>
       </div>
-      <!--
-      <div class="nav salon">
-        <router-link :to="{ name: 'Salon' }">Salong</router-link>
-      </div> -->
+      
+      <div class="nav salons">
+        <router-link :to="{ name: 'Salons' }">Salonger</router-link>
+      </div> 
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
@@ -34,8 +37,9 @@ import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
 import Biljetter from "./views/Biljetter.vue";
-import Salon from "./views/Salon.vue";
+import Salons from "./views/Salons.vue";
 import SkapaKonto from "./views/SkapaKonto.vue";
+import MinaSidor from "./views/MinaSidor.vue"
 
 // This syntax is declaring a component
 // which can be registered and reused later
@@ -46,15 +50,35 @@ export default {
     Filmer,
     Login,
     Biljetter,
-    Salon,
+    SkapaKonto,
+    MinaSidor,
+    Salons,
     SkapaKonto
   },
+   methods: {
+    logout(){
+      fetch('/api/logout')
+      this.$store.commit('setUser', null)
+    },
+    mypages(){
+     this.$router.replace('/minasidor')}
+  },
+
 
   created() {
     this.$store.dispatch("fetchFilmer"),
     this.$store.dispatch("fetchShowtime"),
+    this.$store.dispatch("fetchSalons")
     this.$store.dispatch("whoAmI")
   },
+  computed: {
+    userLoggedIn() {
+      return this.$store.state.user == null
+  },
+   isLoggedIn(){
+      return this.$store.state.user != null
+    }
+    }
 };
 
 </script>
@@ -145,11 +169,32 @@ div.bil {
   font-size: 20px;
 }
 /*Login*/
+div.salons {
+  font-family: "Roboto Slab", serif;
+  float: left;
+  margin-top: -45px;
+  font-size: 20px;
+  padding-left: 550px;
+
+}
+
+
+/*Login*/
 div.log {
   font-family: "Roboto Slab", serif;
   float: right;
   margin-top: -45px;
   font-size: 20px;
   padding-right: 70px;
+}
+button{
+  color: white;
+  text-decoration: none;
+  position: relative;
+  background:none;
+  font-family: "Roboto Slab", serif;
+  background: rgba(255, 255, 255, 0.548);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+ 
 }
 </style>
