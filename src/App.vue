@@ -14,9 +14,9 @@
       </div>
       <div class="nav log">
         <router-link v-if="userLoggedIn" :to="{ name: 'Login' }" >Login</router-link> 
-        <div v-else> Välkommen!
+        <div class="welcome" v-else> Välkommen!
         <button @click="mypages">Mina Sidor</button>
-        <button @click="logout">Logout</button></div>
+        <button @click="logout">Logga ut</button></div>
       </div>
       
       <div class="nav salons">
@@ -185,16 +185,19 @@ div.log {
   float: right;
   margin-top: -45px;
   font-size: 20px;
-  padding-right: 70px;
+  padding-right: 80px;
+  color: white;
+
 }
-button{
+
+
+button {
   color: white;
   text-decoration: none;
-  position: relative;
-  background:none;
+  background:  rgb(209, 6, 46);
   font-family: "Roboto Slab", serif;
-  background: rgba(255, 255, 255, 0.548);
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  margin-left: 15px;
+  border:none;
  
 }
 </style>

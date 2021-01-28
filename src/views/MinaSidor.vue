@@ -10,9 +10,23 @@
 
 
 export default {
+  data(){
+    return{
+      user: "",
+    bookings: []
+  }},
 
+
+computed: {
+   isLoggedIn(){
+      return this.$store.state.user != null
+    }
+    
+  },
+methods: {
+  
 }
-
+}
 
 </script>
 
@@ -25,10 +39,10 @@ h1{
   margin-top:40px;
 }
 div{
-   font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab", serif;
   color: white;
   text-align: left;
-  margin-left: 60px;
+  margin-left: 40px;
   margin-top:40px;
 }
 </style>
