@@ -18,6 +18,7 @@
     </div> -->
     <div v-for="show of showtime" :key="show.id">
       <h1>{{ show.date }}</h1>
+      <div></div>
     </div>
   </div>
 </template>
@@ -48,14 +49,6 @@ export default {
     //   return this.$store.state.images.filter((images) => images.id == this.id);
     // },
     showtime() {
-      console.log(this.film);
-      console.log(this.$store.state.showtime.filter(
-        (showtime) => {
-          
-          console.log(showtime.film, this.film.title);
-          return showtime.film == this.film.title
-          }  
-      ))
       return this.$store.state.showtime.filter(
         (showtime) => showtime.film == this.film.title
       );
