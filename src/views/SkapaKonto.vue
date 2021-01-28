@@ -3,14 +3,13 @@
 
 <div>Skapa konto för att kunna boka biljetter, se bokningsnummer och avboka/omboka biljetter.</div>
 
-<div class="inputboxes">
-      <input type="email" required v-model="email" placeholder="E-postadress"/><br>
-    <input type="password" required v-model="password" placeholder="Lösenord"/><br>
+<form @submit.prevent="register"> 
+      <input type="email" v-model="email" required placeholder="E-postadress"/><br>
+    <input type="password" v-model="password" required placeholder="Lösenord"/><br>
    <!-- <input type="confirmpassword" required v-model="password" placeholder="Bekräfta lösenord"/>-->
-    </div>
-  <router-link :to="'/'" > 
-<button type="submit" @click.prevent="register"> Skapa</button>
-</router-link>
+    
+<button type="register">Skapa</button>
+</form> 
 </template>
 
 <script>
@@ -34,7 +33,7 @@ export default {
       
       }
      this.$store.dispatch('register', credentials)
-      this.$router.replace('/');
+      this.$router.replace('/minasidor');
     }
     }
 };
