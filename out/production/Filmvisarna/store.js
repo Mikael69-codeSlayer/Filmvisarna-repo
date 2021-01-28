@@ -3,6 +3,7 @@ import { createStore } from 'vuex'
 const state = {
   filmer: [],
   showtime: [],
+  salons: [],
   user: null
 }
 
@@ -13,6 +14,9 @@ const mutations = {
   },
   setShowtime(state, list) {
     state.showtime = list
+  },
+  setSalons(state, list) {
+    state.salons = list
   }, 
   setUser(state, user) {
     state.user = user
@@ -26,7 +30,7 @@ const actions = {
     list = await list.json()
 
     // debug list
-    console.log(list)
+    //console.log(list)
     
     store.commit('setFilmer', list)
   },
@@ -35,11 +39,18 @@ const actions = {
     let list = await fetch('/rest/showtime')
     list = await list.json()
 
-    console.log(list)
+    //console.log(list)
 
     store.commit('setShowtime', list)
   },
+  async fetchSalons(store) {
+    let list = await fetch('/rest/salons')
+    list = await list.json()
 
+    //console.log(list)
+
+    store.commit('setSalons', list)
+  },
   async login(store, credentials) {
     let user = await fetch('/api/login', {
       method: 'POST',
@@ -52,7 +63,8 @@ const actions = {
     } catch {
       console.warn('Fel uppgifter')
     }
-  },
+    },
+  
   async register(store, credentials) {
     let user = await fetch('/api/register', {
       method: 'POST',

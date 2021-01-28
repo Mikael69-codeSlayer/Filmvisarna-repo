@@ -3,6 +3,8 @@ package com.company.models;
 import express.database.Model;
 import org.dizitart.no2.objects.Id;
 
+import java.util.ArrayList;
+
 @Model
 public class User {
 
@@ -10,12 +12,18 @@ public class User {
     private String id;
     private String email;
     private String password;
-
-   // List <Booking> bookings;  Lägg till för att kunna se bokningar.
-
+    private ArrayList <String> bookings;
 
     public User() {
 
+    }
+
+    public ArrayList<String> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(ArrayList<String> bookings) {
+        this.bookings = bookings;
     }
 
     public String getId() {
@@ -50,6 +58,7 @@ public class User {
                 "id='" + id + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", bookings=' " + bookings + '\''+
                 '}';
     }
 }
