@@ -25,7 +25,7 @@
 }, {
   "id" : "Wkugpd8-FzBMVbfIClq9Q",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-12",
   "time" : "20:39",
   "showId" : "4",
@@ -49,7 +49,7 @@
 }, {
   "id" : "Pz-gVOJpZ29AsFiome3hM",
   "salon" : "Lilla Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-03",
   "time" : "20:23",
   "showId" : "7",
@@ -57,7 +57,7 @@
 }, {
   "id" : "QnX8UjL0e2NLtJd7k0fo_",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-02",
   "time" : "21:20",
   "showId" : "8",
@@ -73,7 +73,7 @@
 }, {
   "id" : "_PTbCEWZtTbSPUEaKz2mp",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-04",
   "time" : "20:02",
   "showId" : "10",
@@ -97,7 +97,7 @@
 }, {
   "id" : "B4zwGWYg2S4bWZnTmOaeo",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-21",
   "time" : "19:44",
   "showId" : "13",
@@ -113,7 +113,7 @@
 }, {
   "id" : "QHdvEATrhr_x9w8bUJOVm",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-16",
   "time" : "19:08",
   "showId" : "15",
@@ -161,7 +161,7 @@
 }, {
   "id" : "BCdG5O2752xT5unsyp7ZL",
   "salon" : "Lilla Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-05",
   "time" : "18:50",
   "showId" : "21",
@@ -185,7 +185,7 @@
 }, {
   "id" : "wVecN-TX1XrguruZqwpLk",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-27",
   "time" : "21:02",
   "showId" : "24",
@@ -193,7 +193,7 @@
 }, {
   "id" : "RVXg04QiSmOdzsf6NoNjg",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-03",
   "time" : "18:32",
   "showId" : "25",
@@ -217,7 +217,7 @@
 }, {
   "id" : "cUnIhHQta-8ID_xV4C7Tj",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-16",
   "time" : "19:06",
   "showId" : "28",
@@ -225,7 +225,7 @@
 }, {
   "id" : "iznZ4ucdDZjiFihLhz3GP",
   "salon" : "Lilla Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-11",
   "time" : "18:37",
   "showId" : "29",
@@ -233,7 +233,7 @@
 }, {
   "id" : "WvJuJi7rphWuP_RBIhg_x",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-08",
   "time" : "18:47",
   "showId" : "30",
@@ -289,7 +289,7 @@
 }, {
   "id" : "miVeJhIRFOJ9E5OWDt97H",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-23",
   "time" : "18:28",
   "showId" : "37",
@@ -297,7 +297,7 @@
 }, {
   "id" : "rDQsH2GpW7g8jPZK-ccW8",
   "salon" : "Lilla Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-22",
   "time" : "18:09",
   "showId" : "38",
@@ -329,7 +329,7 @@
 }, {
   "id" : "cu3FEwbHfhlVoGSPUsjB6",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-24",
   "time" : "20:48",
   "showId" : "42",
@@ -345,7 +345,7 @@
 }, {
   "id" : "DVxT1nhMrPn6TsVPa7Bp_",
   "salon" : "Lilla Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-19",
   "time" : "18:15",
   "showId" : "44",
@@ -361,7 +361,7 @@
 }, {
   "id" : "h9BE3TUbk8n2PhLLoyDee",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-15",
   "time" : "21:42",
   "showId" : "46",
@@ -369,7 +369,7 @@
 }, {
   "id" : "qcEUUjg03GD8xZoyURrRJ",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-18",
   "time" : "20:42",
   "showId" : "47",
@@ -385,7 +385,7 @@
 }, {
   "id" : "KLJGELV_f7I5ZN3w8quEz",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-11",
   "time" : "20:39",
   "showId" : "49",
@@ -393,7 +393,7 @@
 }, {
   "id" : "yn-INTN4LaRq0skq-H9kH",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-18",
   "time" : "21:58",
   "showId" : "50",
@@ -433,7 +433,7 @@
 }, {
   "id" : "GDVIycq7ABIwhJ5nx1Baz",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-06",
   "time" : "18:26",
   "showId" : "55",
@@ -441,7 +441,7 @@
 }, {
   "id" : "fSUfFloWXnvbX4AETfrrz",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-19",
   "time" : "19:52",
   "showId" : "56",
@@ -457,7 +457,7 @@
 }, {
   "id" : "Af1xr8XofqHX0-ixVB5Wk",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-04",
   "time" : "19:36",
   "showId" : "58",
@@ -473,7 +473,7 @@
 }, {
   "id" : "xqwoICWaR4Se6srs60DdG",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-11",
   "time" : "19:09",
   "showId" : "60",
@@ -489,7 +489,7 @@
 }, {
   "id" : "7Nlh76tQCfBF4S9PlCjRT",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-03",
   "time" : "20:32",
   "showId" : "62",
@@ -497,7 +497,7 @@
 }, {
   "id" : "14payAnFz2NB3TmeW25N2",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-04",
   "time" : "18:20",
   "showId" : "63",
@@ -521,7 +521,7 @@
 }, {
   "id" : "_e4ASj2-hShu_EcMZOOtO",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-05",
   "time" : "21:59",
   "showId" : "66",
@@ -529,7 +529,7 @@
 }, {
   "id" : "oaHywkDxUkPS72zdiU6Rd",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-07",
   "time" : "21:41",
   "showId" : "67",
@@ -537,7 +537,7 @@
 }, {
   "id" : "PhEqwuQn0PXtmWqYHVVtU",
   "salon" : "Lilla Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-20",
   "time" : "20:23",
   "showId" : "68",
@@ -545,7 +545,7 @@
 }, {
   "id" : "ly8lmMKIBDO3DHIEn7vOK",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-11",
   "time" : "18:45",
   "showId" : "69",
@@ -561,7 +561,7 @@
 }, {
   "id" : "0r3WZsqG-YI5-3Ir56RTS",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-23",
   "time" : "21:13",
   "showId" : "71",
@@ -569,7 +569,7 @@
 }, {
   "id" : "mXcNKR5g9uHUb-kxN8qoe",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-02",
   "time" : "20:41",
   "showId" : "72",
@@ -593,7 +593,7 @@
 }, {
   "id" : "slsKg0cJbXw_WXDndrx1E",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-03",
   "time" : "18:36",
   "showId" : "75",
@@ -601,7 +601,7 @@
 }, {
   "id" : "KJ1DIZBrDQCGDAxF0ny6B",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-27",
   "time" : "20:19",
   "showId" : "76",
@@ -609,7 +609,7 @@
 }, {
   "id" : "Dcz2c75y01nX_bExQi3Rd",
   "salon" : "Stora Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-22",
   "time" : "18:21",
   "showId" : "77",
@@ -617,7 +617,7 @@
 }, {
   "id" : "GWfgzw2UXQbWbZrXoJkGk",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-08",
   "time" : "20:02",
   "showId" : "78",
@@ -633,7 +633,7 @@
 }, {
   "id" : "lNszOZnIatoaczgbrW4Fn",
   "salon" : "Lilla Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-10",
   "time" : "18:46",
   "showId" : "80",
@@ -641,7 +641,7 @@
 }, {
   "id" : "yOHs2OJczJME9xitxYS7W",
   "salon" : "Lilla Salongen",
-  "film" : "Bladerunner",
+  "film" : "Blade Runner",
   "date" : "2021-02-04",
   "time" : "18:17",
   "showId" : "81",
@@ -649,7 +649,7 @@
 }, {
   "id" : "bLo3FcZ-G2rT1FtfWUGMm",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-24",
   "time" : "21:06",
   "showId" : "82",
@@ -665,7 +665,7 @@
 }, {
   "id" : "0hCC7vZSP5OiNqKporDiv",
   "salon" : "Stora Salongen",
-  "film" : "Star Wars: Episod III",
+  "film" : "Star Wars: Episode III",
   "date" : "2021-02-21",
   "time" : "19:20",
   "showId" : "84",
