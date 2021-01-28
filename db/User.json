@@ -1,0 +1,16 @@
+[ {
+  "id" : "tLyTJCtsTW0esxx1xarfX",
+  "email" : "hej@fe.com",
+  "password" : "149e70a2f5191678740695bacecd0f482d4dd9e584ee086f43e0ae4c9f94e51f",
+  "bookings" : null
+}, {
+  "id" : "hGmt5sEavb9bksXgLdMN4",
+  "email" : "nic@nic.com",
+  "password" : "aa9efdc2f1829a2b0ecfff76aa7f412ebed885c97b119a4938b29e5a034d5355",
+  "bookings" : null
+}, {
+  "id" : "HGuDFCaClA3B9YfmmIz5g",
+  "email" : "123@123.123",
+  "password" : "ed9631d16c0011e913335dbd5d39fd09aa4addc3fe374a0293ada8b92598c435",
+  "bookings" : null
+} ]

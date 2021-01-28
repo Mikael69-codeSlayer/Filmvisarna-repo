@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import { warn } from 'vue';
 export default {
   name: "Login",
   data() {

@@ -12,13 +12,15 @@
       <div class="nav bil">
         <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
       </div>
+
       <div class="nav log">
         <router-link v-if="userLoggedIn" :to="{ name: 'Login' }" >Login</router-link> 
-        <div class="welcome" v-else> Välkommen!
+        <div class="welcome" v-else> Välkommen, {{userName}}!                                               
         <button @click="mypages">Mina Sidor</button>
         <button @click="logout">Logga ut</button></div>
       </div>
       
+
       <div class="nav salons">
         <router-link :to="{ name: 'Salons' }">Salonger</router-link>
       </div> 
@@ -45,6 +47,11 @@ import MinaSidor from "./views/MinaSidor.vue"
 // which can be registered and reused later
 export default {
   name: "App",
+  data(){
+    return{
+      email:''
+    }
+  },
   components: {
     Filmvisarna,
     Filmer,
@@ -63,12 +70,10 @@ export default {
     mypages(){
      this.$router.replace('/minasidor')}
   },
-
-
   created() {
     this.$store.dispatch("fetchFilmer"),
     this.$store.dispatch("fetchShowtime"),
-    this.$store.dispatch("fetchSalons")
+    this.$store.dispatch("fetchSalons"),
     this.$store.dispatch("whoAmI")
   },
   computed: {
@@ -77,8 +82,15 @@ export default {
   },
    isLoggedIn(){
       return this.$store.state.user != null
-    }
-    }
+    },
+     id() {
+      // get id from url parameter
+      return this.$route.params.id;
+    },
+
+    userName(){
+      return this.$store.state.user.email
+    }}
 };
 
 </script>
