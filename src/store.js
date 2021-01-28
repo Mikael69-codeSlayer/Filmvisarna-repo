@@ -28,29 +28,24 @@ const actions = {
   async fetchFilmer(store) {
     let list = await fetch('/rest/filmer')
     list = await list.json()
-
-    // debug list
     //console.log(list)
-    
     store.commit('setFilmer', list)
   },
 
   async fetchShowtime(store) {
     let list = await fetch('/rest/showtime')
     list = await list.json()
-
     //console.log(list)
-
     store.commit('setShowtime', list)
   },
+  
   async fetchSalons(store) {
     let list = await fetch('/rest/salons')
     list = await list.json()
-
     //console.log(list)
-
     store.commit('setSalons', list)
   },
+
   async login(store, credentials) {
     let user = await fetch('/api/login', {
       method: 'POST',
@@ -78,6 +73,7 @@ const actions = {
       console.warn('Fel uppgifter')
     }
   },
+  
   async whoAmI(store) {
     let user = await fetch ('/api/whoami')
     try {
