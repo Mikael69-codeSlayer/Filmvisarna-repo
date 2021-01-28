@@ -17,8 +17,10 @@
      <h1>{{ film.title }}</h1> 
     </div> -->
     <div v-for="show of showtime" :key="show.id">
-      <h1>{{ show.date }}</h1>
-      <div></div>
+      <div>
+        <h1>{{ show.date }}</h1>
+        <button class="buy-ticket-button">Biljetter</button>
+      </div>
     </div>
   </div>
 </template>
