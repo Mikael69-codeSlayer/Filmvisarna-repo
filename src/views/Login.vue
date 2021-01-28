@@ -2,14 +2,13 @@
 
   <div id="login">
     <h1 class="loginbody">Logga in</h1>
+
+    <form @submit.prevent="login"> 
     <input type="email" required v-model="email" placeholder="E-postadress"/>
     <input type="password" required v-model="password" placeholder="Lösenord"/>
+    <button type="login">Logga in</button>
+    </form> 
     
-    <router-link :to="'/'" > 
-    <button type="login" @click.prevent="login">Logga in</button>
-    </router-link>
-
-
     <p>---eller---</p>
 
     <router-link :to="'/skapaKonto/'" >  
@@ -24,6 +23,7 @@
 </template>
 
 <script>
+import { warn } from 'vue';
 export default {
   name: "Login",
   data() {
@@ -45,13 +45,10 @@ export default {
       email: this.email,
       password: this.password
       }
+     
      this.$store.dispatch('login', credentials)
-     this.$router.replace('/');
+     this.$router.replace('/minasidor');
     },
-    /*logout(){
-      fetch('/api/logout')
-      this.$store.commit('setUser', null)
-    }*/
   }
 
 };
