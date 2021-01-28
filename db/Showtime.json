@@ -4,21 +4,24 @@
   "film" : "Pulp Fiction",
   "date" : "2021-02-19",
   "time" : "20:02",
-  "showId" : "1"
+  "showId" : "1",
+  "availableSeats" : 56
 },{
   "id": "chyuAFdSgXF0Eaima97Oz",
   "salon": "Lilla Salongen",
   "film": "Dansar Med Vargar",
   "date": "2021-02-22",
   "time": "18:59",
-  "showId": "2"
+  "showId": "2",
+  "availableSeats" : 56
 }, {
   "id" : "mj5CRTaL9PA2eKgp6MDwl",
   "salon" : "Lilla Salongen",
   "film" : "Pulp Fiction",
   "date" : "2021-02-17",
   "time" : "19:46",
-  "showId" : "3"
+  "showId" : "3",
+  "availableSeats" : 56
 }, {
   "id" : "Wkugpd8-FzBMVbfIClq9Q",
   "salon" : "Stora Salongen",
@@ -32,7 +35,8 @@
   "film" : "Borat 2",
   "date" : "2021-02-10",
   "time" : "21:44",
-  "showId" : "5"
+  "showId" : "5",
+  "availableSeats" : 56
 }, {
   "id" : "dkEQHo0LFiJkG04eF-na1",
   "salon" : "Stora Salongen",
@@ -46,7 +50,8 @@
   "film" : "Bladerunner",
   "date" : "2021-02-03",
   "time" : "20:23",
-  "showId" : "7"
+  "showId" : "7",
+  "availableSeats" : 56
 }, {
   "id" : "QnX8UjL0e2NLtJd7k0fo_",
   "salon" : "Stora Salongen",
@@ -67,7 +72,8 @@
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-04",
   "time" : "20:02",
-  "showId" : "10"
+  "showId" : "10",
+  "availableSeats" : 56
 }, {
   "id" : "MDrh2G77_pvrgFhPPmFC4",
   "salon" : "Stora Salongen",
@@ -88,28 +94,32 @@
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-21",
   "time" : "19:44",
-  "showId" : "13"
+  "showId" : "13",
+  "availableSeats" : 56
 }, {
   "id" : "ArjM3Gl5Mu0I_M8QSzFWv",
   "salon" : "Lilla Salongen",
   "film" : "Dansar Med Vargar",
   "date" : "2021-02-11",
   "time" : "21:16",
-  "showId" : "14"
+  "showId" : "14",
+  "availableSeats" : 56
 }, {
   "id" : "QHdvEATrhr_x9w8bUJOVm",
   "salon" : "Lilla Salongen",
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-16",
   "time" : "19:08",
-  "showId" : "15"
+  "showId" : "15",
+  "availableSeats" : 56
 }, {
   "id" : "BqfsRh_610CQjDhQt9jsM",
   "salon" : "Lilla Salongen",
   "film" : "Pulp Fiction",
   "date" : "2021-02-17",
   "time" : "19:07",
-  "showId" : "16"
+  "showId" : "16",
+  "availableSeats" : 56
 }, {
   "id" : "3FsX8KyTD0lzPcfXYx1RZ",
   "salon" : "Stora Salongen",
@@ -144,21 +154,24 @@
   "film" : "Bladerunner",
   "date" : "2021-02-05",
   "time" : "18:50",
-  "showId" : "21"
+  "showId" : "21",
+  "availableSeats" : 56
 }, {
   "id" : "DUwrXUnEj4OQhYDNhBSv-",
   "salon" : "Lilla Salongen",
   "film" : "Borat 2",
   "date" : "2021-02-15",
   "time" : "18:19",
-  "showId" : "22"
+  "showId" : "22",
+  "availableSeats" : 56
 }, {
   "id" : "JWNJmQMjid8zD8UiPBIld",
   "salon" : "Lilla Salongen",
   "film" : "Pulp Fiction",
   "date" : "2021-02-11",
   "time" : "19:56",
-  "showId" : "23"
+  "showId" : "23",
+  "availableSeats" : 56
 }, {
   "id" : "wVecN-TX1XrguruZqwpLk",
   "salon" : "Stora Salongen",
@@ -172,7 +185,8 @@
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-03",
   "time" : "18:32",
-  "showId" : "25"
+  "showId" : "25",
+  "availableSeats" : 56
 }, {
   "id" : "O6LJb7lbuGFNlzXVxa5vD",
   "salon" : "Stora Salongen",
@@ -193,21 +207,24 @@
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-16",
   "time" : "19:06",
-  "showId" : "28"
+  "showId" : "28",
+  "availableSeats" : 56
 }, {
   "id" : "iznZ4ucdDZjiFihLhz3GP",
   "salon" : "Lilla Salongen",
   "film" : "Bladerunner",
   "date" : "2021-02-11",
   "time" : "18:37",
-  "showId" : "29"
+  "showId" : "29",
+  "availableSeats" : 56
 }, {
   "id" : "WvJuJi7rphWuP_RBIhg_x",
   "salon" : "Lilla Salongen",
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-08",
   "time" : "18:47",
-  "showId" : "30"
+  "showId" : "30",
+  "availableSeats" : 56
 }, {
   "id" : "-UyDzRDJGO_8BMcrDazEi",
   "salon" : "Stora Salongen",
@@ -221,7 +238,8 @@
   "film" : "Dansar Med Vargar",
   "date" : "2021-02-27",
   "time" : "21:47",
-  "showId" : "32"
+  "showId" : "32",
+  "availableSeats" : 56
 }, {
   "id" : "jU7iNF0N57bkYfjJsJv4t",
   "salon" : "Stora Salongen",
@@ -242,14 +260,16 @@
   "film" : "Dansar Med Vargar",
   "date" : "2021-02-21",
   "time" : "20:56",
-  "showId" : "35"
+  "showId" : "35",
+  "availableSeats" : 56
 }, {
   "id" : "2u9fdr-x8QdviOI8uwSR1",
   "salon" : "Lilla Salongen",
   "film" : "Pulp Fiction",
   "date" : "2021-02-14",
   "time" : "20:10",
-  "showId" : "36"
+  "showId" : "36",
+  "availableSeats" : 56
 }, {
   "id" : "miVeJhIRFOJ9E5OWDt97H",
   "salon" : "Stora Salongen",
@@ -263,21 +283,24 @@
   "film" : "Bladerunner",
   "date" : "2021-02-22",
   "time" : "18:09",
-  "showId" : "38"
+  "showId" : "38",
+  "availableSeats" : 56
 }, {
   "id" : "DLmMuQ_Vpu3LgtuA64POP",
   "salon" : "Lilla Salongen",
   "film" : "Borat 2",
   "date" : "2021-02-25",
   "time" : "19:08",
-  "showId" : "39"
+  "showId" : "39",
+  "availableSeats" : 56
 }, {
   "id" : "ubTAPRT6pGdm0hynus3YW",
   "salon" : "Lilla Salongen",
   "film" : "Borat 2",
   "date" : "2021-02-17",
   "time" : "18:09",
-  "showId" : "40"
+  "showId" : "40",
+  "availableSeats" : 56
 }, {
   "id" : "GnU0wQ-h9hTUXBcofbqj1",
   "salon" : "Stora Salongen",
@@ -305,7 +328,8 @@
   "film" : "Bladerunner",
   "date" : "2021-02-19",
   "time" : "18:15",
-  "showId" : "44"
+  "showId" : "44",
+  "availableSeats" : 56
 }, {
   "id" : "93KEx9KC5hDXN-rQB4f0Q",
   "salon" : "Stora Salongen",
@@ -333,7 +357,8 @@
   "film" : "Borat 2",
   "date" : "2021-02-20",
   "time" : "20:52",
-  "showId" : "48"
+  "showId" : "48",
+  "availableSeats" : 56
 }, {
   "id" : "KLJGELV_f7I5ZN3w8quEz",
   "salon" : "Stora Salongen",
@@ -361,14 +386,16 @@
   "film" : "Dansar Med Vargar",
   "date" : "2021-02-25",
   "time" : "20:51",
-  "showId" : "52"
+  "showId" : "52",
+  "availableSeats" : 56
 }, {
   "id" : "2tSaQoQOn0dWOAMpqtSIi",
   "salon" : "Lilla Salongen",
   "film" : "Borat 2",
   "date" : "2021-02-23",
   "time" : "21:01",
-  "showId" : "53"
+  "showId" : "53",
+  "availableSeats" : 56
 }, {
   "id" : "x2FH57-Mw5VMGpREv_h_h",
   "salon" : "Stora Salongen",
@@ -382,21 +409,24 @@
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-06",
   "time" : "18:26",
-  "showId" : "55"
+  "showId" : "55",
+  "availableSeats" : 56
 }, {
   "id" : "fSUfFloWXnvbX4AETfrrz",
   "salon" : "Lilla Salongen",
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-19",
   "time" : "19:52",
-  "showId" : "56"
+  "showId" : "56",
+  "availableSeats" : 56
 }, {
   "id" : "1xCs_bUyHiPnUhwJaPe8Y",
   "salon" : "Lilla Salongen",
   "film" : "Borat 2",
   "date" : "2021-02-24",
   "time" : "20:27",
-  "showId" : "57"
+  "showId" : "57",
+  "availableSeats" : 56
 }, {
   "id" : "Af1xr8XofqHX0-ixVB5Wk",
   "salon" : "Stora Salongen",
@@ -410,7 +440,8 @@
   "film" : "Borat 2",
   "date" : "2021-02-23",
   "time" : "21:55",
-  "showId" : "59"
+  "showId" : "59",
+  "availableSeats" : 56
 }, {
   "id" : "xqwoICWaR4Se6srs60DdG",
   "salon" : "Stora Salongen",
@@ -424,7 +455,8 @@
   "film" : "Pulp Fiction",
   "date" : "2021-02-05",
   "time" : "21:14",
-  "showId" : "61"
+  "showId" : "61",
+  "availableSeats" : 56
 }, {
   "id" : "7Nlh76tQCfBF4S9PlCjRT",
   "salon" : "Stora Salongen",
@@ -473,7 +505,8 @@
   "film" : "Bladerunner",
   "date" : "2021-02-20",
   "time" : "20:23",
-  "showId" : "68"
+  "showId" : "68",
+  "availableSeats" : 56
 }, {
   "id" : "ly8lmMKIBDO3DHIEn7vOK",
   "salon" : "Stora Salongen",
@@ -508,7 +541,8 @@
   "film" : "Pulp Fiction",
   "date" : "2021-02-16",
   "time" : "20:50",
-  "showId" : "73"
+  "showId" : "73",
+  "availableSeats" : 56
 }, {
   "id" : "4LqK_rfgz2lbEzmhFGyIQ",
   "salon" : "Stora Salongen",
@@ -543,28 +577,32 @@
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-08",
   "time" : "20:02",
-  "showId" : "78"
+  "showId" : "78",
+  "availableSeats" : 56
 }, {
   "id" : "wp9PM5gOIiKRzamoiaACg",
   "salon" : "Lilla Salongen",
   "film" : "Borat 2",
   "date" : "2021-02-17",
   "time" : "21:07",
-  "showId" : "79"
+  "showId" : "79",
+  "availableSeats" : 56
 }, {
   "id" : "lNszOZnIatoaczgbrW4Fn",
   "salon" : "Lilla Salongen",
   "film" : "Star Wars: Episod III",
   "date" : "2021-02-10",
   "time" : "18:46",
-  "showId" : "80"
+  "showId" : "80",
+  "availableSeats" : 56
 }, {
   "id" : "yOHs2OJczJME9xitxYS7W",
   "salon" : "Lilla Salongen",
   "film" : "Bladerunner",
   "date" : "2021-02-04",
   "time" : "18:17",
-  "showId" : "81"
+  "showId" : "81",
+  "availableSeats" : 56
 }, {
   "id" : "bLo3FcZ-G2rT1FtfWUGMm",
   "salon" : "Stora Salongen",
@@ -592,5 +630,6 @@
   "film" : "Pulp Fiction",
   "date" : "2021-02-05",
   "time" : "21:05",
-  "showId" : "85"
+  "showId" : "85",
+  "availableSeats" : 56
 } ]
