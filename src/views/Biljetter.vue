@@ -7,20 +7,18 @@
   <h1>{{show.id}}</h1>
 </div>
 -->
-  <div class="movie-list">
-    <div v-for="film of filmer" :key="film.id">
+  <div v-if="film" class="movie-list">
       <div class="movie-item">
         <div class="movie-item-poster">
           <img :src="film.posterUrl" />
         </div>
-      </div>
     </div>
     <!-- <div v-for="film of filmer" :key="film.id">
      <h1>{{ film.title }}</h1> 
     </div> -->
-    <!-- <div v-for="show of showtime" :key="show.id">
+    <div v-for="show of showtime" :key="show.id">
       <h1>{{ show.date }}</h1>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -40,16 +38,26 @@ export default {
       // get id from url parameter
       return this.$route.params.id;
     },
-    filmer() {
+    film() {
       // Also added this, to get filmes and id
-      return this.$store.state.filmer.filter((filmer) => filmer.id == this.id);
+      return this.$store.state.filmer.filter((filmer) => filmer.id == this.id)[0];
+      // this.id)[0]; alltid en stor vilket blir retunerad 
+      //array[0]
     },
-    images() {
-      return this.$store.state.images.filter((images) => images.id == this.id);
-    },
+    // images() {
+    //   return this.$store.state.images.filter((images) => images.id == this.id);
+    // },
     showtime() {
+      console.log(this.film);
+      console.log(this.$store.state.showtime.filter(
+        (showtime) => {
+          
+          console.log(showtime.film, this.film.title);
+          return showtime.film == this.film.title
+          }  
+      ))
       return this.$store.state.showtime.filter(
-        (showtime) => showtime.id == this.id
+        (showtime) => showtime.film == this.film.title
       );
     },
     sortedShows() {

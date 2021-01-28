@@ -1,22 +1,22 @@
-[ {
-  "id" : "chyuAFdSgXF0Eaima97Oz",
-  "salon" : "Lilla Salongen",
-  "film" : "Dansa Med Vargar",
-  "date" : "20210222",
-  "time" : "18:59",
-  "showId" : "2"
-}, {
+[  {
   "id" : "2_q7K1ioojiOV-iL1ayEQ",
   "salon" : "Lilla Salongen",
   "film" : "Pulp Fiction",
-  "date" : "20210219",
+  "date" : "2021-02-19",
   "time" : "20:02",
   "showId" : "1"
+},{
+  "id": "chyuAFdSgXF0Eaima97Oz",
+  "salon": "Lilla Salongen",
+  "film": "Dansar Med Vargar",
+  "date": "2021-02-22",
+  "time": "18:59",
+  "showId": "2"
 }, {
   "id" : "mj5CRTaL9PA2eKgp6MDwl",
   "salon" : "Lilla Salongen",
   "film" : "Pulp Fiction",
-  "date" : "20210217",
+  "date" : "2021-02-17",
   "time" : "19:46",
   "showId" : "3"
 }, {
@@ -78,7 +78,7 @@
 }, {
   "id" : "v51fWk3rGqDmElNXfp7ED",
   "salon" : "Stora Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-07",
   "time" : "20:20",
   "showId" : "12"
@@ -92,7 +92,7 @@
 }, {
   "id" : "ArjM3Gl5Mu0I_M8QSzFWv",
   "salon" : "Lilla Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-11",
   "time" : "21:16",
   "showId" : "14"
@@ -113,7 +113,7 @@
 }, {
   "id" : "3FsX8KyTD0lzPcfXYx1RZ",
   "salon" : "Stora Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-27",
   "time" : "18:23",
   "showId" : "17"
@@ -218,7 +218,7 @@
 }, {
   "id" : "Pj5A2qGgvcKeW-vpz3BYh",
   "salon" : "Lilla Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-27",
   "time" : "21:47",
   "showId" : "32"
@@ -232,14 +232,14 @@
 }, {
   "id" : "YctJldxhnilJsOjq-c-zS",
   "salon" : "Stora Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-21",
   "time" : "19:39",
   "showId" : "34"
 }, {
   "id" : "6S3jm-jPy14DopqCpKvb8",
   "salon" : "Lilla Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-21",
   "time" : "20:56",
   "showId" : "35"
@@ -295,7 +295,7 @@
 }, {
   "id" : "wVKw7dkjEd7qFHP-yZdOR",
   "salon" : "Stora Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-02",
   "time" : "20:46",
   "showId" : "43"
@@ -309,7 +309,7 @@
 }, {
   "id" : "93KEx9KC5hDXN-rQB4f0Q",
   "salon" : "Stora Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-15",
   "time" : "21:54",
   "showId" : "45"
@@ -351,14 +351,14 @@
 }, {
   "id" : "-z3w8x-ZHbNSWKzc3V1dE",
   "salon" : "Stora Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-22",
   "time" : "21:33",
   "showId" : "51"
 }, {
   "id" : "jSxSPW1uWUETZVMZDMVKA",
   "salon" : "Lilla Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-25",
   "time" : "20:51",
   "showId" : "52"
@@ -372,7 +372,7 @@
 }, {
   "id" : "x2FH57-Mw5VMGpREv_h_h",
   "salon" : "Stora Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-23",
   "time" : "20:41",
   "showId" : "54"
@@ -575,7 +575,7 @@
 }, {
   "id" : "6VVJ51f5ki4vNIgDJA8w5",
   "salon" : "Stora Salongen",
-  "film" : "Dansa Med Vargar",
+  "film" : "Dansar Med Vargar",
   "date" : "2021-02-01",
   "time" : "21:09",
   "showId" : "83"
