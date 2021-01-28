@@ -17,7 +17,7 @@
     <div class="spacing"></div>
     
     <!--- Loop salons to get Salon1--->
-    <div class="salon" v-for="salon of salons" :key="salon">
+    <div class="salon" v-for="salon of salons" :key="salon.salonId">
       
       <div v-if="salon.salonId == 1">
         <!-- display salon name, seats and movie screen  -->
@@ -67,37 +67,29 @@
 
 
 <script>
-import { computed } from 'vue';
-
 export default {
-  //el: '#app3',
-  data: { selected: false },
 
   data() {
     //return row letter
-    const letters = ["A","B","C","D","E","F","G","H","I","J","K","L"]
-    return { letters }
+    return {
+    letters : ["A","B","C","D","E","F","G","H","I","J","K","L"],
+    selected: false
+      }
     
   },
 
   computed: {
-    sNumber() {
-    const seatNumber = computed(() => seatNumber + 1);
-    },
     salons() {
       //to get Salon
       return this.$store.state.salons;
-    }
-    }, 
-    
+    },
+  }, 
    methods: {
     toggleClass: function(event){
        this.isActive = !this.isActive;
     }
   }
-  };
-
-
+};
 </script>
 
 
