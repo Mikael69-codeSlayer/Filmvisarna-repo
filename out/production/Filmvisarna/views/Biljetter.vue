@@ -7,42 +7,12 @@
   <h1>{{show.id}}</h1>
 </div>
 -->
-<div class="filmdropdown">
-<select v-model="films">
-  <option disabled value="">Alla filmer</option>
-   <option value="film" v-for="film of filmer" :key="film.title" > {{film.title}}</option>
-
-</select>
-
-</div>
-
-<div class="datedropdown">
-<select v-model="date">
-<option disabled value="">Datum</option>
-   <option value="time" v-for="show of sortedShows" :key="show.date" > {{show.date}}</option>
-     
-</select>
-</div>
 <div class="movie-list">
       <div v-for="film of filmer" :key="film.id">
-        <router-link :to="'/filmerDetails/' + film.id">
           <div class="movie-item">
             <div class="movie-item-poster">
               <img :src="film.posterUrl" />
             </div>
-
-            <div class="movie-item-text">
-              <a class="movie-title">{{ film.title }}</a> <br />
-              {{ film.genre }} 
-              | {{ film.length }} min
-              | {{ film.language }}
-            </div>
-          </div>
-        </router-link>
-
-        <div class="movie-item-space">
-          <div class="line"></div>
-        </div>
       </div>
     </div>
 
@@ -61,11 +31,21 @@ export default {
   },
 
   computed: {
+    id() {
+      // get id from url parameter
+      return this.$route.params.id;
+    },
     filmer() {
-      return this.$store.state.filmer;
+      // Also added this, to get filmes and id
+      return this.$store.state.filmer.filter((filmer) => filmer.id == this.id);
+    },
+    images() {
+      return this.$store.state.images.filter((images) => images.id == this.id);
     },
    showtime() {
-      return this.$store.state.showtime;
+      return this.$store.state.showtime.filter(
+        (showtime) => showtime.id == this.id
+      );
     },
     sortedShows(){
       //This removes all "-" in dates
