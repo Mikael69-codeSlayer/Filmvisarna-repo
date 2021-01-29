@@ -30,8 +30,8 @@ export default {
       const credentials={
       email: this.email,
       password: this.password,
-      
       }
+
      this.$store.dispatch('register', credentials)
       this.$router.replace('/minasidor');
     }
