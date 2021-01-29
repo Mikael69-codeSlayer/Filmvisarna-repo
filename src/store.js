@@ -73,7 +73,8 @@ const actions = {
       console.warn('Fel uppgifter')
     }
   },
-  
+
+
   async whoAmI(store) {
     let user = await fetch ('/api/whoami')
     try {

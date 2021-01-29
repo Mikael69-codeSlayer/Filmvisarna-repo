@@ -8,20 +8,27 @@
 </div>
 -->
   <div v-if="film" class="movie-list">
-      <div class="movie-item">
-        <div class="movie-item-poster">
-          <img :src="film.posterUrl" />
-        </div>
+    <div class="movie-item">
+      <div class="movie-item-poster">
+        <img :src="film.posterUrl" />
+      </div>
     </div>
     <!-- <div v-for="film of filmer" :key="film.id">
      <h1>{{ film.title }}</h1> 
     </div> -->
-    <div v-for="show of showtime" :key="show.id">
-      <div>
+    <div v-for="show of sortedShows" :key="show.id">
+      <div v-if="isLoggedIn">
         <h1>{{ show.date }}</h1>
         <p>Lediga säten {{ show.availableSeats }}</p>
-       <router-link :to="'/ticket/' + show.id">
-         <button class="ticket-button">Biljetter</button>
+        <router-link :to="'/tickets/' + show.id">
+          <button class="ticket-button">Biljetter</button>
+        </router-link>
+      </div>
+      <div v-else>
+        <h1>{{ show.date }}</h1>
+        <p>Lediga säten {{ show.availableSeats }}</p>
+        <router-link :to="'/login'">
+          <button class="ticket-button">Biljetter</button>
         </router-link>
       </div>
     </div>
@@ -46,9 +53,16 @@ export default {
     },
     film() {
       // Also added this, to get filmes and id
-      return this.$store.state.filmer.filter((filmer) => filmer.id == this.id)[0];
-      // this.id)[0]; alltid en stor vilket blir retunerad 
+      return this.$store.state.filmer.filter(
+        (filmer) => filmer.id == this.id
+      )[0];
+      // this.id)[0]; alltid en stor vilket blir retunerad
       //array[0]
+    },userLoggedIn() {
+      return this.$store.state.user == null
+  },
+   isLoggedIn(){
+      return this.$store.state.user != null
     },
     // images() {
     //   return this.$store.state.images.filter((images) => images.id == this.id);

@@ -3,11 +3,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Filmvisarna from './views/Filmvisarna.vue'
 import Filmer from './views/Filmer.vue'
 import Login from './views/Login.vue'
-import Biljetter from './views/Biljetter.vue'
+import Movieshowings from './views/Movieshowings.vue'
 import FilmerDetails from './views/FilmerDetails.vue'
 import SkapaKonto from './views/SkapaKonto.vue'
 import MinaSidor from "./views/MinaSidor.vue"
 import Salons from "./views/Salons.vue";
+import Tickets from "./views/Tickets.vue";
 
 const routes = [
   {
@@ -31,9 +32,9 @@ const routes = [
     component: Login
   },
   {
-    name: 'Biljetter',
-    path: '/biljetter/:id',
-    component: Biljetter
+    name: 'Movieshowings',
+    path: '/movieshowings/:id',
+    component: Movieshowings
   },
   {
     name: 'SkapaKonto',
@@ -44,10 +45,16 @@ const routes = [
     name: 'MinaSidor',
     path: '/minasidor',
     component: MinaSidor
-  },{
+  },
+  {
     name: 'Salons',
     path: '/salons',
     component: Salons
+  },
+  {
+    name: 'Tickets',
+    path: '/tickets/:id',
+    component: Tickets
   }
 ]
 
