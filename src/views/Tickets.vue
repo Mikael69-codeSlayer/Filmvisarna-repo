@@ -10,7 +10,7 @@
              <p>Vuxenbiljett<br> Antal: {{ count }} </p>
               <button v-on:click.prevent="increment">+</button>
             <button v-on:click.prevent="decrement">-</button>
-            <button class="book-adult-ticket">Boka</button>
+            <button v-on:click="createBooking()" class="book-adult-ticket">Boka</button>
           </div>
 
       </div>
@@ -56,6 +56,17 @@ computed: {
       if(this.count > 0){
         this.count-- ;
       }
+    },
+    createBooking () {
+       this.seatsLeft.availableSeats = this.seatsLeft.availableSeats - this.count;
+       console.log(this.seatsLeft.availableSeats);
+    
+     /* const credentials={
+      availableSeats: this.seatsLeft.availableSeats
+      }
+
+     this.$store.dispatch('book-adult-ticket', credentials)*/
+    //  this.$router.replace('/minasidor');
     }
   }
 }
