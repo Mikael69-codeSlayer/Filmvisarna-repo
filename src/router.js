@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Filmvisarna from './views/Filmvisarna.vue'
 import Filmer from './views/Filmer.vue'
 import Login from './views/Login.vue'
-import Biljetter from './views/Biljetter.vue'
+import Movieshowings from './views/Movieshowings.vue'
 import FilmerDetails from './views/FilmerDetails.vue'
 import SkapaKonto from './views/SkapaKonto.vue'
 import MinaSidor from "./views/MinaSidor.vue"
@@ -32,9 +32,9 @@ const routes = [
     component: Login
   },
   {
-    name: 'Biljetter',
-    path: '/biljetter/:id',
-    component: Biljetter
+    name: 'Movieshowings',
+    path: '/movieshowings/:id',
+    component: Movieshowings
   },
   {
     name: 'SkapaKonto',
