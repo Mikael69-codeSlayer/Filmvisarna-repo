@@ -16,7 +16,7 @@
     <!-- <div v-for="film of filmer" :key="film.id">
      <h1>{{ film.title }}</h1> 
     </div> -->
-    <div v-for="show of showtime" :key="show.id">
+    <div v-for="show of sortedShows" :key="show.id">
       <div v-if="isLoggedIn">
         <h1>{{ show.date }}</h1>
         <p>Lediga säten {{ show.availableSeats }}</p>

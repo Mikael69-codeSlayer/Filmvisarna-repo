@@ -19,10 +19,6 @@
 
 
 
-
-
-
-
 </div>
   
 </template>
@@ -57,15 +53,25 @@ computed: {
         this.count-- ;
       }
     },
+
+          /*  const credentials={
+      email: this.email,
+      password: this.password,
+      }
+
+     this.$store.dispatch('register', credentials)
+      this.$router.replace('/minasidor');
+    } */
+
     createBooking () {
        this.seatsLeft.availableSeats = this.seatsLeft.availableSeats - this.count;
        console.log(this.seatsLeft.availableSeats);
     
      /* const credentials={
       availableSeats: this.seatsLeft.availableSeats
-      }
+      */
 
-     this.$store.dispatch('book-adult-ticket', credentials)*/
+     this.$store.dispatch('book-adult-ticket', credentials)
     //  this.$router.replace('/minasidor');
     }
   }
@@ -73,6 +79,12 @@ computed: {
 </script>
 
 <style scoped>
+div.available-seats {
+  background-color: rgba(128, 0, 128, 0.274);
+  padding: 300px;
+  
+}
+
   .adult-ticket-container{
     padding-bottom: 20px;
     font-weight: bold;
