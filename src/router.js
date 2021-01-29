@@ -8,6 +8,7 @@ import FilmerDetails from './views/FilmerDetails.vue'
 import SkapaKonto from './views/SkapaKonto.vue'
 import MinaSidor from "./views/MinaSidor.vue"
 import Salons from "./views/Salons.vue";
+import Tickets from "./views/Tickets.vue";
 
 const routes = [
   {
@@ -44,10 +45,16 @@ const routes = [
     name: 'MinaSidor',
     path: '/minasidor',
     component: MinaSidor
-  },{
+  },
+  {
     name: 'Salons',
     path: '/salons',
     component: Salons
+  },
+  {
+    name: 'Tickets',
+    path: '/tickets/:id',
+    component: Tickets
   }
 ]
 

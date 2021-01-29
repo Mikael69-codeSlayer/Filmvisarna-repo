@@ -20,7 +20,7 @@
       <div v-if="isLoggedIn">
         <h1>{{ show.date }}</h1>
         <p>Lediga säten {{ show.availableSeats }}</p>
-        <router-link :to="'/ticket/' + show.id">
+        <router-link :to="'/tickets/' + show.id">
           <button class="ticket-button">Biljetter</button>
         </router-link>
       </div>
