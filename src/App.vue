@@ -14,7 +14,7 @@
       </div>
 
       <div class="nav log">
-        <router-link v-if="userLoggedIn" :to="{ name: 'Login' }" >Login</router-link> 
+        <router-link v-if="userLoggedIn" :to="{ name: 'Login' }" >Login</router-link>   
         <div class="welcome" v-else> Välkommen, {{userName}}!                                               
         <button @click="mypages">Mina Sidor</button>
         <button @click="logout">Logga ut</button></div>
@@ -87,7 +87,6 @@ export default {
       // get id from url parameter
       return this.$route.params.id;
     },
-
     userName(){
       return this.$store.state.user.email
     }}

@@ -1,6 +1,7 @@
 <template>
   <h1>Mina Sidor</h1>
-  <div>Mina bokningar</div>
+  <div> Mina bokningar </div>
+  <p></p>
 
 
 
@@ -12,19 +13,27 @@
 export default {
   data(){
     return{
-      user: "",
-    bookings: []
-  }},
-
+      
+  }
+  },
 
 computed: {
+   userName(){
+      return this.$store.state.user.email
+    },
    isLoggedIn(){
       return this.$store.state.user != null
+    },
+    myBookings(){
+      return this.$store.state.user.bookings 
     }
-    
+  
   },
 methods: {
-  
+
+  created() {
+    this.$store.dispatch("whoAmI")
+  },
 }
 }
 

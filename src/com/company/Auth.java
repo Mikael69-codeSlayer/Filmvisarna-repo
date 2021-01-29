@@ -80,7 +80,7 @@ public class Auth {
             User user = req.session("current-user");
             res.json(user);
         });
-        
+
         app.get("api/logout", (req, res) -> {
             req.session("current-user", null);
             res.send("Utloggad");
