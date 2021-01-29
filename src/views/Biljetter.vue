@@ -17,7 +17,7 @@
      <h1>{{ film.title }}</h1> 
     </div> -->
     <div v-for="show of showtime" :key="show.id">
-      <div v-if="!user == null">
+      <div v-if="isLoggedIn">
         <h1>{{ show.date }}</h1>
         <p>Lediga säten {{ show.availableSeats }}</p>
         <router-link :to="'/ticket/' + show.id">
@@ -58,6 +58,11 @@ export default {
       )[0];
       // this.id)[0]; alltid en stor vilket blir retunerad
       //array[0]
+    },userLoggedIn() {
+      return this.$store.state.user == null
+  },
+   isLoggedIn(){
+      return this.$store.state.user != null
     },
     // images() {
     //   return this.$store.state.images.filter((images) => images.id == this.id);
