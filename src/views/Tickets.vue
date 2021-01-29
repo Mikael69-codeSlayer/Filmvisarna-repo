@@ -4,6 +4,16 @@
       <div v-if="seatsLeft" class="movie-list">
         <p>Lediga säten {{ seatsLeft.availableSeats }}</p>
       </div>
+      <div class="buttons-container">
+
+        <div class="adult-ticket-container">  
+             <p>Vuxenbiljett<br> Antal: {{ count }}</p>
+              <button v-on:click.prevent="increment">+</button>
+            <button v-on:click.prevent="decrement">-</button>
+            <button class="book-adult-ticket">Boka</button>
+          </div>
+
+      </div>
   </div>
 
 
@@ -19,7 +29,13 @@
 
 <script>
 export default {
+     data: ()=> {
+    return {
+      count: 0
+    }
+  },
 computed: {
+
     id() {
       // get id from url parameter
       return this.$route.params.id;
@@ -29,26 +45,25 @@ computed: {
       return this.$store.state.showtime.filter(
         (showtime) => showtime.id == this.id
       )[0];
-      // this.id)[0]; alltid en stor vilket blir retunerad
-      //array[0]
-    },userLoggedIn() {
-      return this.$store.state.user == null
-  },
-   isLoggedIn(){
-      return this.$store.state.user != null
+      }
     },
-    // images() {
-    //   return this.$store.state.images.filter((images) => images.id == this.id);
-    // },
-    showtime() {
-      return this.$store.state.showtime.filter(
-        (showtime) => showtime.film == this.film.title
-      );
+
+    methods: {
+    increment () {
+      this.count++;
     },
-}
+    decrement () {
+      if(this.count > 0){
+        this.count-- ;
+      }
+    }
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+  .adult-ticket-container{
+    padding-bottom: 20px;
+    font-weight: bold;
+  }
 </style>
