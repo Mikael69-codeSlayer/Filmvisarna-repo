@@ -7,7 +7,7 @@
       <div class="buttons-container">
 
         <div class="adult-ticket-container">  
-             <p>Vuxenbiljett<br> Antal: {{ count }}</p>
+             <p>Vuxenbiljett<br> Antal: {{ count }} </p>
               <button v-on:click.prevent="increment">+</button>
             <button v-on:click.prevent="decrement">-</button>
             <button class="book-adult-ticket">Boka</button>
