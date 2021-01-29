@@ -9,9 +9,6 @@
       <div class="nav filmer">
         <router-link :to="{ name: 'Filmer' }">Filmer & Trailer</router-link>
       </div>
-      <div class="nav bil">
-        <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
-      </div>
       <div class="nav log">
         <router-link v-if="userLoggedIn" :to="{ name: 'Login' }" >Login</router-link> 
         <div v-else> Välkommen!

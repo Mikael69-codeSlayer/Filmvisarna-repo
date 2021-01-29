@@ -32,7 +32,7 @@ const routes = [
   },
   {
     name: 'Biljetter',
-    path: '/biljetter',
+    path: '/biljetter/:id',
     component: Biljetter
   },
   {

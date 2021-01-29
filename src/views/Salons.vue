@@ -152,8 +152,7 @@ p {
   user-select: none;
 }
  */
-.seats:hover {
-  background-color: rgb(255, 255, 255);
+.seat:hover {
   cursor: pointer;
 }
 

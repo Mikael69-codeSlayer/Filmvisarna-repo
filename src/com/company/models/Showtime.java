@@ -14,7 +14,7 @@ public class Showtime {
     private String date;
     private String time;
     private String showId;
-
+    private int availableSeats;
 
     public String getId() {
         return id;
@@ -64,5 +64,11 @@ public class Showtime {
         this.showId = showId;
     }
 
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
 
+    public void setAvailableSeats(int availableSeats) {
+        this.availableSeats = availableSeats;
+    }
 }
