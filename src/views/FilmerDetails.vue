@@ -17,9 +17,9 @@
           <br />
           <p>{{ film.genre }} | {{ film.length }} min</p>
 
-          <div class="trailer-button-container">
-            <router-link :to="'/biljetter/'">
-              <button class="trailer-button">Biljetter</button>
+          <div class="ticket-button-container">
+            <router-link :to="'/movieshowings/' +film.id">
+              <button class="ticket-button">Biljetter</button>
             </router-link>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default {
       return this.$store.state.images.filter((images) => images.id == this.id);
     },
     showtime() {
-      return this$store.state.showtime.filter(
+      return this.$store.state.showtime.filter(
         (showtime) => showtime.id == this.id
       );
     },
@@ -180,7 +180,7 @@ div.detail-text p {
   font-size: 1em;
 }
 
-.trailer-button {
+.ticket-button {
   background-color: rgba(220, 20, 60, 0.877);
   font-size: 1.2em;
   color: white;
@@ -190,7 +190,7 @@ div.detail-text p {
   cursor: pointer;
 }
 
-.trailer-button:hover {
+.ticket-button:hover {
   background-color: rgba(250, 82, 82, 0.787);
 }
 

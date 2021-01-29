@@ -9,10 +9,6 @@
       <div class="nav filmer">
         <router-link :to="{ name: 'Filmer' }">Filmer & Trailer</router-link>
       </div>
-      <div class="nav bil">
-        <router-link :to="{ name: 'Biljetter' }">Biljetter</router-link>
-      </div>
-
       <div class="nav log">
         <router-link v-if="userLoggedIn" :to="{ name: 'Login' }"
           >Login</router-link
@@ -40,7 +36,7 @@
 import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
-import Biljetter from "./views/Biljetter.vue";
+import Tickets from "./views/Tickets.vue";
 import Salons from "./views/Salons.vue";
 import SkapaKonto from "./views/SkapaKonto.vue";
 import MinaSidor from "./views/MinaSidor.vue";
@@ -58,7 +54,7 @@ export default {
     Filmvisarna,
     Filmer,
     Login,
-    Biljetter,
+    Tickets,
     SkapaKonto,
     MinaSidor,
     Salons,
