@@ -17,7 +17,7 @@ public class Auth {
     private void initAuth(){
         String secretSalt = "hnjfew45%!dhDsdqw-_!dwOL";  //googla på load from environment??
 
-        app.post("/api/register", (req, res) -> {
+        app.post("/api/register", (req, res) -> {                       //post skickar info till databasen
             if(req.session("current-user") != null) {
                 res.send("Redan inloggad");
                 return;
@@ -75,7 +75,7 @@ public class Auth {
             }
         });
 
-        app.get("/api/whoami", (req, res) -> {
+        app.get("/api/whoami", (req, res) -> {                     //get hämtar informationen som redan finns. Hämtar användaren som är inloggad/ registrerad
 
             User user = req.session("current-user");
             res.json(user);

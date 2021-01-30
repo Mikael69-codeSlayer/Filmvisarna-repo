@@ -16,13 +16,6 @@
       </div>
   </div>
 
-
-
-
-
-
-
-
 </div>
   
 </template>
