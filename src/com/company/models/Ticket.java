@@ -11,8 +11,25 @@ public class Ticket {
     private String auditorium;
     private String film;
     private String date;
-    private String time;
+    private String time;             //private int price?? kanske hur många säten också?
+    private int seats;
+    private int price;
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
 
     public String getAuditorium() {
         return auditorium;
@@ -71,6 +88,8 @@ public class Ticket {
                 ", film='" + film + '\'' +
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +
+                ", seats=" + seats +
+                ", price=" + price +
                 '}';
     }
 }

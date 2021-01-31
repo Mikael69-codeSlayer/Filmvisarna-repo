@@ -5,9 +5,11 @@ const state = {
   showtime: [],
   salons: [],
   user: null,
-  ticket: {},              //Biljetten som ska skickas till backend, måste ha exakt samma fält som i backend. Samma stavning osv. {customer:{allt i måsvingar är objekt}, seats: är int, ej objekt}
+  ticket: { userId: "", seats: "", auditorium: "", film: "", date: "", time: "", price:"" }, //Biljetten som ska skickas till backend, måste ha exakt samma fält som i backend. 
+                                                                            //  Samma stavning osv. { user: { allt i måsvingar är objekt }, seats: är int, ej objekt }
   allTickets:[]          //Kan eventuellt behövas för att hitta historiken av en användares biljetter
 }                         
+
 
 // mutates state 
 const mutations = {
