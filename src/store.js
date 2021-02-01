@@ -5,7 +5,7 @@ const state = {
   showtime: [],
   salons: [],
   user: null,
-  ticket: { userId: "", film: "", date: "", time: "", salon: "", seats: 0, price: 0 }, //Biljetten som ska skickas till backend, måste ha exakt samma fält som i backend. 
+  ticket: { id:"", userId: "", film: "", date: "", time: "", salon: "", seats: 0, price: 0 }, //Biljetten som ska skickas till backend, måste ha exakt samma fält som i backend. 
                                                                             //  Samma stavning osv. { user: { allt i måsvingar är objekt }, seats: är int, ej objekt }
   allTickets:[]          //Kan eventuellt behövas för att hitta historiken av en användares biljetter
 }                         
@@ -27,7 +27,11 @@ const mutations = {
   },
   setTickets(state, list) {
     state.allTickets = list               //tar tag i allTickets 
+  },
+  addTicket(state, ticket) {
+    state.ticket.push(ticket)
   }
+
 }
 
 // async network requests 
@@ -100,16 +104,17 @@ const actions = {
   },
 
   async addTicket(store, ticket) {   
+    console.log(ticket)
     let newTicket = await fetch('/rest/ticket', {
       method: 'POST',
-      body:JSON.stringify(ticket)
+      body: JSON.stringify(ticket)
     })
     try {
       newTicket = await newTicket.json()
       console.log(newTicket)
-      store.dispatch('fetchTickets')
+      store.dispatch('fetchTickets', ticket)
     } catch {
-      console.warn("Bokningen misslyckades")
+      console.warn('Bokningen misslyckades')
     }
   }
 }
