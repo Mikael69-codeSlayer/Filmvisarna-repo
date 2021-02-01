@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.models.Salons;
+import com.company.models.Showtime;
 import com.company.models.Ticket;
 import com.company.models.User;
 import com.company.utilities.HashPassword;
@@ -57,12 +59,17 @@ public class Main {
 
         });
 
-
         app.get("/rest/showtime", (req, res) -> {
             res.send("Showtime");
             var showtime = collection("Showtime").find();
             res.json(showtime);
+        });
 
+        app.post("/rest/showtime/:id/:availableSeats", (req, res) -> {
+            Showtime showtime = req.body(Showtime.class);
+            collection("Showtime").save(showtime);
+            //showtime.setAvailableSeats();
+            res.json(showtime);
         });
 
 

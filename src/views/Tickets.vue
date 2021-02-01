@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="available-seats">
-      <div v-if="seatsLeft" class="movie-list">
-        <p>Lediga säten {{ seatsLeft.availableSeats }}</p>
+      <div v-if="currentShow" class="movie-list">
+        <p>Lediga säten {{ currentShow.availableSeats }}</p>
       </div>
       <h1 id="choose-amount">Välj antal biljetter</h1>
       <div class="buttons-container">
@@ -18,7 +18,7 @@
             <button class="button" v-on:click.prevent="decrement">-</button>
             </div>
             </div>
-            <button v-on:click="updateAvailableSeats, writeSeatsLeft, bookTicket" class="book-adult-ticket">Boka</button>
+            <button v-on:click="updateAvailableSeats, writecurrentShow, bookTicket" class="book-adult-ticket">Boka</button>
       </div>
     </div>
   </div>
@@ -45,26 +45,26 @@ export default {
       // get id from url parameter
       return this.$route.params.id;
     },
-    seatsLeft() {
+    currentShow() {
       // Also added this, to get filmes and id
       return this.$store.state.showtime.filter(
         (showtime) => showtime.id == this.id
       )[0];
     },
         updateAvailableSeats() {
-      this.seatsLeft.availableSeats = this.seatsLeft.availableSeats - this.count;
-      //console.log(this.seatsLeft.availableSeats);
+      this.currentShow.availableSeats = this.currentShow.availableSeats - this.count;
+      //console.log(this.currentShow.availableSeats);
       
     },
   },
 
     methods: {
 
-    writeSeatsLeft() {
+    writecurrentShow() {
         const list = {
-          availableSeats: this.seatsLeft.availableSeats
+          availableSeats: this.currentShow.availableSeats
         }
-        this.$store.commit('setShowtime', list);
+        this.$store.commit('updateShow', list);
     },
 
     increment() {
