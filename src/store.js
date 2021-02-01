@@ -5,7 +5,7 @@ const state = {
   showtime: [],
   salons: [],
   user: null,
-  ticket: { userId: "", seats: "", auditorium: "", film: "", date: "", time: "", price:"" }, //Biljetten som ska skickas till backend, måste ha exakt samma fält som i backend. 
+  ticket: { userId: "", seats: 0, auditorium: "", film: "", date: "", time: "", price: 0 }, //Biljetten som ska skickas till backend, måste ha exakt samma fält som i backend. 
                                                                             //  Samma stavning osv. { user: { allt i måsvingar är objekt }, seats: är int, ej objekt }
   allTickets:[]          //Kan eventuellt behövas för att hitta historiken av en användares biljetter
 }                         
