@@ -18,16 +18,16 @@
             <button class="button" v-on:click.prevent="decrement">-</button>
             </div>
             </div>
-            <button v-on:click="createBooking()" class="book-adult-ticket">Boka</button>
+            <button v-on:click="updateAvailableSeats, writeSeatsLeft" class="book-adult-ticket">Boka</button>
 
         <div class="adult-ticket-container">
           <p>
-            Vuxenbiljett<br />
+            Vuxenbiljett<br/>
             Antal: {{ count }}
           </p>
           <button v-on:click.prevent="increment">+</button>
           <button v-on:click.prevent="decrement">-</button>
-          <button v-on:click="bookTicket" type="bookTicket" class="book-adult-ticket">Boka</button>
+          <button v-on:click="bookTicket" type="bookTicket" class="ok-adult-ticket">Boka</button>
         </div>
       </div>
     </div>
@@ -40,6 +40,7 @@ export default {
   data() {
     return {
       count: 0,
+      availableSeats:'',
       userId:"",
       film: "",
       date: "",
@@ -60,23 +61,32 @@ export default {
         (showtime) => showtime.id == this.id
       )[0];
     },
+        updateAvailableSeats() {
+      this.seatsLeft.availableSeats = this.seatsLeft.availableSeats - this.count;
+      //console.log(this.seatsLeft.availableSeats);
+      
+    },
   },
 
     methods: {
+
+    writeSeatsLeft() {
+        const list = {
+          availableSeats: this.seatsLeft.availableSeats
+        }
+        this.$store.commit('fetchShowtime', list);
+    },
+
     increment() {
       this.count++;
     },
+
     decrement() {
       if (this.count > 0) {
         this.count--;
       }
     },
-    createBooking() {
-      this.seatsLeft.availableSeats =
-        this.seatsLeft.availableSeats - this.count;
-      console.log(this.seatsLeft.availableSeats);
 
-    },
     bookTicket() {
       const ticket = {
         userId: this.userId,

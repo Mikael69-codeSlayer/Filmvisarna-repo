@@ -42,7 +42,7 @@ const actions = {
   async fetchShowtime(store) {
     let list = await fetch('/rest/showtime')
     list = await list.json()
-    //console.log(list)
+    console.log(list)
     store.commit('setShowtime', list)
   },
   
