@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="available-seats">
-      <div v-if="seatsLeft" class="movie-list">
-        <p>Lediga säten {{ seatsLeft.availableSeats }}</p>
+      <div v-if="currentShow" class="movie-list">
+        <p>Lediga säten {{ currentShow.availableSeats }}</p>
       </div>
       <h1 id="choose-amount">Välj antal biljetter</h1>
       <div class="buttons-container">
@@ -73,7 +73,7 @@ export default {
       // get id from url parameter
       return this.$route.params.id;
     },
-    seatsLeft() {
+    currentShow() {
       // Also added this, to get filmes and id
       return this.$store.state.showtime.filter(
         (showtime) => showtime.id == this.id
@@ -89,9 +89,9 @@ export default {
 
     methods: {
 
-    writeSeatsLeft() {
+    writecurrentShow() {
         const list = {
-          availableSeats: this.seatsLeft.availableSeats
+          availableSeats: this.currentShow.availableSeats
         }
         this.$store.commit('setShowtime', list);
     },
