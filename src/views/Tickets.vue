@@ -78,7 +78,9 @@ export default {
     },
 
     increment() {
-      this.count++;
+      if(this.count < 8){
+        this.count++;
+      }
     },
 
     decrement() {
