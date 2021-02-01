@@ -12,7 +12,7 @@
           </p>
           <button v-on:click.prevent="increment">+</button>
           <button v-on:click.prevent="decrement">-</button>
-          <button type="bookTicket" class="book-adult-ticket">Boka</button>
+          <button v-on:click="bookTicket" type="bookTicket" class="book-adult-ticket">Boka</button>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@ export default {
       film: "",
       date: "",
       time: "",
-      auditorium: "",
+      salon: "",
       seats: 0,
       price: 0
     };
@@ -68,13 +68,13 @@ export default {
         film: this.film,
         date: this.date,
         time: this.time,
-        auditorium: this.auditorium,
+        salon: this.salon,
         seats: this.seats,
         price: this.price
 
       };
 
-      this.$store.dispatch("bookTicket", ticket);
+      this.$store.dispatch("addTicket", ticket);
       this.$router.replace("/minasidor");
     },
   },

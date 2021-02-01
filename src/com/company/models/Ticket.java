@@ -8,7 +8,7 @@ public class Ticket {
     @Id
     private String id;
     private String userId;
-    private String auditorium;
+    private String salon;
     private String film;
     private String date;
     private String time;             //private int price?? kanske hur många säten också?
@@ -31,12 +31,12 @@ public class Ticket {
         this.seats = seats;
     }
 
-    public String getAuditorium() {
-        return auditorium;
+    public String getSalon() {
+        return salon;
     }
 
-    public void setAuditorium(String auditorium) {
-        this.auditorium = auditorium;
+    public void setSalon(String salon) {
+        this.salon = salon;
     }
 
     public String getFilm() {
@@ -84,7 +84,7 @@ public class Ticket {
         return "Ticket{" +
                 "id='" + id + '\'' +
                 ", userId='" + userId + '\'' +
-                ", auditorium='" + auditorium + '\'' +
+                ", auditorium='" + salon + '\'' +
                 ", film='" + film + '\'' +
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +
