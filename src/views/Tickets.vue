@@ -7,44 +7,52 @@
       <h1 id="choose-amount">Välj antal biljetter</h1>
       <div class="buttons-container">
         <!-- Adult tickets -->
-        <div class="adult-ticket-container">  
-             <div class="adult-header">Vuxen 
-               <p class="adult-price">120kr/st</p>
-             </div>
-                <!-- plus and minus buttons -->
-             <div class="increment-buttons"> 
-              <button class="aButton" v-on:click.prevent="aIncrement">+</button>
-              <div class="aCount">{{ aCount }}</div>
+        <div class="adult-ticket-container">
+          <div class="adult-header">
+            Vuxen
+            <p class="adult-price">120kr/st</p>
+          </div>
+          <!-- plus and minus buttons -->
+
+          <div class="increment-buttons">
+            <button class="aButton" v-on:click.prevent="aIncrement">+</button>
+            <div class="aCount">{{ aCount }}</div>
             <button class="aButton" v-on:click.prevent="aDecrement">-</button>
-            </div>
-            </div>
-              <!-- Child tickets -->
-              <div class="child-ticket-container">  
-             <div class="child-header">Barn 
-               <p class="child-price">80kr/st</p> 
-             </div>
-               <!-- plus and minus buttons -->
-             <div class="increment-buttons"> 
-              <button class="cButton" v-on:click.prevent="cIncrement">+</button>
-              <div class="cCount">{{ cCount }}</div>
+          </div>
+        </div>
+        <!-- Child tickets -->
+        <div class="child-ticket-container">
+          <div class="child-header">
+            Barn
+            <p class="child-price">80kr/st</p>
+          </div>
+          <!-- plus and minus buttons -->
+          <div class="increment-buttons">
+            <button class="cButton" v-on:click.prevent="cIncrement">+</button>
+            <div class="cCount">{{ cCount }}</div>
             <button class="cButton" v-on:click.prevent="cDecrement">-</button>
-            </div>
-            </div>
-                  <!-- Senior tickets -->
-                <div class="senior-ticket-container">  
-             <div class="senior-header">Pensionär 
-               <p class="senior-price">80kr/st</p> 
-             </div>
-               
-            
-             <div class="increment-buttons"> 
-              <button class="sButton" v-on:click.prevent="sIncrement">+</button>
-              <div class="sCount">{{ sCount }}</div>
+          </div>
+        </div>
+        <!-- Senior tickets -->
+        <div class="senior-ticket-container">
+          <div class="senior-header">
+            Pensionär
+            <p class="senior-price">80kr/st</p>
+          </div>
+
+          <div class="increment-buttons">
+            <button class="sButton" v-on:click.prevent="sIncrement">+</button>
+            <div class="sCount">{{ sCount }}</div>
             <button class="sButton" v-on:click.prevent="sDecrement">-</button>
-            </div>
-            </div>
-            
-            <button v-on:click="updateAvailableSeats, writeSeatsLeft, bookTicket" class="book-adult-ticket">Boka</button>
+          </div>
+        </div>
+
+        <button
+          v-on:click="updateAvailableSeats, writeSeatsLeft, bookTicket"
+          class="book-adult-ticket"
+        >
+          Boka
+        </button>
       </div>
     </div>
   </div>
@@ -52,20 +60,20 @@
 
 <script>
 export default {
-  name:"bookTicket",
+  name: "bookTicket",
   data() {
     return {
-      aCount : 0,
+      aCount: 0,
       cCount: 0,
       sCount: 0,
-      availableSeats:'',
-      userId:"",
+      availableSeats: "",
+      userId: "",
       film: "",
       date: "",
       time: "",
       salon: "",
       seats: 0,
-      price: 0
+      price: 0,
     };
   },
   computed: {
@@ -79,60 +87,57 @@ export default {
         (showtime) => showtime.id == this.id
       )[0];
     },
-        updateAvailableSeats() {
-      this.seatsLeft.availableSeats = this.seatsLeft.availableSeats - (this.aCount + this.cCount + this.sCount);
-       
+    updateAvailableSeats() {
+      this.seatsLeft.availableSeats =
+        this.seatsLeft.availableSeats -
+        (this.aCount + this.cCount + this.sCount);
+
       //console.log(this.seatsLeft.availableSeats);
-      
     },
   },
 
-    methods: {
-
+  methods: {
     writecurrentShow() {
-        const list = {
-          availableSeats: this.currentShow.availableSeats
-        }
-        this.$store.commit('setShowtime', list);
+      const list = {
+        availableSeats: this.currentShow.availableSeats,
+      };
+      this.$store.commit("setShowtime", list);
     },
 
     aIncrement() {
-      if(this. aCount  < 8){
-        this. aCount ++;
+      if (this.aCount < 8) {
+        this.aCount++;
       }
     },
 
     aDecrement() {
-      if (this. aCount  > 0) {
-        this.aCount --;
+      if (this.aCount > 0) {
+        this.aCount--;
       }
     },
 
     cIncrement() {
-      if(this. cCount  < 8){
-        this. cCount ++;
+      if (this.cCount < 8) {
+        this.cCount++;
       }
     },
 
     cDecrement() {
-      if (this. cCount  > 0) {
-        this.cCount --;
+      if (this.cCount > 0) {
+        this.cCount--;
       }
     },
-     sIncrement() {
-      if(this. sCount  < 8){
-        this. sCount ++;
+    sIncrement() {
+      if (this.sCount < 8) {
+        this.sCount++;
       }
     },
 
     sDecrement() {
-      if (this. sCount  > 0) {
-        this.sCount --;
+      if (this.sCount > 0) {
+        this.sCount--;
       }
     },
-
-
-    
 
     bookTicket() {
       const ticket = {
@@ -142,8 +147,7 @@ export default {
         time: this.time,
         salon: this.salon,
         seats: this.seats,
-        price: this.price
-
+        price: this.price,
       };
 
       this.$store.dispatch("addTicket", ticket);
@@ -151,28 +155,25 @@ export default {
     },
   },
 };
-
 </script>
 
 <style scoped>
-
-#choose-amount{
+#choose-amount {
   text-align: center;
   font-size: 30px;
   color: whitesmoke;
   font-family: "Roboto Slab", serif;
 }
 
-/*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- ADULT TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/ 
+/*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- ADULT TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
-.adult-price{
-   color: black;
+.adult-price {
+  color: rgba(250, 227, 227, 0.719);
   font-size: 15px;
- 
 }
 
 div.available-seats {
-  background-color: rgb(133, 228, 149);
+  background-color: rgba(47, 44, 44, 0.26);
   padding: 300px;
   text-align: center;
 }
@@ -181,21 +182,20 @@ div.adult-header {
   float: left;
   padding-right: 300px;
   color: whitesmoke;
-   font-family: "Roboto Slab", serif;
-   font-size: 20px;
-   line-height: 15px;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 15px;
 }
-
 
 div.aCount {
   float: left;
   margin: 0 auto;
   text-align: center;
   width: 40px;
-    color: whitesmoke;
-   font-family: "Roboto Slab", serif;
-    font-size: 20px;
-    line-height: 30px;
+  color: whitesmoke;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .aButton {
@@ -207,57 +207,53 @@ div.aCount {
   border: none;
   cursor: pointer;
   outline: none;
-} 
+}
 
+div.adult-ticket-container {
+  padding: 30px;
+  font-weight: bold;
+  width: 500px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.329);
+  margin: 0 auto;
+  height: 60px;
+}
 
-div.adult-ticket-container{
-    padding: 30px;
-    font-weight: bold;
-    width: 500px;
-    text-align: left;
-    background-color: rgba(255, 228, 196, 0.342);
-     margin: 0 auto;
-     height: 60px;
-     
-  }
-
- 
 .adult-ticket-container {
   padding-bottom: 20px;
   font-weight: bold;
 }
 
-
-/*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- CHILD TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/ 
-
-
-.child-price{
-   color: black;
-  font-size: 15px;
-
- 
+.increment-buttons {
+  float: right;
+  width: 100px;
 }
 
+/*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- CHILD TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
+
+.child-price {
+  color: rgba(250, 227, 227, 0.719);
+  font-size: 15px;
+}
 
 div.child-header {
   float: left;
   padding-right: 300px;
   color: whitesmoke;
-   font-family: "Roboto Slab", serif;
-   font-size: 20px;
-   line-height: 15px;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 15px;
 }
-
 
 div.cCount {
   float: left;
   margin: 0 auto;
   text-align: center;
   width: 40px;
-    color: whitesmoke;
-   font-family: "Roboto Slab", serif;
-    font-size: 20px;
-    line-height: 30px;
+  color: whitesmoke;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .cButton {
@@ -269,49 +265,43 @@ div.cCount {
   border: none;
   cursor: pointer;
   outline: none;
-} 
-
-
-div.child-ticket-container{
-    padding: 30px;
-    font-weight: bold;
-    width: 500px;
-    text-align: left;
-    background-color: rgba(255, 228, 196, 0.342);
-     margin: 0 auto;
-     height: 60px;
-     
-  }
-
-/*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- SENIOR TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/ 
-
-.senior-price{
-   color: black;
-  font-size: 15px;
-
- 
 }
 
+div.child-ticket-container {
+  padding: 30px;
+  font-weight: bold;
+  width: 500px;
+  text-align: left;
+  background-color: rgb(10, 10, 10);
+  margin: 0 auto;
+  height: 60px;
+}
+
+/*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- SENIOR TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
+
+.senior-price {
+  color: rgba(250, 227, 227, 0.719);
+  font-size: 15px;
+}
 
 div.senior-header {
   float: left;
   padding-right: 300px;
   color: whitesmoke;
-   font-family: "Roboto Slab", serif;
-   font-size: 20px;
-   line-height: 15px;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 15px;
 }
-
 
 div.sCount {
   float: left;
   margin: 0 auto;
   text-align: center;
   width: 40px;
-    color: whitesmoke;
-   font-family: "Roboto Slab", serif;
-    font-size: 20px;
-    line-height: 30px;
+  color: whitesmoke;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .sButton {
@@ -323,19 +313,15 @@ div.sCount {
   border: none;
   cursor: pointer;
   outline: none;
-} 
+}
 
-
-div.senior-ticket-container{
-    padding: 30px;
-    font-weight: bold;
-    width: 500px;
-    text-align: left;
-    background-color: rgba(255, 228, 196, 0.342);
-     margin: 0 auto;
-     height: 60px;
-  }
-
-
-
+div.senior-ticket-container {
+  padding: 30px;
+  font-weight: bold;
+  width: 500px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.329);
+  margin: 0 auto;
+  height: 60px;
+}
 </style>
