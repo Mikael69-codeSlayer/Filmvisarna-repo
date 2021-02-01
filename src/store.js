@@ -60,8 +60,10 @@ const actions = {
       {
         method: "PUT",
         body: JSON.stringify(show)
+        
       })
- },
+    store.commit('setAvailableSeats', show) 
+  },
 
   async login(store, credentials) {
     let user = await fetch('/api/login', {

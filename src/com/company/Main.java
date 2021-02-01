@@ -65,7 +65,7 @@ public class Main {
             res.json(showtime);
         });
 
-        app.post("/rest/showtime/:id/:availableSeats", (req, res) -> {
+        app.put("/rest/showtime/:id/:availableSeats", (req, res) -> {
             Showtime showtime = req.body(Showtime.class);
             collection("Showtime").save(showtime);
             //showtime.setAvailableSeats();

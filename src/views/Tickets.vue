@@ -61,10 +61,10 @@ export default {
     methods: {
 
     writecurrentShow() {
-        const list = {
+        const show = {
           availableSeats: this.currentShow.availableSeats
         }
-        this.$store.commit('setShowtime', list);
+        this.$store.commit('updateShow', show);
     },
 
     increment() {
