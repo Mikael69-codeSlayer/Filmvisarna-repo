@@ -18,17 +18,7 @@
             <button class="button" v-on:click.prevent="decrement">-</button>
             </div>
             </div>
-            <button v-on:click="updateAvailableSeats, writeSeatsLeft" class="book-adult-ticket">Boka</button>
-
-        <div class="adult-ticket-container">
-          <p>
-            Vuxenbiljett<br/>
-            Antal: {{ count }}
-          </p>
-          <button v-on:click.prevent="increment">+</button>
-          <button v-on:click.prevent="decrement">-</button>
-          <button v-on:click="bookTicket" type="bookTicket" class="ok-adult-ticket">Boka</button>
-        </div>
+            <button v-on:click="updateAvailableSeats, writeSeatsLeft, bookTicket" class="book-adult-ticket">Boka</button>
       </div>
     </div>
   </div>
@@ -74,7 +64,7 @@ export default {
         const list = {
           availableSeats: this.seatsLeft.availableSeats
         }
-        this.$store.commit('fetchShowtime', list);
+        this.$store.commit('setShowtime', list);
     },
 
     increment() {

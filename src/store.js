@@ -53,6 +53,8 @@ const actions = {
     store.commit('setSalons', list)
   },
 
+  
+
   async login(store, credentials) {
     let user = await fetch('/api/login', {
       method: 'POST',
