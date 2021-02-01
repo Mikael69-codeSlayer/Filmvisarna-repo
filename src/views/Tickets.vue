@@ -30,8 +30,8 @@ export default {
       date: "",
       time: "",
       auditorium: "",
-      seats:"",
-      price:""
+      seats: 0,
+      price: 0
     };
   },
   computed: {
@@ -61,12 +61,6 @@ export default {
         this.seatsLeft.availableSeats - this.count;
       console.log(this.seatsLeft.availableSeats);
 
-      /* const credentials={
-      availableSeats: this.seatsLeft.availableSeats
-      }
-
-     this.$store.dispatch('book-adult-ticket', credentials)*/
-      //  this.$router.replace('/minasidor');
     },
     bookTicket() {
       const ticket = {

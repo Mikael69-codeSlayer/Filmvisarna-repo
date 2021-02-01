@@ -12,17 +12,17 @@ public class User {
     private String id;
     private String email;
     private String password;
-    private ArrayList <String> bookings;
+    private ArrayList <Ticket> bookings;
 
     public User() {
 
     }
 
-    public ArrayList<String> getBookings() {
+    public ArrayList<Ticket> getBookings() {
         return bookings;
     }
 
-    public void setBookings(ArrayList<String> bookings) {
+    public void setBookings(ArrayList<Ticket> bookings) {
         this.bookings = bookings;
     }
 
