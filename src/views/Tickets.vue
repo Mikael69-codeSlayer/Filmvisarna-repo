@@ -88,8 +88,8 @@ export default {
       )[0];
     },
     updateAvailableSeats() {
-      this.seatsLeft.availableSeats =
-        this.seatsLeft.availableSeats -
+      this.currentShow.availableSeats =
+        this.currentShow.availableSeats -
         (this.aCount + this.cCount + this.sCount);
 
       //console.log(this.seatsLeft.availableSeats);
@@ -99,7 +99,7 @@ export default {
   methods: {
     writecurrentShow() {
         const show = {
-          availableSeats: this.currentShow.availableSeats
+          availableSeats: this.updateAvailableSeats
         }
         this.$store.commit('updateShow', show);
     },
