@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.models.Salons;
+import com.company.models.Showtime;
+import com.company.models.Ticket;
 import com.company.models.User;
 import com.company.utilities.HashPassword;
 import express.Express;
@@ -36,17 +39,37 @@ public class Main {
             var salons = collection("Salons").find();
             res.json(salons);
         });
+
         app.get("/rest/ticket", (req, res) -> {
             var ticket = collection("Ticket").find();
             res.json(ticket);
         });
 
+        app.post("/rest/ticket", (req, res) -> {
+            User user = req.session("current-user");
+            if(user == null ){
+                res.send("Du måste vara inloggad för att kunna boka en biljett");
+                return;
+            }
+            Ticket ticket = req.body(Ticket.class);
+            ticket.setUserId(user.getId());
+
+            collection("Ticket").save(ticket);                 //Lägger till en ny ticket till database
+            res.json(ticket);
+
+        });
 
         app.get("/rest/showtime", (req, res) -> {
             res.send("Showtime");
             var showtime = collection("Showtime").find();
             res.json(showtime);
+        });
 
+        app.post("/rest/showtime/:id/:availableSeats", (req, res) -> {
+            Showtime showtime = req.body(Showtime.class);
+            collection("Showtime").save(showtime);
+            //showtime.setAvailableSeats();
+            res.json(showtime);
         });
 
 

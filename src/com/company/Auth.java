@@ -17,8 +17,8 @@ public class Auth {
     private void initAuth(){
         String secretSalt = "hnjfew45%!dhDsdqw-_!dwOL";  //googla på load from environment??
 
-        app.post("/api/register", (req, res) -> {
-            if(req.session("current-user") != null) {
+        app.post("/api/register", (req, res) -> {                       //post skickar info till databasen
+            if(req.session("user") != null) {
                 res.send("Redan inloggad");
                 return;
             }
@@ -42,13 +42,13 @@ public class Auth {
             user.setPassword(null);
 
             // spara användaren i sessionen
-            req.session("current-user", user);
+            req.session("user", user);
 
             res.json(user);
         });
 
         app.post("/api/login", (req, res) -> {
-            if (req.session("current-user") != null) {
+            if (req.session("user") != null) {
                 res.send("Redan inloggad");
                 return;
             }
@@ -66,7 +66,7 @@ public class Auth {
 
                existingUser.setPassword(null);
 
-                req.session("current-user", existingUser);
+                req.session("user", existingUser);
 
                 res.json(existingUser); //rätt email + lösenord
 
@@ -75,13 +75,14 @@ public class Auth {
             }
         });
 
-        app.get("/api/whoami", (req, res) -> {
+        app.get("/api/whoami", (req, res) -> {                     //get hämtar informationen som redan finns. Hämtar användaren som är inloggad/ registrerad
 
-            User user = req.session("current-user");
+            User user = req.session("user");
             res.json(user);
         });
+
         app.get("api/logout", (req, res) -> {
-            req.session("current-user", null);
+            req.session("user", null);
             res.send("Utloggad");
         });
 
