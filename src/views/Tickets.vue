@@ -64,7 +64,7 @@ export default {
         const list = {
           availableSeats: this.currentShow.availableSeats
         }
-        this.$store.commit('updateShow', list);
+        this.$store.commit('setShowtime', list);
     },
 
     increment() {

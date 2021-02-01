@@ -59,13 +59,9 @@ const actions = {
       "rest/showtime/" + show.id + "/" + show.availableSeats,
       {
         method: "PUT",
-      }
-    )
-  //  method: 'POST',
-  //  body: JSON.stringify(list)
-  //  store.commit('setSalons', list)
-
-  }
+        body: JSON.stringify(show)
+      })
+ },
 
   async login(store, credentials) {
     let user = await fetch('/api/login', {
