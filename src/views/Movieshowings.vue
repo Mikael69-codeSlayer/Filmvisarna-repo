@@ -10,14 +10,14 @@
     </div>
     
     <div v-for="show of sortedShows" :key="show.id">
-      <div v-if="isLoggedIn">
+      <div class="showings" v-if="isLoggedIn">
         <h1>{{ show.date }}</h1>
         <p>Lediga säten {{ show.availableSeats }}</p>
         <router-link :to="'/tickets/' + show.id">
           <button class="ticket-button">Biljetter</button>
         </router-link>
       </div>
-      <div v-else>
+      <div class="showings" v-else>
         <h1>{{ show.date }}</h1>
         <p>Lediga säten {{ show.availableSeats }}</p>
         <router-link :to="'/login'">
