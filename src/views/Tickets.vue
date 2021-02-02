@@ -47,12 +47,7 @@
           </div>
         </div>
 
-        <button
-          v-on:click="updateAvailableSeats, writeSeatsLeft, bookTicket"
-          class="book-adult-ticket"
-        >
-          Boka
-        </button>
+        <button v-on:click="writecurrentShow() /*,bookTicket() */" class="book-ticket">Boka</button>
       </div>
     </div>
   </div>
@@ -87,21 +82,24 @@ export default {
         (showtime) => showtime.id == this.id
       )[0];
     },
-    updateAvailableSeats() {
-      this.currentShow.availableSeats =
-        this.currentShow.availableSeats -
-        (this.aCount + this.cCount + this.sCount);
 
-      //console.log(this.seatsLeft.availableSeats);
-    },
   },
 
   methods: {
+
+        updateAvailableSeats() {
+      this.currentShow.availableSeats =
+        this.currentShow.availableSeats -
+        (this.aCount + this.cCount + this.sCount);
+    },
+
     writecurrentShow() {
+
         const show = {
-          availableSeats: this.updateAvailableSeats
+          bookedSeats: this.aCount + this.cCount + this.sCount,
+          id: this.id
         }
-        this.$store.commit('updateShow', show);
+        this.$store.dispatch('updateShow', show);
     },
 
     aIncrement() {
