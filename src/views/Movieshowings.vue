@@ -239,9 +239,16 @@ div.line {
 
 img {
   width: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
-.showings{
-  background-color: rgb(58, 58, 58);
+.showings {
+  background-color: rgba(58, 58, 58, 0.281);
+
 }
 div > p{
   color: whitesmoke;
@@ -249,7 +256,15 @@ div > p{
 #subtitle{
   color: whitesmoke
 }
-.showings-container{
-  padding-top: 250px;
+.showings-container {
+  padding-top: 350px;
+  
+}
+
+.ticket-button {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid rgba(245, 245, 245, 0.424);
+  border-radius: 3px;
 }
 </style>
