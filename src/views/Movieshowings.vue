@@ -16,6 +16,7 @@
             <button class="ticket-button">Biljetter</button>
           </router-link>
         </div>
+        
         <div class="showings" v-else>
           <div class="show-date">{{ show.date }}</div>
           <div class="show-time">{{ show.time }}</div>
@@ -250,6 +251,7 @@ img {
 }
 .showings {
   background-color: rgba(58, 58, 58, 0.281);
+   padding:10px;    
 }
 div > p {
   color: whitesmoke;
@@ -258,7 +260,8 @@ div > p {
   color: whitesmoke;
 }
 .showings-container {
-  padding-top: 350px;
+  padding-top: 450px;
+  
 }
 
 .ticket-button {
@@ -283,7 +286,7 @@ div > p {
   font-family: "Roboto Slab", serif;
   font-size: 16px;
   color: rgba(245, 245, 245, 0.637);
-    width: 50px;
+    width: 150px;
 
 }
 .show-salon {
@@ -303,8 +306,9 @@ div > p {
   font-size: 16px;
   color: rgba(245, 245, 245, 0.637);
   padding-left: 10px;
-  width: 150px;
+  width: 250px;
 }
+
 
 
 </style>
