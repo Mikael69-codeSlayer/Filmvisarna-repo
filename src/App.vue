@@ -113,7 +113,8 @@ div.main-container {
   width: 100%;
 }
 .nav {
-  background-color: rgb(209, 6, 46);
+background: rgb(133,0,0);
+background: linear-gradient(0deg, rgba(133,0,0,1) 0%, rgba(230,21,21,1) 55%, rgba(255,85,85,1) 100%);
   padding: 5px;
 
   /*fix margin*/
@@ -157,11 +158,13 @@ div.filmV {
   float: center;
   font-size: 50px;
   margin-top: 5px;
+  background: rgba(142, 0, 0, 0);
 }
 /*First letter*/
 div.filmV::first-letter {
   font-size: 70px;
   color: aliceblue;
+
 }
 /*Filmer*/
 div.filmer {
@@ -170,6 +173,7 @@ div.filmer {
   padding-left: 300px;
   margin-top: -45px;
   font-size: 20px;
+  background: rgba(142, 0, 0, 0);
 }
 /*Biljetter*/
 div.bil {
@@ -178,6 +182,7 @@ div.bil {
   padding-left: 90px;
   margin-top: -45px;
   font-size: 20px;
+  background: rgba(142, 0, 0, 0);
 }
 /*Login*/
 div.salons {
@@ -186,6 +191,7 @@ div.salons {
   margin-top: -45px;
   font-size: 20px;
   padding-left: 550px;
+  background: rgba(142, 0, 0, 0);
 }
 
 /*Login*/
@@ -196,14 +202,16 @@ div.log {
   font-size: 20px;
   padding-right: 80px;
   color: white;
+  background: rgba(142, 0, 0, 0);
 }
 
 button {
   color: white;
   text-decoration: none;
-  background: rgb(209, 6, 46);
+  background: rgba(142, 0, 0, 0);
   font-family: "Roboto Slab", serif;
   margin-left: 15px;
   border: none;
+
 }
 </style>

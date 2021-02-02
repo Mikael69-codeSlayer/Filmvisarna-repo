@@ -28,7 +28,7 @@
       <div v-if="currentShow" class="movie-list">
         
       </div>
-      <div class="tickets-header">Biljetter:</div>
+      <div class="tickets-header">Boka biljetter</div>
       <div class="buttons-container">
         <!-- Adult tickets -->
         <div class="adult-ticket-container">
@@ -70,7 +70,7 @@
           </div>
         </div>
 
-        <button class="book-button" v-on:click="updateShow() /*,bookTicket() */" class="book-ticket">Boka</button>
+        <button class="book-button" v-on:click="updateShow()">Boka</button>
       </div>
     </div>
 </template>
@@ -220,9 +220,6 @@ export default {
   border-radius: 2px;
   background-color: rgb(156, 156, 156);
   color: 156, 156, 156;
-}
-.seat:hover {
-  cursor: pointer;
 }
 
 .salon {
