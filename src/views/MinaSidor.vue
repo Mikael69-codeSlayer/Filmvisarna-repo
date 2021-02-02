@@ -1,27 +1,33 @@
 <template>
   <h1>Mina Sidor</h1>
-  <div>Mina bokningar</div>
-
-  <p>{{tickets}}</p>
+  <div class="header">Mina bokningar</div>
+  <div v-for="info of tickets" :key="info">
+    <p>{{ info.film }}</p>
+    <pre>
+    Datum:  {{ info.date }} 
+    Tid:  {{ info.time }}
+    Antal bokade platser:  {{ info.seats }} 
+    Bokningsnummer:  {{ info.id }}
+    Totala kostnaden:  {{ info.price }}kr</pre
+    >
+  </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {};
-  },
 
   computed: {
     userName() {
       return this.$store.state.user.email;
     },
-    tickets(){
-      return this.$store.state.allTickets
-    }
+    tickets() {
+      return this.$store.state.allTickets;
+    },
   },
   created() {
-    this.$store.dispatch("fetchTickets")
-  }
+    this.$store.dispatch("fetchTickets");
+  },
+  
 };
 </script>
 
@@ -32,11 +38,24 @@ h1 {
   text-align: center;
   margin-top: 40px;
 }
+.header{
+   font-family: "Roboto Slab", serif;
+  color: white;
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 20px;
+}
 div {
   font-family: "Roboto Slab", serif;
   color: white;
   text-align: left;
   margin-left: 40px;
   margin-top: 40px;
+}
+
+pre {
+  font-family: "Roboto Slab", serif;
+  color: white;
 }
 </style>

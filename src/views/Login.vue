@@ -45,9 +45,7 @@ export default {
       email: this.email,
       password: this.password
       }
-     
-     /*this.$store.dispatch('login', credentials)*/
-
+    
       let user = await fetch('/api/login', {
       method: 'POST',
       body: JSON.stringify(credentials)

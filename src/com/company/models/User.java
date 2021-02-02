@@ -18,6 +18,7 @@ public class User {
 
     }
 
+
     public ArrayList<Ticket> getBookings() {
         return bookings;
     }
