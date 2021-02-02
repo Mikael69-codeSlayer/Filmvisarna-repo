@@ -1,21 +1,14 @@
 <template>
   <h1>Biljetter</h1>
   <div>Boka dina biljetter idag</div>
-  <!--
-<div v-for="show of sortedShows" :key="show.id">
-  <h1>TEST</h1>
-  <h1>{{show.id}}</h1>
-</div>
--->
+
   <div v-if="film" class="movie-list">
     <div class="movie-item">
       <div class="movie-item-poster">
         <img :src="film.posterUrl" />
       </div>
     </div>
-    <!-- <div v-for="film of filmer" :key="film.id">
-     <h1>{{ film.title }}</h1> 
-    </div> -->
+    
     <div v-for="show of sortedShows" :key="show.id">
       <div v-if="isLoggedIn">
         <h1>{{ show.date }}</h1>
