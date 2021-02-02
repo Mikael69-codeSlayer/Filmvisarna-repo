@@ -1,30 +1,21 @@
 <template>
   <h1>Biljetter</h1>
-  <div>Boka dina biljetter idag</div>
-  <!--
-<div v-for="show of sortedShows" :key="show.id">
-  <h1>TEST</h1>
-  <h1>{{show.id}}</h1>
-</div>
--->
+  <div id ="subtitle">Boka dina biljetter idag</div>
   <div v-if="film" class="movie-list">
-    <div class="movie-item">
       <div class="movie-item-poster">
         <img :src="film.posterUrl" />
       </div>
-    </div>
-    <!-- <div v-for="film of filmer" :key="film.id">
-     <h1>{{ film.title }}</h1> 
-    </div> -->
+  <div class="showings-container">
+
     <div v-for="show of sortedShows" :key="show.id">
-      <div v-if="isLoggedIn">
+      <div class="showings" v-if="isLoggedIn">
         <h1>{{ show.date }}</h1>
         <p>Lediga säten {{ show.availableSeats }}</p>
         <router-link :to="'/tickets/' + show.id">
           <button class="ticket-button">Biljetter</button>
         </router-link>
       </div>
-      <div v-else>
+      <div class="showings" v-else>
         <h1>{{ show.date }}</h1>
         <p>Lediga säten {{ show.availableSeats }}</p>
         <router-link :to="'/login'">
@@ -32,6 +23,8 @@
         </router-link>
       </div>
     </div>
+  </div>
+
   </div>
 </template>
 
@@ -58,15 +51,14 @@ export default {
       )[0];
       // this.id)[0]; alltid en stor vilket blir retunerad
       //array[0]
-    },userLoggedIn() {
-      return this.$store.state.user == null
-  },
-   isLoggedIn(){
-      return this.$store.state.user != null
     },
-    // images() {
-    //   return this.$store.state.images.filter((images) => images.id == this.id);
-    // },
+    userLoggedIn() {
+      return this.$store.state.user == null;
+    },
+    isLoggedIn() {
+      return this.$store.state.user != null;
+    },
+
     showtime() {
       return this.$store.state.showtime.filter(
         (showtime) => showtime.film == this.film.title
@@ -77,12 +69,10 @@ export default {
       for (let show of this.showtime) {
         if (show.date.includes("-")) {
           show.date = show.date.replaceAll("-", "");
-          //console.log(show.date)
         }
       }
       //This sorts showtimes dates in order
       this.showtime.sort((a, b) => a.date - b.date);
-      //console.log(this.showtime)
 
       //This adds "-" between year-month and month-day
       for (let show of this.showtime) {
@@ -92,26 +82,9 @@ export default {
         if (show.date.includes(2021)) {
           show.date = show.date.replace("-02", "-02-");
         }
-        //console.log(show.date)
       }
-      console.log(this.showtime);
 
-      //THIS IS THE SORTING OF DATE
-      //   let noDuplicates = []
-
-      //     this.showtime.forEach(remove => {
-      //         if(!noDuplicates.includes(remove.date)){
-      //             noDuplicates.push(remove.date)
-      //         }
-      //     })
-
-      // console.log(noDuplicates)
-      // this.showtime=this.noDuplicates;
       return this.showtime;
-      /*
-      let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
-      console.log("Detta är shows" + shows)
-      return shows;*/
     },
   },
 
@@ -265,6 +238,18 @@ div.line {
 }
 
 img {
-  width: 100px;
+  width: 200px;
+}
+.showings{
+  background-color: rgb(58, 58, 58);
+}
+div > p{
+  color: whitesmoke;
+}
+#subtitle{
+  color: whitesmoke
+}
+.showings-container{
+  padding-top: 250px;
 }
 </style>

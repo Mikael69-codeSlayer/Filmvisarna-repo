@@ -10,8 +10,10 @@ import express.database.CollectionOptions;
 import org.dizitart.no2.objects.filters.ObjectFilters;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static express.database.Database.collection;
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 
 public class Main {
 
@@ -41,12 +43,17 @@ public class Main {
         });
 
         app.get("/rest/ticket", (req, res) -> {
-            var ticket = collection("Ticket").find();
+            User user = req.session("user");
+            if(user == null ){
+                res.send("Du måste vara inloggad för att kunna boka en biljett");
+                return;
+            }
+            var ticket = collection("Ticket").find(eq("userId", user.getId()));
             res.json(ticket);
         });
 
         app.post("/rest/ticket", (req, res) -> {
-            User user = req.session("current-user");
+            User user = req.session("user");
             if(user == null ){
                 res.send("Du måste vara inloggad för att kunna boka en biljett");
                 return;
@@ -65,11 +72,21 @@ public class Main {
             res.json(showtime);
         });
 
-        app.post("/rest/showtime/:id/:availableSeats", (req, res) -> {
-            Showtime showtime = req.body(Showtime.class);
-            collection("Showtime").save(showtime);
-            //showtime.setAvailableSeats();
-            res.json(showtime);
+        app.put("/rest/showtime/:id", (req, res) -> {
+
+            String id = req.params("id");
+            Map body = req.body();
+            System.out.println(body);
+            Showtime showtime = collection("Showtime").findById(id);
+            boolean booked = showtime.updateSeats((int)body.get("bookedSeats"));
+            if (booked) {
+                collection("Showtime").save(showtime);
+                res.send("ok");
+            }
+            else {
+                res.status(400).send("Inte tillräckligt med lediga platser");
+            }
+
         });
 
 

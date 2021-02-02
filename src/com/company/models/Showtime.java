@@ -71,4 +71,13 @@ public class Showtime {
     public void setAvailableSeats(int availableSeats) {
         this.availableSeats = availableSeats;
     }
+
+    public boolean updateSeats(int bookedSeats) {
+
+        if (this.availableSeats >= bookedSeats) {
+            this.availableSeats -= bookedSeats;
+            return true;
+        }
+        else { return false; }
+    }
 }
