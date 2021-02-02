@@ -40,14 +40,27 @@ export default {
 
   },
   methods: {
-    login(){
+   async login(){
       const credentials={
       email: this.email,
       password: this.password
       }
      
-     this.$store.dispatch('login', credentials)
-     this.$router.replace('/minasidor');
+     /*this.$store.dispatch('login', credentials)*/
+
+      let user = await fetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify(credentials)
+    })
+    try {
+      user = await user.json()
+      console.log(user);
+      this.$store.commit('setUser', user)
+      this.$router.replace('/minasidor');
+    } catch {
+      console.warn('Fel uppgifter')
+    }
+     
     },
   }
 

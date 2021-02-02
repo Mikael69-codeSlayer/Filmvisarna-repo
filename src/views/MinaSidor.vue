@@ -1,7 +1,8 @@
 <template>
   <h1>Mina Sidor</h1>
   <div>Mina bokningar</div>
-  <p></p>
+
+  <p>{{tickets}}</p>
 </template>
 
 <script>
@@ -14,18 +15,13 @@ export default {
     userName() {
       return this.$store.state.user.email;
     },
-    isLoggedIn() {
-      return this.$store.state.user != null;
-    },
-    myBookings() {
-      return this.$store.state.user.bookings;
-    },
+    tickets(){
+      return this.$store.state.allTickets
+    }
   },
-  methods: {
-    created() {
-      this.$store.dispatch("whoAmI");
-    },
-  },
+  created() {
+    this.$store.dispatch("fetchTickets")
+  }
 };
 </script>
 
