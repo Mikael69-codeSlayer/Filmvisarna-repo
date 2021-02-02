@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static express.database.Database.collection;
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 
 public class Main {
 
@@ -42,12 +43,17 @@ public class Main {
         });
 
         app.get("/rest/ticket", (req, res) -> {
-            var ticket = collection("Ticket").find();
+            User user = req.session("user");
+            if(user == null ){
+                res.send("Du måste vara inloggad för att kunna boka en biljett");
+                return;
+            }
+            var ticket = collection("Ticket").find(eq("userId", user.getId()));
             res.json(ticket);
         });
 
         app.post("/rest/ticket", (req, res) -> {
-            User user = req.session("current-user");
+            User user = req.session("user");
             if(user == null ){
                 res.send("Du måste vara inloggad för att kunna boka en biljett");
                 return;

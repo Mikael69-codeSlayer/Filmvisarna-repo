@@ -130,7 +130,7 @@ const actions = {
     })
     try {
       newTicket = await newTicket.json()
-      console.log(newTicket)
+      console.log("newTicket", newTicket)
       store.dispatch('fetchTickets', ticket)
     } catch {
       console.warn('Bokningen misslyckades')
