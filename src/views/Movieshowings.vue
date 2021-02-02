@@ -82,7 +82,7 @@ export default {
           show.date = show.date.replace("-02", "-02-");
         }
       }
-      console.log(this.showtime);
+      //console.log(this.showtime);
 
       return this.showtime;
     },

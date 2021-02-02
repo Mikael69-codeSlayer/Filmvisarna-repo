@@ -20,6 +20,11 @@ const mutations = {
   setShowtime(state, list) {
     state.showtime = list
   },
+  updateShow(state, show) {
+    let showtime = state.showtime.filter((showtime) => showtime.id == show.id)[0]
+    showtime.availableSeats -= show.bookedSeats
+  },
+
   setSalons(state, list) {
     state.salons = list
   }, 
@@ -55,14 +60,16 @@ const actions = {
   },
 
   async updateShow(store, show) {
-    fetch(
-      "rest/showtime/" + show.id + "/" + show.availableSeats,
+    let res = await fetch(
+      "/rest/showtime/" + show.id,
       {
         method: "PUT",
         body: JSON.stringify(show)
         
       })
-    store.commit('setAvailableSeats', show) 
+    if (res.ok) {
+      store.commit('updateShow', show) 
+    }
   },
 
   async login(store, credentials) {

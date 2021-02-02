@@ -10,6 +10,7 @@ import express.database.CollectionOptions;
 import org.dizitart.no2.objects.filters.ObjectFilters;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static express.database.Database.collection;
 
@@ -65,11 +66,21 @@ public class Main {
             res.json(showtime);
         });
 
-        app.put("/rest/showtime/:id/:availableSeats", (req, res) -> {
-            Showtime showtime = req.body(Showtime.class);
-            collection("Showtime").save(showtime);
-            //showtime.setAvailableSeats();
-            res.json(showtime);
+        app.put("/rest/showtime/:id", (req, res) -> {
+
+            String id = req.params("id");
+            Map body = req.body();
+            System.out.println(body);
+            Showtime showtime = collection("Showtime").findById(id);
+            boolean booked = showtime.updateSeats((int)body.get("bookedSeats"));
+            if (booked) {
+                collection("Showtime").save(showtime);
+                res.send("ok");
+            }
+            else {
+                res.status(400).send("Inte tillräckligt med lediga platser");
+            }
+
         });
 
 
