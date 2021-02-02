@@ -70,6 +70,7 @@ public class Main {
 
             String id = req.params("id");
             Map body = req.body();
+            System.out.println(body);
             Showtime showtime = collection("Showtime").findById(id);
             boolean booked = showtime.updateSeats((int)body.get("bookedSeats"));
             if (booked) {

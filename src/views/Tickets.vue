@@ -12,12 +12,11 @@
             Vuxen
             <p class="adult-price">120kr/st</p>
           </div>
-          <!-- plus and minus buttons -->
-
+          <!-- Adult plus and minus buttons -->
           <div class="increment-buttons">
-            <button class="aButton" v-on:click.prevent="aIncrement">+</button>
-            <div class="aCount">{{ aCount }}</div>
-            <button class="aButton" v-on:click.prevent="aDecrement">-</button>
+            <button class="adultButton" v-on:click.prevent="aIncrement">+</button>
+            <div class="adultCount">{{ adultCount }}</div>
+            <button class="adultButton" v-on:click.prevent="aDecrement">-</button>
           </div>
         </div>
         <!-- Child tickets -->
@@ -26,11 +25,11 @@
             Barn
             <p class="child-price">80kr/st</p>
           </div>
-          <!-- plus and minus buttons -->
+          <!-- Child plus and minus buttons -->
           <div class="increment-buttons">
-            <button class="cButton" v-on:click.prevent="cIncrement">+</button>
-            <div class="cCount">{{ cCount }}</div>
-            <button class="cButton" v-on:click.prevent="cDecrement">-</button>
+            <button class="childButton" v-on:click.prevent="cIncrement">+</button>
+            <div class="childCount">{{ childCount }}</div>
+            <button class="childButton" v-on:click.prevent="cDecrement">-</button>
           </div>
         </div>
         <!-- Senior tickets -->
@@ -39,15 +38,15 @@
             Pensionär
             <p class="senior-price">80kr/st</p>
           </div>
-
+          <!-- Senior plus and minus buttons -->
           <div class="increment-buttons">
-            <button class="sButton" v-on:click.prevent="sIncrement">+</button>
-            <div class="sCount">{{ sCount }}</div>
-            <button class="sButton" v-on:click.prevent="sDecrement">-</button>
+            <button class="seniorButton" v-on:click.prevent="sIncrement">+</button>
+            <div class="seniorCount">{{ seniorCount }}</div>
+            <button class="seniorButton" v-on:click.prevent="sDecrement">-</button>
           </div>
         </div>
 
-        <button v-on:click="writecurrentShow() /*,bookTicket() */" class="book-ticket">Boka</button>
+        <button v-on:click="updateShow() /*,bookTicket() */" class="book-ticket">Boka</button>
       </div>
     </div>
   </div>
@@ -58,9 +57,9 @@ export default {
   name: "bookTicket",
   data() {
     return {
-      aCount: 0,
-      cCount: 0,
-      sCount: 0,
+      adultCount: 0,
+      childCount: 0,
+      seniorCount: 0,
       availableSeats: "",
       userId: "",
       film: "",
@@ -73,11 +72,11 @@ export default {
   },
   computed: {
     id() {
-      // get id from url parameter
+      // Get id from url parameter
       return this.$route.params.id;
     },
     currentShow() {
-      // Also added this, to get filmes and id
+      // To get filmes and id
       return this.$store.state.showtime.filter(
         (showtime) => showtime.id == this.id
       )[0];
@@ -87,53 +86,48 @@ export default {
 
   methods: {
 
-        updateAvailableSeats() {
-      this.currentShow.availableSeats =
-        this.currentShow.availableSeats -
-        (this.aCount + this.cCount + this.sCount);
-    },
-
-    writecurrentShow() {
-
+    updateShow() {
+        // Send booked seats + show id to backend
         const show = {
-          bookedSeats: this.aCount + this.cCount + this.sCount,
+          bookedSeats: this.adultCount + this.childCount + this.seniorCount,
           id: this.id
         }
         this.$store.dispatch('updateShow', show);
     },
 
+    // Ticket button increments and decrements
     aIncrement() {
-      if (this.aCount < 8) {
-        this.aCount++;
+      if (this.adultCount < 8) {
+        this.adultCount++;
       }
     },
 
     aDecrement() {
-      if (this.aCount > 0) {
-        this.aCount--;
+      if (this.adultCount > 0) {
+        this.adultCount--;
       }
     },
 
     cIncrement() {
-      if (this.cCount < 8) {
-        this.cCount++;
+      if (this.childCount < 8) {
+        this.childCount++;
       }
     },
 
     cDecrement() {
-      if (this.cCount > 0) {
-        this.cCount--;
+      if (this.childCount > 0) {
+        this.childCount--;
       }
     },
     sIncrement() {
-      if (this.sCount < 8) {
-        this.sCount++;
+      if (this.seniorCount < 8) {
+        this.seniorCount++;
       }
     },
 
     sDecrement() {
-      if (this.sCount > 0) {
-        this.sCount--;
+      if (this.seniorCount > 0) {
+        this.seniorCount--;
       }
     },
 
@@ -156,6 +150,7 @@ export default {
 </script>
 
 <style scoped>
+
 #choose-amount {
   text-align: center;
   font-size: 30px;
@@ -163,17 +158,21 @@ export default {
   font-family: "Roboto Slab", serif;
 }
 
+div.available-seats {
+  background-color: rgba(47, 44, 44, 0.26);
+  padding: 300px;
+  text-align: center;
+}
+.increment-buttons {
+  float: right;
+  width: 100px;
+}
+
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- ADULT TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .adult-price {
   color: rgba(250, 227, 227, 0.719);
   font-size: 15px;
-}
-
-div.available-seats {
-  background-color: rgba(47, 44, 44, 0.26);
-  padding: 300px;
-  text-align: center;
 }
 
 div.adult-header {
@@ -185,7 +184,7 @@ div.adult-header {
   line-height: 15px;
 }
 
-div.aCount {
+div.adultCount {
   float: left;
   margin: 0 auto;
   text-align: center;
@@ -196,7 +195,7 @@ div.aCount {
   line-height: 30px;
 }
 
-.aButton {
+.adultButton {
   float: left;
   margin: 0 auto;
   line-height: 30px;
@@ -222,11 +221,6 @@ div.adult-ticket-container {
   font-weight: bold;
 }
 
-.increment-buttons {
-  float: right;
-  width: 100px;
-}
-
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- CHILD TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .child-price {
@@ -243,7 +237,7 @@ div.child-header {
   line-height: 15px;
 }
 
-div.cCount {
+div.childCount {
   float: left;
   margin: 0 auto;
   text-align: center;
@@ -254,7 +248,7 @@ div.cCount {
   line-height: 30px;
 }
 
-.cButton {
+.childButton {
   float: left;
   margin: 0 auto;
   line-height: 30px;
@@ -291,7 +285,7 @@ div.senior-header {
   line-height: 15px;
 }
 
-div.sCount {
+div.seniorCount {
   float: left;
   margin: 0 auto;
   text-align: center;
@@ -302,7 +296,7 @@ div.sCount {
   line-height: 30px;
 }
 
-.sButton {
+.seniorButton {
   float: left;
   margin: 0 auto;
   line-height: 30px;
