@@ -2,11 +2,11 @@
   <h1>Biljetter</h1>
   <div id ="subtitle">Boka dina biljetter idag</div>
   <div v-if="film" class="movie-list">
-    <div class="movie-item">
       <div class="movie-item-poster">
         <img :src="film.posterUrl" />
       </div>
-    </div>
+  <div class="showings-container">
+
     <div v-for="show of sortedShows" :key="show.id">
       <div class="showings" v-if="isLoggedIn">
         <h1>{{ show.date }}</h1>
@@ -23,6 +23,8 @@
         </router-link>
       </div>
     </div>
+  </div>
+
   </div>
 </template>
 
@@ -236,7 +238,7 @@ div.line {
 }
 
 img {
-  width: 100px;
+  width: 200px;
 }
 .showings{
   background-color: rgb(58, 58, 58);
@@ -246,5 +248,8 @@ div > p{
 }
 #subtitle{
   color: whitesmoke
+}
+.showings-container{
+  padding-top: 200px;
 }
 </style>
