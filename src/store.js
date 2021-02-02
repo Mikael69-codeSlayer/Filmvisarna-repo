@@ -1,3 +1,4 @@
+import { vShow } from 'vue'
 import { createStore } from 'vuex'
 
 const state = {
@@ -46,7 +47,7 @@ const actions = {
   async fetchShowtime(store) {
     let list = await fetch('/rest/showtime')
     list = await list.json()
-    //console.log(list)
+    console.log(list)
     store.commit('setShowtime', list)
   },
   
@@ -56,6 +57,15 @@ const actions = {
     //console.log(list)
     store.commit('setSalons', list)
   },
+
+  async updateShow(store, show) {
+    fetch(
+      "rest/showtime/" + show.id + "/" + show.availableSeats,
+      {
+        method: "PUT",
+        body: JSON.stringify(show)
+      })
+ },
 
   async login(store, credentials) {
     let user = await fetch('/api/login', {
@@ -84,7 +94,8 @@ const actions = {
       console.warn('Fel uppgifter')
     }
   },
-  
+
+
   async whoAmI(store) {
     let user = await fetch ('/api/whoami')
     try {
