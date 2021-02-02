@@ -6,17 +6,37 @@ import org.dizitart.no2.objects.Id;
 @Model
 public class Ticket {
     @Id
-    private String auditorium;
+    private String id;
+    private String userId;
+    private String salon;
     private String film;
     private String date;
-    private String time;
+    private String time;             //private int price?? kanske hur många säten också?
+    private int seats;
+    private int price;
 
-    public String getAuditorium() {
-        return auditorium;
+    public int getPrice() {
+        return price;
     }
 
-    public void setAuditorium(String auditorium) {
-        this.auditorium = auditorium;
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public String getSalon() {
+        return salon;
+    }
+
+    public void setSalon(String salon) {
+        this.salon = salon;
     }
 
     public String getFilm() {
@@ -43,4 +63,33 @@ public class Ticket {
         this.time = time;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id='" + id + '\'' +
+                ", userId='" + userId + '\'' +
+                ", auditorium='" + salon + '\'' +
+                ", film='" + film + '\'' +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                ", seats=" + seats +
+                ", price=" + price +
+                '}';
+    }
 }

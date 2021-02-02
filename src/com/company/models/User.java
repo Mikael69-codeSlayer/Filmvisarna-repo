@@ -12,17 +12,17 @@ public class User {
     private String id;
     private String email;
     private String password;
-    private ArrayList <String> bookings;
+    private ArrayList <Ticket> bookings;
 
     public User() {
 
     }
 
-    public ArrayList<String> getBookings() {
+    public ArrayList<Ticket> getBookings() {
         return bookings;
     }
 
-    public void setBookings(ArrayList<String> bookings) {
+    public void setBookings(ArrayList<Ticket> bookings) {
         this.bookings = bookings;
     }
 
@@ -52,13 +52,14 @@ public class User {
         this.password = password;
     }
 
-   // @Override
+
+    @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", bookings=' " + bookings + '\''+
+                ", bookings=" + bookings +
                 '}';
     }
 }

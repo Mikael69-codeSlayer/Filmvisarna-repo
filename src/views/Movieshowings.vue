@@ -94,7 +94,7 @@ export default {
         }
         //console.log(show.date)
       }
-      console.log(this.showtime);
+      //console.log(this.showtime);
 
       //THIS IS THE SORTING OF DATE
       //   let noDuplicates = []

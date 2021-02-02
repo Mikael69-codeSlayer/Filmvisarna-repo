@@ -41,6 +41,7 @@ const routes = [
     path: '/skapaKonto',
     component: SkapaKonto
   },
+
   {
     name: 'MinaSidor',
     path: '/minasidor',

@@ -10,21 +10,24 @@
         <router-link :to="{ name: 'Filmer' }">Filmer & Trailer</router-link>
       </div>
       <div class="nav log">
-        <router-link v-if="userLoggedIn" :to="{ name: 'Login' }" >Login</router-link> 
-        <div v-else> Välkommen!
-        <button @click="mypages">Mina Sidor</button>
-        <button @click="logout">Logout</button></div>
+        <router-link v-if="userLoggedIn" :to="{ name: 'Login' }"
+          >Login</router-link
+        >
+        <div class="welcome" v-else>
+          Välkommen, {{ userName }}!
+          <button @click="mypages">Mina Sidor</button>
+          <button @click="logout">Logga ut</button>
+        </div>
       </div>
-      
+
       <div class="nav salons">
         <router-link :to="{ name: 'Salons' }">Salonger</router-link>
-      </div> 
+      </div>
     </div>
     <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
-  
+
   <router-view />
-  
 </template>
 
 <!-- JavaScript (Vue) -->
@@ -36,11 +39,16 @@ import Login from "./views/Login.vue";
 import Tickets from "./views/Tickets.vue";
 import Salons from "./views/Salons.vue";
 import SkapaKonto from "./views/SkapaKonto.vue";
-import MinaSidor from "./views/MinaSidor.vue"
+import MinaSidor from "./views/MinaSidor.vue";
 
 // Declare a component which can be registered and reused later
 export default {
   name: "App",
+  data() {
+    return {
+      email: "",
+    };
+  },
   components: {
     Filmvisarna,
     Filmer,
@@ -48,34 +56,41 @@ export default {
     Tickets,
     SkapaKonto,
     MinaSidor,
-    Salons
+    Salons,
+    SkapaKonto,
   },
-   methods: {
-    logout(){
-      fetch('/api/logout')
-      this.$store.commit('setUser', null)
+  methods: {
+    logout() {
+      fetch("/api/logout");
+      this.$store.commit("setUser", null);
     },
-    mypages(){
-     this.$router.replace('/minasidor')}
+    mypages() {
+      this.$router.replace("/minasidor");
+    },
   },
-
-
   created() {
     this.$store.dispatch("fetchFilmer"),
-    this.$store.dispatch("fetchShowtime"),
-    this.$store.dispatch("fetchSalons")
-    this.$store.dispatch("whoAmI")
+      this.$store.dispatch("fetchShowtime"),
+      this.$store.dispatch("fetchSalons"),
+      this.$store.dispatch("whoAmI");
+      this.$store.dispatch("fetchTickets");
   },
   computed: {
     userLoggedIn() {
-      return this.$store.state.user == null
+      return this.$store.state.user == null;
+    },
+    isLoggedIn() {
+      return this.$store.state.user != null;
+    },
+    id() {
+      // get id from url parameter
+      return this.$route.params.id;
+    },
+    userName() {
+      return this.$store.state.user.email;
+    },
   },
-   isLoggedIn(){
-      return this.$store.state.user != null
-    }
-    }
 };
-
 </script>
 
 <style>
@@ -165,9 +180,7 @@ div.salons {
   margin-top: -45px;
   font-size: 20px;
   padding-left: 550px;
-
 }
-
 
 /*Login*/
 div.log {
@@ -175,16 +188,16 @@ div.log {
   float: right;
   margin-top: -45px;
   font-size: 20px;
-  padding-right: 70px;
+  padding-right: 80px;
+  color: white;
 }
-button{
+
+button {
   color: white;
   text-decoration: none;
-  position: relative;
-  background:none;
+  background: rgb(209, 6, 46);
   font-family: "Roboto Slab", serif;
-  background: rgba(255, 255, 255, 0.548);
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
- 
+  margin-left: 15px;
+  border: none;
 }
 </style>

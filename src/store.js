@@ -1,11 +1,16 @@
+import { vShow } from 'vue'
 import { createStore } from 'vuex'
 
 const state = {
   filmer: [],
   showtime: [],
   salons: [],
-  user: null
-}
+  user: null,
+  ticket: { userId: "", film: "", date: "", time: "", salon: "", seats: 0, price: 0 }, //Biljetten som ska skickas till backend, måste ha exakt samma fält som i backend. 
+                                                                            //  Samma stavning osv. { user: { allt i måsvingar är objekt }, seats: är int, ej objekt }
+  allTickets:[]          //Kan eventuellt behövas för att hitta historiken av en användares biljetter
+}                         
+
 
 // mutates state 
 const mutations = {
@@ -15,11 +20,19 @@ const mutations = {
   setShowtime(state, list) {
     state.showtime = list
   },
+  updateShow(state, show) {
+    let showtime = state.showtime.filter((showtime) => showtime.id == show.id)[0]
+    showtime.availableSeats -= show.bookedSeats
+  },
+
   setSalons(state, list) {
     state.salons = list
   }, 
   setUser(state, user) {
     state.user = user
+  },
+  setTickets(state, list) {
+    state.allTickets = list               //tar tag i allTickets 
   }
 }
 
@@ -35,7 +48,7 @@ const actions = {
   async fetchShowtime(store) {
     let list = await fetch('/rest/showtime')
     list = await list.json()
-    //console.log(list)
+    console.log(list)
     store.commit('setShowtime', list)
   },
   
@@ -44,6 +57,19 @@ const actions = {
     list = await list.json()
     //console.log(list)
     store.commit('setSalons', list)
+  },
+
+  async updateShow(store, show) {
+    let res = await fetch(
+      "/rest/showtime/" + show.id,
+      {
+        method: "PUT",
+        body: JSON.stringify(show)
+        
+      })
+    if (res.ok) {
+      store.commit('updateShow', show) 
+    }
   },
 
   async login(store, credentials) {
@@ -83,6 +109,27 @@ const actions = {
       store.commit('setUser', user)
     } catch {
       console.warn('Ej inloggad')
+    }
+  },
+
+  async fetchTickets(store) {                                              //hämtar alla tickets
+    let list = await fetch('/rest/ticket')
+    list = await list.json()
+
+    store.commit('setTickets',list)
+  },
+
+  async addTicket(store, ticket) {   
+    let newTicket = await fetch('/rest/ticket', {
+      method: 'POST',
+      body:JSON.stringify(ticket)
+    })
+    try {
+      newTicket = await newTicket.json()
+      console.log(newTicket)
+      store.dispatch('fetchTickets')
+    } catch {
+      console.warn("Bokningen misslyckades")
     }
   }
 }
