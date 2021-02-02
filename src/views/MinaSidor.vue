@@ -1,28 +1,60 @@
 <template>
   <h1>Mina Sidor</h1>
   <div class="header">Mina bokningar</div>
+
+
   <div v-for="info of tickets" :key="info">
-    <p>{{ info.film }}</p>
-    <pre>
+    <div class="ticket-info">
+      <p>{{ info.film }}</p>
+      <pre>
     Datum:  {{ info.date }} 
     Tid:  {{ info.time }}
     Antal bokade platser:  {{ info.seats }} 
     Bokningsnummer:  {{ info.id }}
-    Totala kostnaden:  {{ info.price }}kr</pre
-    >
+    Totala kostnaden:  {{ info.price }}kr</pre>
+    <div class="ticket-image" v-for="film of filmer" :key="film.id" >
+      <div v-if="info.film == film.title">
+      <img :src="film.posterUrl"/></div>
+      <div class="line"></div>
+    </div>
   </div>
+</div>
+  <!---<div class="salon" v-for="salon of salons" :key="salon.name">              <div v-if="salon.name == currentShow.salon"> -->
+
+  <footer>Betalning sker på plats, uppge ditt bokningsnummer</footer>
 </template>
 
 <script>
 export default {
-
+  data(){
+   return{
+     films: "",
+     posterUrl: ""
+   }
+  },
+  methods:{
+    imagesDisplayed(){
+        if(filmer.title == allTickets.film){
+              return this.posterUrl
+        }
+    }
+  },
   computed: {
+     id() {
+      // Get id from url parameter
+      return this.$route.params.id;
+    },
     userName() {
       return this.$store.state.user.email;
     },
     tickets() {
       return this.$store.state.allTickets;
     },
+  filmer() {
+      return this.$store.state.filmer;
+    },
+    
+
   },
   created() {
     this.$store.dispatch("fetchTickets");
@@ -38,8 +70,8 @@ h1 {
   text-align: center;
   margin-top: 40px;
 }
-.header{
-   font-family: "Roboto Slab", serif;
+.header {
+  font-family: "Roboto Slab", serif;
   color: white;
   text-align: left;
   margin-left: 40px;
@@ -48,14 +80,40 @@ h1 {
 }
 div {
   font-family: "Roboto Slab", serif;
-  color: white;
+  color: rgba(250, 227, 227, 0.719);
   text-align: left;
   margin-left: 40px;
   margin-top: 40px;
+}
+p {
+  margin-left: 35px;
 }
 
 pre {
   font-family: "Roboto Slab", serif;
   color: white;
+  margin-left: 40px;
+}
+div.line {
+  background-color: white;
+  width: 90%;
+  height: 1px;
+  margin-top: 10px;
+}
+
+footer {
+  font-family: "Roboto Slab", serif;
+  color: rgba(250, 227, 227, 0.719);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.ticket-image{
+  background-color: green;
+  width: 100px;
+  height:100px;
+}
+img {
+  width: 100px;
 }
 </style>

@@ -12,7 +12,7 @@ public class User {
     private String id;
     private String email;
     private String password;
-    private ArrayList <Ticket> bookings;
+    private ArrayList <Ticket> bookings;        //KAN TAS BORT
 
     public User() {
 

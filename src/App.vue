@@ -74,7 +74,7 @@ export default {
       this.$store.dispatch("fetchShowtime"),
       this.$store.dispatch("fetchSalons"),
       this.$store.dispatch("whoAmI");
-      this.$store.dispatch("fetchTickets");
+      //this.$store.dispatch("fetchTickets");
   },
   computed: {
     userLoggedIn() {
