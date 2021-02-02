@@ -1,30 +1,32 @@
 <template>
   <h1>Biljetter</h1>
-  <div id ="subtitle">Boka dina biljetter idag</div>
+  <div id="subtitle">Boka dina biljetter idag</div>
   <div v-if="film" class="movie-list">
-      <div class="movie-item-poster">
-        <img :src="film.posterUrl" />
-      </div>
-  <div class="showings-container">
-
-    <div v-for="show of sortedShows" :key="show.id">
-      <div class="showings" v-if="isLoggedIn">
-        <div class="show-date">{{ show.date }}</div>
-        <div class="show-seats">Lediga säten {{ show.availableSeats }}</div>
-        <router-link :to="'/tickets/' + show.id">
-          <button class="ticket-button">Biljetter</button>
-        </router-link>
-      </div>
-      <div class="showings" v-else>
-        <div class="show-date">{{ show.date }}</div>
-       <div class="show-seats">Lediga säten {{ show.availableSeats }}</div>
-        <router-link :to="'/login'">
-          <button class="ticket-button">Biljetter</button>
-        </router-link>
+    <div class="movie-item-poster">
+      <img :src="film.posterUrl" />
+    </div>
+    <div class="showings-container">
+      <div v-for="show of sortedShows" :key="show.id">
+        <div class="showings" v-if="isLoggedIn">
+          <div class="show-date">{{ show.date }}</div>
+          <div class="show-time">{{ show.time }}</div>
+          <div class="show-salon">{{ show.salon }}</div>
+          <div class="show-seats">Lediga säten {{ show.availableSeats }}</div>
+          <router-link :to="'/tickets/' + show.id">
+            <button class="ticket-button">Biljetter</button>
+          </router-link>
+        </div>
+        <div class="showings" v-else>
+          <div class="show-date">{{ show.date }}</div>
+          <div class="show-time">{{ show.time }}</div>
+          <div class="show-salon">{{ show.salon }}</div>
+          <div class="show-seats">Lediga säten {{ show.availableSeats }}</div>
+          <router-link :to="'/tickets/' + show.id">
+            <button class="ticket-button">Biljetter</button>
+          </router-link>
+        </div>
       </div>
     </div>
-  </div>
-
   </div>
 </template>
 
@@ -248,17 +250,15 @@ img {
 }
 .showings {
   background-color: rgba(58, 58, 58, 0.281);
-
 }
-div > p{
+div > p {
   color: whitesmoke;
 }
-#subtitle{
-  color: whitesmoke
+#subtitle {
+  color: whitesmoke;
 }
 .showings-container {
   padding-top: 350px;
-  
 }
 
 .ticket-button {
@@ -266,24 +266,38 @@ div > p{
   padding: 10px;
   border: 1px solid rgba(245, 245, 245, 0.424);
   border-radius: 3px;
-
 }
 
 .show-date {
- float: left;
- margin: 0 auto;
-   font-family: "Roboto Slab", serif;
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
   font-size: 16px;
-  color:whitesmoke;
+  color: whitesmoke;
 }
 
 .show-seats {
- float: left;
- margin: 0 auto;
+  float: left;
+  margin: 0 auto;
   font-family: "Roboto Slab", serif;
   font-size: 16px;
-  color:rgba(245, 245, 245, 0.637);
+  color: rgba(245, 245, 245, 0.637);
   padding-left: 10px;
 }
-
+.show-time {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+  padding-left: 10px;
+}
+.show-salon {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+  padding-left: 10px;
+}
 </style>
