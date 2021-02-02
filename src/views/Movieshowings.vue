@@ -1,6 +1,6 @@
 <template>
   <h1>Biljetter</h1>
-  <div>Boka dina biljetter idag</div>
+  <div id ="subtitle">Boka dina biljetter idag</div>
   <div v-if="film" class="movie-list">
     <div class="movie-item">
       <div class="movie-item-poster">
@@ -237,5 +237,14 @@ div.line {
 
 img {
   width: 100px;
+}
+.showings{
+  background-color: rgb(58, 58, 58);
+}
+div > p{
+  color: whitesmoke;
+}
+#subtitle{
+  color: whitesmoke
 }
 </style>
