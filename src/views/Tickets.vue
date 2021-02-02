@@ -48,9 +48,8 @@
         </div>
 
         <button
-          v-on:click="updateAvailableSeats, writeSeatsLeft, bookTicket"
-          class="book-adult-ticket"
-        >
+          v-on:click="updateAvailableSeats, writecurrentShow, bookTicket()"
+          class="book-adult-ticket">
           Boka
         </button>
       </div>
@@ -63,7 +62,6 @@ export default {
   name: "bookTicket",
   data() {
     return {
-      count: 0,
       aCount: 0,
       cCount: 0,
       sCount: 0,
@@ -88,15 +86,9 @@ export default {
         (showtime) => showtime.id == this.id
       )[0];
     },
-   /* createBooking() {
-      this.getId.availableSeats =
-        this.getId.availableSeats - this.count;
-      console.log(this.getId.availableSeats);
-    },*/
-
     updateAvailableSeats() {
-      this.seatsLeft.availableSeats =
-        this.seatsLeft.availableSeats -
+      this.currentShow.availableSeats =
+        this.currentShow.availableSeats -
         (this.aCount + this.cCount + this.sCount);
 
       //console.log(this.seatsLeft.availableSeats);
@@ -128,15 +120,32 @@ export default {
         this.cCount++;
       }
     },
+    cDecrement() {
+      if (this.cCount > 0) {
+        this.cCount--;
+      }
+    },
+    sIncrement() {
+      if (this.sCount < 8) {
+        this.sCount++;
+      }
+    },
+
+    sDecrement() {
+      if (this.sCount > 0) {
+        this.sCount--;
+      }
+    },
 
     bookTicket() {
+      console.log('bookticket')
       const ticket = {
-        userId: this.getId.showId,
-        film: this.getId.film,
-        date: this.getId.date,
-        time: this.getId.time,
-        salon: this.getId.salon,
-        seats: this.count
+        userId: this.currentShow.showId,
+        film: this.currentShow.film,
+        date: this.currentShow.date,
+        time: this.currentShow.time,
+        salon: this.currentShow.salon,
+        seats: this.currentShow.aCount
       }
 
       this.$store.dispatch("addTicket", ticket);
@@ -145,6 +154,8 @@ export default {
   },
 };
 </script>
+
+
 
 <style scoped>
 #choose-amount {

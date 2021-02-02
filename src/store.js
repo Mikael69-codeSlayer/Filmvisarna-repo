@@ -29,9 +29,9 @@ const mutations = {
   setTickets(state, list) {
     state.allTickets = list               //tar tag i allTickets 
   },
-  addTicket(state, ticket) {
+  /*addTicket(state, ticket) {
     state.ticket.push(ticket)
-  }
+  }*/
 
 }
 
