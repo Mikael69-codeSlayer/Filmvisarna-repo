@@ -12,12 +12,11 @@
             Vuxen
             <p class="adult-price">120kr/st</p>
           </div>
-          <!-- plus and minus buttons -->
-
+          <!-- Adult plus and minus buttons -->
           <div class="increment-buttons">
-            <button class="aButton" v-on:click.prevent="aIncrement">+</button>
-            <div class="aCount">{{ aCount }}</div>
-            <button class="aButton" v-on:click.prevent="aDecrement">-</button>
+            <button class="adultButton" v-on:click.prevent="aIncrement">+</button>
+            <div class="adultCount">{{ adultCount }}</div>
+            <button class="adultButton" v-on:click.prevent="aDecrement">-</button>
           </div>
         </div>
         <!-- Child tickets -->
@@ -26,11 +25,11 @@
             Barn
             <p class="child-price">80kr/st</p>
           </div>
-          <!-- plus and minus buttons -->
+          <!-- Child plus and minus buttons -->
           <div class="increment-buttons">
-            <button class="cButton" v-on:click.prevent="cIncrement">+</button>
-            <div class="cCount">{{ cCount }}</div>
-            <button class="cButton" v-on:click.prevent="cDecrement">-</button>
+            <button class="childButton" v-on:click.prevent="cIncrement">+</button>
+            <div class="childCount">{{ childCount }}</div>
+            <button class="childButton" v-on:click.prevent="cDecrement">-</button>
           </div>
         </div>
         <!-- Senior tickets -->
@@ -39,19 +38,16 @@
             Pensionär
             <p class="senior-price">80kr/st</p>
           </div>
-
+          <!-- Senior plus and minus buttons -->
           <div class="increment-buttons">
-            <button class="sButton" v-on:click.prevent="sIncrement">+</button>
-            <div class="sCount">{{ sCount }}</div>
-            <button class="sButton" v-on:click.prevent="sDecrement">-</button>
+            <button class="seniorButton" v-on:click.prevent="sIncrement">+</button>
+            <div class="seniorCount">{{ seniorCount }}</div>
+            <button class="seniorButton" v-on:click.prevent="sDecrement">-</button>
           </div>
         </div>
              <div>Totalt {{price}}kr</div>
-        <button
-          v-on:click="updateAvailableSeats, writecurrentShow, bookTicket()"
-          class="book-adult-ticket">
-          Boka
-        </button>
+
+        <button v-on:click="updateShow() /*,bookTicket() */" class="book-ticket">Boka</button>
       </div>
     </div>
   </div>
@@ -62,10 +58,9 @@ export default {
   name: "bookTicket",
   data() {
     return {
-  
-      aCount: 0,
-      cCount: 0,
-      sCount: 0,
+      adultCount: 0,
+      childCount: 0,
+      seniorCount: 0,
       availableSeats: "",
       userId: "",
       film: "",
@@ -78,69 +73,67 @@ export default {
   },
   computed: {
     id() {
-      // get id from url parameter
+      // Get id from url parameter
       return this.$route.params.id;
     },
     currentShow() {
-      // Also added this, to get filmes and id
+      // To get filmes and id
       return this.$store.state.showtime.filter(
         (showtime) => showtime.id == this.id
       )[0];
     },
-    updateAvailableSeats() {
-      this.currentShow.availableSeats =
-        this.currentShow.availableSeats -
-        (this.aCount + this.cCount + this.sCount);
 
-      //console.log(this.seatsLeft.availableSeats);
-    },
   },
 
   methods: {
-    writecurrentShow() {
-      const list = {
-        availableSeats: this.currentShow.availableSeats,
-      };
-      this.$store.commit("setShowtime", list);
+
+    updateShow() {
+        // Send booked seats + show id to backend
+        const show = {
+          bookedSeats: this.adultCount + this.childCount + this.seniorCount,
+          id: this.id
+        }
+        this.$store.dispatch('updateShow', show);
     },
 
+    // Ticket button increments and decrements
     aIncrement() {
       if (this.aCount < 8) {
         this.price += 120
-        this.aCount++;
+        this.adultCount++;
       }
     },
 
     aDecrement() {
       if (this.aCount > 0) {
         this.price -= 120
-        this.aCount--;
+        this.adultCount--;
       }
     },
 
     cIncrement() {
       if (this.cCount < 8) {
         this.price+= 80
-        this.cCount++;
+        this.childCount++;
       }
     },
     cDecrement() {
-      if (this.cCount > 0) {
+      if (this.childCount > 0) {
         this.price -= 80
-        this.cCount--;
+        this.childCount--;
       }
     },
     sIncrement() {
-      if (this.sCount < 8) {
-        this.price += 80
-        this.sCount++;
+      if (this.seniorCount < 8) {
+        this.prive += 80
+        this.seniorCount++;
       }
     },
 
     sDecrement() {
       if (this.sCount > 0) {
         this.price -= 80
-        this.sCount--;
+        this.seniorCount--;
       }
     },
 
@@ -166,6 +159,7 @@ export default {
 
 
 <style scoped>
+
 #choose-amount {
   text-align: center;
   font-size: 30px;
@@ -173,17 +167,21 @@ export default {
   font-family: "Roboto Slab", serif;
 }
 
+div.available-seats {
+  background-color: rgba(47, 44, 44, 0.26);
+  padding: 300px;
+  text-align: center;
+}
+.increment-buttons {
+  float: right;
+  width: 100px;
+}
+
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- ADULT TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .adult-price {
   color: rgba(250, 227, 227, 0.719);
   font-size: 15px;
-}
-
-div.available-seats {
-  background-color: rgba(47, 44, 44, 0.26);
-  padding: 300px;
-  text-align: center;
 }
 
 div.adult-header {
@@ -195,7 +193,7 @@ div.adult-header {
   line-height: 15px;
 }
 
-div.aCount {
+div.adultCount {
   float: left;
   margin: 0 auto;
   text-align: center;
@@ -206,7 +204,7 @@ div.aCount {
   line-height: 30px;
 }
 
-.aButton {
+.adultButton {
   float: left;
   margin: 0 auto;
   line-height: 30px;
@@ -232,11 +230,6 @@ div.adult-ticket-container {
   font-weight: bold;
 }
 
-.increment-buttons {
-  float: right;
-  width: 100px;
-}
-
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- CHILD TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .child-price {
@@ -253,7 +246,7 @@ div.child-header {
   line-height: 15px;
 }
 
-div.cCount {
+div.childCount {
   float: left;
   margin: 0 auto;
   text-align: center;
@@ -264,7 +257,7 @@ div.cCount {
   line-height: 30px;
 }
 
-.cButton {
+.childButton {
   float: left;
   margin: 0 auto;
   line-height: 30px;
@@ -301,7 +294,7 @@ div.senior-header {
   line-height: 15px;
 }
 
-div.sCount {
+div.seniorCount {
   float: left;
   margin: 0 auto;
   text-align: center;
@@ -312,7 +305,7 @@ div.sCount {
   line-height: 30px;
 }
 
-.sButton {
+.seniorButton {
   float: left;
   margin: 0 auto;
   line-height: 30px;
