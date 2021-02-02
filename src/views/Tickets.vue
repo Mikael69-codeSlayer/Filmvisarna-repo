@@ -47,7 +47,7 @@
         </div>
              <div>Totalt {{price}}kr</div>
 
-        <button v-on:click="updateShow() /*,bookTicket() */" class="book-ticket">Boka</button>
+        <button v-on:click="updateShow(), bookTicket()" class="book-ticket">Boka</button>
       </div>
     </div>
   </div>
@@ -98,21 +98,21 @@ export default {
 
     // Ticket button increments and decrements
     aIncrement() {
-      if (this.aCount < 8) {
+      if (this.adultCount < 8) {
         this.price += 120
         this.adultCount++;
       }
     },
 
     aDecrement() {
-      if (this.aCount > 0) {
+      if (this.adultCount > 0) {
         this.price -= 120
         this.adultCount--;
       }
     },
 
     cIncrement() {
-      if (this.cCount < 8) {
+      if (this.childCount < 8) {
         this.price+= 80
         this.childCount++;
       }
@@ -125,13 +125,13 @@ export default {
     },
     sIncrement() {
       if (this.seniorCount < 8) {
-        this.prive += 80
+        this.price += 80
         this.seniorCount++;
       }
     },
 
     sDecrement() {
-      if (this.sCount > 0) {
+      if (this.seniorCount > 0) {
         this.price -= 80
         this.seniorCount--;
       }
@@ -145,7 +145,7 @@ export default {
         date: this.currentShow.date,
         time: this.currentShow.time,
         salon: this.currentShow.salon,
-        seats: (this.aCount + this.cCount + this.sCount),
+        seats: (this.adultCount + this.childCount + this.seniorCount),
         price: this.price
       }
 
