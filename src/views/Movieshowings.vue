@@ -9,15 +9,15 @@
 
     <div v-for="show of sortedShows" :key="show.id">
       <div class="showings" v-if="isLoggedIn">
-        <h1>{{ show.date }}</h1>
-        <p>Lediga säten {{ show.availableSeats }}</p>
+        <div class="show-date">{{ show.date }}</div>
+        <div class="show-seats">Lediga säten {{ show.availableSeats }}</div>
         <router-link :to="'/tickets/' + show.id">
           <button class="ticket-button">Biljetter</button>
         </router-link>
       </div>
       <div class="showings" v-else>
-        <h1>{{ show.date }}</h1>
-        <p>Lediga säten {{ show.availableSeats }}</p>
+        <div class="show-date">{{ show.date }}</div>
+       <div class="show-seats">Lediga säten {{ show.availableSeats }}</div>
         <router-link :to="'/login'">
           <button class="ticket-button">Biljetter</button>
         </router-link>
@@ -266,5 +266,24 @@ div > p{
   padding: 10px;
   border: 1px solid rgba(245, 245, 245, 0.424);
   border-radius: 3px;
+
 }
+
+.show-date {
+ float: left;
+ margin: 0 auto;
+   font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color:whitesmoke;
+}
+
+.show-seats {
+ float: left;
+ margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color:rgba(245, 245, 245, 0.637);
+  padding-left: 10px;
+}
+
 </style>
