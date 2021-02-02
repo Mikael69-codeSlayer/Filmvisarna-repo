@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <div class="header">{{ currentShow.film + " - " + currentShow.salon + 
-      " " + currentShow.date + "  " + currentShow.time}}</h1>
+  <div class="salon-container">
+    <div class="salon-header">{{ currentShow.film + " - " +  
+      " " + currentShow.date + "  " + currentShow.time + " - " + currentShow.salon}}</div>
 <!--- Loop salons to get Salon1--->
     <div class="salon" v-for="salon of salons" :key="salon.name">
       
@@ -16,16 +16,19 @@
           
              <!-- loop seats and set seat/row number-->
              <button class="seat" v-for="seat in row" :key="seat"> {{letters[n]}}{{ (seat-1)+1 }}</button>  
-        </div>  
-        <div class="spacing"></div>
+        </div>
+        <br><br>
         <p id="available-seats">{{ currentShow.availableSeats }} Lediga platser</p>
+        
       </div>
     </div>
+  </div>
+
     <div class="tickets-container">
       <div v-if="currentShow" class="movie-list">
         
       </div>
-      <h1 id="choose-amount">Välj antal biljetter</h1>
+      <div class="tickets-header">Biljetter:</div>
       <div class="buttons-container">
         <!-- Adult tickets -->
         <div class="adult-ticket-container">
@@ -67,10 +70,9 @@
           </div>
         </div>
 
-        <button v-on:click="updateShow() /*,bookTicket() */" class="book-ticket">Boka</button>
+        <button class="book-button" v-on:click="updateShow() /*,bookTicket() */" class="book-ticket">Boka</button>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -93,6 +95,7 @@ export default {
       selected: false
     };
   },
+  
   computed: {
     id() {
       // Get id from url parameter
@@ -178,16 +181,16 @@ export default {
 
 <style scoped>
 
-.container {
+.salon-container {
   background-color: rgb(34, 17, 17);
   
 }
-.header {
+.salon-header {
   font-family: "Roboto Slab", serif;
   color: white;
-  font-size: 28px;
+  font-size: 30px;
   background-color: rgb(34, 17, 17);
-  padding-top: 50px;
+  padding-top: 70px;
 
 }
 .increment-buttons {
@@ -197,7 +200,7 @@ export default {
 
 /*-------------------Salon----------------------*/
 .row {
-  height: 34px;
+  height: 30px;
   text-align: center;
   color: black;
   display: inline-block;
@@ -208,15 +211,15 @@ export default {
 .seat {
   text-align: center;
   margin: 3px;
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   border: none;
   font-family: "Roboto Slab", serif;
-  font-weight: bold;
-  background-color: rgb(204, 204, 204);
-  font-size: 12px;
+  font-size: 8px;
   user-select: none;
   border-radius: 2px;
+  background-color: rgb(156, 156, 156);
+  color: 156, 156, 156;
 }
 .seat:hover {
   cursor: pointer;
@@ -225,30 +228,15 @@ export default {
 .salon {
   text-align: center;
   width: 430px;
-  height: 300px;
+  height: 270px;
   margin: 0 auto;
   user-select: none;
   background-color: rgba(34, 17, 17, 0);
 }
 
-.salon-name {
-  color: green;
-  font-size: 20px;
-}
-
-.salon-header {
-  font-family: "Roboto Slab", serif;
-  color: white;
-  font-weight: 100;
-  width: 830px;
-  height: 10px;
-  background: rgb(42, 36, 36);
-  text-align: left;
-  margin: 0 auto;
-}
 
 .salon-screen {
-  width: 430px;
+  width: 370px;
   background-color: rgb(70, 70, 70);
   color: rgb(255, 255, 255);
   font-family: "Roboto Slab", serif;
@@ -266,27 +254,34 @@ export default {
   margin: 0 auto;
   user-select: none;
 }
-/*------------Seats---------------*/
+/*------------Tickets---------------*/
 #available-seats {
-  font-size: 10px;
-}
-#choose-amount {
-  text-align: center;
-  font-size: 30px;
-  color: whitesmoke;
   font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  color: white;
+  
 }
 
-div.tickets-container {
-  background-color: rgb(34, 17, 17);
-  padding: 50px;
-  text-align: center;
-  top: 500px;
+.buttons-container {
+  height: 550px;
+  padding-top: 10px;
 }
+
+.tickets-header {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-family: "Roboto Slab", serif;
+}
+.tickets-container {
+  background-color: rgb(34, 17, 17);
+  text-align: center;
+}
+
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- ADULT TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .adult-price {
-  color: rgba(250, 227, 227, 0.719);
+  color: rgba(175, 175, 175);
   font-size: 15px;
 }
 
@@ -339,7 +334,7 @@ div.adult-ticket-container {
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- CHILD TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .child-price {
-  color: rgba(250, 227, 227, 0.719);
+  color: rgb(175, 175, 175);
   font-size: 15px;
 }
 
@@ -431,4 +426,9 @@ div.senior-ticket-container {
   margin: 0 auto;
   height: 60px;
 }
+.book-button {
+  padding: 10px 30px;
+  font-size: 20px;
+}
+
 </style>
