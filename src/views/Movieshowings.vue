@@ -250,6 +250,6 @@ div > p{
   color: whitesmoke
 }
 .showings-container{
-  padding-top: 200px;
+  padding-top: 250px;
 }
 </style>
