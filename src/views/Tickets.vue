@@ -1,8 +1,29 @@
 <template>
-  <div>
-    <div class="available-seats">
+  <div class="container">
+    <div class="header">{{ currentShow.film + " - " + currentShow.salon + 
+      " " + currentShow.date + "  " + currentShow.time}}</h1>
+<!--- Loop salons to get Salon1--->
+    <div class="salon" v-for="salon of salons" :key="salon.name">
+      
+      <div v-if="salon.name == currentShow.salon">
+         <!-- display seats and movie screen  -->
+        <div class="spacing"></div>
+        <div class="salon-screen">BIODUK</div>
+        <div class="spacing"></div>
+        
+        <!-- loop through the rows -->
+        <div class="row" v-for="(row,n) in salon.seatsPerRow" :key="row">
+          
+             <!-- loop seats and set seat/row number-->
+             <button class="seat" v-for="seat in row" :key="seat"> {{letters[n]}}{{ (seat-1)+1 }}</button>  
+        </div>  
+        <div class="spacing"></div>
+        <p id="available-seats">{{ currentShow.availableSeats }} Lediga platser</p>
+      </div>
+    </div>
+    <div class="tickets-container">
       <div v-if="currentShow" class="movie-list">
-        <p>Lediga säten {{ currentShow.availableSeats }}</p>
+        
       </div>
       <h1 id="choose-amount">Välj antal biljetter</h1>
       <div class="buttons-container">
@@ -68,6 +89,8 @@ export default {
       salon: "",
       seats: 0,
       price: 0,
+      letters : ["A","B","C","D","E","F","G","H","I","J","K","L"],
+      selected: false
     };
   },
   computed: {
@@ -81,8 +104,12 @@ export default {
         (showtime) => showtime.id == this.id
       )[0];
     },
-
+        salons() {
+      //to get Salon
+      return this.$store.state.salons;
+    },
   },
+
 
   methods: {
 
@@ -151,6 +178,98 @@ export default {
 
 <style scoped>
 
+.container {
+  background-color: rgb(34, 17, 17);
+  
+}
+.header {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-size: 28px;
+  background-color: rgb(34, 17, 17);
+  padding-top: 50px;
+
+}
+.increment-buttons {
+  float: right;
+  width: 100px;
+}
+
+/*-------------------Salon----------------------*/
+.row {
+  height: 34px;
+  text-align: center;
+  color: black;
+  display: inline-block;
+  margin-left:auto;
+  margin-right:auto;
+  user-select: none;
+}
+.seat {
+  text-align: center;
+  margin: 3px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  background-color: rgb(204, 204, 204);
+  font-size: 12px;
+  user-select: none;
+  border-radius: 2px;
+}
+.seat:hover {
+  cursor: pointer;
+}
+
+.salon {
+  text-align: center;
+  width: 430px;
+  height: 300px;
+  margin: 0 auto;
+  user-select: none;
+  background-color: rgba(34, 17, 17, 0);
+}
+
+.salon-name {
+  color: green;
+  font-size: 20px;
+}
+
+.salon-header {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-weight: 100;
+  width: 830px;
+  height: 10px;
+  background: rgb(42, 36, 36);
+  text-align: left;
+  margin: 0 auto;
+}
+
+.salon-screen {
+  width: 430px;
+  background-color: rgb(70, 70, 70);
+  color: rgb(255, 255, 255);
+  font-family: "Roboto Slab", serif;
+  margin: 0 auto;
+  height: 20px;
+  vertical-align: middle;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.spacing {
+  width: 500px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0);
+  margin: 0 auto;
+  user-select: none;
+}
+/*------------Seats---------------*/
+#available-seats {
+  font-size: 10px;
+}
 #choose-amount {
   text-align: center;
   font-size: 30px;
@@ -158,16 +277,12 @@ export default {
   font-family: "Roboto Slab", serif;
 }
 
-div.available-seats {
-  background-color: rgba(47, 44, 44, 0.26);
-  padding: 300px;
+div.tickets-container {
+  background-color: rgb(34, 17, 17);
+  padding: 50px;
   text-align: center;
+  top: 500px;
 }
-.increment-buttons {
-  float: right;
-  width: 100px;
-}
-
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- ADULT TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .adult-price {
@@ -213,7 +328,7 @@ div.adult-ticket-container {
   text-align: left;
   background-color: rgba(0, 0, 0, 0.329);
   margin: 0 auto;
-  height: 60px;
+  height: 56px;
 }
 
 .adult-ticket-container {
@@ -264,7 +379,7 @@ div.child-ticket-container {
   font-weight: bold;
   width: 500px;
   text-align: left;
-  background-color: rgb(10, 10, 10);
+  background-color: rgba(10, 10, 10, 0.294);
   margin: 0 auto;
   height: 60px;
 }
