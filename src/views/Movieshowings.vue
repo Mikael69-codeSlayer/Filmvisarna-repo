@@ -266,6 +266,7 @@ div > p {
   padding: 10px;
   border: 1px solid rgba(245, 245, 245, 0.424);
   border-radius: 3px;
+  align-items: center;
 }
 
 .show-date {
@@ -274,15 +275,7 @@ div > p {
   font-family: "Roboto Slab", serif;
   font-size: 16px;
   color: whitesmoke;
-}
-
-.show-seats {
-  float: left;
-  margin: 0 auto;
-  font-family: "Roboto Slab", serif;
-  font-size: 16px;
-  color: rgba(245, 245, 245, 0.637);
-  padding-left: 10px;
+  width: 100px;
 }
 .show-time {
   float: left;
@@ -290,7 +283,8 @@ div > p {
   font-family: "Roboto Slab", serif;
   font-size: 16px;
   color: rgba(245, 245, 245, 0.637);
-  padding-left: 10px;
+    width: 50px;
+
 }
 .show-salon {
   float: left;
@@ -298,6 +292,19 @@ div > p {
   font-family: "Roboto Slab", serif;
   font-size: 16px;
   color: rgba(245, 245, 245, 0.637);
-  padding-left: 10px;
+  width: 150px;
+  text-align: left;
+  margin-left: 20px;
 }
+.show-seats {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+  padding-left: 10px;
+  width: 150px;
+}
+
+
 </style>
