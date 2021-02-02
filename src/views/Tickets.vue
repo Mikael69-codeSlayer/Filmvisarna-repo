@@ -46,7 +46,7 @@
             <button class="sButton" v-on:click.prevent="sDecrement">-</button>
           </div>
         </div>
-
+             <div>Totalt {{price}}kr</div>
         <button
           v-on:click="updateAvailableSeats, writecurrentShow, bookTicket()"
           class="book-adult-ticket">
@@ -62,6 +62,7 @@ export default {
   name: "bookTicket",
   data() {
     return {
+  
       aCount: 0,
       cCount: 0,
       sCount: 0,
@@ -105,34 +106,40 @@ export default {
 
     aIncrement() {
       if (this.aCount < 8) {
+        this.price += 120
         this.aCount++;
       }
     },
 
     aDecrement() {
       if (this.aCount > 0) {
+        this.price -= 120
         this.aCount--;
       }
     },
 
     cIncrement() {
       if (this.cCount < 8) {
+        this.price+= 80
         this.cCount++;
       }
     },
     cDecrement() {
       if (this.cCount > 0) {
+        this.price -= 80
         this.cCount--;
       }
     },
     sIncrement() {
       if (this.sCount < 8) {
+        this.price += 80
         this.sCount++;
       }
     },
 
     sDecrement() {
       if (this.sCount > 0) {
+        this.price -= 80
         this.sCount--;
       }
     },
@@ -145,7 +152,8 @@ export default {
         date: this.currentShow.date,
         time: this.currentShow.time,
         salon: this.currentShow.salon,
-        seats: this.currentShow.aCount
+        seats: (this.aCount + this.cCount + this.sCount),
+        price: this.price
       }
 
       this.$store.dispatch("addTicket", ticket);
