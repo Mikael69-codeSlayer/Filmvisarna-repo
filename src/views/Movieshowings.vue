@@ -6,6 +6,7 @@
       <img :src="film.posterUrl" />
     </div>
     </div>
+      <div class="film-title"> {{ film.title }} </div>
     <div class="header-container">
        <div class="header-date"> Datum </div>
           <div class="header-time"> Tid </div>
@@ -36,6 +37,7 @@
         </div>
       </div>
     </div>
+    <div class="empty-space" style="height: 100px"></div>
  
 </template>
 
@@ -385,6 +387,13 @@ height: 30px;
   float: left;
   margin: 0 auto;
 background-color: rgba(245, 245, 245, 0.157);
+}
+
+.film-title {
+  height: 100px;
+  font-family: "Roboto Slab", serif;
+  font-size: 35px;
+  color: whitesmoke;
 }
 
 </style>
