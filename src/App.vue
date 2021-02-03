@@ -119,9 +119,9 @@ div.main-container {
   /*fix margin*/
 }
 body {
-  background-color: black;
   margin: 0 !important;
   padding: 0 !important;
+   background-color: rgb(22, 11, 11);
 }
 
 /*a -> filmer, biljetter, filmvisarna, login*/
@@ -205,5 +205,6 @@ button {
   font-family: "Roboto Slab", serif;
   margin-left: 15px;
   border: none;
+   cursor: pointer;
 }
 </style>
