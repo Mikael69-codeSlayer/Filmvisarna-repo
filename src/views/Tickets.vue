@@ -202,7 +202,6 @@ export default {
 }
 
 .salon {
-#choose-amount {
   text-align: center;
   font-size: 30px;
   color: whitesmoke;
