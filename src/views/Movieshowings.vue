@@ -276,6 +276,7 @@ width: 700px;
   border: 1px solid rgba(245, 245, 245, 0.424);
   border-radius: 3px;
   align-items: center;
+  background-color: rgba(220, 20, 60, 0.877);
 }
 
 .show-date {

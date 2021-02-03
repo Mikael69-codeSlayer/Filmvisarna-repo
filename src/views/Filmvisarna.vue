@@ -29,14 +29,6 @@
       </div>
       <div class="empty-space" style="height: 200px"></div>
     </div>
-    <!--
-    <div
-    v-for ="film of filmer"
-    :key ="film.id">
-        <img :src="posterUrl">
-    </div>-->
-    <!--If you want to add some pictures-->
-    <!--<img :src="posterUrl">-->
   </div>
 </template>
 
@@ -111,7 +103,7 @@ div.news-container {
 
 .news-poster img {
   margin: 0 auto;
-  width: 900px;
+  width: 600px;
 }
 .news-container-inside {
   text-align: left;
