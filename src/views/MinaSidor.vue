@@ -3,7 +3,7 @@
   <div class="header">Mina bokningar</div>
 
 
-  <div v-for="info of tickets" :key="info">
+  <div v-for="info of sortedTickets" :key="info">
     <div class="ticket-info">
       <p>{{ info.film }}</p>
       <pre>
@@ -29,7 +29,8 @@ export default {
   data(){
    return{
      films: "",
-     posterUrl: ""
+     posterUrl: "",
+     date:""
    }
   },
   methods:{
@@ -52,6 +53,29 @@ export default {
     },
   filmer() {
       return this.$store.state.filmer;
+    },
+    sortedTickets() {                         //sorts the tickets by date
+      //This removes all "-" in dates
+      for (let ticket of this.tickets) {
+        if (ticket.date.includes("-")) {
+          ticket.date = ticket.date.replaceAll("-", "");
+          //console.log(ticket.date)
+        }
+      }
+      //This sorts ticket dates in order
+      this.tickets.sort((a, b) => a.date - b.date);
+
+      //This adds "-" between year-month and month-day
+      for (let ticket of this.tickets) {
+        if (ticket.date.includes(2021)) {
+          ticket.date = ticket.date.replace("2021", "2021-");
+        }
+        if (ticket.date.includes(2021)) {
+          ticket.date = ticket.date.replace("-02", "-02-");
+        }
+      }
+     
+      return this.tickets;
     },
     
 
