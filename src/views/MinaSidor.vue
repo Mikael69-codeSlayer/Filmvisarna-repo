@@ -75,13 +75,6 @@ export default {
 
       return this.tickets;
     },
-    sortedPosters() {
-      for (let info of this.filmer) {
-        if (info.posterUrl == film.title) {
-          return this.$store.state.filmer.posterUrl;
-        }
-      }
-    },
   },
   created() {
     this.$store.dispatch("fetchTickets");
