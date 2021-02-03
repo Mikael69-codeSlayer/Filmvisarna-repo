@@ -1,10 +1,34 @@
 <template>
-  <div>
-    <div class="available-seats">
-      <div v-if="currentShow" class="movie-list">
-        <p>Lediga säten {{ currentShow.availableSeats }}</p>
+  <div class="salon-container">
+    <div class="salon-header">{{ currentShow.film + " - " +  
+      " " + currentShow.date + "  " + currentShow.time + " - " + currentShow.salon}}</div>
+<!--- Loop salons to get Salon1--->
+    <div class="salon" v-for="salon of salons" :key="salon.name">
+      
+      <div v-if="salon.name == currentShow.salon">
+         <!-- display seats and movie screen  -->
+        <div class="spacing"></div>
+        <div class="salon-screen">BIODUK</div>
+        <div class="spacing"></div>
+        
+        <!-- loop through the rows -->
+        <div class="row" v-for="(row,n) in salon.seatsPerRow" :key="row">
+          
+             <!-- loop seats and set seat/row number-->
+             <button class="seat" v-for="seat in row" :key="seat"> {{letters[n]}}{{ (seat-1)+1 }}</button>  
+        </div>
+        <br><br>
+        <p id="available-seats">{{ currentShow.availableSeats }} Lediga platser</p>
+        
       </div>
-      <h1 id="choose-amount">Välj antal biljetter</h1>
+    </div>
+  </div>
+
+    <div class="tickets-container">
+      <div v-if="currentShow" class="movie-list">
+        
+      </div>
+      <div class="tickets-header">Boka biljetter</div>
       <div class="buttons-container">
         <!-- Adult tickets -->
         <div class="adult-ticket-container">
@@ -45,12 +69,12 @@
             <button class="seniorButton" v-on:click.prevent="sDecrement">-</button>
           </div>
         </div>
-             <div>Totalt {{price}}kr</div>
 
-        <button v-on:click="updateShow(), bookTicket()" class="book-ticket">Boka</button>
+          <div>Totalt {{price}}kr</div>
+          
+        <button v-on:click="updateShow(), bookTicket()" class="book-button">Boka</button>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -69,8 +93,11 @@ export default {
       salon: "",
       seats: 0,
       price: 0,
+      letters : ["A","B","C","D","E","F","G","H","I","J","K","L"],
+      selected: false
     };
   },
+  
   computed: {
     id() {
       // Get id from url parameter
@@ -82,8 +109,12 @@ export default {
         (showtime) => showtime.id == this.id
       )[0];
     },
-
+        salons() {
+      //to get Salon
+      return this.$store.state.salons;
+    },
   },
+
 
   methods: {
 
@@ -97,7 +128,7 @@ export default {
     },
 
     // Ticket button increments and decrements
-    aIncrement() {
+   aIncrement() {
       if (this.adultCount < 8) {
         this.price += 120
         this.adultCount++;
@@ -136,7 +167,6 @@ export default {
         this.seniorCount--;
       }
     },
-
     bookTicket() {
       console.log('bookticket')
       const ticket = {
@@ -156,31 +186,106 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
 
-#choose-amount {
-  text-align: center;
-  font-size: 30px;
-  color: whitesmoke;
-  font-family: "Roboto Slab", serif;
+.salon-container {
+  background-color: rgb(34, 17, 17);
+  
 }
+.salon-header {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-size: 30px;
+  background-color: rgb(34, 17, 17);
+  padding-top: 70px;
 
-div.available-seats {
-  background-color: rgba(47, 44, 44, 0.26);
-  padding: 300px;
-  text-align: center;
 }
 .increment-buttons {
   float: right;
   width: 100px;
 }
 
+/*-------------------Salon----------------------*/
+.row {
+  height: 30px;
+  text-align: center;
+  color: black;
+  display: inline-block;
+  margin-left:auto;
+  margin-right:auto;
+  user-select: none;
+}
+.seat {
+  text-align: center;
+  margin: 3px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  font-family: "Roboto Slab", serif;
+  font-size: 8px;
+  user-select: none;
+  border-radius: 2px;
+  background-color: rgb(156, 156, 156);
+  color: 156, 156, 156;
+}
+
+.salon {
+  text-align: center;
+  width: 430px;
+  height: 270px;
+  margin: 0 auto;
+  user-select: none;
+  background-color: rgba(34, 17, 17, 0);
+}
+
+
+.salon-screen {
+  width: 370px;
+  background-color: rgb(70, 70, 70);
+  color: rgb(255, 255, 255);
+  font-family: "Roboto Slab", serif;
+  margin: 0 auto;
+  height: 20px;
+  vertical-align: middle;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.spacing {
+  width: 500px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0);
+  margin: 0 auto;
+  user-select: none;
+}
+/*------------Tickets---------------*/
+#available-seats {
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  color: white;
+  
+}
+
+.buttons-container {
+  height: 550px;
+  padding-top: 10px;
+}
+
+.tickets-header {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-family: "Roboto Slab", serif;
+}
+.tickets-container {
+  background-color: rgb(34, 17, 17);
+  text-align: center;
+}
+
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- ADULT TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .adult-price {
-  color: rgba(250, 227, 227, 0.719);
+  color: rgba(175, 175, 175);
   font-size: 15px;
 }
 
@@ -207,12 +312,16 @@ div.adultCount {
 .adultButton {
   float: left;
   margin: 0 auto;
-  line-height: 30px;
+  line-height: 20px;
   width: 30px;
   border-radius: 100px;
-  border: none;
   cursor: pointer;
   outline: none;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px 5px 5px;
+  border: 1px solid red;
 }
 
 div.adult-ticket-container {
@@ -222,7 +331,7 @@ div.adult-ticket-container {
   text-align: left;
   background-color: rgba(0, 0, 0, 0.329);
   margin: 0 auto;
-  height: 60px;
+  height: 56px;
 }
 
 .adult-ticket-container {
@@ -233,7 +342,7 @@ div.adult-ticket-container {
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- CHILD TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .child-price {
-  color: rgba(250, 227, 227, 0.719);
+  color: rgb(175, 175, 175);
   font-size: 15px;
 }
 
@@ -260,12 +369,16 @@ div.childCount {
 .childButton {
   float: left;
   margin: 0 auto;
-  line-height: 30px;
+  line-height: 20px;
   width: 30px;
   border-radius: 100px;
-  border: none;
   cursor: pointer;
   outline: none;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px 5px 5px;
+  border: 1px solid red;
 }
 
 div.child-ticket-container {
@@ -273,7 +386,7 @@ div.child-ticket-container {
   font-weight: bold;
   width: 500px;
   text-align: left;
-  background-color: rgb(10, 10, 10);
+  background-color: rgba(10, 10, 10, 0.294);
   margin: 0 auto;
   height: 60px;
 }
@@ -308,12 +421,16 @@ div.seniorCount {
 .seniorButton {
   float: left;
   margin: 0 auto;
-  line-height: 30px;
+  line-height: 20px;
   width: 30px;
   border-radius: 100px;
-  border: none;
   cursor: pointer;
   outline: none;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px 5px 5px;
+  border: 1px solid red;
 }
 
 div.senior-ticket-container {
@@ -325,4 +442,13 @@ div.senior-ticket-container {
   margin: 0 auto;
   height: 60px;
 }
+.book-button {
+  padding: 10px 30px;
+  font-size: 20px;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  border: 1px solid red;
+}
+
 </style>
