@@ -71,8 +71,10 @@
         </div>
 
           <div>Totalt {{price}}kr</div>
+          <div v-if="price !=0">
+            <button v-on:click="updateShow(), bookTicket()" class="book-button">Boka</button>
+          </div>
           
-        <button v-on:click="updateShow(), bookTicket()" class="book-button">Boka</button>
       </div>
     </div>
 </template>
