@@ -1,32 +1,8 @@
 <template>
-  <div class="salon-container">
-    <div class="salon-header">{{ currentShow.film + " - " +  
-      " " + currentShow.date + "  " + currentShow.time + " - " + currentShow.salon}}</div>
-<!--- Loop salons to get Salon1--->
-    <div class="salon" v-for="salon of salons" :key="salon.name">
-      
-      <div v-if="salon.name == currentShow.salon">
-         <!-- display seats and movie screen  -->
-        <div class="spacing"></div>
-        <div class="salon-screen">BIODUK</div>
-        <div class="spacing"></div>
-        
-        <!-- loop through the rows -->
-        <div class="row" v-for="(row,n) in salon.seatsPerRow" :key="row">
-          
-             <!-- loop seats and set seat/row number-->
-             <button class="seat" v-for="seat in row" :key="seat"> {{letters[n]}}{{ (seat-1)+1 }}</button>  
-        </div>
-        <br><br>
-        <p id="available-seats">{{ currentShow.availableSeats }} Lediga platser</p>
-        
-      </div>
-    </div>
-  </div>
-
-    <div class="tickets-container">
+  <div>
+    <div class="available-seats">
       <div v-if="currentShow" class="movie-list">
-        
+        <p>Lediga säten {{ currentShow.availableSeats }}</p>
       </div>
       <div class="tickets-header">Boka biljetter</div>
       <div class="buttons-container">
@@ -71,9 +47,10 @@
         </div>
              <div>Totalt {{price}}kr</div>
 
-        <button class="book-button" v-on:click="updateShow()">Boka</button>
+        <button v-on:click="updateShow(), bookTicket()" class="book-ticket">Boka</button>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -92,11 +69,8 @@ export default {
       salon: "",
       seats: 0,
       price: 0,
-      letters : ["A","B","C","D","E","F","G","H","I","J","K","L"],
-      selected: false
     };
   },
-  
   computed: {
     id() {
       // Get id from url parameter
@@ -108,12 +82,8 @@ export default {
         (showtime) => showtime.id == this.id
       )[0];
     },
-        salons() {
-      //to get Salon
-      return this.$store.state.salons;
-    },
-  },
 
+  },
 
   methods: {
 
@@ -180,7 +150,7 @@ export default {
       }
 
       this.$store.dispatch("addTicket", ticket);
-      this.$router.replace("/minasidor");
+      this.$router.replace("/minasidor/");
     },
   },
 };
@@ -232,62 +202,27 @@ export default {
 }
 
 .salon {
-  text-align: center;
-  width: 430px;
-  height: 270px;
-  margin: 0 auto;
-  user-select: none;
-  background-color: rgba(34, 17, 17, 0);
-}
-
-
-.salon-screen {
-  width: 370px;
-  background-color: rgb(70, 70, 70);
-  color: rgb(255, 255, 255);
-  font-family: "Roboto Slab", serif;
-  margin: 0 auto;
-  height: 20px;
-  vertical-align: middle;
-  line-height: 20px;
-  font-size: 12px;
-}
-
-.spacing {
-  width: 500px;
-  height: 50px;
-  background: rgba(0, 0, 0, 0);
-  margin: 0 auto;
-  user-select: none;
-}
-/*------------Tickets---------------*/
-#available-seats {
-  font-family: "Roboto Slab", serif;
-  font-size: 18px;
-  color: white;
-  
-}
-
-.buttons-container {
-  height: 550px;
-  padding-top: 10px;
-}
-
-.tickets-header {
+#choose-amount {
   text-align: center;
   font-size: 30px;
-  color: white;
+  color: whitesmoke;
   font-family: "Roboto Slab", serif;
 }
-.tickets-container {
-  background-color: rgb(34, 17, 17);
+
+div.available-seats {
+  background-color: rgba(47, 44, 44, 0.26);
+  padding: 300px;
   text-align: center;
+}
+.increment-buttons {
+  float: right;
+  width: 100px;
 }
 
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- ADULT TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .adult-price {
-  color: rgba(175, 175, 175);
+  color: rgba(250, 227, 227, 0.719);
   font-size: 15px;
 }
 
@@ -333,7 +268,7 @@ div.adult-ticket-container {
   text-align: left;
   background-color: rgba(0, 0, 0, 0.329);
   margin: 0 auto;
-  height: 56px;
+  height: 60px;
 }
 
 .adult-ticket-container {
@@ -344,7 +279,7 @@ div.adult-ticket-container {
 /*/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/- CHILD TICKET -/--/--/--/--/--/--/--/--/--/--/--/--/--/*/
 
 .child-price {
-  color: rgb(175, 175, 175);
+  color: rgba(250, 227, 227, 0.719);
   font-size: 15px;
 }
 
@@ -388,7 +323,7 @@ div.child-ticket-container {
   font-weight: bold;
   width: 500px;
   text-align: left;
-  background-color: rgba(10, 10, 10, 0.294);
+  background-color: rgb(10, 10, 10);
   margin: 0 auto;
   height: 60px;
 }

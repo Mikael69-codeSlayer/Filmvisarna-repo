@@ -80,10 +80,10 @@ export default {
 
   computed: {
     salons() {
+      //to get Salon
       return this.$store.state.salons;
     },
   }, 
-  //toggles 
    methods: {
     toggleClass: function(event){
        this.isActive = !this.isActive;
