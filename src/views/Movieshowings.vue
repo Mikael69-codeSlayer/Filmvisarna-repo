@@ -27,11 +27,11 @@
         </div>
         
         <div class="showings" v-else>
-          <div class="show-date">{{ show.date }}</div>
+               <div class="show-date">{{ show.date }}</div>
           <div class="show-time">{{ show.time }}</div>
           <div class="show-salon">{{ show.salon }}</div>
           <div class="show-seats"> {{ show.availableSeats }}</div>
-          <router-link :to="'/tickets/' + show.id">
+          <router-link :to="'/login/'">
             <button class="ticket-button">Biljetter</button>
           </router-link>
         </div>

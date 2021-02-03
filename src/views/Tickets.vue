@@ -71,7 +71,7 @@
         </div>
              <div>Totalt {{price}}kr</div>
 
-        <button class="book-button" v-on:click="updateShow() /*,bookTicket() */" class="book-ticket">Boka</button>
+        <button class="book-button" v-on:click="updateShow()">Boka</button>
       </div>
     </div>
 </template>
