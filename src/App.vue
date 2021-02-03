@@ -121,7 +121,7 @@ div.main-container {
 body {
   margin: 0 !important;
   padding: 0 !important;
-   background-color: rgb(22, 11, 11);
+   background-color: rgb(0, 0, 0);
 }
 
 /*a -> filmer, biljetter, filmvisarna, login*/

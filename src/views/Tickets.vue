@@ -150,7 +150,7 @@ export default {
       }
 
       this.$store.dispatch("addTicket", ticket);
-      this.$router.replace("/minasidor");
+      this.$router.replace("/minasidor/");
     },
   },
 };
