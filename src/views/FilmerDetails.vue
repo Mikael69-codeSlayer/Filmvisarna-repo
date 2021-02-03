@@ -185,7 +185,6 @@ div.detail-text p {
   font-size: 1.2em;
   color: white;
   padding: 5px 15px 5px;
-
   border: 1px solid red;
   cursor: pointer;
 }

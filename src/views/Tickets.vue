@@ -305,12 +305,16 @@ div.adultCount {
 .adultButton {
   float: left;
   margin: 0 auto;
-  line-height: 30px;
+  line-height: 20px;
   width: 30px;
   border-radius: 100px;
-  border: none;
   cursor: pointer;
   outline: none;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px 5px 5px;
+  border: 1px solid red;
 }
 
 div.adult-ticket-container {
@@ -358,12 +362,16 @@ div.childCount {
 .childButton {
   float: left;
   margin: 0 auto;
-  line-height: 30px;
+  line-height: 20px;
   width: 30px;
   border-radius: 100px;
-  border: none;
   cursor: pointer;
   outline: none;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px 5px 5px;
+  border: 1px solid red;
 }
 
 div.child-ticket-container {
@@ -406,12 +414,16 @@ div.seniorCount {
 .seniorButton {
   float: left;
   margin: 0 auto;
-  line-height: 30px;
+  line-height: 20px;
   width: 30px;
   border-radius: 100px;
-  border: none;
   cursor: pointer;
   outline: none;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px 5px 5px;
+  border: 1px solid red;
 }
 
 div.senior-ticket-container {
@@ -426,6 +438,10 @@ div.senior-ticket-container {
 .book-button {
   padding: 10px 30px;
   font-size: 20px;
+  background-color: rgba(220, 20, 60, 0.877);
+  font-size: 1.2em;
+  color: white;
+  border: 1px solid red;
 }
 
 </style>
