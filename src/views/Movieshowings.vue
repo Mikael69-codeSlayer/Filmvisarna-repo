@@ -217,8 +217,8 @@ div.movie-item {
 div.movie-item-poster {
   background-color: rgb(0, 0, 0);
   width: 100px;
-  height: 150px;
-  float: left;
+  
+  
 }
 
 div.movie-item-text {
