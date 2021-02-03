@@ -215,10 +215,11 @@ div.movie-item {
 }
 
 div.movie-item-poster {
-  background-color: rgb(0, 0, 0);
-  width: 100px;
-  
-  
+  background-color: rgba(0, 0, 0, 0);
+  float: left;
+  margin: 0 auto;
+  padding-top: 40px;
+  width: 100%;
 }
 
 div.movie-item-text {
@@ -251,14 +252,9 @@ div.line {
 }
 
 img {
-  width: 200px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  width: 250px;
 }
+
 .showings {
   background-color: rgba(58, 58, 58, 0.281);
    padding:10px;    
