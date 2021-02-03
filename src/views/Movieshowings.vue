@@ -276,6 +276,7 @@ width: 700px;
 }
 
 .ticket-button {
+  background-color: rgba(220, 20, 60, 0.877);
   cursor: pointer;
   padding: 6px 8px;
   border: 1px solid rgba(245, 245, 245, 0.424);
