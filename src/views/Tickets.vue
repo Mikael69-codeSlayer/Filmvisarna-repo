@@ -70,9 +70,11 @@
           </div>
         </div>
 
-          <div>Totalt {{price}}kr</div>
+          <div class="total-price">Totalt {{price}}kr</div>
+          <div v-if="price !=0">
+            <button v-on:click="updateShow(), bookTicket()" class="book-button">Boka</button>
+          </div>
           
-        <button v-on:click="updateShow(), bookTicket()" class="book-button">Boka</button>
       </div>
     </div>
 </template>
@@ -189,14 +191,14 @@ export default {
 <style scoped>
 
 .salon-container {
-  background-color: rgb(34, 17, 17);
+  background-color: rgb(0, 0, 0);
   
 }
 .salon-header {
   font-family: "Roboto Slab", serif;
   color: white;
   font-size: 30px;
-  background-color: rgb(34, 17, 17);
+  background-color: rgb(0, 0, 0);
   padding-top: 70px;
 
 }
@@ -235,7 +237,7 @@ export default {
   height: 270px;
   margin: 0 auto;
   user-select: none;
-  background-color: rgba(34, 17, 17, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 
@@ -278,7 +280,7 @@ export default {
   font-family: "Roboto Slab", serif;
 }
 .tickets-container {
-  background-color: rgb(34, 17, 17);
+  background-color: rgb(0, 0, 0);
   text-align: center;
 }
 
@@ -329,7 +331,7 @@ div.adult-ticket-container {
   font-weight: bold;
   width: 500px;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.329);
+  background-color: rgba(82, 82, 82, 0.329);
   margin: 0 auto;
   height: 56px;
 }
@@ -386,7 +388,7 @@ div.child-ticket-container {
   font-weight: bold;
   width: 500px;
   text-align: left;
-  background-color: rgba(10, 10, 10, 0.294);
+  background-color: rgba(46, 46, 46, 0.329);
   margin: 0 auto;
   height: 60px;
 }
@@ -438,7 +440,7 @@ div.senior-ticket-container {
   font-weight: bold;
   width: 500px;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.329);
+  background-color: rgba(82, 82, 82, 0.329);
   margin: 0 auto;
   height: 60px;
 }
@@ -450,5 +452,18 @@ div.senior-ticket-container {
   color: white;
   border: 1px solid red;
 }
+.total-price {
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 50px;
+  color: white;
+  height: 50px;
+  text-align: center;
+  padding-left: 13px;
+  
+
+
+}
+
 
 </style>
