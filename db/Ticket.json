@@ -1,0 +1,46 @@
+[ {
+  "id" : "7B9x7k8fkl-VPGCDj84gc",
+  "userId" : "ufylInw3GioM4iVgQOl6B",
+  "salon" : null,
+  "film" : "Harry Potter",
+  "date" : "2021-02-19",
+  "time" : null,
+  "seats" : 0,
+  "price" : 0
+}, {
+  "id" : "PmRve3-QCYnf0AHVTsKyE",
+  "userId" : "LSwzeRSPSUpwNbf8BWLus",
+  "salon" : "Stora Salongen",
+  "film" : "Borat 2",
+  "date" : "2021-02-03",
+  "time" : "21:22",
+  "seats" : 1,
+  "price" : 120
+}, {
+  "id" : "gLkJjJck6wm2EPF-AmiY-",
+  "userId" : "LSwzeRSPSUpwNbf8BWLus",
+  "salon" : "Stora Salongen",
+  "film" : "Blade Runner",
+  "date" : "2021-02-03",
+  "time" : "20:32",
+  "seats" : 2,
+  "price" : 160
+}, {
+  "id" : "DcN6kefDnAtt1r8VNzuZ3",
+  "userId" : "LSwzeRSPSUpwNbf8BWLus",
+  "salon" : "Stora Salongen",
+  "film" : "Star Wars: Episode III",
+  "date" : "2021-02-02",
+  "time" : "21:20",
+  "seats" : 2,
+  "price" : 240
+}, {
+  "id" : "kbrnAQZOIeGI3kmBYcK9u",
+  "userId" : "LSwzeRSPSUpwNbf8BWLus",
+  "salon" : "Lilla Salongen",
+  "film" : "Blade Runner",
+  "date" : "2021-02-03",
+  "time" : "20:23",
+  "seats" : 2,
+  "price" : 240
+} ]

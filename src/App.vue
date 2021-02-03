@@ -32,7 +32,7 @@
 
 <!-- JavaScript (Vue) -->
 <script scoped>
-// Imported Viewa
+// Imported 3  Vue.js files
 import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
@@ -41,7 +41,8 @@ import Salons from "./views/Salons.vue";
 import SkapaKonto from "./views/SkapaKonto.vue";
 import MinaSidor from "./views/MinaSidor.vue";
 
-// Declare a component which can be registered and reused later
+// This syntax is declaring a component
+// which can be registered and reused later
 export default {
   name: "App",
   data() {
@@ -73,7 +74,7 @@ export default {
       this.$store.dispatch("fetchShowtime"),
       this.$store.dispatch("fetchSalons"),
       this.$store.dispatch("whoAmI");
-      this.$store.dispatch("fetchTickets");
+      //this.$store.dispatch("fetchTickets");
   },
   computed: {
     userLoggedIn() {
@@ -94,6 +95,11 @@ export default {
 </script>
 
 <style>
+/*
+IMPORTANT! Don't forget to use 'scope'
+otherwise all changes will effect other files
+*/
+
 /******************** google fonts **************/
 /*Cookie*/
 @import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
@@ -114,9 +120,9 @@ background: linear-gradient(0deg, rgba(133,0,0,1) 0%, rgba(230,21,21,1) 55%, rgb
   /*fix margin*/
 }
 body {
-  background-color: black;
   margin: 0 !important;
   padding: 0 !important;
+   background-color: rgb(0, 0, 0);
 }
 
 /*a -> filmer, biljetter, filmvisarna, login*/
@@ -206,6 +212,6 @@ button {
   font-family: "Roboto Slab", serif;
   margin-left: 15px;
   border: none;
-
+   cursor: pointer;
 }
 </style>
