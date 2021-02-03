@@ -8,7 +8,7 @@
         <div class="news-poster" v-for="film of filmer" :key="film.id">
           <div v-if="film.movieId == 4">
             <router-link :to="'/filmerDetails/' + film.id">
-              <img :src="film.images[0]" />
+              <img :src="film.backgroundImage" />
               <p class="news-spotlight">{{ film.title }}</p>
             </router-link>
             <div class="space"></div>
@@ -27,7 +27,7 @@
           <br /><a>{{ film.title }}</a>
         </div>
       </div>
-      <div class="space"></div>
+      <div class="empty-space" style="height: 200px"></div>
     </div>
     <!--
     <div
@@ -91,7 +91,7 @@ h1.news-headline {
   color: white;
   padding-right: 70px;
   text-align: left;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .showing-films {
@@ -99,7 +99,7 @@ h1.news-headline {
 }
 
 .movie-item {
-  width: 220px;
+  width: 230px;
 }
 
 img {
@@ -110,7 +110,8 @@ div.news-container {
 }
 
 .news-poster img {
-  width: 400px;
+  margin: 0 auto;
+  width: 900px;
 }
 .news-container-inside {
   text-align: left;
