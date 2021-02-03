@@ -1,31 +1,44 @@
 <template>
   <h1>Biljetter</h1>
-  <div id ="subtitle">Boka dina biljetter idag</div>
+  <div id="subtitle">Boka dina biljetter idag</div>
   <div v-if="film" class="movie-list">
-      <div class="movie-item-poster">
-        <img :src="film.posterUrl" />
-      </div>
-  <div class="showings-container">
-
-    <div v-for="show of sortedShows" :key="show.id">
-      <div class="showings" v-if="isLoggedIn">
-        <h1>{{ show.date }}</h1>
-        <p>Lediga säten {{ show.availableSeats }}</p>
-        <router-link :to="'/tickets/' + show.id">
-          <button class="ticket-button">Biljetter</button>
-        </router-link>
-      </div>
-      <div class="showings" v-else>
-        <h1>{{ show.date }}</h1>
-        <p>Lediga säten {{ show.availableSeats }}</p>
-        <router-link :to="'/login'">
-          <button class="ticket-button">Biljetter</button>
-        </router-link>
+    <div class="movie-item-poster">
+      <img :src="film.posterUrl" />
+    </div>
+    </div>
+      <div class="film-title"> {{ film.title }} </div>
+    <div class="header-container">
+       <div class="header-date"> Datum </div>
+          <div class="header-time"> Tid </div>
+          <div class="header-salon"> Salong </div>
+          <div class="header-seats"> Lediga säten </div>
+         <div class="header-empty"></div>
+    </div>
+    <div class="showings-container">
+      <div v-for="show of sortedShows" :key="show.id">
+        <div class="showings" v-if="isLoggedIn">
+          <div class="show-date">{{ show.date }}</div>
+          <div class="show-time">{{ show.time }}</div>
+          <div class="show-salon">{{ show.salon }}</div>
+          <div class="show-seats"> {{ show.availableSeats }}</div>
+          <router-link :to="'/tickets/' + show.id">
+            <button class="ticket-button">Biljetter</button>
+          </router-link>
+        </div>
+        
+        <div class="showings" v-else>
+          <div class="show-date">{{ show.date }}</div>
+          <div class="show-time">{{ show.time }}</div>
+          <div class="show-salon">{{ show.salon }}</div>
+          <div class="show-seats"> {{ show.availableSeats }}</div>
+          <router-link :to="'/tickets/' + show.id">
+            <button class="ticket-button">Biljetter</button>
+          </router-link>
+        </div>
       </div>
     </div>
-  </div>
-
-  </div>
+    <div class="empty-space" style="height: 100px"></div>
+ 
 </template>
 
 
@@ -187,7 +200,7 @@ h1.filmer-header {
 
 div.movie-list {
   background-color: rgb(0, 0, 0);
-  height: 1100px;
+  height: 450px;
   width: 55%;
   margin: 0 auto;
   padding-left: 10px;
@@ -248,23 +261,139 @@ img {
 }
 .showings {
   background-color: rgba(58, 58, 58, 0.281);
-
+   padding:10px;    
 }
-div > p{
+div > p {
   color: whitesmoke;
 }
-#subtitle{
-  color: whitesmoke
+#subtitle {
+  color: whitesmoke;
 }
 .showings-container {
-  padding-top: 350px;
-  
+width: 700px;
+  margin: auto;
+
 }
 
 .ticket-button {
   cursor: pointer;
-  padding: 10px;
+  padding: 6px 8px;
   border: 1px solid rgba(245, 245, 245, 0.424);
   border-radius: 3px;
+  align-items: center;
 }
+
+.show-date {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+  width: 100px;
+}
+.show-time {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+    width: 150px;
+
+}
+.show-salon {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+  width: 150px;
+  text-align: left;
+  margin-left: 20px;
+}
+.show-seats {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+  padding-left: 10px;
+  width: 100px;
+}
+
+.header-date {
+   padding-left: 5px;
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+  width: 100px;
+height: 30px;
+  background-color: rgba(245, 245, 245, 0.157);
+  line-height: 30px;
+}
+
+.header-time {
+  padding-left: 3px;
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+ width: 150px;
+ height: 30px;
+  background-color: rgba(245, 245, 245, 0.157);
+  line-height: 30px;
+}
+
+.header-salon {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+  width: 150px;
+  text-align: center;
+ height: 30px;
+  background-color: rgba(245, 245, 245, 0.157);
+  line-height: 30px;
+  
+
+}
+
+.header-seats {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+  width: 170px;
+  text-align: center;
+ height: 30px;
+  
+  background-color: rgba(245, 245, 245, 0.157);
+  line-height: 30px;
+}
+
+.header-container {
+  width: 700px;
+  margin: auto;
+  height: 35px;
+}
+
+.header-empty {
+  height: 30px;
+  width: 122px;
+  float: left;
+  margin: 0 auto;
+background-color: rgba(245, 245, 245, 0.157);
+}
+
+.film-title {
+  height: 100px;
+  font-family: "Roboto Slab", serif;
+  font-size: 35px;
+  color: whitesmoke;
+}
+
 </style>
