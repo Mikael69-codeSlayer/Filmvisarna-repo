@@ -11,7 +11,7 @@ public class Ticket {
     private String salon;
     private String film;
     private String date;
-    private String time;             //private int price?? kanske hur många säten också?
+    private String time;
     private int seats;
     private int price;
 

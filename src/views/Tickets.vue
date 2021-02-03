@@ -69,6 +69,7 @@
             <button class="seniorButton" v-on:click.prevent="sDecrement">-</button>
           </div>
         </div>
+             <div>Totalt {{price}}kr</div>
 
         <button class="book-button" v-on:click="updateShow()">Boka</button>
       </div>
@@ -128,49 +129,55 @@ export default {
     // Ticket button increments and decrements
     aIncrement() {
       if (this.adultCount < 8) {
+        this.price += 120
         this.adultCount++;
       }
     },
 
     aDecrement() {
       if (this.adultCount > 0) {
+        this.price -= 120
         this.adultCount--;
       }
     },
 
     cIncrement() {
       if (this.childCount < 8) {
+        this.price+= 80
         this.childCount++;
       }
     },
-
     cDecrement() {
       if (this.childCount > 0) {
+        this.price -= 80
         this.childCount--;
       }
     },
     sIncrement() {
       if (this.seniorCount < 8) {
+        this.price += 80
         this.seniorCount++;
       }
     },
 
     sDecrement() {
       if (this.seniorCount > 0) {
+        this.price -= 80
         this.seniorCount--;
       }
     },
 
     bookTicket() {
+      console.log('bookticket')
       const ticket = {
-        userId: this.userId,
-        film: this.film,
-        date: this.date,
-        time: this.time,
-        salon: this.salon,
-        seats: this.seats,
-        price: this.price,
-      };
+        userId: this.currentShow.showId,
+        film: this.currentShow.film,
+        date: this.currentShow.date,
+        time: this.currentShow.time,
+        salon: this.currentShow.salon,
+        seats: (this.adultCount + this.childCount + this.seniorCount),
+        price: this.price
+      }
 
       this.$store.dispatch("addTicket", ticket);
       this.$router.replace("/minasidor");
@@ -178,6 +185,8 @@ export default {
   },
 };
 </script>
+
+
 
 <style scoped>
 

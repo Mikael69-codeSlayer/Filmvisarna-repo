@@ -1,38 +1,44 @@
 <template>
   <h1>Biljetter</h1>
-  <div>Boka dina biljetter idag</div>
-  <!--
-<div v-for="show of sortedShows" :key="show.id">
-  <h1>TEST</h1>
-  <h1>{{show.id}}</h1>
-</div>
--->
+  <div id="subtitle">Boka dina biljetter idag</div>
   <div v-if="film" class="movie-list">
-    <div class="movie-item">
-      <div class="movie-item-poster">
-        <img :src="film.posterUrl" />
+    <div class="movie-item-poster">
+      <img :src="film.posterUrl" />
+    </div>
+    </div>
+      <div class="film-title"> {{ film.title }} </div>
+    <div class="header-container">
+       <div class="header-date"> Datum </div>
+          <div class="header-time"> Tid </div>
+          <div class="header-salon"> Salong </div>
+          <div class="header-seats"> Lediga säten </div>
+         <div class="header-empty"></div>
+    </div>
+    <div class="showings-container">
+      <div v-for="show of sortedShows" :key="show.id">
+        <div class="showings" v-if="isLoggedIn">
+          <div class="show-date">{{ show.date }}</div>
+          <div class="show-time">{{ show.time }}</div>
+          <div class="show-salon">{{ show.salon }}</div>
+          <div class="show-seats"> {{ show.availableSeats }}</div>
+          <router-link :to="'/tickets/' + show.id">
+            <button class="ticket-button">Biljetter</button>
+          </router-link>
+        </div>
+        
+        <div class="showings" v-else>
+          <div class="show-date">{{ show.date }}</div>
+          <div class="show-time">{{ show.time }}</div>
+          <div class="show-salon">{{ show.salon }}</div>
+          <div class="show-seats"> {{ show.availableSeats }}</div>
+          <router-link :to="'/tickets/' + show.id">
+            <button class="ticket-button">Biljetter</button>
+          </router-link>
+        </div>
       </div>
     </div>
-    <!-- <div v-for="film of filmer" :key="film.id">
-     <h1>{{ film.title }}</h1> 
-    </div> -->
-    <div v-for="show of sortedShows" :key="show.id">
-      <div v-if="isLoggedIn">
-        <h1>{{ show.date }}</h1>
-        <p>Lediga säten {{ show.availableSeats }}</p>
-        <router-link :to="'/tickets/' + show.id">
-          <button class="ticket-button">Biljetter</button>
-        </router-link>
-      </div>
-      <div v-else>
-        <h1>{{ show.date }}</h1>
-        <p>Lediga säten {{ show.availableSeats }}</p>
-        <router-link :to="'/login'">
-          <button class="ticket-button">Biljetter</button>
-        </router-link>
-      </div>
-    </div>
-  </div>
+    <div class="empty-space" style="height: 100px"></div>
+ 
 </template>
 
 
@@ -58,15 +64,14 @@ export default {
       )[0];
       // this.id)[0]; alltid en stor vilket blir retunerad
       //array[0]
-    },userLoggedIn() {
-      return this.$store.state.user == null
-  },
-   isLoggedIn(){
-      return this.$store.state.user != null
     },
-    // images() {
-    //   return this.$store.state.images.filter((images) => images.id == this.id);
-    // },
+    userLoggedIn() {
+      return this.$store.state.user == null;
+    },
+    isLoggedIn() {
+      return this.$store.state.user != null;
+    },
+
     showtime() {
       return this.$store.state.showtime.filter(
         (showtime) => showtime.film == this.film.title
@@ -77,12 +82,10 @@ export default {
       for (let show of this.showtime) {
         if (show.date.includes("-")) {
           show.date = show.date.replaceAll("-", "");
-          //console.log(show.date)
         }
       }
       //This sorts showtimes dates in order
       this.showtime.sort((a, b) => a.date - b.date);
-      //console.log(this.showtime)
 
       //This adds "-" between year-month and month-day
       for (let show of this.showtime) {
@@ -92,26 +95,9 @@ export default {
         if (show.date.includes(2021)) {
           show.date = show.date.replace("-02", "-02-");
         }
-        //console.log(show.date)
       }
-      //console.log(this.showtime);
 
-      //THIS IS THE SORTING OF DATE
-      //   let noDuplicates = []
-
-      //     this.showtime.forEach(remove => {
-      //         if(!noDuplicates.includes(remove.date)){
-      //             noDuplicates.push(remove.date)
-      //         }
-      //     })
-
-      // console.log(noDuplicates)
-      // this.showtime=this.noDuplicates;
       return this.showtime;
-      /*
-      let shows = this.$store.state.showtime.sort((a, b) => a.date - b.date );
-      console.log("Detta är shows" + shows)
-      return shows;*/
     },
   },
 
@@ -214,7 +200,7 @@ h1.filmer-header {
 
 div.movie-list {
   background-color: rgb(0, 0, 0);
-  height: 1100px;
+  height: 450px;
   width: 55%;
   margin: 0 auto;
   padding-left: 10px;
@@ -265,6 +251,149 @@ div.line {
 }
 
 img {
+  width: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.showings {
+  background-color: rgba(58, 58, 58, 0.281);
+   padding:10px;    
+}
+div > p {
+  color: whitesmoke;
+}
+#subtitle {
+  color: whitesmoke;
+}
+.showings-container {
+width: 700px;
+  margin: auto;
+
+}
+
+.ticket-button {
+  cursor: pointer;
+  padding: 6px 8px;
+  border: 1px solid rgba(245, 245, 245, 0.424);
+  border-radius: 3px;
+  align-items: center;
+}
+
+.show-date {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
   width: 100px;
 }
+.show-time {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+    width: 150px;
+
+}
+.show-salon {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+  width: 150px;
+  text-align: left;
+  margin-left: 20px;
+}
+.show-seats {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.637);
+  padding-left: 10px;
+  width: 100px;
+}
+
+.header-date {
+   padding-left: 5px;
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+  width: 100px;
+height: 30px;
+  background-color: rgba(245, 245, 245, 0.157);
+  line-height: 30px;
+}
+
+.header-time {
+  padding-left: 3px;
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+ width: 150px;
+ height: 30px;
+  background-color: rgba(245, 245, 245, 0.157);
+  line-height: 30px;
+}
+
+.header-salon {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+  width: 150px;
+  text-align: center;
+ height: 30px;
+  background-color: rgba(245, 245, 245, 0.157);
+  line-height: 30px;
+  
+
+}
+
+.header-seats {
+  float: left;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: whitesmoke;
+  width: 170px;
+  text-align: center;
+ height: 30px;
+  
+  background-color: rgba(245, 245, 245, 0.157);
+  line-height: 30px;
+}
+
+.header-container {
+  width: 700px;
+  margin: auto;
+  height: 35px;
+}
+
+.header-empty {
+  height: 30px;
+  width: 122px;
+  float: left;
+  margin: 0 auto;
+background-color: rgba(245, 245, 245, 0.157);
+}
+
+.film-title {
+  height: 100px;
+  font-family: "Roboto Slab", serif;
+  font-size: 35px;
+  color: whitesmoke;
+}
+
 </style>

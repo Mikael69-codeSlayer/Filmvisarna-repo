@@ -32,7 +32,7 @@
 
 <!-- JavaScript (Vue) -->
 <script scoped>
-// Imported 3  Vue.js files
+// Imported Viewa
 import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
@@ -41,8 +41,7 @@ import Salons from "./views/Salons.vue";
 import SkapaKonto from "./views/SkapaKonto.vue";
 import MinaSidor from "./views/MinaSidor.vue";
 
-// This syntax is declaring a component
-// which can be registered and reused later
+// Declare a component which can be registered and reused later
 export default {
   name: "App",
   data() {
@@ -95,11 +94,6 @@ export default {
 </script>
 
 <style>
-/*
-IMPORTANT! Don't forget to use 'scope'
-otherwise all changes will effect other files
-*/
-
 /******************** google fonts **************/
 /*Cookie*/
 @import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
