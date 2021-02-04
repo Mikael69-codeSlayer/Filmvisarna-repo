@@ -74,6 +74,9 @@
           <div v-if="price !=0">
             <button v-on:click="updateShow(), bookTicket()" class="book-button">Boka</button>
           </div>
+          <div v-else>
+            <button class="grey-book-button">Boka</button>
+          </div>
           
       </div>
     </div>
@@ -451,6 +454,13 @@ div.senior-ticket-container {
   font-size: 1.2em;
   color: white;
   border: 1px solid red;
+}
+.grey-book-button {
+  padding: 10px 30px;
+  font-size: 20px;
+  background-color: silver;
+  font-size: 1.2em;
+  color: black;
 }
 .total-price {
   font-family: "Roboto Slab", serif;
