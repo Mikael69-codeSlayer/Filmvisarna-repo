@@ -34,7 +34,7 @@
         <div class="adult-ticket-container">
           <div class="adult-header">
             Vuxen
-            <p class="adult-price">120kr/st</p>
+            <p class="adult-price">85kr/st</p>
           </div>
           <!-- Adult plus and minus buttons -->
           <div class="increment-buttons">
@@ -47,7 +47,7 @@
         <div class="child-ticket-container">
           <div class="child-header">
             Barn
-            <p class="child-price">80kr/st</p>
+            <p class="child-price">65kr/st</p>
           </div>
           <!-- Child plus and minus buttons -->
           <div class="increment-buttons">
@@ -60,7 +60,7 @@
         <div class="senior-ticket-container">
           <div class="senior-header">
             Pensionär
-            <p class="senior-price">80kr/st</p>
+            <p class="senior-price">75kr/st</p>
           </div>
           <!-- Senior plus and minus buttons -->
           <div class="increment-buttons">
@@ -135,40 +135,40 @@ export default {
     // Ticket button increments and decrements
    aIncrement() {
       if (this.adultCount < 8) {
-        this.price += 120
+        this.price += 85
         this.adultCount++;
       }
     },
 
     aDecrement() {
       if (this.adultCount > 0) {
-        this.price -= 120
+        this.price -= 85
         this.adultCount--;
       }
     },
 
     cIncrement() {
       if (this.childCount < 8) {
-        this.price+= 80
+        this.price+= 65
         this.childCount++;
       }
     },
     cDecrement() {
       if (this.childCount > 0) {
-        this.price -= 80
+        this.price -= 65
         this.childCount--;
       }
     },
     sIncrement() {
       if (this.seniorCount < 8) {
-        this.price += 80
+        this.price += 75
         this.seniorCount++;
       }
     },
 
     sDecrement() {
       if (this.seniorCount > 0) {
-        this.price -= 80
+        this.price -= 75
         this.seniorCount--;
       }
     },

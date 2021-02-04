@@ -16,7 +16,9 @@
         <div class="welcome" v-else>
           Välkommen, {{ userName }}!
           <button @click="mypages">Mina Sidor</button>
-          <button @click="logout">Logga ut</button>
+          <router-link :to="'/'">
+            <button @click="logout">Logga ut</button>
+          </router-link>
         </div>
       </div>
 
@@ -74,7 +76,7 @@ export default {
       this.$store.dispatch("fetchShowtime"),
       this.$store.dispatch("fetchSalons"),
       this.$store.dispatch("whoAmI");
-      //this.$store.dispatch("fetchTickets");
+    //this.$store.dispatch("fetchTickets");
   },
   computed: {
     userLoggedIn() {
@@ -113,8 +115,13 @@ div.main-container {
   width: 100%;
 }
 .nav {
-background: rgb(133,0,0);
-background: linear-gradient(0deg, rgba(133,0,0,1) 0%, rgba(230,21,21,1) 55%, rgba(255,85,85,1) 100%);
+  background: rgb(133, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(133, 0, 0, 1) 0%,
+    rgba(230, 21, 21, 1) 55%,
+    rgba(255, 85, 85, 1) 100%
+  );
   padding: 5px;
 
   /*fix margin*/
@@ -164,7 +171,6 @@ div.filmV {
 div.filmV::first-letter {
   font-size: 70px;
   color: aliceblue;
-
 }
 /*Filmer*/
 div.filmer {
