@@ -2,16 +2,16 @@
   <div class="salon-container">
     <div class="spacing"></div>
     <div class="salon-header">
-      <h1>VÄLJ DINA PLATSER</h1>
+      <h1>Välkommen till Filmvisarna - Den lilla biografen i Småstad</h1>
       <!-- seat icons -->
-      <div class="seats-icons">
+      <!-- <div class="seats-icons">
         <div class="seat-available-icon"></div>
         <div class="seat-available">Ledig</div>
         <div class="seat-taken-icon"></div>
         <div class="seat-taken">Ej Ledig</div>
         <div class="seat-chosen-icon"></div>
         <div class="seat-chosen">Vald</div>
-      </div>
+      </div> -->
     </div>
 
     <div class="spacing"></div>
@@ -178,7 +178,7 @@ p {
   width: 830px;
   height: 100px;
   background: rgb(0, 0, 0);
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
 }
 
