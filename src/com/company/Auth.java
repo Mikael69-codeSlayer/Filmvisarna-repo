@@ -15,9 +15,10 @@ public class Auth {
         initAuth();
     }
     private void initAuth(){
-        String secretSalt = "hnjfew45%!dhDsdqw-_!dwOL";  //googla på load from environment??
+        String secretSalt = "hnjfew45%!dhDsdqw-_!dwOL";
 
-        app.post("/api/register", (req, res) -> {                       //post skickar info till databasen
+        //post send information to database
+        app.post("/api/register", (req, res) -> {
             if(req.session("user") != null) {
                 res.send("Redan inloggad");
                 return;
@@ -26,12 +27,12 @@ public class Auth {
             var user = req.body(User.class);
             System.out.println(user);
 
-            // validera att email inte är upptaget
+            // validate email to avoid copies
             User existingUser = collection("User").findOne(ObjectFilters.eq("email", user.getEmail()));
             if(existingUser != null) {
-                // email upptagen
+                // email taken
                 res.send("E-postadressen används redan");
-                return; // spara inte användaren
+                return; // don't save the user
             }
 
             String hashedPassword = HashPassword.hash(user.getPassword() + secretSalt);
@@ -40,8 +41,7 @@ public class Auth {
             collection("User").save(user);
 
             user.setPassword(null);
-
-            // spara användaren i sessionen
+            //save user in session
             req.session("user", user);
 
             res.json(user);
@@ -67,15 +67,15 @@ public class Auth {
                existingUser.setPassword(null);
 
                 req.session("user", existingUser);
-
-                res.json(existingUser); //rätt email + lösenord
+                //correct email + password
+                res.json(existingUser);
 
             } else {
                 res.send("Fel e-postadress eller lösenord");
             }
         });
-
-        app.get("/api/whoami", (req, res) -> {                     //get hämtar informationen som redan finns. Hämtar användaren som är inloggad/ registrerad
+        //get gets the information that already exists. Returns user that is logged in / registered
+        app.get("/api/whoami", (req, res) -> {
 
             User user = req.session("user");
             res.json(user);

@@ -12,20 +12,11 @@ public class User {
     private String id;
     private String email;
     private String password;
-    private ArrayList <Ticket> bookings;        //KAN TAS BORT
 
     public User() {
 
     }
 
-
-    public ArrayList<Ticket> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(ArrayList<Ticket> bookings) {
-        this.bookings = bookings;
-    }
 
     public String getId() {
         return id;
@@ -43,12 +34,10 @@ public class User {
         this.email = email;
     }
 
-   // @JsonIgnore -- tar bort password när man hämtar en user
     public String getPassword() {
         return password;
     }
 
-    //@JsonProperty  -- tillåter password att tas emot av express
     public void setPassword(String password) {
         this.password = password;
     }
@@ -59,7 +48,6 @@ public class User {
                 "id='" + id + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", bookings=" + bookings +
                 '}';
     }
 }

@@ -73,7 +73,7 @@ public class Showtime {
     }
 
     public boolean updateSeats(int bookedSeats) {
-
+        // If there are less available seats than you try to book then it will return false
         if (this.availableSeats >= bookedSeats) {
             this.availableSeats -= bookedSeats;
             return true;

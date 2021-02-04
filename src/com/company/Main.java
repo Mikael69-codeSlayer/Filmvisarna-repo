@@ -60,8 +60,9 @@ public class Main {
             }
             Ticket ticket = req.body(Ticket.class);
             ticket.setUserId(user.getId());
-
-            collection("Ticket").save(ticket);                 //Lägger till en ny ticket till database
+            
+            //Adds a new ticket to the database
+            collection("Ticket").save(ticket);
             res.json(ticket);
 
         });
