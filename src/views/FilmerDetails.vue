@@ -1,7 +1,4 @@
 <template>
-  <!-- It works. 
-  We added v-for to loop through films like we did in 'Filmvisarna.vue'
-  and v-if to choose which poster should be displayed. -->
   <div class="detail-container" v-for="film of filmer" :key="film.id">
     <div
       class="movie-container"
@@ -18,7 +15,7 @@
           <p>{{ film.genre }} | {{ film.length }} min</p>
 
           <div class="ticket-button-container">
-            <router-link :to="'/movieshowings/' +film.id">
+            <router-link :to="'/movieshowings/' + film.id">
               <button class="ticket-button">Biljetter</button>
             </router-link>
           </div>

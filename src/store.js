@@ -6,9 +6,8 @@ const state = {
   showtime: [],
   salons: [],
   user: null,
-  ticket: { id:"", userId: "", film: "", date: "", time: "", salon: "", seats: 0, price: 0 }, //Biljetten som ska skickas till backend, måste ha exakt samma fält som i backend. 
-                                                                            //  Samma stavning osv. { user: { allt i måsvingar är objekt }, seats: är int, ej objekt }
-  allTickets:[]          //Kan eventuellt behövas för att hitta historiken av en användares biljetter
+  ticket: { id: "", userId: "", film: "", date: "", time: "", salon: "", seats: 0, price: 0 },
+  allTickets:[]
 }                         
 
 
@@ -32,7 +31,7 @@ const mutations = {
     state.user = user
   },
   setTickets(state, list) {
-    state.allTickets = list               //tar tag i allTickets 
+    state.allTickets = list
   },
   addTicket(state, ticket) {
     state.ticket.push(ticket)
@@ -45,7 +44,6 @@ const actions = {
   async fetchFilmer(store) {
     let list = await fetch('/rest/filmer')
     list = await list.json()
-    //console.log(list)
     store.commit('setFilmer', list)
   },
 
@@ -59,7 +57,6 @@ const actions = {
   async fetchSalons(store) {
     let list = await fetch('/rest/salons')
     list = await list.json()
-    //console.log(list)
     store.commit('setSalons', list)
   },
 
@@ -115,10 +112,9 @@ const actions = {
     }
   },
 
-  async fetchTickets(store) {                                              //hämtar alla tickets
+  async fetchTickets(store) {
     let list = await fetch('/rest/ticket')
     list = await list.json()
-
     store.commit('setTickets',list)
   },
 

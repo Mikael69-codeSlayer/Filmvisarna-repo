@@ -6,7 +6,6 @@
 <form @submit.prevent="register"> 
       <input type="email" v-model="email" required placeholder="E-postadress"/><br>
     <input type="password" v-model="password" required placeholder="Lösenord"/><br>
-   <!-- <input type="confirmpassword" required v-model="password" placeholder="Bekräfta lösenord"/>-->
     
 <button type="register">Skapa</button>
 </form> 
@@ -21,7 +20,6 @@ export default {
   return{
         email: "",
         password: "",
-       /* confirmPassword: ""*/
       }
     },
 
@@ -84,7 +82,5 @@ padding:5px 10px;
 width:200px;
 height:30px;
 }
-
-
 
 </style> 

@@ -3,15 +3,7 @@
     <div class="spacing"></div>
     <div class="salon-header">
       <h1>Välkommen till Filmvisarna - Den lilla biografen i Småstad</h1>
-      <!-- seat icons -->
-      <!-- <div class="seats-icons">
-        <div class="seat-available-icon"></div>
-        <div class="seat-available">Ledig</div>
-        <div class="seat-taken-icon"></div>
-        <div class="seat-taken">Ej Ledig</div>
-        <div class="seat-chosen-icon"></div>
-        <div class="seat-chosen">Vald</div>
-      </div> -->
+      
     </div>
 
     <div class="spacing"></div>
@@ -36,9 +28,6 @@
       </div>
     </div>
 
-        
-    <!--<div id="app3">-->
-
       <!--- Loop salons to get Salon2--->
     <div class="salon" v-for="salon of salons" :key="salon">
       <div v-if="salon.salonId == 2">
@@ -61,7 +50,6 @@
     </div>
     </div>
 
-  <!--</div>-->
 </template>
 
 
@@ -136,22 +124,7 @@ p {
   margin-right:auto;
   user-select: none;
 }
-/*
-.seats {
-  float: left;
-  background-color: rgb(204, 204, 204);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  font-size: 15px;
-  font-weight: bold;
-  width: 40px;
-  height: 40px; 
-  text-align: center;
-  vertical-align: middle;
-  line-height: 40px;
-  margin-left: 5px;
-  user-select: none;
-}
- */
+
 .seat:hover {
   cursor: pointer;
 }

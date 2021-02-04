@@ -1,6 +1,6 @@
 <!--This is for movies and trailers-->
 <template>
-<div class="space"></div>
+  <div class="space"></div>
   <div class="movies-container">
     <div class="movies-header">
       <h1 class="filmer-header">Filmer</h1>
@@ -16,9 +16,8 @@
 
             <div class="movie-item-text">
               <a class="movie-title">{{ film.title }}</a> <br />
-              {{ film.genre }} 
-              | {{ film.length }} min
-              | {{ film.language }}
+              {{ film.genre }}
+              | {{ film.length }} min | {{ film.language }}
             </div>
           </div>
         </router-link>
@@ -34,9 +33,7 @@
 <script>
 export default {
   data() {
-    return {
-      
-    };
+    return {};
   },
   computed: {
     filmer() {
@@ -47,11 +44,6 @@ export default {
 </script>
 
 <style scoped>
-/*
-IMPORTANT! Don't forget to use 'scope'
-otherwise all changes will effect other files
-*/
-
 .space {
   width: 100%;
   height: 100px;
@@ -60,16 +52,14 @@ otherwise all changes will effect other files
 a {
   font-family: "Roboto Slab", serif;
   color: white;
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .movie-title {
-   font-size: 25px;
-   font-weight: bold;
-   line-height: 70px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 70px;
 }
-
-
 
 div.movies-container {
   color: white;
@@ -134,9 +124,8 @@ div.movie-item-text {
   line-height: 7px;
 }
 div.movie-item-text p {
-    font-weight: bold;
-    font-size: 25px;
-    
+  font-weight: bold;
+  font-size: 25px;
 }
 
 div.movie-item-space {

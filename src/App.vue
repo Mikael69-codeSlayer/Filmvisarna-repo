@@ -1,4 +1,3 @@
-<!-- HTML -->
 <template>
   <!-- Navigationbar with router-link and data-bind-->
   <div class="main-container">
@@ -26,15 +25,12 @@
         <router-link :to="{ name: 'Salons' }">Salonger</router-link>
       </div>
     </div>
-    <!--We added router-view to App.vue template, it must be included to render components.-->
   </div>
 
   <router-view />
 </template>
 
-<!-- JavaScript (Vue) -->
 <script scoped>
-// Imported 3  Vue.js files
 import Filmvisarna from "./views/Filmvisarna.vue";
 import Filmer from "./views/Filmer.vue";
 import Login from "./views/Login.vue";
@@ -43,8 +39,6 @@ import Salons from "./views/Salons.vue";
 import SkapaKonto from "./views/SkapaKonto.vue";
 import MinaSidor from "./views/MinaSidor.vue";
 
-// This syntax is declaring a component
-// which can be registered and reused later
 export default {
   name: "App",
   data() {
@@ -76,7 +70,6 @@ export default {
       this.$store.dispatch("fetchShowtime"),
       this.$store.dispatch("fetchSalons"),
       this.$store.dispatch("whoAmI");
-    //this.$store.dispatch("fetchTickets");
   },
   computed: {
     userLoggedIn() {
@@ -97,10 +90,6 @@ export default {
 </script>
 
 <style>
-/*
-IMPORTANT! Don't forget to use 'scope'
-otherwise all changes will effect other files
-*/
 
 /******************** google fonts **************/
 /*Cookie*/
@@ -124,7 +113,6 @@ div.main-container {
   );
   padding: 5px;
 
-  /*fix margin*/
 }
 body {
   background-color: black;

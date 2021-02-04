@@ -59,11 +59,10 @@ export default {
     },
     film() {
       // Also added this, to get filmes and id
+      // this.id)[0]; always return only one object
       return this.$store.state.filmer.filter(
         (filmer) => filmer.id == this.id
       )[0];
-      // this.id)[0]; alltid en stor vilket blir retunerad
-      //array[0]
     },
     userLoggedIn() {
       return this.$store.state.user == null;
@@ -114,10 +113,7 @@ export default {
 </script>
 
 <style scoped>
-/*Test
-IMPORTANT! Don't forget to use 'scope'
-otherwise all changes will effect other files
-*/
+
 h1 {
   font-family: "Roboto Slab", serif;
   text-align: center;
@@ -150,8 +146,6 @@ div.datedropdown {
   margin-top: 50px;
   margin-left: 2px;
 }
-
-/* */
 
 .space {
   width: 100%;
@@ -353,7 +347,6 @@ height: 30px;
  height: 30px;
   background-color: rgba(245, 245, 245, 0.157);
   line-height: 30px;
-  
 
 }
 

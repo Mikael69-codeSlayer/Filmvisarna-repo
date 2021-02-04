@@ -1,10 +1,9 @@
-<!--   HTML  -->
 <template>
   <div class="home">
     <div class="news-container">
       <div class="news-container-inside">
         <h1 class="news-headline">Aktuellt på bio</h1>
-
+        <!-- Display the spotligt movie on the frontpage -->
         <div class="news-poster" v-for="film of filmer" :key="film.id">
           <div v-if="film.movieId == 4">
             <router-link :to="'/filmerDetails/' + film.id">
@@ -19,6 +18,7 @@
     <div class="showing-now">
       <h1 class="showing-now-headline">{{ msg }}</h1>
       <br />
+      <!-- Display the movies on the frontpage -->
       <div class="showing-films" v-for="film of filmer" :key="film.id">
         <div class="movie-item">
           <router-link :to="'/filmerDetails/' + film.id">
@@ -32,7 +32,6 @@
   </div>
 </template>
 
-<!--  JavaScript (Vue.js)   -->
 <script>
 export default {
   name: "home",
@@ -50,12 +49,7 @@ export default {
 };
 </script>
 
-<!--- CSS  --->
 <style scoped>
-/*
-IMPORTANT! Don't forget to use 'scoped'
-otherwise all changes will effect other files
-*/
 .space {
   width: 100%;
   height: 50px;

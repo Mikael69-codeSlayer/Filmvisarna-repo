@@ -4,11 +4,10 @@
   <h1>Mina Sidor</h1>
   <div class="header">Mina bokningar</div>
   <div class="payInfo">Betalning sker på plats, uppge ditt bokningsnummer</div>
-
+<!-- Loops out all tickets the user bought, sorted by date -->
   <div class="ticket-container" v-for="info of sortedTickets" :key="info">
     <div class="ticket-info">
       <p>{{ info.film }}</p>
-   <!--  <div class="line"></div> -->
 
       <pre>
     Datum:  {{ info.date }} 
@@ -57,7 +56,6 @@ export default {
       for (let ticket of this.tickets) {
         if (ticket.date.includes("-")) {
           ticket.date = ticket.date.replaceAll("-", "");
-          //console.log(ticket.date)
         }
       }
       //This sorts ticket dates in order
